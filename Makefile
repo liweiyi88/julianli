@@ -14,7 +14,7 @@ help:
 ##---------------------------------------------------------------------------
 
 start:          ## Install and start the project
-start: build up .env db perm
+start: build up db perm .env
 
 stop:           ## Remove docker containers
 	$(FIG) rm -v --force --stop
@@ -64,12 +64,6 @@ perm:
 
 vendor: composer.lock
 	@$(RUN) composer install
-	@$(RUN) composer req orm
-	@$(RUN) composer req annotations
-	@$(RUN) composer req --dev profiler
-	@$(RUN) composer req twig
-	@$(RUN) composer req encore
-	@$(RUN) composer req asset
 
 composer.lock: composer.json
 	@echo compose.lock is not up to date.

@@ -1278,16 +1278,16 @@
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v5.1.1",
+            "version": "v5.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "4fc5d5ba02eee8bb02cc00548dfc5a98f6151fe8"
+                "reference": "28792a4e1a3237088ee1694098767833d079d56d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/4fc5d5ba02eee8bb02cc00548dfc5a98f6151fe8",
-                "reference": "4fc5d5ba02eee8bb02cc00548dfc5a98f6151fe8",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/28792a4e1a3237088ee1694098767833d079d56d",
+                "reference": "28792a4e1a3237088ee1694098767833d079d56d",
                 "shasum": ""
             },
             "require": {
@@ -1343,7 +1343,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2017-11-30T14:53:48+00:00"
+            "time": "2017-12-01T00:43:37+00:00"
         },
         {
             "name": "symfony/asset",
