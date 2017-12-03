@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="theme-color-07cb79 theme-skin-light">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Julian Li{% endblock %}</title>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicon/apple-touch-icon.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon/favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon/favicon-16x16.png') }}">
+        <link rel="manifest" href="{{ asset('img/favicon/manifest.json') }}">
+        <link rel="mask-icon" href="{{ asset('img/favicon/safari-pinned-tab.svg') }}" color="#5bd5a2">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Fredoka+One">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic">
+
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('fonts/map-icons/css/map-icons.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('fonts/icomoon/style.css') }}">
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('js/plugins/jquery.bxslider/jquery.bxslider.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('js/plugins/jquery.customscroll/jquery.mCustomScrollbar.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('js/plugins/jquery.mediaelement/mediaelementplayer.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('js/plugins/jquery.fancybox/jquery.fancybox.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('js/plugins/jquery.owlcarousel/owl.carousel.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('js/plugins/jquery.owlcarousel/owl.theme.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('colors/green.css') }}">
+
+        <script type="text/javascript" src="js/libs/modernizr.js"></script>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body class="home header-has-img loading">
+        {% block body %}{% endblock %}
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+        <script type="text/javascript" src="{{ asset('fonts/map-icons/js/map-icons.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/plugins/jquery.mousewheel-3.0.6.pack.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/plugins/imagesloaded.pkgd.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/plugins/isotope.pkgd.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/plugins/jquery.appear.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/plugins/jquery.onepagenav.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/plugins/jquery.bxslider/jquery.bxslider.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/plugins/jquery.customscroll/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/plugins/jquery.mediaelement/mediaelement-and-player.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/plugins/jquery.fancybox/jquery.fancybox.pack.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/plugins/jquery.fancybox/helpers/jquery.fancybox-media.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/plugins/jquery.owlcarousel/owl.carousel.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/options.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/site.min.js') }}"></script>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

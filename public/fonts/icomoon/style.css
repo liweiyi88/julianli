@@ -1,0 +1,204 @@
+@font-face {
+    font-family: 'icomoon';
+    src:    url('fonts/icomoon.eot?vqltqj');
+    src:    url('fonts/icomoon.eot?vqltqj#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?vqltqj') format('truetype'),
+        url('fonts/icomoon.woff?vqltqj') format('woff'),
+        url('fonts/icomoon.svg?vqltqj#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="rsicon-"], [class*=" rsicon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.rsicon-bitbucket:before {
+    content: "\e91d";
+}
+.rsicon-stack-overflow:before {
+    content: "\e91c";
+}
+.rsicon-odnoklassniki:before {
+    content: "\e903";
+}
+.rsicon-whatsapp:before {
+    content: "\e904";
+}
+.rsicon-amazon:before {
+    content: "\e905";
+}
+.rsicon-yelp:before {
+    content: "\e910";
+}
+.rsicon-yahoo:before {
+    content: "\e911";
+}
+.rsicon-windows:before {
+    content: "\e912";
+}
+.rsicon-skype2:before {
+    content: "\e913";
+}
+.rsicon-envelope:before {
+    content: "\e914";
+}
+.rsicon-digg:before {
+    content: "\e915";
+}
+.rsicon-renren:before {
+    content: "\e916";
+}
+.rsicon-xing:before {
+    content: "\e917";
+}
+.rsicon-vine:before {
+    content: "\e918";
+}
+.rsicon-skype:before {
+    content: "\e605";
+}
+.rsicon-pinterest:before {
+    content: "\e606";
+}
+.rsicon-youtube:before {
+    content: "\e607";
+}
+.rsicon-instagram:before {
+    content: "\e608";
+}
+.rsicon-dribbble:before {
+    content: "\e609";
+}
+.rsicon-google-plus:before {
+    content: "\e60a";
+}
+.rsicon-linkedin:before {
+    content: "\e60b";
+}
+.rsicon-twitter:before {
+    content: "\e60c";
+}
+.rsicon-facebook:before {
+    content: "\e60d";
+}
+.rsicon-calendar:before {
+    content: "\e60e";
+}
+.rsicon-evernote:before {
+    content: "\e906";
+}
+.rsicon-wordpress:before {
+    content: "\e907";
+}
+.rsicon-vk:before {
+    content: "\e908";
+}
+.rsicon-soundcloud:before {
+    content: "\e909";
+}
+.rsicon-dropbox:before {
+    content: "\e90a";
+}
+.rsicon-behance:before {
+    content: "\e90b";
+}
+.rsicon-feed:before {
+    content: "\e90c";
+}
+.rsicon-tumblr:before {
+    content: "\e90d";
+}
+.rsicon-vimeo:before {
+    content: "\e90e";
+}
+.rsicon-github:before {
+    content: "\e90f";
+}
+.rsicon-chevron_left:before {
+    content: "\e900";
+}
+.rsicon-chevron_right:before {
+    content: "\e901";
+}
+.rsicon-comments:before {
+    content: "\e617";
+}
+.rsicon-link:before {
+    content: "\e61a";
+}
+.rsicon-quotes:before {
+    content: "\e61c";
+}
+.rsicon-user:before {
+    content: "\e61f";
+}
+.rsicon-add:before {
+    content: "\e803";
+}
+.rsicon-eye:before {
+    content: "\e802";
+}
+.rsicon-zoom_out:before {
+    content: "\e800";
+}
+.rsicon-zoom_in:before {
+    content: "\e801";
+}
+.rsicon-arrow-right:before {
+    content: "\e601";
+}
+.rsicon-arrow-left:before {
+    content: "\e60f";
+}
+.rsicon-arrow-down:before {
+    content: "\e610";
+}
+.rsicon-arrow-up:before {
+    content: "\e611";
+}
+.rsicon-check:before {
+    content: "\e612";
+}
+.rsicon-close:before {
+    content: "\e613";
+}
+.rsicon-search:before {
+    content: "\e602";
+}
+.rsicon-settings:before {
+    content: "\e603";
+}
+.rsicon-menu:before {
+    content: "\e604";
+}
+.rsicon-email:before {
+    content: "\e902";
+}
+.rsicon-reddit:before {
+    content: "\e919";
+}
+.rsicon-blogger:before {
+    content: "\e91a";
+}
+.rsicon-flickr:before {
+    content: "\e91b";
+}
+.rsicon-play:before {
+    content: "\e804";
+}
+.rsicon-audio:before {
+    content: "\e805";
+}
+

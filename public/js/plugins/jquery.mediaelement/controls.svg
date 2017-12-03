@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="controls.fw-Page_x25_201" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="144px" height="32px" viewBox="0 0 144 32" enable-background="new 0 0 144 32" xml:space="preserve">
+<path fill="none" d="z"/>
+<g id="BG">
+</g>
+<g id="controls">
+	<path id="Line" fill="#404040" stroke="#FFFFFF" d="M98.5,7.5h11"/>
+	<path id="Line2" fill="#404040" stroke="#FFFFFF" d="M98.5,3.5h11"/>
+	<path id="Line3" fill="#404040" stroke="#FFFFFF" d="M98.5,11.5h11"/>
+	<path id="Ellipse" fill="#404040" d="M108,11.5c0-0.829,0.447-1.5,1-1.5s1,0.671,1,1.5s-0.447,1.5-1,1.5S108,12.329,108,11.5z"/>
+	<path id="Ellipse2" fill="#404040" d="M104,7.5c0-0.829,0.447-1.5,1-1.5s1,0.671,1,1.5S105.553,9,105,9S104,8.329,104,7.5z"/>
+	<path id="Ellipse3" fill="#404040" d="M108,3.5c0-0.829,0.447-1.5,1-1.5s1,0.671,1,1.5S109.553,5,109,5S108,4.329,108,3.5z"/>
+</g>
+<g id="backlight">
+	<g id="off">
+		<rect x="83" y="21" fill="#333333" stroke="#FFFFFF" width="10" height="6"/>
+	</g>
+	<g id="on">
+		
+			<radialGradient id="Ellipse4_1_" cx="24.1074" cy="3.0503" r="0.5" gradientTransform="matrix(14 0 0 -10 -249.5 38.5)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="1" style="stop-color:#F2F2F2;stop-opacity:0.2"/>
+		</radialGradient>
+		<path id="Ellipse4" fill="url(#Ellipse4_1_)" d="M81,8c0-2.762,3.134-5,7-5s7,2.238,7,5s-3.134,5-7,5S81,10.762,81,8z"/>
+		<rect x="83" y="5" fill="#333333" stroke="#FFFFFF" width="10" height="6"/>
+	</g>
+</g>
+<g id="loop">
+	<g id="on2">
+		<path fill="#808080" d="M73.795,4.205C75.215,4.878,76.2,6.323,76.2,8c0,2.32-1.88,4.2-4.2,4.2c-2.32,0-4.2-1.88-4.2-4.2
+			c0-1.677,0.985-3.122,2.405-3.795l-1.33-1.33C67.15,3.929,66,5.831,66,8c0,3.314,2.686,6,6,6c3.314,0,6-2.686,6-6
+			c0-2.169-1.15-4.071-2.875-5.125L73.795,4.205z"/>
+		<path fill="#808080" d="M71,2h-5l5,5V2z"/>
+	</g>
+	<g id="off2">
+		<path fill="#404040" d="M73.795,20.205C75.215,20.879,76.2,22.323,76.2,24c0,2.32-1.88,4.2-4.2,4.2c-2.32,0-4.2-1.88-4.2-4.2
+			c0-1.677,0.985-3.121,2.405-3.795l-1.33-1.33C67.15,19.929,66,21.83,66,24c0,3.314,2.686,6,6,6c3.314,0,6-2.686,6-6
+			c0-2.17-1.15-4.071-2.875-5.125L73.795,20.205z"/>
+		<path fill="#404040" d="M71,18h-5l5,5V18z"/>
+	</g>
+</g>
+<g id="cc">
+	<rect x="49" y="2" display="none" fill="none" stroke="#B0B0B0" width="14" height="12"/>
+	<path fill="none" stroke="#FFFFFF" d="M55,7c-4.719-3.219-4.937,5.94,0,3"/>
+	<path fill="none" stroke="#FFFFFF" d="M60,7c-4.719-3.219-4.937,5.94,0,3"/>
+	<path fill="#404040" d="M50,3h12v10H50V3z M49,2v12h14V2H49z"/>
+	<rect x="49" y="2" fill="none" width="14" height="12"/>
+</g>
+<g id="volume">
+	<g id="no_x25_20sound">
+		<rect x="17" y="5" fill="#404040" width="5" height="6"/>
+		<path fill="#404040" d="M21,5l4-3v12l-4-2.938V5z"/>
+	</g>
+	<g id="sound_x25_20bars">
+		<rect x="17" y="21" fill="#404040" width="5" height="6"/>
+		<path fill="#404040" d="M21,21l4-3v12l-4-2.938V21z"/>
+	</g>
+</g>
+<g id="play_x2F_pause">
+	<g id="play">
+		<path id="Polygon" fill="#404040" d="M14,8.5L3,14V3L14,8.5z"/>
+	</g>
+	<g id="pause">
+		<rect x="3" y="18" fill="#404040" width="3" height="12"/>
+		<rect x="10" y="18" fill="#404040" width="3" height="12"/>
+	</g>
+</g>
+<g id="fullscreen">
+	<g id="enter_x25_201">
+		<path fill="#404040" d="M34,2h5l-5,5V2z"/>
+		<path fill="#404040" d="M34,14h5l-5-5V14z"/>
+		<path fill="#404040" d="M46,2h-5l5,5V2z"/>
+		<path fill="#404040" d="M46,14h-5l5-5V14z"/>
+	</g>
+	<g id="exit">
+		<path fill="#404040" d="M42,22h4l-4-4V22z"/>
+		<path fill="#404040" d="M38,22v-4l-4,4H38z"/>
+		<path fill="#404040" d="M38,26h-4l4,4V26z"/>
+		<path fill="#404040" d="M42,26v4l4-4H42z"/>
+	</g>
+</g>
+<g id="stop">
+	<rect x="115" y="3" fill="#404040" width="10" height="10"/>
+</g>
+<g id="chooser">
+	<path fill="#404040" d="M135.234,6.152c1.021-0.423,2.191,0.062,2.613,1.082c0.423,1.021-0.062,2.19-1.082,2.613
+		s-2.191-0.062-2.613-1.082C133.729,7.745,134.214,6.575,135.234,6.152z M133.273,1.417L136,4.005l2.727-2.588l0.098,3.758
+		l3.758,0.098L139.994,8l2.588,2.727l-3.758,0.098l-0.098,3.758L136,11.995l-2.727,2.588l-0.098-3.758l-3.758-0.098L132.006,8
+		l-2.588-2.727l3.758-0.098L133.273,1.417z"/>
+</g>
+<path fill="none" d="z"/>
+<path fill="#444444" d="M26.484,20.352l-0.256-0.191v1.52l0.031,0.048c0.545,0.64,0.848,1.44,0.848,2.272s-0.303,1.647-0.848,2.271
+	l-0.031,0.048v1.521l0.256-0.192c1.168-0.864,1.824-2.208,1.824-3.647C28.309,22.543,27.636,21.216,26.484,20.352z"/>
+</svg>
