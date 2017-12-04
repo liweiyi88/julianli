@@ -40,7 +40,7 @@
         <div class="widget-area">
             <aside class="widget widget-profile">
                 <div class="profile-photo">
-                    <img src="img/uploads/rs-photo-v2.jpg" alt="Robert Smith"/>
+                    <img src="{{ asset('img/uploads/rs-photo-v2.jpg') }}" alt="{{ freelancer.firstName }} {{ freelancer.lastName }}"/>
                 </div>
                 <div class="profile-info">
                     <h2 class="profile-title">{{ freelancer.firstName }} {{ freelancer.lastName }}</h2>
