@@ -137,4 +137,9 @@ class Experience
     {
         $this->freelancer = $freelancer;
     }
+
+    public function __toString()
+    {
+        return 'Experience #'.$this->id;
+    }
 }

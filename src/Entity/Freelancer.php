@@ -209,4 +209,9 @@ class Freelancer
     {
         $this->education = $education;
     }
+
+    public function __toString()
+    {
+        return 'Freelancer: #'.$this->id;
+    }
 }

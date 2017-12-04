@@ -104,7 +104,7 @@ class Education
     /**
      * @return mixed
      */
-    public function getFreelancer(): Freelancer
+    public function getFreelancer(): ?Freelancer
     {
         return $this->freelancer;
     }
@@ -115,5 +115,10 @@ class Education
     public function setFreelancer($freelancer): void
     {
         $this->freelancer = $freelancer;
+    }
+
+    public function __toString()
+    {
+        return 'Education: #'.$this->id;
     }
 }
