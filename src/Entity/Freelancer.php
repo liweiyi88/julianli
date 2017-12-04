@@ -43,9 +43,15 @@ class Freelancer
      */
     private $socialNetworks;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Skill", mappedBy="freelancer")
+     */
+    private $skills;
+
     public function __construct()
     {
         $this->socialNetworks = new ArrayCollection();
+        $this->skills = new ArrayCollection();
     }
 
     /**
@@ -142,5 +148,21 @@ class Freelancer
     public function setSocialNetworks($socialNetworks): void
     {
         $this->socialNetworks = $socialNetworks;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSkills()
+    {
+        return $this->skills;
+    }
+
+    /**
+     * @param mixed $skills
+     */
+    public function setSkills($skills): void
+    {
+        $this->skills = $skills;
     }
 }

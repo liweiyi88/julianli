@@ -295,83 +295,25 @@
                         <h2 class="section-title">Professional Skills</h2>
 
                         <div class="section-box">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="progress-bar">
-                                        <div class="bar-data">
-                                            <span class="bar-title">Symfony</span>
-                                            <span class="bar-value">90%</span>
+                            {% for skill in freelancer.skills %}
+                                {% if loop.index%2 == 0 %}
+                                    <div class="row">
+                                {% endif %}
+                                        <div class="col-sm-6">
+                                            <div class="progress-bar">
+                                                <div class="bar-data">
+                                                    <span class="bar-title">{{ skill.name }}</span>
+                                                    <span class="bar-value">{{ skill.score }}%</span>
+                                                </div>
+                                                <div class="bar-line">
+                                                    <span class="bar-fill" data-width="{{ skill.score }}%"></span>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="bar-line">
-                                            <span class="bar-fill" data-width="90%"></span>
-                                        </div>
+                                {% if loop.index%2 == 0 %}
                                     </div>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <div class="progress-bar">
-                                        <div class="bar-data">
-                                            <span class="bar-title">JavaScript</span>
-                                            <span class="bar-value">70%</span>
-                                        </div>
-                                        <div class="bar-line">
-                                            <span class="bar-fill" data-width="70%"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="progress-bar">
-                                        <div class="bar-data">
-                                            <span class="bar-title">Drupal</span>
-                                            <span class="bar-value">61%</span>
-                                        </div>
-                                        <div class="bar-line">
-                                            <span class="bar-fill" data-width="79%"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <div class="progress-bar">
-                                        <div class="bar-data">
-                                            <span class="bar-title">HTML & CSS</span>
-                                            <span class="bar-value">89%</span>
-                                        </div>
-                                        <div class="bar-line">
-                                            <span class="bar-fill" data-width="67%"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="progress-bar">
-                                        <div class="bar-data">
-                                            <span class="bar-title">PHP & MySQL</span>
-                                            <span class="bar-value">99%</span>
-                                        </div>
-                                        <div class="bar-line">
-                                            <span class="bar-fill" data-width="54%"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <div class="progress-bar">
-                                        <div class="bar-data">
-                                            <span class="bar-title">Photoshop</span>
-                                            <span class="bar-value">97%</span>
-                                        </div>
-                                        <div class="bar-line">
-                                            <span class="bar-fill" data-width="80%"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                     </div>
                 </section>
