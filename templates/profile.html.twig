@@ -10,7 +10,6 @@
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#experience">Experience</a></li>
-                    <li><a href="#references">References</a></li>
                     <li>
                         <a href="category.html">Blog</a>
                         <ul>
@@ -209,20 +208,11 @@
                                         <li><a href="#skills">Skills</a></li>
                                         <li><a href="#portfolio">Portfolio</a></li>
                                         <li><a href="#experience">Experience</a></li>
-                                        <li><a href="#references">References</a></li>
                                         <li>
                                             <a href="category.html">Blog</a>
                                             <ul>
-                                                <li><a href="single-image.html">Image Post</a></li>
-                                                <li><a href="single-slider.html">Slider Post</a></li>
-                                                <li><a href="single-video.html">Video Post</a></li>
-                                                <li><a href="single-audio.html">Audio Post</a></li>
-                                                <li><a href="single-vimeo.html">Vimeo Post</a></li>
-                                                <li><a href="single-youtube.html">Youtube Post</a></li>
-                                                <li><a href="single-dailymotion.html">Dailymotion Post</a></li>
-                                                <li><a href="single.html">Without Media Post</a></li>
-                                                <li><a href="typography.html">Typography Page</a></li>
-                                                <li><a href="404.html">404 Page</a></li>
+                                                <li><a href="single-image.html">Tech Post</a></li>
+                                                <li><a href="single-slider.html">Image Post</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="#contact">Contact <span></span></a></li>
@@ -541,98 +531,21 @@
                         <div class="timeline">
                             <div class="timeline-bar"></div>
                             <div class="timeline-inner clearfix">
-                                <div class="timeline-box timeline-box-left">
-                                    <span class="dot"></span>
 
-                                    <div class="timeline-box-inner animate-right">
-                                        <span class="arrow"></span>
+                                {% for experience in freelancer.experiences %}
+                                        <div class="timeline-box {% if loop.index is odd %}timeline-box-left{% else %}timeline-box-right{% endif %}">
+                                            <span class="dot"></span>
 
-                                        <div class="date">2014 - 2016</div>
-                                        <h3>PINEAPPLE</h3>
-                                        <h4>Full Stack developer</h4>
+                                            <div class="timeline-box-inner {% if loop.index is odd %}animate-right{% else %}animate-left{% endif %}">
+                                                <span class="arrow"></span>
 
-                                        <p>Worked as part of a multi-disciplinary team, carrying out ad-hoc tasks as requested by the IT
-                                            Manager. Had a specific brief to ensure the websites build for customer’s precisely matched
-                                            their requirements.developers and marketers.</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-box timeline-box-right">
-                                    <span class="dot"></span>
-
-                                    <div class="timeline-box-inner animate-left">
-                                        <span class="arrow"></span>
-
-                                        <div class="date">2011 - 2014</div>
-                                        <h3>MACROSOOFT</h3>
-                                        <h4>Web Developer</h4>
-
-                                        <p>I was responsible for working on a range of projects, designing appealing websites and
-                                            interacting on a daily basis with graphic designers, back-end developers and marketers.</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-box timeline-box-left">
-                                    <span class="dot"></span>
-
-                                    <div class="timeline-box-inner animate-right">
-                                        <span class="arrow"></span>
-
-                                        <div class="date">2003 - 2006</div>
-                                        <h3>JOOJLE</h3>
-                                        <h4>Systems Analyst / Web Developer</h4>
-
-                                        <p>Rebuilt and enhanced existing ASP B2C site with ASP.NET 2.0 Framework and tools. Technology
-                                            consists of ASP.NET 2.0 (C#), IIS, Microsoft SQL Server 2005, Stored Procedures & PayPal
-                                            Instant Payment Notification.</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-box timeline-box-right">
-                                    <span class="dot"></span>
-
-                                    <div class="timeline-box-inner animate-left">
-                                        <span class="arrow"></span>
-
-                                        <div class="date">2004 - 2008</div>
-                                        <h3>IBBBM</h3>
-                                        <h4>Webmaster / Web Developer</h4>
-
-                                        <p>Developed, managed, operated and promoted an Internet business.Handled customer support
-                                            issues.Planned and managed business finances.</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-box timeline-box-left">
-                                    <span class="dot"></span>
-
-                                    <div class="timeline-box-inner animate-right">
-                                        <span class="arrow"></span>
-
-                                        <div class="date">2003 - 2004</div>
-                                        <h3>HEADBOOK</h3>
-                                        <h4>Intern</h4>
-
-                                        <p>This was beginning of my career. Developed, managed, operated and promoted an Internet
-                                            business.Handled customer support issues.</p>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-box timeline-box-right">
-                                    <span class="dot"></span>
-
-                                    <div class="timeline-box-inner animate-left">
-                                        <span class="arrow"></span>
-
-                                        <div class="date">2000 - 2003</div>
-                                        <h3>UBEAR</h3>
-                                        <h4>Taxi Driver</h4>
-
-                                        <p>Driving from point A to point B and if necessary to point C and sometimes even to point R and
-                                            point S. I was known as experienced driver. Once my passenger who was a web developer told
-                                            me about his job and I have made my decision at that moment to became a developer.</p>
-                                    </div>
-                                </div>
+                                                <div class="date">{{ experience.dateRange }}</div>
+                                                <h3>{{ experience.company }}</h3>
+                                                <h4>{{ experience.jobTitle }}r</h4>
+                                                <p>{{ experience.description }}</p>
+                                            </div>
+                                        </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -647,190 +560,24 @@
                             <div class="timeline-bar"></div>
                             <div class="timeline-inner clearfix">
 
-                                <div class="timeline-box timeline-box-compact timeline-box-left">
-                                    <span class="dot"></span>
+                                {% for education in freelancer.education %}
+                                    <div class="timeline-box timeline-box-compact {% if loop.index is odd %}timeline-box-left{% else %}timeline-box-right{% endif %}">
+                                        <span class="dot"></span>
 
-                                    <div class="timeline-box-inner animate-right">
-                                        <span class="arrow"></span>
+                                        <div class="timeline-box-inner {% if loop.index is odd %}animate-right{% else %}animate-left{% endif %}">
+                                            <span class="arrow"></span>
 
-                                        <div class="date"><span>2012 - 2014</span></div>
-                                        <h3>Master of Information Technology</h3>
-                                        <h4>MIT&T</h4>
+                                            <div class="date"><span>{{ education.dateRange }}</span></div>
+                                            <h3>{{ education.degree }}</h3>
+                                            <h4>{{ education.university }}</h4>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="timeline-box timeline-box-compact timeline-box-right">
-                                    <span class="dot"></span>
-
-                                    <div class="timeline-box-inner animate-left">
-                                        <span class="arrow"></span>
-
-                                        <div class="date"><span>2008 - 2012</span></div>
-                                        <h3>Bachelor Computer Engineering</h3>
-                                        <h4>Harwarg Universitey</h4>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-box timeline-box-compact timeline-box-left">
-                                    <span class="dot"></span>
-
-                                    <div class="timeline-box-inner animate-right">
-                                        <span class="arrow"></span>
-
-                                        <div class="date"><span>2007 - 2008</span></div>
-                                        <h3>Certificate for courses of Computer Science</h3>
-                                        <h4>Stanfoorb Universitey</h4>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-box timeline-box-compact timeline-box-right">
-                                    <span class="dot"></span>
-
-                                    <div class="timeline-box-inner animate-left">
-                                        <span class="arrow"></span>
-
-                                        <div class="date"><span>2007 - 2008</span></div>
-                                        <h3>1 week Courses of Information Systems</h3>
-                                        <h4>Oxforz Universitey</h4>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-box timeline-box-compact timeline-box-left">
-                                    <span class="dot"></span>
-
-                                    <div class="timeline-box-inner animate-right">
-                                        <span class="arrow"></span>
-
-                                        <div class="date"><span>2006 - 2007</span></div>
-                                        <h3>Software Engineering</h3>
-                                        <h4>Sordonne University</h4>
-                                    </div>
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
                 </section>
                 <!-- #education -->
-
-                <section id="clients" class="section section-clients">
-                    <div class="animate-up">
-
-                        <div class="clients-carousel">
-                            <div class="client-logo">
-                                <a href="http://market.envato.com" target="_blank"><img src="img/uploads/logos/logo-envato.png"
-                                                                                        title="envato" alt="envato"/></a>
-                            </div>
-
-                            <div class="client-logo">
-                                <img src="img/uploads/logos/logo-angularjs.png" title="angular js" alt="angular js"/>
-                            </div>
-
-                            <div class="client-logo">
-                                <a href="https://www.omniref.com/ruby/gems/teaspoon/0.7.9" target="_blank"><img
-                                            src="img/uploads/logos/logo-teaspoon.png" title="teaspoon" alt="teaspoon"/></a>
-                            </div>
-
-                            <div class="client-logo">
-                                <a href="https://wordpress.com" target="_blank"><img src="img/uploads/logos/logo-wordpress.png"
-                                                                                     title="wordpress" alt="wordpress"/></a>
-                            </div>
-
-                            <div class="client-logo">
-                                <a href="https://evernote.com" target="_blank"><img src="img/uploads/logos/logo-evernote.png"
-                                                                                    title="evernote" alt="evernote"/></a>
-                            </div>
-
-                            <div class="client-logo">
-                                <a href="http://compass-style.org" target="_blank"><img src="img/uploads/logos/logo-compass.png"
-                                                                                        title="compass" alt="compass"/></a>
-                            </div>
-
-                            <div class="client-logo">
-                                <a href="http://getbootstrap.com" target="_blank"><img src="img/uploads/logos/logo-bootstrap.png"
-                                                                                       title="bootstrap" alt="bootstrap"/></a>
-                            </div>
-
-                            <div class="client-logo">
-                                <a href="http://jasmine.github.io" target="_blank"><img src="img/uploads/logos/logo-jasmine.png"
-                                                                                        title="jasmine" alt="jasmine"/></a>
-                            </div>
-
-                            <div class="client-logo">
-                                <a href="https://jquery.com" target="_blank"><img src="img/uploads/logos/logo-jquery.png" title="jquery"
-                                                                                  alt="jquery"/></a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- #clients -->
-
-                <section id="references" class="section section-references">
-                    <div class="animate-up">
-                        <h2 class="section-title">References</h2>
-
-                        <div class="section-box">
-                            <ul class="ref-slider">
-                                <li>
-                                    <div class="ref-box">
-                                        <div class="person-speech">
-                                            <p>I confirm that I have dealt with New Company Ltd since 1998. Their work has been a major
-                                                factor in our
-                                                website's success, helping it to become one of the most visited resources of its kind on
-                                                the Internet.</p>
-                                        </div>
-                                        <div class="person-info clearfix">
-                                            <img class="person-img" src="img/uploads/rs-avatar-60x60.jpg" alt="Headshot">
-
-                                            <div class="person-name-title">
-                                                <span class="person-name">Alexander Jokovich</span>
-                                                <span class="person-title">Modern LLC , HR</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="ref-box">
-                                        <div class="person-speech">
-                                            <p>I confirm that New Company Ltd has been a customer of ours since 1998, during which time
-                                                they have always made payments reliably,
-                                                in full and on time.</p>
-                                        </div>
-                                        <div class="person-info clearfix">
-                                            <img class="person-img" src="img/uploads/rs-avatar-60x60.jpg" alt="Headshot">
-
-                                            <div class="person-name-title">
-                                                <span class="person-name">Alexander Jokovich</span>
-                                                <span class="person-title">Modern LLC , HR</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="ref-box">
-                                        <div class="person-speech">
-                                            <p>I have known Robert Smith for 10 years as web developer. I can confirm that he is a man
-                                                of great integrity, is extremely dedicated
-                                                to his family and work, and is entirely peace-loving.</p>
-                                        </div>
-                                        <div class="person-info clearfix">
-                                            <img class="person-img" src="img/uploads/rs-avatar-60x60.jpg" alt="Headshot">
-
-                                            <div class="person-name-title">
-                                                <span class="person-name">Alexander Jokovich</span>
-                                                <span class="person-title">Modern LLC , HR</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="ref-slider-nav">
-                                <span id="ref-slider-prev" class="slider-prev"></span>
-                                <span id="ref-slider-next" class="slider-next"></span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- #references -->
 
                 <section id="blog" class="section section-blog">
                     <div class="animate-up">

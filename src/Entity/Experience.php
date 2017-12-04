@@ -27,6 +27,11 @@ class Experience
     private $company;
 
     /**
+     * @ORM\Column(name="job_title", type="string", length=255)
+     */
+    private $jobTitle;
+
+    /**
      * @ORM\Column(name="description", type="text")
      */
     private $description;
@@ -83,6 +88,22 @@ class Experience
     public function setCompany($company): void
     {
         $this->company = $company;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getJobTitle()
+    {
+        return $this->jobTitle;
+    }
+
+    /**
+     * @param mixed $jobTitle
+     */
+    public function setJobTitle($jobTitle): void
+    {
+        $this->jobTitle = $jobTitle;
     }
 
     /**
