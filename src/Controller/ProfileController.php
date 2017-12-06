@@ -16,10 +16,8 @@ class ProfileController extends AbstractController
         $em = $this->getDoctrine()->getManager();
 
         $repo = $em->getRepository(Freelancer::class);
+        $freelancer = $repo->findFreeLancer();
 
-        $freelancer = $repo->find(1);
-
-        // replace this line with your own code!
         return $this->render('profile.html.twig', array('freelancer' => $freelancer));
     }
 }

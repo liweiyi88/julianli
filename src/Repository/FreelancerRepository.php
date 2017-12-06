@@ -13,6 +13,15 @@ class FreelancerRepository extends ServiceEntityRepository
         parent::__construct($registry, Freelancer::class);
     }
 
+    public function findFreeLancer()
+    {
+        $qb = $this->createQueryBuilder('f');
+
+        $qb->setMaxResults(1);
+
+        return $qb->getQuery()->getOneOrNullResult();
+    }
+
     /*
     public function findBySomething($value)
     {
