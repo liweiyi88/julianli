@@ -252,6 +252,11 @@ class Freelancer implements UserInterface, \Serializable
        return $this->password;
     }
 
+    public function setPassword(string $password)
+    {
+        $this->password = $password;
+    }
+
     public function getSalt()
     {
         return null;
@@ -260,6 +265,11 @@ class Freelancer implements UserInterface, \Serializable
     public function getUsername()
     {
         return $this->username;
+    }
+
+    public function setUsername(string $username)
+    {
+        $this->username = $username;
     }
 
     public function eraseCredentials()
