@@ -4,12 +4,13 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Table(name="freelancer")
  * @ORM\Entity(repositoryClass="App\Repository\FreelancerRepository")
  */
-class Freelancer
+class Freelancer implements UserInterface, \Serializable
 {
     /**
      * @ORM\Id
@@ -17,6 +18,21 @@ class Freelancer
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @ORM\Column(name="email", type="string", length=255)
+     */
+    private $email;
+
+    /**
+     * @ORM\Column(name="username", type="string", length=25, unique=true)
+     */
+    private $username;
+
+    /**
+     * @ORM\Column(name="password", type="string", length=64)
+     */
+    private $password;
 
     /**
      * @ORM\Column(name="first_name", type="string", length=255)
@@ -72,6 +88,22 @@ class Freelancer
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email): void
+    {
+        $this->email = $email;
     }
 
     /**
@@ -210,8 +242,51 @@ class Freelancer
         $this->education = $education;
     }
 
+    public function getRoles()
+    {
+        return array('ROLE_USER');
+    }
+
+    public function getPassword()
+    {
+       return $this->password;
+    }
+
+    public function getSalt()
+    {
+        return null;
+    }
+
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    public function eraseCredentials()
+    {
+        return;
+    }
+
+    public function serialize()
+    {
+       return serialize(array(
+           $this->id,
+           $this->username,
+           $this->password
+       ));
+    }
+
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->username,
+            $this->password
+            ) = unserialize($serialized);
+    }
+
     public function __toString()
     {
-        return 'Freelancer: #'.$this->id;
+        return $this->firstName.' '.$this->lastName;
     }
 }
