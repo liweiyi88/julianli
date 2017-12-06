@@ -98,6 +98,6 @@ class Skill
 
     public function __toString()
     {
-        return 'Skill #'.$this->id;
+        return $this->name;
     }
 }

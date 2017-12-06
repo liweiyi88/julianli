@@ -99,6 +99,6 @@ class SocialNetwork
 
     public function __toString()
     {
-        return 'Social Network #'.$this->id;
+        return $this->link;
     }
 }

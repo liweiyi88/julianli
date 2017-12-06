@@ -119,6 +119,6 @@ class Education
 
     public function __toString()
     {
-        return 'Education: #'.$this->id;
+        return $this->degree.' at '.$this->university;
     }
 }

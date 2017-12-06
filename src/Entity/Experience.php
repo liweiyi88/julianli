@@ -140,6 +140,6 @@ class Experience
 
     public function __toString()
     {
-        return 'Experience #'.$this->id;
+        return $this->jobTitle.' at '.$this->company;
     }
 }
