@@ -32,23 +32,23 @@ class Project
     private $shortDescription;
 
     /**
-     * @ORM\Column(name="description", type="text")
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
 
     /**
-     * @ORM\Column(name="cover_image_style_size", type="integer")
+     * @ORM\Column(name="cover_image_style_size", type="integer", nullable=true)
      */
     private $coverImageStyleSize;
 
     /**
-     * @ORM\Column(name="cover_image_url", type="string", length=255)
+     * @ORM\Column(name="cover_image_url", type="string", length=255, nullable=true)
      */
     private $coverImageUrl;
 
 
     /**
-     * @ORM\Column(name="inner_image_url", type="string", length=255)
+     * @ORM\Column(name="inner_image_url", type="string", length=255, nullable=true)
      */
     private $innerImageUrl;
 
