@@ -84,7 +84,7 @@ class SocialNetwork
     /**
      * @return mixed
      */
-    public function getFreelancer(): Freelancer
+    public function getFreelancer(): ?Freelancer
     {
         return $this->freelancer;
     }

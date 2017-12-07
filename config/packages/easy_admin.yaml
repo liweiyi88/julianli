@@ -7,3 +7,4 @@ easy_admin:
         - App\Entity\Freelancer
         - App\Entity\Skill
         - App\Entity\SocialNetwork
+        - App\Entity\Project
