@@ -2,6 +2,8 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'en'
+    mailer_host_email: '%env(MAILER_HOST_EMAIL)%'
+    mailer_admin_email: '%env(MAILER_ADMIN_EMAIL)%'
 
 services:
     # default configuration for services in *this* file
@@ -26,3 +28,8 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Email\EmailManager:
+        arguments:
+            $hostEmail: '%mailer_host_email%'
+            $adminEmail: '%mailer_admin_email%'

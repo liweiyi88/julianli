@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Contact\Contact;
+use App\Email\EmailManager;
 use App\Entity\Freelancer;
 use App\Form\ContactType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -14,7 +15,7 @@ class ProfileController extends AbstractController
     /**
      * @Route("/", name="index")
      */
-    public function index(Request $request)
+    public function index(Request $request, EmailManager $emailManager)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -28,6 +29,10 @@ class ProfileController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $contact = $form->getData();
+
+            $message = $emailManager->createPlianMessageFromContact($contact);
+            $emailManager->sendEmail($message);
+
             return $this->redirectToRoute('index', ['_fragment'=>'contact']);
         }
 
