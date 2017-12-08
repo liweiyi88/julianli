@@ -57,7 +57,7 @@
             <aside class="widget widget_contact">
                 <h2 class="widget-title">Contact Me</h2>
 
-                <form class="rsForm" action="{{ path('contact') }}" method="post">
+                <form class="rsForm" action="{{ path('index') }}" method="post">
                     <div class="input-field">
                         <label>Name</label>
                         <input type="text" name="rsName" value="">
@@ -494,59 +494,30 @@
                                         <div class="input-field">
                                             <label>Name</label>
                                             {{ form_widget(form.name) }}
-                                            <span class="line"></span>
                                         </div>
+                                        <span class="line">{{ form_errors(form.name) }}</span>
 
                                         <div class="input-field">
                                             <label>Email</label>
                                             {{ form_widget(form.email) }}
-                                            <span class="line"></span>
                                         </div>
+                                        <span class="line">{{ form_errors(form.email) }}</span>
+
 
                                         <div class="input-field">
                                             <label>Subject</label>
                                             {{ form_widget(form.subject) }}
-                                            <span class="line"></span>
                                         </div>
+                                        <span class="line">{{ form_errors(form.subject) }}</span>
 
                                         <div class="input-field">
                                             <label>Message</label>
                                             {{ form_widget(form.message) }}
-                                            <span class="line"></span>
                                         </div>
+                                        <span class="line">{{ form_errors(form.message) }}</span>
 
                                         <input class="btn btn-lg btn-primary" type="submit" value="Send">
                                     {{ form_end(form) }}
-
-                                    {#<form class="rsForm" action="{{ path('contact') }}" method="post">#}
-                                        {#<div class="input-field">#}
-                                            {#<label>Name</label>#}
-                                            {#<input type="text" name="rsName" value="">#}
-                                            {#<span class="line"></span>#}
-                                        {#</div>#}
-
-                                        {#<div class="input-field">#}
-                                            {#<label>Email</label>#}
-                                            {#<input type="email" name="rsEmail" value="">#}
-                                            {#<span class="line"></span>#}
-                                        {#</div>#}
-
-                                        {#<div class="input-field">#}
-                                            {#<label>Subject</label>#}
-                                            {#<input type="text" name="rsSubject" value="">#}
-                                            {#<span class="line"></span>#}
-                                        {#</div>#}
-
-                                        {#<div class="input-field">#}
-                                            {#<label>Message</label>#}
-                                            {#<textarea rows="4" name="rsMessage"></textarea>#}
-                                            {#<span class="line"></span>#}
-                                        {#</div>#}
-
-                                        {#<span class="btn-outer btn-primary-outer ripple">#}
-                                        {#<input class="contactSubmit btn btn-lg btn-primary" type="submit" value="Send">#}
-                                    {#</span>#}
-                                    {#</form>#}
                                 </div>
                             </div>
 

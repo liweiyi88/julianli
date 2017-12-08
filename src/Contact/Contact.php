@@ -2,11 +2,25 @@
 
 namespace App\Contact;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 class Contact
 {
+    /**
+     * @Assert\NotBlank(message="At least tell me how can I call you?")
+     */
     private $name;
+    /**
+     * @Assert\Email(message="I could not contact you through an invalid email address")
+     */
     private $email;
+    /**
+     * @Assert\NotBlank(message="A brief subject is good")
+     */
     private $subject;
+    /**
+     * @Assert\NotBlank(message="Please let me know your request")
+     */
     private $message;
 
     /**
