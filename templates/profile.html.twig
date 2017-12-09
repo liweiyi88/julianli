@@ -182,7 +182,7 @@
 
     <div class="wrapper">
         <header class="header">
-            <div class="head-bg" style="background-image: url('img/uploads/rs-cover.jpg')"></div>
+            <div class="head-bg" style="background-image: url({{ asset('img/uploads/rs-cover.jpg') }})"></div>
 
             <div class="head-bar">
                 <div class="head-bar-inner">
@@ -263,9 +263,6 @@
                         </div>
 
                         <div class="section-txt-btn">
-                            <p><a class="btn btn-lg btn-border ripple" target="_blank"
-                                  href="http://dev.novembit.com/rs_card/wp-content/uploads/2015/11/test-1.pdf">Download Resume</a></p>
-
                             <p>{{ freelancer.description }}</p>
                         </div>
                     </div>
@@ -490,34 +487,34 @@
                             <div class="col-sm-6">
                                 <div class="section-box contact-form">
                                     <h3>Feel free to contact me</h3>
-                                    {{ form_start(form) }}
+                                    <form class="rsForm" action="{{ path('contact') }}" method="post">
                                         <div class="input-field">
                                             <label>Name</label>
-                                            {{ form_widget(form.name) }}
+                                            <input type="text" name="rsName" value="">
                                         </div>
-                                        <span class="line">{{ form_errors(form.name) }}</span>
+                                        <span class="line"></span>
 
                                         <div class="input-field">
                                             <label>Email</label>
-                                            {{ form_widget(form.email) }}
+                                            <input type="email" name="rsEmail" value="">
                                         </div>
-                                        <span class="line">{{ form_errors(form.email) }}</span>
+                                        <span class="line"></span>
 
 
                                         <div class="input-field">
                                             <label>Subject</label>
-                                            {{ form_widget(form.subject) }}
+                                            <input type="text" name="rsSubject" value="">
                                         </div>
-                                        <span class="line">{{ form_errors(form.subject) }}</span>
+                                        <span class="line"></span>
 
                                         <div class="input-field">
                                             <label>Message</label>
-                                            {{ form_widget(form.message) }}
+                                            <textarea rows="4" name="rsMessage"></textarea>
                                         </div>
-                                        <span class="line">{{ form_errors(form.message) }}</span>
+                                        <span class="line"></span>
 
                                         <input class="btn btn-lg btn-primary" type="submit" value="Send">
-                                    {{ form_end(form) }}
+                                    </form>
                                 </div>
                             </div>
 

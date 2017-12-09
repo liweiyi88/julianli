@@ -33,3 +33,10 @@ services:
         arguments:
             $hostEmail: '%mailer_host_email%'
             $adminEmail: '%mailer_admin_email%'
+
+    App\EventSubscriber\ApiExceptionSubscriber:
+        arguments:
+            $debug: '%kernel.debug%'
+        tags:
+            - { name: kernel.event_subscriber, event: kernel.exception}
+
