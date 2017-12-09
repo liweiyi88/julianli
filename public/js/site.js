@@ -785,12 +785,11 @@
         });
 
         /** Contact Form */
-        $('.rsFormSubmit').on('click', function (e) {                        
+        $('.rsFormSubmit').on('click', function (e) {
+            $('.rsFormSubmit').attr('disabled', 'disabled');
             var rsForm = $(this).closest('.rsForm');
-			var rsFormErrors = false;
-			var rsFormAction = rsForm.attr('action');
-			var rsFormCaptcha = rsForm.data('captcha');		
-			var rsFormFields = rsForm.find('.input-field');		           	
+			var rsFormAction = rsForm.data('url');
+			var rsFormSubject = rsForm.find("[name='rsSubject']");
             var rsFormName = rsForm.find("[name='rsName']");						
             var rsFormEmail = rsForm.find("[name='rsEmail']");
             var rsFormMessage = rsForm.find("[name='rsMessage']");		
@@ -798,50 +797,71 @@
 			
 			// Button ripple effect
 			ripple($(this).parent(), e.pageX, e.pageY);
-			
-            // Reset form errors
-            rsFormFields.removeClass('error');
-            rsFormErrors = false;						
-						
-			// Validate form fields	
-            if(!rsFormName.val()) {
-                rsFormErrors = true;
-                rsFormName.parent().addClass('error');
-            }
-			
-			if(!rsFormEmail.val() || !isValidEmail(rsFormEmail.val())) {
-                rsFormErrors = true;
-                rsFormEmail.parent().addClass('error');
-            }
-			
-			if(!rsFormMessage.val()) {
-                rsFormErrors = true;
-                rsFormMessage.parent().addClass('error');
-            }
-									
-			if(rsFormErrors) {
-				// if has errors - do nothing
-				return false;
-			} else {	
-				if (rsFormCaptcha === true) {
-					// if captcha - goto captcha page
-					return true;
-				} else {
+
+            $.ajax({
+                url: rsFormAction,
+                data: JSON.stringify({
+                    email: rsFormEmail.val(),
+                    subject: rsFormSubject.val(),
+                    name: rsFormName.val(),
+                    message: rsFormMessage.val()
+                }),
+                error: function(data) {
+                    $('.rsFormSubmit').removeAttr('disabled');
+                    var responseErrors = data['responseJSON']['errors'];
+
+                    var emailError;
+                    if (responseErrors['email'] !== undefined) {
+                        emailError = responseErrors['email'][0];
+                    }
+
+                    var subjectError;
+                    if (responseErrors['subject'] !== undefined) {
+                        subjectError = responseErrors['subject'][0];
+                    }
+
+                    var nameError;
+                    if (responseErrors['name'] !== undefined) {
+                        nameError = responseErrors['name'][0];
+                    }
+
+                    var messageError;
+                    if (responseErrors['message'] !== undefined) {
+                        messageError = responseErrors['message'][0];
+                    }
+
+                    $('.subject-error').text(subjectError);
+                    $('.name-error').text(nameError);
+                    $('.email-error').text(emailError);
+                    $('.message-error').text(messageError);
+                },
+                dataType: 'json',
+                success: function(data) {
+                    $('.rsFormSubmit').removeAttr('disabled');
+                    $('.subject-error').text('');
+                    $('.name-error').text('');
+                    $('.email-error').text('');
+                    $('.message-error').text('');
+
+                    alert('Thanks for reaching out to me, I will contact you as soon as possible!');
+                    location.reload();
+                },
+                type: 'POST'
+            });
+
 					// if no captcha - make ajax request
-					$.post( rsFormAction,
-						rsForm.serialize(),
-						function (response) {
-							var data = jQuery.parseJSON( response );
-							if(data){								
-								rsForm.append('<div class="rsFormResponce"><strong>Congratulation!</strong><br>Your email was sent successfully!</div>');
-							} else {
-								rsForm.append('<div class="rsFormResponce"><strong>OOPS!</strong> Something went wrong.<br>Please try again.</div>');
-							}							
-						}
-					);
+					// $.post( rsFormAction,
+                     //    {name:'fdf', message:'fdsfsdf'},
+					// 	function (response) {
+					// 		var data = jQuery.parseJSON( response );
+					// 		if(data){
+					// 			rsForm.append('<div class="rsFormResponce"><strong>Congratulation!</strong><br>Your email was sent successfully!</div>');
+					// 		} else {
+					// 			rsForm.append('<div class="rsFormResponce"><strong>OOPS!</strong> Something went wrong.<br>Please try again.</div>');
+					// 		}
+					// 	}
+					// );
 					return false;
-				}
-			}					                         
         });
 
 		

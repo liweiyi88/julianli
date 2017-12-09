@@ -30,6 +30,12 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('colors/green.css') }}">
 
         <script type="text/javascript" src="js/libs/modernizr.js"></script>
+
+        <style>
+            .contact-error {
+                color: red;
+            }
+        </style>
         {% block stylesheets %}{% endblock %}
     </head>
     <body class="home header-has-img loading">
@@ -49,7 +55,7 @@
         <script type="text/javascript" src="{{ asset('js/plugins/jquery.fancybox/helpers/jquery.fancybox-media.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/plugins/jquery.owlcarousel/owl.carousel.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/options.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/site.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/site.js') }}"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

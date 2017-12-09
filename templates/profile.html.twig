@@ -487,34 +487,34 @@
                             <div class="col-sm-6">
                                 <div class="section-box contact-form">
                                     <h3>Feel free to contact me</h3>
-                                    <form class="rsForm" action="{{ path('contact') }}" method="post">
+                                    <div class="rsForm" data-url="{{ path('contact') }}">
                                         <div class="input-field">
                                             <label>Name</label>
                                             <input type="text" name="rsName" value="">
+                                            <span class="contact-error name-error"></span>
                                         </div>
-                                        <span class="line"></span>
 
                                         <div class="input-field">
                                             <label>Email</label>
                                             <input type="email" name="rsEmail" value="">
+                                            <span class="contact-error email-error"></span>
                                         </div>
-                                        <span class="line"></span>
 
 
                                         <div class="input-field">
                                             <label>Subject</label>
                                             <input type="text" name="rsSubject" value="">
+                                            <span class="contact-error subject-error"></span>
                                         </div>
-                                        <span class="line"></span>
 
                                         <div class="input-field">
                                             <label>Message</label>
                                             <textarea rows="4" name="rsMessage"></textarea>
+                                            <span class="contact-error message-error"></span>
                                         </div>
-                                        <span class="line"></span>
 
-                                        <input class="btn btn-lg btn-primary" type="submit" value="Send">
-                                    </form>
+                                        <input class="rsFormSubmit btn btn-lg btn-primary" type="submit" value="Send">
+                                    </div>
                                 </div>
                             </div>
 
