@@ -29,6 +29,7 @@ class AppFixtures extends Fixture
         $freelancer->setFirstName('Julian');
         $freelancer->setLastName('Li');
         $freelancer->setUsername('julian');
+        $freelancer->setAddress('530 Collins Street, Melbourne VIC');
 
         $password = $this->encoder->encodePassword($freelancer, 'abcd');
         $freelancer->setPassword($password);

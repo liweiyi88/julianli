@@ -40,141 +40,6 @@
                 </div>
             </aside>
             <!-- .widget-profile -->
-
-            <aside class="widget widget_search">
-                <h2 class="widget-title">Search</h2>
-
-                <form class="search-form">
-                    <label class="ripple">
-                        <span class="screen-reader-text">Search for:</span>
-                        <input class="search-field" type="search" placeholder="Search">
-                    </label>
-                    <input type="submit" class="search-submit" value="Search">
-                </form>
-            </aside>
-            <!-- .widget_search -->
-
-            <aside class="widget widget_contact">
-                <h2 class="widget-title">Contact Me</h2>
-
-                <form class="rsForm" action="{{ path('index') }}" method="post">
-                    <div class="input-field">
-                        <label>Name</label>
-                        <input type="text" name="rsName" value="">
-                        <span class="line"></span>
-                    </div>
-
-                    <div class="input-field">
-                        <label>Email</label>
-                        <input type="email" name="rsEmail" value="">
-                        <span class="line"></span>
-                    </div>
-
-                    <div class="input-field">
-                        <label>Subject</label>
-                        <input type="text" name="rsSubject" value="">
-                        <span class="line"></span>
-                    </div>
-
-                    <div class="input-field">
-                        <label>Message</label>
-                        <textarea rows="4" name="rsMessage"></textarea>
-                        <span class="line"></span>
-                    </div>
-
-                    <span class="btn-outer btn-primary-outer ripple">
-                        <input class="rsFormSubmit btn btn-lg btn-primary" type="submit" value="Send">
-                    </span>
-                </form>
-            </aside>
-            <!-- .widget_contact -->
-
-            <aside class="widget widget-popuplar-posts">
-                <h2 class="widget-title">Popular posts</h2>
-                <ul>
-                    <li>
-                        <div class="post-media"><a href=""><img src="img/uploads/thumb-78x56-1.jpg" alt=""/></a></div>
-                        <h3 class="post-title"><a href="">Standard Post Format With Featured Image</a></h3>
-
-                        <div class="post-info"><a href=""><i class="rsicon rsicon-comments"></i>56 comments</a></div>
-                    </li>
-                    <li>
-                        <div class="post-media"><a href=""><img src="img/uploads/thumb-78x56-2.jpg" alt=""/></a></div>
-                        <h3 class="post-title"><a href="">Standard Post Format With Featured Image</a></h3>
-
-                        <div class="post-info"><a href=""><i class="rsicon rsicon-comments"></i>56 comments</a></div>
-                    </li>
-                    <li>
-                        <div class="post-media"><a href=""><img src="img/uploads/thumb-78x56-3.jpg" alt=""/></a></div>
-                        <h3 class="post-title"><a href="">Standard Post Format With Featured Image</a></h3>
-
-                        <div class="post-info"><a href=""><i class="rsicon rsicon-comments"></i>56 comments</a></div>
-                    </li>
-                </ul>
-            </aside>
-            <!-- .widget-popuplar-posts -->
-
-            <aside class="widget widget_tag_cloud">
-                <h2 class="widget-title">Tag Cloud</h2>
-
-                <div class="tagcloud">
-                    <a href="" title="1 topic">Business</a>
-                    <a href="" title="9 topics">City</a>
-                    <a href="" title="10 topics">Creative</a>
-                    <a href="" title="6 topics">Fashion</a>
-                    <a href="" title="2 topics">Music</a>
-                    <a href="" title="5 topics">News</a>
-                    <a href="" title="9 topics">Peoples</a>
-                </div>
-            </aside>
-            <!-- .widget_tag_cloud -->
-
-            <aside class="widget widget-recent-posts">
-                <h2 class="widget-title">Recent posts</h2>
-                <ul>
-                    <li>
-                        <div class="post-tag">
-                            <a href="">#Photo</a>
-                            <a href="">#Architect</a>
-                        </div>
-                        <h3 class="post-title"><a href="">Standard Post Format With Featured Image</a></h3>
-
-                        <div class="post-info"><a href=""><i class="rsicon rsicon-comments"></i>56 comments</a></div>
-                    </li>
-                    <li>
-                        <div class="post-tag">
-                            <a href="">#Photo</a>
-                            <a href="">#Architect</a>
-                        </div>
-                        <h3 class="post-title"><a href="">Standard Post Format With Featured Image</a></h3>
-
-                        <div class="post-info"><a href=""><i class="rsicon rsicon-comments"></i>56 comments</a></div>
-                    </li>
-                    <li>
-                        <div class="post-tag">
-                            <a href="">#Photo</a>
-                            <a href="">#Architect</a>
-                        </div>
-                        <h3 class="post-title"><a href="">Standard Post Format With Featured Image</a></h3>
-
-                        <div class="post-info"><a href=""><i class="rsicon rsicon-comments"></i>56 comments</a></div>
-                    </li>
-                </ul>
-            </aside>
-            <!-- .widget-recent-posts -->
-
-            <aside class="widget widget_categories">
-                <h2 class="widget-title">Categories</h2>
-                <ul>
-                    <li><a href="" title="Architecture Category Posts">Architecture</a> (9)</li>
-                    <li><a href="" title="Business Category Posts">Business</a> (16)</li>
-                    <li><a href="" title="Creative Category Posts">Creative</a> (18)</li>
-                    <li><a href="" title="Design Category Posts">Design</a> (10)</li>
-                    <li><a href="" title="Development Category Posts">Development</a> (14)</li>
-                    <li><a href="" title="Education Category Posts">Education</a> (9)</li>
-                </ul>
-            </aside>
-            <!-- .widget_categories -->
         </div>
         <!-- .widget-area -->
     </div>
@@ -232,7 +97,7 @@
                             <div class="profile">
                                 <div class="row">
                                     <div class="col-xs-5">
-                                        <div class="profile-photo"><img src="img/uploads/rs-photo-v1.jpg" alt="Robert Smith"/></div>
+                                        <div class="profile-photo"><img src="{{ asset('img/uploads/rs-photo-v1.jpg') }}" alt="{{ freelancer.firstName }} {{ freelancer.lastName }}"/></div>
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="profile-info">
@@ -243,11 +108,7 @@
                                         <ul class="profile-list">
                                             <li class="clearfix">
                                                 <strong class="title">Address</strong>
-                                                <span class="cont">24058, Belgium, Brussels, Liutte 27, BE</span>
-                                            </li>
-                                            <li class="clearfix">
-                                                <strong class="title">Freelance</strong>
-                                                <span class="cont">till April 15, 2016</span>
+                                                <span class="cont">{{ freelancer.address }}</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -523,19 +384,11 @@
                                     <ul class="contact-list">
                                         <li class="clearfix">
                                             <strong>Address</strong>
-                                            <span>Belgium, Brussels, Liutte 27, BE</span>
-                                        </li>
-                                        <li class="clearfix">
-                                            <strong>phone</strong>
-                                            <span><a href="tel:+12562548456">+1 256 254 84 56</a></span>
-                                        </li>
-                                        <li class="clearfix">
-                                            <strong>E-mail</strong>
-                                            <span><a href="mailto:robertsmith@company.com">robertsmith@company.com</a></span>
+                                            <span>{{ freelancer.address }}</span>
                                         </li>
                                     </ul>
 
-                                    <div id="map" data-latitude="50.84592" data-longitude="4.366859999999974"></div>
+                                    <div id="map" data-latitude="-37.8176842" data-longitude="144.9546278"></div>
                                 </div>
                             </div>
                         </div>

@@ -45,6 +45,11 @@ class Freelancer implements UserInterface, \Serializable
     private $lastName;
 
     /**
+     * @ORM\Column(name="address", type="string", length=255, nullable=true)
+     */
+    private $address;
+
+    /**
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
@@ -150,6 +155,22 @@ class Freelancer implements UserInterface, \Serializable
     public function setLastName($lastName): void
     {
         $this->lastName = $lastName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @param mixed $address
+     */
+    public function setAddress($address): void
+    {
+        $this->address = $address;
     }
 
     /**
