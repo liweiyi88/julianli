@@ -84,6 +84,11 @@ class Freelancer implements UserInterface, \Serializable
      */
     private $projects;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Post", mappedBy="freelancer")
+     */
+    private $posts;
+
     public function __construct()
     {
         $this->socialNetworks = new ArrayCollection();
@@ -91,6 +96,7 @@ class Freelancer implements UserInterface, \Serializable
         $this->experiences = new ArrayCollection();
         $this->education = new ArrayCollection();
         $this->projects = new ArrayCollection();
+        $this->posts = new ArrayCollection();
     }
 
     /**
@@ -275,6 +281,22 @@ class Freelancer implements UserInterface, \Serializable
     public function getProjects()
     {
         return $this->projects;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPosts()
+    {
+        return $this->posts;
+    }
+
+    /**
+     * @param mixed $posts
+     */
+    public function setPosts($posts): void
+    {
+        $this->posts = $posts;
     }
 
     /**
