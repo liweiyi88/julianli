@@ -33,7 +33,7 @@ class Post
     private $createdAt;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Tag", mappedBy="tag")
+     * @ORM\Column(name="tags", type="simple_array", nullable=true)
      */
     private $tags;
 
@@ -42,11 +42,6 @@ class Post
      * @ORM\JoinColumn(nullable=true)
      */
     private $freelancer;
-
-    public function __construct()
-    {
-        $this->tags = new ArrayCollection();
-    }
 
     /**
      * @return mixed

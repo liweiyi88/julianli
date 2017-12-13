@@ -5,9 +5,11 @@ namespace App\DataFixtures;
 use App\Entity\Education;
 use App\Entity\Experience;
 use App\Entity\Freelancer;
+use App\Entity\Post;
 use App\Entity\Project;
 use App\Entity\Skill;
 use App\Entity\SocialNetwork;
+use App\Entity\Tag;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -168,6 +170,21 @@ class AppFixtures extends Fixture
         $p3->setCoverImageUrl('img/uploads/portfolio/portfolio-thumb-08-289x281.jpg');
         $p3->setInnerImageUrl('img/uploads/portfolio/portfolio-thumb-08-large.jpg');
 
+        $tags = ['Photo', 'Nature'];
+        $post1 = new Post();
+        $post1->setFreelancer($freelancer);
+        $post1->setCreatedAt(new \DateTime('now'));
+        $post1->setTitle('Image Post');
+        $post1->setCoverImageUrl('img/uploads/thumb-449x286-1.jpg');
+        $post1->setTags($tags);
+
+        $post2 = new Post();
+        $post2->setFreelancer($freelancer);
+        $post2->setCreatedAt(new \DateTime('now'));
+        $post2->setTitle('Video Post');
+        $post2->setCoverImageUrl('img/uploads/thumb-449x286-5.jpg');
+        $post2->setTags($tags);
+
         $manager->persist($freelancer);
         $manager->persist($education);
         $manager->persist($experience1);
@@ -184,6 +201,8 @@ class AppFixtures extends Fixture
         $manager->persist($p1);
         $manager->persist($p2);
         $manager->persist($p3);
+        $manager->persist($post1);
+        $manager->persist($post2);
         $manager->flush();
     }
 }
