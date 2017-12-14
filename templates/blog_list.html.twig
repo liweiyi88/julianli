@@ -19,7 +19,7 @@
 
     <div class="wrapper">
         <header class="header">
-            <div class="head-bg" style="background-image: url({{ asset('img/uploads/rs-cover.jpg') }})"></div>
+            <div class="head-bg" style="height: 275px !important; background-image: url({{ asset('img/uploads/rs-cover.jpg') }})"></div>
 
             <div class="head-bar">
                 <div class="head-bar-inner">
@@ -52,9 +52,13 @@
 
                 <!-- START: PAGE CONTENT -->
                 <div class="row animate-up">
-                    <div class="col-sm-">
+                    <div class="col-sm-8">
                         <main class="post-single">
                             <article class="post-content section-box">
+
+                                <div class="post-media">
+                                    <img src="{{ asset('img/uploads/rs-thumb-610x396.jpg') }}" alt=""/>
+                                </div><!-- .post-media -->
 
                                 {% for post in freelancer.posts %}
                                     <div class="post-inner">
@@ -78,6 +82,23 @@
                         </main>
                         <!-- .post-single -->
                     </div>
+
+                    <div class="col-sm-4">
+                        <div class="sidebar sidebar-default">
+                            <div class="widget-area">
+                                <aside class="widget widget-profile">
+                                    <div class="profile-photo">
+                                        <img src="{{ asset('img/uploads/rs-photo-v2.jpg') }}" alt="Robert Smith"/>
+                                    </div>
+                                    <div class="profile-info">
+                                        <h2 class="profile-title">{{ freelancer.firstName }} {{ freelancer.lastName }}</h2>
+                                        <h3 class="profile-position">{{ freelancer.title }}</h3>
+                                    </div>
+                                </aside><!-- .widget-profile -->
+
+                            </div><!-- .widget-area -->
+                        </div><!-- .sidebar -->
+                    </div><!-- .col-sm-4 -->
                 </div><!-- .row -->
                 <!-- END: PAGE CONTENT -->
 

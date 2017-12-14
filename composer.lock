@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e6a09e9475445881f991a75bc973e7f",
+    "content-hash": "7caeeecb11a6fb256d23149497cdba57",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -4566,6 +4566,58 @@
                 "validate"
             ],
             "time": "2016-11-23T20:04:58+00:00"
+        },
+        {
+            "name": "white-october/pagerfanta-bundle",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/whiteoctober/WhiteOctoberPagerfantaBundle.git",
+                "reference": "9b1f3d43eaeebaf1e2b8d9f8be394c0785184df3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/whiteoctober/WhiteOctoberPagerfantaBundle/zipball/9b1f3d43eaeebaf1e2b8d9f8be394c0785184df3",
+                "reference": "9b1f3d43eaeebaf1e2b8d9f8be394c0785184df3",
+                "shasum": ""
+            },
+            "require": {
+                "pagerfanta/pagerfanta": "1.0.*",
+                "symfony/framework-bundle": "~2.3|~3.0|~4.0",
+                "symfony/property-access": "~2.3|~3.0|~4.0",
+                "symfony/twig-bundle": "~2.3|~3.0|~4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7|~4.0",
+                "symfony/symfony": "~2.3|~3.0|~4.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "WhiteOctober\\PagerfantaBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pablo Díez",
+                    "email": "pablodip@gmail.com"
+                }
+            ],
+            "description": "Bundle to use Pagerfanta with Symfony2",
+            "keywords": [
+                "page",
+                "paging"
+            ],
+            "time": "2017-11-30T12:07:11+00:00"
         },
         {
             "name": "zendframework/zend-code",
