@@ -33,7 +33,8 @@ class Post
     private $createdAt;
 
     /**
-     * @ORM\Column(name="tags", type="simple_array", nullable=true)
+     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="posts")
+     * @ORM\JoinTable(name="posts_tags")
      */
     private $tags;
 
@@ -42,6 +43,11 @@ class Post
      * @ORM\JoinColumn(nullable=true)
      */
     private $freelancer;
+
+    public function __construct()
+    {
+        $this->tags = new ArrayCollection();
+    }
 
     /**
      * @return mixed
@@ -137,5 +143,10 @@ class Post
     public function setFreelancer($freelancer): void
     {
         $this->freelancer = $freelancer;
+    }
+
+    public function __toString()
+    {
+        return $this->title;
     }
 }

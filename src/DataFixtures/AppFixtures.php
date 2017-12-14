@@ -170,7 +170,12 @@ class AppFixtures extends Fixture
         $p3->setCoverImageUrl('img/uploads/portfolio/portfolio-thumb-08-289x281.jpg');
         $p3->setInnerImageUrl('img/uploads/portfolio/portfolio-thumb-08-large.jpg');
 
-        $tags = ['Photo', 'Nature'];
+        $tag1 = new Tag();
+        $tag1->setName('Photo');
+        $tag2 = new Tag();
+        $tag2->setName('Nature');
+
+        $tags = [ $tag1, $tag2];
         $post1 = new Post();
         $post1->setFreelancer($freelancer);
         $post1->setCreatedAt(new \DateTime('now'));
@@ -201,6 +206,8 @@ class AppFixtures extends Fixture
         $manager->persist($p1);
         $manager->persist($p2);
         $manager->persist($p3);
+        $manager->persist($tag1);
+        $manager->persist($tag2);
         $manager->persist($post1);
         $manager->persist($post2);
         $manager->flush();

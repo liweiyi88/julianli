@@ -9,3 +9,4 @@ easy_admin:
         - App\Entity\SocialNetwork
         - App\Entity\Project
         - App\Entity\Post
+        - App\Entity\Tag
