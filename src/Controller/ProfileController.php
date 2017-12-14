@@ -8,6 +8,7 @@ use App\Api\ApiProblemException;
 use App\Email\EmailManager;
 use App\Entity\Freelancer;
 use App\Form\ContactType;
+use App\Repository\FreelancerRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,14 +16,11 @@ use Symfony\Component\HttpFoundation\Request;
 class ProfileController extends BaseController
 {
     /**
-     * @Route("/", name="index")
+     * @Route("/", name="home")
      */
-    public function index(Request $request)
+    public function index(Request $request, FreelancerRepository $freelancerRepo)
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $repo = $em->getRepository(Freelancer::class);
-        $freelancer = $repo->findFreeLancer();
+        $freelancer = $freelancerRepo->findFreeLancer();
 
         return $this->render('profile.html.twig', array(
             'freelancer' => $freelancer

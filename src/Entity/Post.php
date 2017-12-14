@@ -28,6 +28,11 @@ class Post
     private $coverImageUrl;
 
     /**
+     * @ORM\Column(name="content", type="text")
+     */
+    private $content;
+
+    /**
      * @ORM\Column(name="created_at", type="datetime")
      */
     private $createdAt;
@@ -103,6 +108,22 @@ class Post
     public function getCreatedAt()
     {
         return $this->createdAt;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * @param mixed $content
+     */
+    public function setContent($content): void
+    {
+        $this->content = $content;
     }
 
     /**

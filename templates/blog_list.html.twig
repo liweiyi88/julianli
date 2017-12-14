@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<body class="page-single header-has-img loading">
+    <div class="mobile-nav">
+        <button class="btn-mobile mobile-nav-close"><i class="rsicon rsicon-close"></i></button>
+
+        <div class="mobile-nav-inner">
+            <nav id="mobile-nav" class="nav">
+                <ul class="clearfix">
+                    <li><a href="{{ path('home', {'_fragment': 'about'}) }}">About</a></li>
+                    <li><a href="{{ path('home', {'_fragment': 'skills'}) }}">Skills</a></li>
+                    <li><a href="{{ path('home', {'_fragment': 'projects'}) }}">Portfolio</a> </li>
+                    <li><a href="{{ path('home', {'_fragment': 'experience'}) }}">Experience</a></li>
+                    <li><a href="{{ path('home', {'_fragment': 'contact'}) }}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div><!-- .mobile-nav -->
+
+    <div class="wrapper">
+        <header class="header">
+            <div class="head-bg" style="background-image: url({{ asset('img/uploads/rs-cover.jpg') }})"></div>
+
+            <div class="head-bar">
+                <div class="head-bar-inner">
+                    <div class="row">
+                        <div class="col-sm-3 col-xs-6">
+                            <a class="logo" href="{{ path('home') }}"><span>{{ freelancer.firstName | upper}}</span>{{ freelancer.lastName | upper }}</a>
+                            <!-- <a class="head-logo" href=""><img src="img/rs-logo.png" alt="RScard"/></a> -->
+                        </div>
+
+                        <div class="col-sm-9 col-xs-6">
+                            <div class="nav-wrap">
+                                <nav id="nav" class="nav">
+                                    <ul class="clearfix">
+                                        <li><a href="{{ path('home', {'_fragment': 'about'}) }}">About</a></li>
+                                        <li><a href="{{ path('home', {'_fragment': 'skills'}) }}">Skills</a></li>
+                                        <li><a href="{{ path('home', {'_fragment': 'projects'}) }}">Portfolio</a> </li>
+                                        <li><a href="{{ path('home', {'_fragment': 'experience'}) }}">Experience</a></li>
+                                        <li><a href="{{ path('home', {'_fragment': 'contact'}) }}">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header><!-- .header -->
+
+        <div class="content">
+            <div class="container">
+
+                <!-- START: PAGE CONTENT -->
+                <div class="row animate-up">
+                    <div class="col-sm-">
+                        <main class="post-single">
+                            <article class="post-content section-box">
+
+                                {% for post in freelancer.posts %}
+                                    <div class="post-inner">
+                                        <header class="post-header">
+                                            <div class="post-data">
+                                                <div class="post-title-wrap">
+                                                    <h1 class="post-title">{{ post.title }}</h1>
+                                                    <time class="post-datetime" datetime="{{ post.createdAt | date('Y-m-d h:i:s') }}">
+                                                        <span class="day">{{ post.createdAt | date('d') }}</span>
+                                                        <span class="month">{{ post.createdAt | date('M') | upper}}</span>
+                                                    </time>
+                                                </div>
+                                            </div>
+                                        </header>
+
+                                        <div class="post-editor clearfix">{{ post.content | raw }}</div>
+                                    </div><!-- .post-inner -->
+
+                                {% endfor %}
+                            </article><!-- .post-content -->
+                        </main>
+                        <!-- .post-single -->
+                    </div>
+                </div><!-- .row -->
+                <!-- END: PAGE CONTENT -->
+
+            </div><!-- .container -->
+        </div><!-- .content -->
+
+        <footer class="footer">
+            <div class="footer-social">
+                <ul class="social">
+                    <li><a class="ripple-centered" href="" target="_blank"><i class="rsicon rsicon-facebook"></i></a></li>
+                    <li><a class="ripple-centered" href="" target="_blank"><i class="rsicon rsicon-twitter"></i></a></li>
+                    <li><a class="ripple-centered" href="" target="_blank"><i class="rsicon rsicon-linkedin"></i></a></li>
+                    <li><a class="ripple-centered" href="" target="_blank"><i class="rsicon rsicon-google-plus"></i></a></li>
+                    <li><a class="ripple-centered" href="" target="_blank"><i class="rsicon rsicon-dribbble"></i></a></li>
+                    <li><a class="ripple-centered" href="" target="_blank"><i class="rsicon rsicon-instagram"></i></a></li>
+                </ul>
+            </div>
+        </footer><!-- .footer -->
+    </div><!-- .wrapper -->
+
+    <a class="btn-scroll-top" href="#"><i class="rsicon rsicon-arrow-up"></i></a>
+    <div id="overlay"></div>
+    <div id="preloader">
+        <div class="preload-icon"><span></span><span></span></div>
+        <div class="preload-text">Loading ...</div>
+    </div>
+</body>
+{% endblock %}
