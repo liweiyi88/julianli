@@ -62,7 +62,7 @@
                     <div class="blog-grid">
                         <div class="grid-sizer"></div>
 
-                        {% for post in freelancer.posts %}
+                        {% for post in posts %}
                             <div class="grid-item">
                                 <article class="post-box animate-up">
                                     <div class="post-media {% if post.coverImageUrl is empty %}no-media{% endif %}">
@@ -98,15 +98,11 @@
                         {% endfor %}
                     </div><!-- .blog-grid -->
 
-                    <div class="pagination">
-                        <a class="next page-numbers" href=""><i class="rsicon rsicon-chevron_left"></i></a>
-                        <span class="page-numbers current">1</span>
-                        <a class="page-numbers" href="">2</a>
-                        <a class="page-numbers" href="">3</a>
-                        <span>...</span>
-                        <a class="page-numbers" href="">22</a>
-                        <a class="next page-numbers" href=""><i class="rsicon rsicon-chevron_right"></i></a>
-                    </div><!-- .pagination -->
+                    {% if posts.haveToPaginate %}
+                        <div class="pagination">
+                            {{ pagerfanta(posts, 'custom_view', {routeName: 'blog_list_paginated'}) }}
+                        </div>
+                    {% endif %}
                 </div><!-- .blog -->
                 <!-- END: PAGE CONTENT -->
 

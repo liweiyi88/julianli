@@ -40,3 +40,8 @@ services:
         tags:
             - { name: kernel.event_subscriber, event: kernel.exception}
 
+
+    App\CustomPagerfanta\CustomView:
+        public: false
+        tags: [{ name: pagerfanta.view, alias: custom_view }]
+
