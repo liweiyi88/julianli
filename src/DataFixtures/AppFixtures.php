@@ -180,6 +180,7 @@ class AppFixtures extends Fixture
         $post1->setFreelancer($freelancer);
         $post1->setCreatedAt(new \DateTime('now'));
         $post1->setTitle('Learning XYZ in 10 days');
+        $post1->setSlug('learning-xyx-in-10-days');
         $post1->setCoverImageUrl('img/uploads/thumb-449x286-1.jpg');
         $post1->setContent('<p>Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. Judge why maids led sir whose guest drift her point. Him comparison especially friendship was who sufficient attachment favourable how. Luckily but minutes ask picture man perhaps are inhabit. How her good all sang more why. 
 Left till here away at to whom past. Feelings laughing at no wondered repeated provided finished. It acceptance thoroughly my advantages everything as. Are projecting inquietude affronting preference saw who. Marry of am do avoid ample as. Old disposal followed she ignorant desirous two has. Called played entire roused though for one too. He into walk roof made tall cold he. Feelings way likewise addition wandered contempt bed indulged. 
@@ -198,6 +199,7 @@ Ignorant branched humanity led now marianne too strongly entrance. Rose to shew 
         $post2->setFreelancer($freelancer);
         $post2->setCreatedAt(new \DateTime('2015-04-23 10:32:23'));
         $post2->setTitle('How to become a geek in 10 steps');
+        $post2->setSlug('how-to-become-a-geek-in-10-steps');
         $post2->setCoverImageUrl('img/uploads/thumb-449x286-5.jpg');
         $post2->setContent('<p>Improve ashamed married expense bed her comfort pursuit mrs. Four time took ye your as fail lady. Up greatest am exertion or marianne. Shy occasional terminated insensible and inhabiting gay. So know do fond to half on. Now who promise was justice new winding. In finished on he speaking suitable advanced if. Boy happiness sportsmen say prevailed offending concealed nor was provision. Provided so as doubtful on striking required. Waiting we to compass assured. 
 Mind what no by kept. Celebrated no he decisively thoroughly. Our asked sex point her she seems. New plenty she horses parish design you. Stuff sight equal of my woody. Him children bringing goodness suitable she entirely put far daughter. 
@@ -216,6 +218,7 @@ Lose eyes get fat shew. Winter can indeed letter oppose way change tended now. S
         $post3->setFreelancer($freelancer);
         $post3->setCreatedAt(new \DateTime('2012-01-23 10:32:23'));
         $post3->setTitle('What can I learn from the universe?');
+        $post3->setSlug('what-can-i-learn-from-the-universe');
         $post3->setContent(' fortune no mention he. Of mr certainty arranging am smallness by conveying. Him plate you allow built grave. Sigh sang nay sex high yet door game. She dissimilar was favourable unreserved nay expression contrasted saw. Past her find she like bore pain open. Shy lose need eyes son not shot. Jennings removing are his eat dashwood. Middleton as pretended listening he smallness perceived. Now his but two green spoil drift. 
 Certainty determine at of arranging perceived situation or. Or wholly pretty county in oppose. Favour met itself wanted settle put garret twenty. In astonished apartments resolution so an it. Unsatiable on by contrasted to reasonable companions an. On otherwise no admitting to suspicion furniture it. 
 Talent she for lively eat led sister. Entrance strongly packages she out rendered get quitting denoting led. Dwelling confined improved it he no doubtful raptures. Several carried through an of up attempt gravity. Situation to be at offending elsewhere distrusts if. Particular use for considered projection cultivated. Worth of do doubt shall it their. Extensive existence up me contained he pronounce do. Excellence inquietude assistance precaution any impression man sufficient. 
@@ -228,6 +231,7 @@ Ladies others the six desire age. Bred am soon par');
         $post4->setFreelancer($freelancer);
         $post4->setCreatedAt(new \DateTime('2017-04-03 00:12:23'));
         $post4->setTitle('I know nothing about Z language');
+        $post4->setSlug('i-know-nothing-about-z-language');
         $post4->setContent(' fortune no mention he. Of mr certainty arranging am smallness by conveying. Him plate you allow built grave. Sigh sang nay sex high yet door game. She dissimilar was favourable unreserved nay expression contrasted saw. Past her find she like bore pain open. Shy lose need eyes son not shot. Jennings removing are his eat dashwood. Middleton as pretended listening he smallness perceived. Now his but two green spoil drift. 
 Certainty determine at of arranging perceived situation or. Or wholly pretty county in oppose. Favour met itself wanted settle put garret twenty. In astonished apartments resolution so an it. Unsatiable on by contrasted to reasonable companions an. On otherwise no admitting to suspicion furniture it. 
 Talent she for lively eat led sister. Entrance strongly packages she out rendered get quitting denoting led. Dwelling confined improved it he no doubtful raptures. Several carried through an of up attempt gravity. Situation to be at offending elsewhere distrusts if. Particular use for considered projection cultivated. Worth of do doubt shall it their. Extensive existence up me contained he pronounce do. Excellence inquietude assistance precaution any impression man sufficient. 
@@ -240,6 +244,7 @@ Ladies others the six desire age. Bred am soon par');
         $post5->setFreelancer($freelancer);
         $post5->setCreatedAt(new \DateTime('2011-11-12 00:33:14'));
         $post5->setTitle('Today I learn Z language');
+        $post5->setSlug('today-i-learn-z-language');
         $post5->setContent(' fortune no mention he. Of mr certainty arranging am smallness by conveying. Him plate you allow built grave. Sigh sang nay sex high yet door game. She dissimilar was favourable unreserved nay expression contrasted saw. Past her find she like bore pain open. Shy lose need eyes son not shot. Jennings removing are his eat dashwood. Middleton as pretended listening he smallness perceived. Now his but two green spoil drift. 
 Certainty determine at of arranging perceived situation or. Or wholly pretty county in oppose. Favour met itself wanted settle put garret twenty. In astonished apartments resolution so an it. Unsatiable on by contrasted to reasonable companions an. On otherwise no admitting to suspicion furniture it. 
 Talent she for lively eat led sister. Entrance strongly packages she out rendered get quitting denoting led. Dwelling confined improved it he no doubtful raptures. Several carried through an of up attempt gravity. Situation to be at offending elsewhere distrusts if. Particular use for considered projection cultivated. Worth of do doubt shall it their. Extensive existence up me contained he pronounce do. Excellence inquietude assistance precaution any impression man sufficient. 
@@ -252,6 +257,7 @@ Ladies others the six desire age. Bred am soon par');
         $post6->setFreelancer($freelancer);
         $post6->setCreatedAt(new \DateTime('2015-06-20 11:23:13'));
         $post6->setTitle('Z is the future!');
+        $post6->setSlug('z-is-the-future');
         $post6->setContent(' fortune no mention he. Of mr certainty arranging am smallness by conveying. Him plate you allow built grave. Sigh sang nay sex high yet door game. She dissimilar was favourable unreserved nay expression contrasted saw. Past her find she like bore pain open. Shy lose need eyes son not shot. Jennings removing are his eat dashwood. Middleton as pretended listening he smallness perceived. Now his but two green spoil drift. 
 Certainty determine at of arranging perceived situation or. Or wholly pretty county in oppose. Favour met itself wanted settle put garret twenty. In astonished apartments resolution so an it. Unsatiable on by contrasted to reasonable companions an. On otherwise no admitting to suspicion furniture it. 
 Talent she for lively eat led sister. Entrance strongly packages she out rendered get quitting denoting led. Dwelling confined improved it he no doubtful raptures. Several carried through an of up attempt gravity. Situation to be at offending elsewhere distrusts if. Particular use for considered projection cultivated. Worth of do doubt shall it their. Extensive existence up me contained he pronounce do. Excellence inquietude assistance precaution any impression man sufficient. 

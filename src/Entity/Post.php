@@ -24,6 +24,11 @@ class Post
     private $title;
 
     /**
+     * @ORM\Column(name="slug", type="string", length=255)
+     */
+    private $slug;
+
+    /**
      * @ORM\Column(name="cover_image_url", type="string", length=255, nullable=true)
      */
     private $coverImageUrl;
@@ -85,6 +90,22 @@ class Post
     public function setTitle($title): void
     {
         $this->title = $title;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param mixed $slug
+     */
+    public function setSlug($slug): void
+    {
+        $this->slug = $slug;
     }
 
     /**
