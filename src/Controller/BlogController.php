@@ -27,8 +27,9 @@ class BlogController extends Controller
      * @Route("/posts/{slug}", name="blog_post")
      * @Method("GET")
      */
-    public function postShow(Post $post): Response
+    public function postShow(Post $post, FreelancerRepository $freelancerRepository): Response
     {
-        return $this->render('blog/post_show.html.twig', ['post' => $post]);
+        $freelancer = $freelancerRepository->findFreeLancer();
+        return $this->render('blog/post_show.html.twig', ['post' => $post, 'freelancer' => $freelancer]);
     }
 }

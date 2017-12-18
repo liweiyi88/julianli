@@ -1,57 +1,10 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 {% block body %}
 <body class="page-single header-has-img loading">
-    <div class="mobile-nav">
-        <button class="btn-mobile mobile-nav-close"><i class="rsicon rsicon-close"></i></button>
-
-        <div class="mobile-nav-inner">
-            <nav id="mobile-nav" class="nav">
-                <ul class="clearfix">
-                    <li><a href="{{ path('home', {'_fragment': 'about'}) }}">About</a></li>
-                    <li><a href="{{ path('home', {'_fragment': 'skills'}) }}">Skills</a></li>
-                    <li><a href="{{ path('home', {'_fragment': 'projects'}) }}">Projects</a> </li>
-                    <li><a href="{{ path('home', {'_fragment': 'experience'}) }}">Experience</a></li>
-                    <li>
-                        <a href="{{ path('blog_list') }}">Blog</a>
-                    </li>
-                    <li><a href="{{ path('home', {'__fragment': 'contact'}) }}">Contact <span></span></a></li>
-                </ul>
-            </nav>
-        </div>
-    </div><!-- .mobile-nav -->
+    {% block mobile_nav %} {{ parent() }} {% endblock %}
 
     <div class="wrapper">
-        <header class="header">
-            <div class="head-bg" style="height: 257px !important; background-image: url({{ asset('img/uploads/rs-cover.jpg') }})"></div>
-
-            <div class="head-bar">
-                <div class="head-bar-inner">
-                    <div class="row">
-                        <div class="col-sm-3 col-xs-6">
-                            <a class="logo" href="{{ path('home') }}"><span>{{ post.freelancer.firstName | upper}}</span>{{ post.freelancer.lastName | upper}}</a>
-                            <!-- <a class="head-logo" href=""><img src="img/rs-logo.png" alt="RScard"/></a> -->
-                        </div>
-
-                        <div class="col-sm-9 col-xs-6">
-                            <div class="nav-wrap">
-                                <nav id="nav" class="nav">
-                                    <ul class="clearfix">
-                                        <li><a href="{{ path('home', {'_fragment': 'about'}) }}">About</a></li>
-                                        <li><a href="{{ path('home', {'_fragment': 'skills'}) }}">Skills</a></li>
-                                        <li><a href="{{ path('home', {'_fragment': 'projects'}) }}">Projects</a> </li>
-                                        <li><a href="{{ path('home', {'_fragment': 'experience'}) }}">Experience</a></li>
-                                        <li>
-                                            <a href="{{ path('blog_list') }}">Blog</a>
-                                        </li>
-                                        <li><a href="{{ path('home', {'_fragment': 'contact'}) }}">Contact <span></span></a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header><!-- .header -->
+        {% block header %} {{ parent() }} {% endblock %}
 
         <div class="content">
             <div class="container">
@@ -111,7 +64,6 @@
                             </script>
                             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-
                             <div>
                                 <span class="btn-outer btn-primary-outer ripple">
                                     <a href="{{ path('blog_list') }}" class="btn btn-lg btn-primary" style="color:white">Back to posts list</a>
@@ -142,22 +94,9 @@
             </div><!-- .container -->
         </div><!-- .content -->
 
-        <footer class="footer">
-            <div class="footer-social">
-                <ul class="social">
-                    {% for socialNetwork in post.freelancer.socialNetworks %}
-                        <li><a class="ripple-centered" href="{{ socialNetwork.link }}" target="_blank"><i class="rsicon {{ socialNetwork.icon }}"></i></a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </footer><!-- .footer -->
+        {% block footer %} {{ parent() }} {% endblock %}
     </div><!-- .wrapper -->
 
-    <a class="btn-scroll-top" href="#"><i class="rsicon rsicon-arrow-up"></i></a>
-    <div id="overlay"></div>
-    <div id="preloader">
-        <div class="preload-icon"><span></span><span></span></div>
-        <div class="preload-text">Loading ...</div>
-    </div>
+    {% block preloader %} {{ parent() }} {% endblock %}
 </body>
 {% endblock %}
