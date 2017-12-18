@@ -68,7 +68,7 @@
                                     <div class="post-media {% if post.coverImageUrl is empty %}no-media{% endif %}">
                                         {% if post.coverImageUrl is not empty %}
                                             <div class="post-image">
-                                                <a href="single.html"><img src="{{ asset(post.coverImageUrl) }}" alt="{{ post.title }}"> </a>
+                                                <a href="{{ path('blog_post', {slug: post.slug}) }}"><img src="{{ asset(post.coverImageUrl) }}" alt="{{ post.title }}"> </a>
                                             </div>
                                         {% endif %}
                                     </div>
@@ -86,7 +86,7 @@
                                         </div>
 
                                         <h3 class="post-title">
-                                            <a href="single-image.html">{{ post.title }}</a>
+                                            <a href="{{ path('blog_post', {slug: post.slug}) }}">{{ post.title }}</a>
                                         </h3>
 
                                         <div class="post-info">

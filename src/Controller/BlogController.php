@@ -2,10 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\Post;
 use App\Repository\FreelancerRepository;
 use App\Repository\PostRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 class BlogController extends Controller
 {
@@ -17,6 +20,15 @@ class BlogController extends Controller
     {
         $posts = $postRepository->findLatest($page);
         $freelancer = $freelancerRepository->findFreeLancer();
-        return $this->render('blog_list.html.twig', ['posts' => $posts, 'freelancer' => $freelancer]);
+        return $this->render('blog/blog_list.html.twig', ['posts' => $posts, 'freelancer' => $freelancer]);
+    }
+
+    /**
+     * @Route("/posts/{slug}", name="blog_post")
+     * @Method("GET")
+     */
+    public function postShow(Post $post): Response
+    {
+        return $this->render('blog/post_show.html.twig', ['post' => $post]);
     }
 }
