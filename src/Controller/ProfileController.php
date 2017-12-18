@@ -28,7 +28,7 @@ class ProfileController extends BaseController
     }
 
     /**
-     * @Route("/contact", name="contact")
+     * @Route("/api/contact", name="contact")
      */
     public function postContact(Request $request, EmailManager $emailManager)
     {
