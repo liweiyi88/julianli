@@ -74,7 +74,7 @@
                                     </div>
 
                                     <div class="post-data">
-                                        <time class="post-datetime" datetime="{{ post.createdAt | date('Y-m-d h:i:s') }}">
+                                        <time class="post-datetime" datetime="{{ post.createdAt | date('Y-m-d H:i:s') }}">
                                             <span class="day">{{ post.createdAt | date('d') }}</span>
                                             <span class="month">{{ post.createdAt | date('M') | upper }}</span>
                                         </time>
