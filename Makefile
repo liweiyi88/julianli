@@ -47,7 +47,7 @@ db:             ## Reset the database and load fixtures
 db: vendor
 	$(RUN) php -r "for(;;){if(@fsockopen('db',3306)){break;}}" # Wait for MySQL
 	$(RUN) $(CONSOLE) doctrine:database:create --if-not-exists
-	$(RUN) $(CONSOLE) doctrine:migrations:migrate
+	$(RUN) $(CONSOLE) doctrine:migrations:migrate --no-interaction
 	$(RUN) $(CONSOLE) doctrine:fixtures:load --no-interaction -q
 
 # Internal rules

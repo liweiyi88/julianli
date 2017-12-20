@@ -38,24 +38,25 @@
         </style>
         {% block stylesheets %}{% endblock %}
     </head>
-    <body class="home header-has-img loading">
-        {% block body %}{% endblock %}
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-        <script type="text/javascript" src="{{ asset('fonts/map-icons/js/map-icons.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/plugins/jquery.mousewheel-3.0.6.pack.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/plugins/imagesloaded.pkgd.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/plugins/isotope.pkgd.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/plugins/jquery.appear.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/plugins/jquery.onepagenav.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/plugins/jquery.bxslider/jquery.bxslider.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/plugins/jquery.customscroll/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/plugins/jquery.mediaelement/mediaelement-and-player.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/plugins/jquery.fancybox/jquery.fancybox.pack.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/plugins/jquery.fancybox/helpers/jquery.fancybox-media.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/plugins/jquery.owlcarousel/owl.carousel.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/options.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/site.js') }}"></script>
-        {% block javascripts %}{% endblock %}
-    </body>
+    {% block body %}
+            {% block javascripts %}
+                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+                <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+                <script type="text/javascript" src="{{ asset('fonts/map-icons/js/map-icons.min.js') }}"></script>
+                <script type="text/javascript" src="{{ asset('js/plugins/jquery.mousewheel-3.0.6.pack.js') }}"></script>
+                <script type="text/javascript" src="{{ asset('js/plugins/imagesloaded.pkgd.min.js') }}"></script>
+                <script type="text/javascript" src="{{ asset('js/plugins/isotope.pkgd.min.js') }}"></script>
+                <script type="text/javascript" src="{{ asset('js/plugins/jquery.appear.min.js') }}"></script>
+                <script type="text/javascript" src="{{ asset('js/plugins/jquery.onepagenav.min.js') }}"></script>
+                <script type="text/javascript" src="{{ asset('js/plugins/jquery.bxslider/jquery.bxslider.min.js') }}"></script>
+                <script type="text/javascript" src="{{ asset('js/plugins/jquery.customscroll/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+                <script type="text/javascript" src="{{ asset('js/plugins/jquery.mediaelement/mediaelement-and-player.min.js') }}"></script>
+                <script type="text/javascript" src="{{ asset('js/plugins/jquery.fancybox/jquery.fancybox.pack.js') }}"></script>
+                <script type="text/javascript" src="{{ asset('js/plugins/jquery.fancybox/helpers/jquery.fancybox-media.js') }}"></script>
+                <script type="text/javascript" src="{{ asset('js/plugins/jquery.owlcarousel/owl.carousel.min.js') }}"></script>
+                <script type="text/javascript" src="{{ asset('js/options.js') }}"></script>
+                <script type="text/javascript" src="{{ asset('js/site.js') }}"></script>
+            {% endblock %}
+        </body>
+    {% endblock %}
 </html>

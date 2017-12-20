@@ -1,0 +1,62 @@
+{% extends 'layout.html.twig' %}
+{% block body %}
+    <body class="loading">
+        <div class="wrapper">
+
+            {% block mobile_nav %} {{ parent() }} {% endblock %}
+
+            {% block header %}
+                <header class="header">
+                    <div class="head-bg" style="background-image: url({{ asset('img/uploads/rs-cover.jpg') }})"></div>
+
+                    <div class="head-bar">
+                        <div class="head-bar-inner">
+                            <div class="row">
+                                <div class="col-sm-3 col-xs-6">
+                                    <a class="logo" href="{{ path('home') }}"><span>JULIAN</span>LI</a>
+                                    <!-- <a class="head-logo" href=""><img src="img/rs-logo.png" alt="RScard"/></a> -->
+                                </div>
+
+                                <div class="col-sm-9 col-xs-6">
+                                    <div class="nav-wrap">
+                                        <nav id="nav" class="nav">
+                                            <ul class="clearfix">
+                                                <li><a href="{{ path('home', {'_fragment': 'about'}) }}">About</a></li>
+                                                <li><a href="{{ path('home', {'_fragment': 'skills'}) }}">Skills</a></li>
+                                                <li><a href="{{ path('home', {'_fragment': 'projects'}) }}">Projects</a> </li>
+                                                <li><a href="{{ path('home', {'_fragment': 'experience'}) }}">Experience</a></li>
+                                                <li>
+                                                    <a href="{{ path('blog_list') }}">Blog</a>
+                                                </li>
+                                                <li><a href="{{ path('home', {'_fragment': 'contact'}) }}">Contact <span></span></a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header><!-- .header -->
+
+            {% endblock %}
+
+            <div class="content">
+                <div class="container">
+
+                    <!-- START: PAGE CONTENT -->
+                    <div class="page-404">
+                        <h2>4<span>0</span>4</h2>
+                        <p>Ooops! This page doesn't even exist</p>
+                        <a class="btn btn-lg btn-border" href="{{ path('home') }}">Go To The Homepage ?</a>
+                    </div>
+                    <!-- END: PAGE CONTENT -->
+
+                </div><!-- .container -->
+            </div><!-- .content -->
+        </div>
+
+    {% block preloader %} {{ parent() }} {% endblock %}
+
+    {% block javascripts %} {{ parent() }} {% endblock %}
+    </body>
+{% endblock %}
