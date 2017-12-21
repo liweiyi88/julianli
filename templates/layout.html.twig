@@ -22,6 +22,32 @@
             </div><!-- .mobile-nav -->
         {% endblock %}
 
+        {% block sidebar %}
+            <div class="sidebar sidebar-fixed">
+                <button class="btn-sidebar btn-sidebar-close"><i class="rsicon rsicon-close"></i></button>
+
+                <div class="widget-area">
+                    <aside class="widget widget-profile">
+                        <div class="profile-photo">
+                            <img src="{{ asset('img/uploads/rs-photo-v2.jpg') }}" alt="{{ freelancer.firstName }} {{ freelancer.lastName }}"/>
+                        </div>
+                        <div class="profile-info">
+                            <h2 class="profile-title">{{ freelancer.firstName }} {{ freelancer.lastName }}</h2>
+
+                            <h3 class="profile-position">{{ freelancer.title }}</h3>
+                        </div>
+                    </aside>
+                    <!-- .widget-profile -->
+
+                    <aside class="widget">
+                        <a class="twitter-timeline" href="https://twitter.com/liweiyi88?ref_src=twsrc%5Etfw">Tweets by liweiyi88</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </aside>
+                </div>
+                <!-- .widget-area -->
+            </div>
+            <!-- .sidebar -->
+        {% endblock %}
+
         {% block header %}
             <header class="header">
                 <div class="head-bg" style="background-image: url({{ asset('img/uploads/rs-cover.jpg') }})"></div>

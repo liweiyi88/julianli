@@ -23,25 +23,7 @@
         <!-- .mobile-nav -->
     {% endblock %}
 
-    <div class="sidebar sidebar-fixed">
-        <button class="btn-sidebar btn-sidebar-close"><i class="rsicon rsicon-close"></i></button>
-
-        <div class="widget-area">
-            <aside class="widget widget-profile">
-                <div class="profile-photo">
-                    <img src="{{ asset('img/uploads/rs-photo-v2.jpg') }}" alt="{{ freelancer.firstName }} {{ freelancer.lastName }}"/>
-                </div>
-                <div class="profile-info">
-                    <h2 class="profile-title">{{ freelancer.firstName }} {{ freelancer.lastName }}</h2>
-
-                    <h3 class="profile-position">{{ freelancer.title }}</h3>
-                </div>
-            </aside>
-            <!-- .widget-profile -->
-        </div>
-        <!-- .widget-area -->
-    </div>
-    <!-- .sidebar -->
+   {% block sidebar %} {{ parent() }} {% endblock %}
 
     <div class="wrapper">
         {% block header %}
