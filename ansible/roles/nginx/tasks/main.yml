@@ -1,0 +1,23 @@
+---
+- name: Install Nginx
+  become: true
+  apt:
+    name: nginx
+    state: latest
+  notify: Restart Nginx
+
+- name: Add Symfony config template to the Nginx available sites
+  become: true
+  template:
+    src: templates/julianli.conf
+    dest: "/etc/nginx/sites-available/{{ server_name }}.conf"
+  notify: Restart Nginx
+
+- name: Enable Symfony config template from Nginx available sites
+  become: true
+  file:
+    src: "/etc/nginx/sites-available/{{ server_name }}.conf"
+    dest: "/etc/nginx/sites-enabled/{{ server_name }}.conf"
+    state: link
+  notify: Restart Nginx
+

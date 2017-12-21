@@ -1,0 +1,5 @@
+project_root_dir: /var/www/julianli
+symfony_var_dir: "{{ project_root_dir }}/var"
+symfony_console_path: "{{ project_root_dir }}/{{ ansistrano_current_dir }}/bin/console"
+ansistrano_current_dir: current
+server_document_root: "{{ project_root_dir }}/{{ ansistrano_current_dir }}/public"

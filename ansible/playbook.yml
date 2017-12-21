@@ -1,0 +1,8 @@
+---
+- hosts: digitalocean
+
+  vars_files:
+      - ./vars/vars.yml
+
+  roles:
+      - nginx

@@ -16,3 +16,5 @@ supervisord.log
 supervisord.pid
 
 .idea/
+
+ansible/playbook.retry
