@@ -20,7 +20,7 @@
                                     <div class="post-media {% if post.coverImageUrl is empty %}no-media{% endif %}">
                                         {% if post.coverImageUrl is not empty %}
                                             <div class="post-image">
-                                                <a href="{{ path('blog_post', {slug: post.slug}) }}"><img src="{{ asset(post.coverImageUrl) }}" alt="{{ post.title }}"> </a>
+                                                <a href="{{ path('blog_post', {slug: post.slug}) }}"><img src="{{ vich_uploader_asset(post, 'coverImageFile') }}" alt="{{ post.title }}"> </a>
                                             </div>
                                         {% endif %}
                                     </div>

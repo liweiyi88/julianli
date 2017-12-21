@@ -21,6 +21,7 @@
         "symfony/validator": "^4.0",
         "symfony/webpack-encore-pack": "^1.0",
         "symfony/yaml": "^4.0",
+        "vich/uploader-bundle": "^1.7",
         "white-october/pagerfanta-bundle": "^1.1"
     },
     "require-dev": {

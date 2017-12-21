@@ -1,4 +1,7 @@
 {
+    "behat/transliterator": {
+        "version": "v1.2.0"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -82,6 +85,9 @@
     },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
+    },
+    "jms/metadata": {
+        "version": "1.6.0"
     },
     "monolog/monolog": {
         "version": "1.23.0"
@@ -287,6 +293,9 @@
             "ref": "8daf8ede72274989fb0dc66b83cb4bc1693afbb9"
         }
     },
+    "symfony/templating": {
+        "version": "v4.0.2"
+    },
     "symfony/translation": {
         "version": "3.3",
         "recipe": {
@@ -346,6 +355,15 @@
     },
     "twig/twig": {
         "version": "v2.4.4"
+    },
+    "vich/uploader-bundle": {
+        "version": "1.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.5",
+            "ref": "c4f5755b37fb65b9c6a3cbdae91205c15a137ed4"
+        }
     },
     "webmozart/assert": {
         "version": "1.2.0"

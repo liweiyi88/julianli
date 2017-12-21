@@ -3,10 +3,13 @@
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PostRepository")
+ * @Vich\Uploadable
  */
 class Post
 {
@@ -34,6 +37,12 @@ class Post
     private $coverImageUrl;
 
     /**
+     * @Vich\UploadableField(mapping="blogs", fileNameProperty="coverImageUrl")
+     * @var File
+     */
+    private $coverImageFile;
+
+    /**
      * @ORM\Column(name="content", type="text")
      */
     private $content;
@@ -42,6 +51,12 @@ class Post
      * @ORM\Column(name="created_at", type="datetime")
      */
     private $createdAt;
+
+    /**
+     * @ORM\Column(name="update_at", type="datetime", nullable=true)
+     * @var \DateTime
+     */
+    private $updatedAt;
 
     /**
      * @ORM\ManyToMany(targetEntity="Tag", inversedBy="posts")
@@ -122,6 +137,40 @@ class Post
     public function setCoverImageUrl($coverImageUrl): void
     {
         $this->coverImageUrl = $coverImageUrl;
+    }
+
+    public function setCoverImageFile(File $image = null)
+    {
+        $this->coverImageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getCoverImageFile()
+    {
+        return $this->coverImageFile;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdatedAt(): \DateTime
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param \DateTime $updatedAt
+     */
+    public function setUpdatedAt(\DateTime $updatedAt): void
+    {
+        $this->updatedAt = $updatedAt;
     }
 
     /**

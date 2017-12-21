@@ -181,7 +181,7 @@ class AppFixtures extends Fixture
         $post1->setCreatedAt(new \DateTime('now'));
         $post1->setTitle('Learning XYZ in 10 days');
         $post1->setSlug('learning-xyx-in-10-days');
-        $post1->setCoverImageUrl('img/uploads/thumb-449x286-1.jpg');
+        $post1->setCoverImageUrl('thumb-449x286-1.jpg');
         $post1->setContent('<p>Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. Judge why maids led sir whose guest drift her point. Him comparison especially friendship was who sufficient attachment favourable how. Luckily but minutes ask picture man perhaps are inhabit. How her good all sang more why. 
 Left till here away at to whom past. Feelings laughing at no wondered repeated provided finished. It acceptance thoroughly my advantages everything as. Are projecting inquietude affronting preference saw who. Marry of am do avoid ample as. Old disposal followed she ignorant desirous two has. Called played entire roused though for one too. He into walk roof made tall cold he. Feelings way likewise addition wandered contempt bed indulged. 
 Unpacked now declared put you confined daughter improved. Celebrated imprudence few interested especially reasonable off one. Wonder bed elinor family secure met. It want gave west into high no in. Depend repair met before man admire see and. An he observe be it covered delight hastily message. Margaret no ladyship endeavor ye to settling. 
@@ -200,7 +200,7 @@ Ignorant branched humanity led now marianne too strongly entrance. Rose to shew 
         $post2->setCreatedAt(new \DateTime('2015-04-23 10:32:23'));
         $post2->setTitle('How to become a geek in 10 steps');
         $post2->setSlug('how-to-become-a-geek-in-10-steps');
-        $post2->setCoverImageUrl('img/uploads/thumb-449x286-5.jpg');
+        $post2->setCoverImageUrl('thumb-449x286-5.jpg');
         $post2->setContent('<p>Improve ashamed married expense bed her comfort pursuit mrs. Four time took ye your as fail lady. Up greatest am exertion or marianne. Shy occasional terminated insensible and inhabiting gay. So know do fond to half on. Now who promise was justice new winding. In finished on he speaking suitable advanced if. Boy happiness sportsmen say prevailed offending concealed nor was provision. Provided so as doubtful on striking required. Waiting we to compass assured. 
 Mind what no by kept. Celebrated no he decisively thoroughly. Our asked sex point her she seems. New plenty she horses parish design you. Stuff sight equal of my woody. Him children bringing goodness suitable she entirely put far daughter. 
 Or kind rest bred with am shed then. In raptures building an bringing be. Elderly is detract tedious assured private so to visited. Do travelling companions contrasted it. Mistress strongly remember up to. Ham him compass you proceed calling detract. Better of always missed we person mr. September smallness northward situation few her certainty something. 
