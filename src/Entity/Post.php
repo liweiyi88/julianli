@@ -75,66 +75,42 @@ class Post
         $this->tags = new ArrayCollection();
     }
 
-    /**
-     * @return mixed
-     */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id): void
+    public function setId(int $id): void
     {
         $this->id = $id;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getTitle()
+    public function getTitle(): ?string
     {
         return $this->title;
     }
 
-    /**
-     * @param mixed $title
-     */
-    public function setTitle($title): void
+    public function setTitle(?string $title): void
     {
         $this->title = $title;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getSlug()
+    public function getSlug(): ?string
     {
         return $this->slug;
     }
 
-    /**
-     * @param mixed $slug
-     */
-    public function setSlug($slug): void
+    public function setSlug(?string $slug): void
     {
         $this->slug = $slug;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getCoverImageUrl()
+    public function getCoverImageUrl(): ?string
     {
         return $this->coverImageUrl;
     }
 
-    /**
-     * @param mixed $coverImageUrl
-     */
-    public function setCoverImageUrl($coverImageUrl): void
+    public function setCoverImageUrl(?string $coverImageUrl): void
     {
         $this->coverImageUrl = $coverImageUrl;
     }
@@ -152,71 +128,47 @@ class Post
         }
     }
 
-    public function getCoverImageFile()
+    public function getCoverImageFile(): ?File
     {
         return $this->coverImageFile;
     }
 
-    /**
-     * @return \DateTime
-     */
-    public function getUpdatedAt(): \DateTime
+    public function getUpdatedAt(): ?\DateTime
     {
         return $this->updatedAt;
     }
 
-    /**
-     * @param \DateTime $updatedAt
-     */
-    public function setUpdatedAt(\DateTime $updatedAt): void
+    public function setUpdatedAt(?\DateTime $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getCreatedAt()
+    public function getCreatedAt(): ?\DateTime
     {
         return $this->createdAt;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getContent()
+    public function getContent(): ?string
     {
         return $this->content;
     }
 
-    /**
-     * @param mixed $content
-     */
-    public function setContent($content): void
+    public function setContent(string $content): void
     {
         $this->content = $content;
     }
 
-    /**
-     * @param mixed $createdAt
-     */
-    public function setCreatedAt($createdAt): void
+    public function setCreatedAt(?\DateTime $createdAt): void
     {
         $this->createdAt = $createdAt;
     }
 
-    /**
-     * @return mixed
-     */
     public function getTags()
     {
         return $this->tags;
     }
 
-    /**
-     * @param mixed $tags
-     */
-    public function setTags($tags): void
+    public function setTags(array $tags): void
     {
         $this->tags = $tags;
     }
@@ -224,20 +176,17 @@ class Post
     /**
      * @return mixed
      */
-    public function getFreelancer()
+    public function getFreelancer(): Freelancer
     {
         return $this->freelancer;
     }
 
-    /**
-     * @param mixed $freelancer
-     */
-    public function setFreelancer($freelancer): void
+    public function setFreelancer(Freelancer $freelancer): void
     {
         $this->freelancer = $freelancer;
     }
 
-    public function __toString()
+    public function __toString(): ?string
     {
         return $this->title;
     }

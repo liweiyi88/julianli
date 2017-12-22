@@ -222,4 +222,9 @@ class Project
     {
         $this->freelancer = $freelancer;
     }
+
+    public function __toString()
+    {
+        return $this->title;
+    }
 }
