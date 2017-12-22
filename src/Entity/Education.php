@@ -37,82 +37,47 @@ class Education
      */
     private $freelancer;
 
-    /**
-     * @return mixed
-     */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDegree()
+    public function getDegree(): ?string
     {
         return $this->degree;
     }
 
-    /**
-     * @param mixed $degree
-     */
-    public function setDegree($degree): void
+    public function setDegree(?string $degree): void
     {
         $this->degree = $degree;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getDateRange()
+    public function getDateRange(): ?string
     {
         return $this->dateRange;
     }
 
-    /**
-     * @param mixed $dateRange
-     */
-    public function setDateRange($dateRange): void
+    public function setDateRange(?string $dateRange): void
     {
         $this->dateRange = $dateRange;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getUniversity()
+    public function getUniversity(): ?string
     {
         return $this->university;
     }
 
-    /**
-     * @param mixed $university
-     */
-    public function setUniversity($university): void
+    public function setUniversity(?string $university): void
     {
         $this->university = $university;
     }
 
-    /**
-     * @return mixed
-     */
     public function getFreelancer(): ?Freelancer
     {
         return $this->freelancer;
     }
 
-    /**
-     * @param mixed $freelancer
-     */
-    public function setFreelancer($freelancer): void
+    public function setFreelancer(Freelancer $freelancer): void
     {
         $this->freelancer = $freelancer;
     }

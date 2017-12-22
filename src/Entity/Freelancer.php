@@ -99,222 +99,139 @@ class Freelancer implements UserInterface, \Serializable
         $this->posts = new ArrayCollection();
     }
 
-    /**
-     * @return mixed
-     */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getEmail()
+    public function getEmail(): ?string
     {
         return $this->email;
     }
 
-    /**
-     * @param mixed $email
-     */
-    public function setEmail($email): void
+    public function setEmail(?string $email): void
     {
         $this->email = $email;
     }
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFirstName()
+    public function getFirstName(): string
     {
         return $this->firstName;
     }
 
-    /**
-     * @param mixed $firstName
-     */
-    public function setFirstName($firstName): void
+    public function setFirstName(string $firstName): void
     {
         $this->firstName = $firstName;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getLastName()
+    public function getLastName(): string
     {
         return $this->lastName;
     }
 
-    /**
-     * @param mixed $lastName
-     */
-    public function setLastName($lastName): void
+    public function setLastName(string $lastName): void
     {
         $this->lastName = $lastName;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getAddress()
+    public function getAddress(): ?string
     {
         return $this->address;
     }
 
-    /**
-     * @param mixed $address
-     */
-    public function setAddress($address): void
+    public function setAddress(?string $address): void
     {
         $this->address = $address;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getTitle()
+    public function getTitle(): ?string
     {
         return $this->title;
     }
 
-    /**
-     * @param mixed $title
-     */
-    public function setTitle($title): void
+    public function setTitle(?string $title): void
     {
         $this->title = $title;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getDescription()
+    public function getDescription(): ?string
     {
         return $this->description;
     }
 
-    /**
-     * @param mixed $description
-     */
-    public function setDescription($description): void
+    public function setDescription(?string $description): void
     {
         $this->description = $description;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getSocialNetworks()
+    public function getSocialNetworks(): ArrayCollection
     {
         return $this->socialNetworks;
     }
 
-    /**
-     * @param mixed $socialNetworks
-     */
-    public function setSocialNetworks($socialNetworks): void
+    public function setSocialNetworks(ArrayCollection $socialNetworks): void
     {
         $this->socialNetworks = $socialNetworks;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getSkills()
+    public function getSkills(): ArrayCollection
     {
         return $this->skills;
     }
 
-    /**
-     * @param mixed $skills
-     */
-    public function setSkills($skills): void
+    public function setSkills(ArrayCollection $skills): void
     {
         $this->skills = $skills;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getExperiences()
+    public function getExperiences(): ArrayCollection
     {
         return $this->experiences;
     }
 
-    /**
-     * @param mixed $experiences
-     */
-    public function setExperiences($experiences): void
+    public function setExperiences(ArrayCollection $experiences): void
     {
         $this->experiences = $experiences;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getEducation()
+    public function getEducation(): ArrayCollection
     {
         return $this->education;
     }
 
-    /**
-     * @param mixed $education
-     */
-    public function setEducation($education): void
+    public function setEducation(Education $education): void
     {
         $this->education = $education;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getProjects()
+    public function getProjects(): ArrayCollection
     {
         return $this->projects;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getPosts()
+    public function getPosts(): ArrayCollection
     {
         return $this->posts;
     }
 
-    /**
-     * @param mixed $posts
-     */
-    public function setPosts($posts): void
+    public function setPosts(ArrayCollection $posts): void
     {
         $this->posts = $posts;
     }
 
-    /**
-     * @param mixed $projects
-     */
-    public function setProjects($projects): void
+    public function setProjects(ArrayCollection $projects): void
     {
         $this->projects = $projects;
     }
 
-    public function getRoles()
+    public function getRoles(): array
     {
         return array('ROLE_USER');
     }
 
-    public function getPassword()
+    public function getPassword(): string
     {
-       return $this->password;
+        return $this->password;
     }
 
     public function setPassword(string $password)
@@ -327,7 +244,7 @@ class Freelancer implements UserInterface, \Serializable
         return null;
     }
 
-    public function getUsername()
+    public function getUsername(): string
     {
         return $this->username;
     }
@@ -344,11 +261,13 @@ class Freelancer implements UserInterface, \Serializable
 
     public function serialize()
     {
-       return serialize(array(
-           $this->id,
-           $this->username,
-           $this->password
-       ));
+        return serialize(
+            array(
+            $this->id,
+            $this->username,
+            $this->password
+            )
+        );
     }
 
     public function unserialize($serialized)

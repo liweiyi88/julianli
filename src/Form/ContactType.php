@@ -17,14 +17,15 @@ class ContactType extends AbstractType
             ->add('name', TextType::class, ['required' => false])
             ->add('email', TextType::class, ['required' => false])
             ->add('subject', TextType::class, ['required' => false])
-            ->add('message', TextareaType::class, ['required' => false])
-        ;
+            ->add('message', TextareaType::class, ['required' => false]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults([
+        $resolver->setDefaults(
+            [
             'data_class' => Contact::class,
-        ]);
+            ]
+        );
     }
 }

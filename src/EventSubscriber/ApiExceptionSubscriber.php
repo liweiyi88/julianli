@@ -37,8 +37,6 @@ class ApiExceptionSubscriber implements EventSubscriberInterface
         if ($e instanceof ApiProblemException) {
             $apiProblem = $e->getApiProblem();
         } else {
-
-
             $apiProblem = new ApiProblem(
                 $statusCode
             );

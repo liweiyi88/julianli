@@ -11,7 +11,8 @@ class CustomView extends DefaultView
         return new CustomTemplate();
     }
 
-    public function getName() {
+    public function getName()
+    {
         return 'my_template';
     }
 }

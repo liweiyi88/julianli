@@ -19,9 +19,13 @@ class BaseController extends AbstractController
     {
         $json = $this->serialize($data);
 
-        return new Response($json, $statusCode, array(
+        return new Response(
+            $json,
+            $statusCode,
+            array(
             'Content-Type' => 'application/json'
-        ));
+            )
+        );
     }
 
     protected function serialize($data, $format = 'json')

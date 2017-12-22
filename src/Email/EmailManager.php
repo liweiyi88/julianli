@@ -22,8 +22,7 @@ class EmailManager
         $message = (new \Swift_Message($contact->getSubject()))
             ->setFrom($this->hostEmail)
             ->setTo($this->adminEmail)
-            ->setBody('Email From: '.$contact->getEmail()."\r\nMessage: \r\n".$contact->getMessage(), 'text/plain')
-        ;
+            ->setBody('Email From: '.$contact->getEmail()."\r\nMessage: \r\n".$contact->getMessage(), 'text/plain');
 
         return $message;
     }

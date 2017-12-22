@@ -22,9 +22,12 @@ class ProfileController extends BaseController
     {
         $freelancer = $freelancerRepo->findFreeLancer();
 
-        return $this->render('profile.html.twig', array(
+        return $this->render(
+            'profile.html.twig',
+            array(
             'freelancer' => $freelancer
-        ));
+            )
+        );
     }
 
     /**

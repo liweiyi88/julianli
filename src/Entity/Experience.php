@@ -42,98 +42,57 @@ class Experience
      */
     private $freelancer;
 
-    /**
-     * @return mixed
-     */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDateRange()
+    public function getDateRange(): ?string
     {
         return $this->dateRange;
     }
 
-    /**
-     * @param mixed $dateRange
-     */
-    public function setDateRange($dateRange): void
+    public function setDateRange(?string $dateRange): void
     {
         $this->dateRange = $dateRange;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getCompany()
+    public function getCompany(): ?string
     {
         return $this->company;
     }
 
-    /**
-     * @param mixed $company
-     */
-    public function setCompany($company): void
+    public function setCompany(?string $company): void
     {
         $this->company = $company;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getJobTitle()
+    public function getJobTitle(): ?string
     {
         return $this->jobTitle;
     }
 
-    /**
-     * @param mixed $jobTitle
-     */
-    public function setJobTitle($jobTitle): void
+    public function setJobTitle(?string $jobTitle): void
     {
         $this->jobTitle = $jobTitle;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getDescription()
+    public function getDescription(): ?string
     {
         return $this->description;
     }
 
-    /**
-     * @param mixed $description
-     */
-    public function setDescription($description): void
+    public function setDescription(?string $description): void
     {
         $this->description = $description;
     }
 
-    /**
-     * @return mixed
-     */
     public function getFreelancer(): ?Freelancer
     {
         return $this->freelancer;
     }
 
-    /**
-     * @param mixed $freelancer
-     */
-    public function setFreelancer($freelancer): void
+    public function setFreelancer(Freelancer $freelancer): void
     {
         $this->freelancer = $freelancer;
     }
