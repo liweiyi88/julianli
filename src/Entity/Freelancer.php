@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -99,7 +100,7 @@ class Freelancer implements UserInterface, \Serializable
         $this->posts = new ArrayCollection();
     }
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -164,37 +165,37 @@ class Freelancer implements UserInterface, \Serializable
         $this->description = $description;
     }
 
-    public function getSocialNetworks(): ArrayCollection
+    public function getSocialNetworks(): Collection
     {
         return $this->socialNetworks;
     }
 
-    public function setSocialNetworks(ArrayCollection $socialNetworks): void
+    public function setSocialNetworks(Collection $socialNetworks): void
     {
         $this->socialNetworks = $socialNetworks;
     }
 
-    public function getSkills(): ArrayCollection
+    public function getSkills(): Collection
     {
         return $this->skills;
     }
 
-    public function setSkills(ArrayCollection $skills): void
+    public function setSkills(Collection $skills): void
     {
         $this->skills = $skills;
     }
 
-    public function getExperiences(): ArrayCollection
+    public function getExperiences(): Collection
     {
         return $this->experiences;
     }
 
-    public function setExperiences(ArrayCollection $experiences): void
+    public function setExperiences(Collection $experiences): void
     {
         $this->experiences = $experiences;
     }
 
-    public function getEducation(): ArrayCollection
+    public function getEducation(): Collection
     {
         return $this->education;
     }
@@ -204,22 +205,22 @@ class Freelancer implements UserInterface, \Serializable
         $this->education = $education;
     }
 
-    public function getProjects(): ArrayCollection
+    public function getProjects(): Collection
     {
         return $this->projects;
     }
 
-    public function getPosts(): ArrayCollection
+    public function getPosts(): Collection
     {
         return $this->posts;
     }
 
-    public function setPosts(ArrayCollection $posts): void
+    public function setPosts(Collection $posts): void
     {
         $this->posts = $posts;
     }
 
-    public function setProjects(ArrayCollection $projects): void
+    public function setProjects(Collection $projects): void
     {
         $this->projects = $projects;
     }

@@ -33,66 +33,37 @@ class SocialNetwork
      */
     private $freelancer;
 
-    /**
-     * @return mixed
-     */
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIcon()
+    public function getIcon(): string
     {
         return $this->icon;
     }
 
-    /**
-     * @param mixed $icon
-     */
-    public function setIcon($icon): void
+    public function setIcon(string $icon): void
     {
         $this->icon = $icon;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getLink()
+    public function getLink(): string
     {
         return $this->link;
     }
 
-    /**
-     * @param mixed $link
-     */
-    public function setLink($link): void
+    public function setLink(string $link): void
     {
         $this->link = $link;
     }
 
-    /**
-     * @return mixed
-     */
     public function getFreelancer(): ?Freelancer
     {
         return $this->freelancer;
     }
 
-    /**
-     * @param mixed $freelancer
-     */
-    public function setFreelancer($freelancer): void
+    public function setFreelancer(Freelancer $freelancer): void
     {
         $this->freelancer = $freelancer;
     }

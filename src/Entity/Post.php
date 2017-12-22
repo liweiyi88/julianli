@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Doctrine\ORM\Mapping as ORM;
@@ -75,7 +76,7 @@ class Post
         $this->tags = new ArrayCollection();
     }
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -163,12 +164,12 @@ class Post
         $this->createdAt = $createdAt;
     }
 
-    public function getTags()
+    public function getTags(): Collection
     {
         return $this->tags;
     }
 
-    public function setTags(array $tags): void
+    public function setTags(?Collection $tags): void
     {
         $this->tags = $tags;
     }

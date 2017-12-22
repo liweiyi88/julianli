@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -32,50 +33,27 @@ class Tag
         $this->posts = new ArrayCollection();
     }
 
-    /**
-     * @return mixed
-     */
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getName()
+    public function getName(): ?string
     {
         return $this->name;
     }
 
-    /**
-     * @param mixed $name
-     */
     public function setName($name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getPosts()
+    public function getPosts(): Collection
     {
         return $this->posts;
     }
 
-    /**
-     * @param mixed $posts
-     */
-    public function setPosts($posts): void
+    public function setPosts(Collection $posts): void
     {
         $this->posts = $posts;
     }

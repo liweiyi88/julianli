@@ -32,66 +32,37 @@ class Skill
      */
     private $freelancer;
 
-    /**
-     * @return mixed
-     */
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getName()
+    public function getName(): ?string
     {
         return $this->name;
     }
 
-    /**
-     * @param mixed $name
-     */
     public function setName($name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getScore()
+    public function getScore(): ?int
     {
         return $this->score;
     }
 
-    /**
-     * @param mixed $score
-     */
-    public function setScore($score): void
+    public function setScore(?int $score): void
     {
         $this->score = $score;
     }
 
-    /**
-     * @return mixed
-     */
     public function getFreelancer(): ?Freelancer
     {
         return $this->freelancer;
     }
 
-    /**
-     * @param mixed $freelancer
-     */
-    public function setFreelancer($freelancer): void
+    public function setFreelancer(Freelancer $freelancer): void
     {
         $this->freelancer = $freelancer;
     }

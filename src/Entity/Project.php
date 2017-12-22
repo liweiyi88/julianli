@@ -63,7 +63,7 @@ class Project
      */
     private $freelancer;
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -83,12 +83,12 @@ class Project
         $this->title = $title;
     }
 
-    public function getTag(): ?Tag
+    public function getTag(): ?string
     {
         return $this->tag;
     }
 
-    public function setTag(Tag $tag): void
+    public function setTag(?string $tag): void
     {
         $this->tag = $tag;
     }
