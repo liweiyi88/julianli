@@ -63,162 +63,102 @@ class Project
      */
     private $freelancer;
 
-    /**
-     * @return mixed
-     */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id): void
+    public function setId(int $id): void
     {
         $this->id = $id;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getTitle()
+    public function getTitle(): ?string
     {
         return $this->title;
     }
 
-    /**
-     * @param mixed $title
-     */
-    public function setTitle($title): void
+    public function setTitle(?string $title): void
     {
         $this->title = $title;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getTag()
+    public function getTag(): ?Tag
     {
         return $this->tag;
     }
 
-    /**
-     * @param mixed $tag
-     */
-    public function setTag($tag): void
+    public function setTag(Tag $tag): void
     {
         $this->tag = $tag;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getShortDescription()
+    public function getShortDescription(): ?string
     {
         return $this->shortDescription;
     }
 
-    /**
-     * @param mixed $shortDescription
-     */
-    public function setShortDescription($shortDescription): void
+    public function setShortDescription(?string $shortDescription): void
     {
         $this->shortDescription = $shortDescription;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getDescription()
+    public function getDescription(): ?string
     {
         return $this->description;
     }
 
-    /**
-     * @param mixed $description
-     */
-    public function setDescription($description): void
+    public function setDescription(?string $description): void
     {
         $this->description = $description;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getCoverImageStyleSize()
+    public function getCoverImageStyleSize(): ?int
     {
         return $this->coverImageStyleSize;
     }
 
-    /**
-     * @param mixed $coverImageStyleSize
-     */
-    public function setCoverImageStyleSize($coverImageStyleSize): void
+    public function setCoverImageStyleSize(?int $coverImageStyleSize): void
     {
         $this->coverImageStyleSize = $coverImageStyleSize;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getCoverImageUrl()
+    public function getCoverImageUrl(): ?string
     {
         return $this->coverImageUrl;
     }
 
-    /**
-     * @param mixed $coverImageUrl
-     */
-    public function setCoverImageUrl($coverImageUrl): void
+    public function setCoverImageUrl(?string $coverImageUrl): void
     {
         $this->coverImageUrl = $coverImageUrl;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getInnerImageUrl()
+    public function getInnerImageUrl(): ?string
     {
         return $this->innerImageUrl;
     }
 
-    /**
-     * @param mixed $innerImageUrl
-     */
-    public function setInnerImageUrl($innerImageUrl): void
+    public function setInnerImageUrl(?string $innerImageUrl): void
     {
         $this->innerImageUrl = $innerImageUrl;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getLink()
+    public function getLink(): ?string
     {
         return $this->link;
     }
 
-    /**
-     * @param mixed $link
-     */
-    public function setLink($link): void
+    public function setLink(?string $link): void
     {
         $this->link = $link;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getFreelancer(): ?Freelancer
+    public function getFreelancer(): Freelancer
     {
         return $this->freelancer;
     }
 
-    /**
-     * @param mixed $freelancer
-     */
-    public function setFreelancer($freelancer): void
+    public function setFreelancer(Freelancer $freelancer): void
     {
         $this->freelancer = $freelancer;
     }
