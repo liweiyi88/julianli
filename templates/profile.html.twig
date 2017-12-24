@@ -153,7 +153,7 @@
                                 <div class="grid-item size{{ project.coverImageStyleSize }}">
                                     <div class="grid-box">
                                         <figure class="portfolio-figure">
-                                            <img src="{{ asset(project.coverImageUrl) }}" alt=""/>
+                                            <img src="{{ vich_uploader_asset(project, 'coverImageFile') }}" alt=""/>
                                             <figcaption class="portfolio-caption">
                                                 <div class="portfolio-caption-inner">
                                                     <h3 class="portfolio-title">{{ project.title }}</h3>
@@ -172,7 +172,7 @@
                                         <!-- Start: Portfolio Inline Boxes -->
                                         <div id="portfolio{{ project.id }}-inline1" class="fancybox-inline-box">
                                             <div class="inline-embed" data-embed-type="image"
-                                                 data-embed-url="{{ asset(project.innerImageUrl) }}"></div>
+                                                 data-embed-url="{{ vich_uploader_asset(project, 'innerImageFile') }}"></div>
                                             <div class="inline-cont">
                                                 <h2 class="inline-title">{{ project.shortDescription }}</h2>
 
@@ -305,17 +305,7 @@
         </div>
         <!-- .content -->
 
-        <footer class="footer">
-            <div class="footer-social">
-                <ul class="social">
-                    {% for socialNetwork in freelancer.socialNetworks %}
-                        <li><a class="ripple-centered" href="{{ socialNetwork.link }}" target="_blank"><i class="rsicon {{ socialNetwork.icon }}"></i></a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </footer>
-        <!-- .footer -->
-
+       {% block footer %} {{ parent() }} {% endblock %}
     </div>
     <!-- .wrapper -->
 

@@ -2,10 +2,13 @@
 
 namespace App\Entity;
 
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProjectRepository")
+ * @Vich\Uploadable
  */
 class Project
 {
@@ -46,11 +49,23 @@ class Project
      */
     private $coverImageUrl;
 
+    /**
+     * @Vich\UploadableField(mapping="projects", fileNameProperty="coverImageUrl")
+     * @var File
+     */
+    private $coverImageFile;
+
 
     /**
      * @ORM\Column(name="inner_image_url", type="string", length=255, nullable=true)
      */
     private $innerImageUrl;
+
+    /**
+     * @Vich\UploadableField(mapping="projects", fileNameProperty="innerImageUrl")
+     * @var File
+     */
+    private $innerImageFile;
 
     /**
      * @ORM\Column(name="link", type="string", length=255, nullable=true)
@@ -62,6 +77,12 @@ class Project
      * @ORM\JoinColumn(nullable=true)
      */
     private $freelancer;
+
+    /**
+     * @ORM\Column(name="update_at", type="datetime", nullable=true)
+     * @var \DateTime
+     */
+    private $updatedAt;
 
     public function getId(): ?int
     {
@@ -128,6 +149,24 @@ class Project
         return $this->coverImageUrl;
     }
 
+    public function getCoverImageFile(): ?File
+    {
+        return $this->coverImageFile;
+    }
+
+    public function setCoverImageFile(File $image = null)
+    {
+        $this->coverImageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
     public function setCoverImageUrl(?string $coverImageUrl): void
     {
         $this->coverImageUrl = $coverImageUrl;
@@ -143,6 +182,30 @@ class Project
         $this->innerImageUrl = $innerImageUrl;
     }
 
+    /**
+     * @return File
+     */
+    public function getInnerImageFile(): ?File
+    {
+        return $this->innerImageFile;
+    }
+
+    /**
+     * @param File $innerImageFile
+     */
+    public function setInnerImageFile(File $innerImageFile = null): void
+    {
+        $this->innerImageFile = $innerImageFile;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($innerImageFile) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
     public function getLink(): ?string
     {
         return $this->link;
@@ -151,6 +214,22 @@ class Project
     public function setLink(?string $link): void
     {
         $this->link = $link;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdatedAt(): \DateTime
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param \DateTime $updatedAt
+     */
+    public function setUpdatedAt(\DateTime $updatedAt): void
+    {
+        $this->updatedAt = $updatedAt;
     }
 
     public function getFreelancer(): Freelancer

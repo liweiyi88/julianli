@@ -169,14 +169,11 @@ class Post
         return $this->tags;
     }
 
-    public function setTags(?Collection $tags): void
+    public function setTags(?array $tags): void
     {
         $this->tags = $tags;
     }
 
-    /**
-     * @return mixed
-     */
     public function getFreelancer(): Freelancer
     {
         return $this->freelancer;

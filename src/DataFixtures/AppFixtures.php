@@ -111,8 +111,8 @@ class AppFixtures extends Fixture
         $p1->setShortDescription('Street photography is photography that features the chance encounters and random accidents within public places.');
         $p1->setDescription('<p>Street photography does not necessitate the presence of a street or even the urban environment. Though people usually feature directly, street photography might be absent of people and can be an object or environment where the image projects a decidedly human character in facsimile or aesthetic.</p>');
         $p1->setCoverImageStyleSize(22);
-        $p1->setCoverImageUrl('img/uploads/portfolio/portfolio-thumb-05-610x600.jpg');
-        $p1->setInnerImageUrl('img/uploads/portfolio/portfolio-thumb-05-large.jpg');
+        $p1->setCoverImageUrl('portfolio-thumb-05-610x600.jpg');
+        $p1->setInnerImageUrl('portfolio-thumb-05-large.jpg');
 
         $p2 = new Project();
         $p2->setFreelancer($freelancer);
@@ -159,7 +159,7 @@ class AppFixtures extends Fixture
                                                     the Mughal administration in India.</p>'
         );
         $p2->setCoverImageStyleSize(11);
-        $p2->setCoverImageUrl('img/uploads/portfolio/portfolio-thumb-11-289x281.jpg');
+        $p2->setCoverImageUrl('portfolio-thumb-11-289x281.jpg');
 
 
         $p3 = new Project();
@@ -169,15 +169,15 @@ class AppFixtures extends Fixture
         $p3->setTag('Nature, Photography');
         $p3->setShortDescription('Street photography is photography that features the chance encounters and random accidents within public places.');
         $p3->setCoverImageStyleSize(11);
-        $p3->setCoverImageUrl('img/uploads/portfolio/portfolio-thumb-08-289x281.jpg');
-        $p3->setInnerImageUrl('img/uploads/portfolio/portfolio-thumb-08-large.jpg');
+        $p3->setCoverImageUrl('portfolio-thumb-08-289x281.jpg');
+        $p3->setInnerImageUrl('portfolio-thumb-08-large.jpg');
 
         $tag1 = new Tag();
         $tag1->setName('Photo');
         $tag2 = new Tag();
         $tag2->setName('Nature');
 
-        $tags = [ $tag1, $tag2];
+        $tags = [$tag1, $tag2];
         $post1 = new Post();
         $post1->setFreelancer($freelancer);
         $post1->setCreatedAt(new \DateTime('now'));
