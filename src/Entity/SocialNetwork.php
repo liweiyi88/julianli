@@ -38,7 +38,7 @@ class SocialNetwork
         return $this->id;
     }
 
-    public function getIcon(): string
+    public function getIcon(): ?string
     {
         return $this->icon;
     }
@@ -48,7 +48,7 @@ class SocialNetwork
         $this->icon = $icon;
     }
 
-    public function getLink(): string
+    public function getLink(): ?string
     {
         return $this->link;
     }
