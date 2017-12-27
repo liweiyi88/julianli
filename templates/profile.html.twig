@@ -206,7 +206,7 @@
                                                 <div class="date">{{ experience.dateRange }}</div>
                                                 <h3>{{ experience.company }}</h3>
                                                 <h4>{{ experience.jobTitle }}r</h4>
-                                                <p>{{ experience.description }}</p>
+                                                <p>{{ experience.description | raw}}</p>
                                             </div>
                                         </div>
                                 {% endfor %}
