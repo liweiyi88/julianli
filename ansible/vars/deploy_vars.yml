@@ -1,1 +1,4 @@
 database_url: "{{ vault_database_url }}"
+mailer_url: "{{ vault_mailer_url }}"
+mailer_host_email: "{{ vault_mailer_host_email }}"
+mailer_admin_email: "{{ vault_mailer_admin_email }}"
