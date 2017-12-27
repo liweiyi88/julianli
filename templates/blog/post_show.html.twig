@@ -15,7 +15,7 @@
                             <article class="post-content section-box">
                                 {% if post.coverImageUrl is not empty %}
                                     <div class="post-media">
-                                        <img src="{{ asset(post.coverImageUrl) }}" alt="{{ post.title }}"/>
+                                        <img src="{{ vich_uploader_asset(post, 'coverImageFile') }}" alt="{{ post.title }}"/>
                                     </div><!-- .post-media -->
                                 {% endif %}
                                 <div class="post-inner">
@@ -78,7 +78,7 @@
                             <div class="widget-area">
                                 <aside class="widget widget-profile">
                                     <div class="profile-photo">
-                                        <img src="{{ asset('img/uploads/rs-photo-v2.jpg') }}" alt="{{ post.freelancer.firstName }} {{ post.freelancer.lastName }}"/>
+                                        <img src="{{ asset('img/uploads/julian-2.jpg') }}" alt="{{ post.freelancer.firstName }} {{ post.freelancer.lastName }}"/>
                                     </div>
                                     <div class="profile-info">
                                         <h2 class="profile-title">{{ post.freelancer.firstName }} {{ post.freelancer.lastName }}</h2>
