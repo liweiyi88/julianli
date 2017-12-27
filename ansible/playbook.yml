@@ -2,7 +2,9 @@
 - hosts: digitalocean
 
   vars_files:
+      - ./vars/deploy_vault.yml
       - ./vars/vars.yml
+      - ./vars/deploy_vars.yml
 
   roles:
       - nginx
