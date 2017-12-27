@@ -162,7 +162,7 @@
         "version": "v4.0.0"
     },
     "symfony/dotenv": {
-        "version": "v4.0.0"
+        "version": "v4.0.2"
     },
     "symfony/event-dispatcher": {
         "version": "v4.0.0"
@@ -246,7 +246,7 @@
         "version": "v1.6.0"
     },
     "symfony/profiler-pack": {
-        "version": "v1.0.2"
+        "version": "v1.0.3"
     },
     "symfony/property-access": {
         "version": "v4.0.0"
@@ -282,7 +282,7 @@
         "version": "v1.0.0"
     },
     "symfony/stopwatch": {
-        "version": "v4.0.0"
+        "version": "v4.0.2"
     },
     "symfony/swiftmailer-bundle": {
         "version": "2.5",
@@ -321,7 +321,7 @@
         "version": "v4.0.0"
     },
     "symfony/var-dumper": {
-        "version": "v4.0.0"
+        "version": "v4.0.2"
     },
     "symfony/web-profiler-bundle": {
         "version": "3.3",
