@@ -18,3 +18,4 @@ supervisord.pid
 .idea/
 
 ansible/playbook.retry
+ansible/deploy.retry
