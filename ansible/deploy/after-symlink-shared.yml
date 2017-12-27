@@ -6,6 +6,12 @@
     command: install
     working_dir: "{{ ansistrano_release_path.stdout }}"
 
+- name: Clear the cache
+  command: "{{ release_console_path }} cache:clear --no-warmup --env=prod"
+
+- name: Warm up the cache
+  command: "{{ release_console_path }} cache:warmup --env=prod"
+
 - name: Create DB if not exists
   command: "{{ release_console_path }} doctrine:database:create --if-not-exists --env=prod"
   register: create_db_output
