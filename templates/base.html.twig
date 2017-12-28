@@ -40,6 +40,16 @@
     </head>
     {% block body %}
             {% block javascripts %}
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52548506-5"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'UA-52548506-5');
+                </script>
+
                 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
                 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiPWLoNb8OXdHULstwFz7Z60nLZhwPLmQ"></script>
                 <script type="text/javascript" src="{{ asset('fonts/map-icons/js/map-icons.min.js') }}"></script>
