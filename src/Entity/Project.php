@@ -232,7 +232,7 @@ class Project
         $this->updatedAt = $updatedAt;
     }
 
-    public function getFreelancer(): Freelancer
+    public function getFreelancer(): ?Freelancer
     {
         return $this->freelancer;
     }
