@@ -1,6 +1,6 @@
 parameters:
-    app.path.posts: img/uploads/blog/
-    app.path.projects: img/uploads/project/
+    app.path.posts: img/uploads/blog
+    app.path.projects: img/uploads/project
 
 vich_uploader:
     db_driver: orm
