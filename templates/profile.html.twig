@@ -171,8 +171,11 @@
 
                                         <!-- Start: Portfolio Inline Boxes -->
                                         <div id="portfolio{{ project.id }}-inline1" class="fancybox-inline-box">
-                                            <div class="inline-embed" data-embed-type="image"
-                                                 data-embed-url="{{ vich_uploader_asset(project, 'innerImageFile') }}"></div>
+                                            {% if project.innerImageFile is not null %}
+                                                <div class="inline-embed" data-embed-type="image"
+                                                     data-embed-url="{{ vich_uploader_asset(project, 'innerImageFile') }}">
+                                                </div>
+                                            {% endif %}
                                             <div class="inline-cont">
                                                 <h2 class="inline-title">{{ project.shortDescription }}</h2>
 

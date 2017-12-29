@@ -15,11 +15,11 @@ easy_admin:
         Project:
             class: App\Entity\Project
             list:
-                fields: ['id', 'title', 'shortDescription', 'coverImageStyleSize', { property: 'coverImageUrl', type: 'image', base_path: '%app.path.projects%' }, { property: 'innerImageUrl', type: 'image', base_path: '%app.path.projects%'} 'tag', 'freelancer']
+                fields: ['id', 'title', 'shortDescription', 'coverImageStyleSize', { property: 'coverImageUrl', type: 'image', base_path: '%app.path.projects%' }, 'tag', 'freelancer']
             show:
                 fields: [{ property: 'coverImageUrl', type: 'image', base_path: '%app.path.projects%' }, { property: 'innerImageUrl', type: 'image', base_path: '%app.path.projects%' }]
             form:
-                fields: ['title', 'shortDescription', 'description', 'coverImageStyleSize', { property: 'coverImageFile', type: 'vich_image' }, { property: 'innerImageFile', type: 'vich_image' }, 'tag', 'freelancer']
+                fields: ['title', 'shortDescription', 'description', 'coverImageStyleSize', 'link', { property: 'coverImageFile', type: 'vich_image' }, { property: 'innerImageFile', type: 'vich_image' }, 'tag', 'freelancer']
         Post:
             class: App\Entity\Post
             list:
