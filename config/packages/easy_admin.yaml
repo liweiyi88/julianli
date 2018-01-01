@@ -23,11 +23,11 @@ easy_admin:
         Post:
             class: App\Entity\Post
             list:
-                fields: ['id', 'title', 'slug', { property: 'coverImageUrl', type: 'image', base_path: '%app.path.posts%' }, 'tags']
+                fields: ['id', 'title', 'slug', { property: 'coverImageUrl', type: 'image', base_path: '%app.path.posts%' }, 'tags', 'createdAt']
             show:
                 fields:
                     - { property: 'coverImageUrl', type: 'image', base_path: '%app.path.posts%' }
             form:
-                fields: ['title', 'slug', 'content', { property: 'coverImageFile', type: 'vich_image' }, 'tags']
+                fields: ['title', 'slug', 'content', { property: 'coverImageFile', type: 'vich_image' }, 'tags', 'freelancer']
         Tag:
             class: App\Entity\Tag

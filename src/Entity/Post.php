@@ -74,6 +74,7 @@ class Post
     public function __construct()
     {
         $this->tags = new ArrayCollection();
+        $this->createdAt = new \DateTime();
     }
 
     public function getId(): ?int
@@ -174,7 +175,7 @@ class Post
         $this->tags = $tags;
     }
 
-    public function getFreelancer(): Freelancer
+    public function getFreelancer(): ?Freelancer
     {
         return $this->freelancer;
     }
