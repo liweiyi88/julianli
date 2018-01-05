@@ -51,7 +51,6 @@ class Project
 
     /**
      * @Vich\UploadableField(mapping="projects", fileNameProperty="coverImageUrl")
-     * @var File
      */
     private $coverImageFile;
 
@@ -63,7 +62,6 @@ class Project
 
     /**
      * @Vich\UploadableField(mapping="projects", fileNameProperty="innerImageUrl")
-     * @var File
      */
     private $innerImageFile;
 

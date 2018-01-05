@@ -39,7 +39,6 @@ class Post
 
     /**
      * @Vich\UploadableField(mapping="blogs", fileNameProperty="coverImageUrl")
-     * @var File
      */
     private $coverImageFile;
 
@@ -55,7 +54,6 @@ class Post
 
     /**
      * @ORM\Column(name="update_at", type="datetime", nullable=true)
-     * @var \DateTime
      */
     private $updatedAt;
 

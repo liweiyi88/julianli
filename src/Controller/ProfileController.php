@@ -6,7 +6,6 @@ use App\Contact\Contact;
 use App\Api\ApiProblem;
 use App\Api\ApiProblemException;
 use App\Email\EmailManager;
-use App\Entity\Freelancer;
 use App\Form\ContactType;
 use App\Repository\FreelancerRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;

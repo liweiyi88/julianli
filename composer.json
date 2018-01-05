@@ -26,6 +26,7 @@
         "white-october/pagerfanta-bundle": "^1.1"
     },
     "require-dev": {
+        "phpstan/phpstan": "^0.9.1",
         "symfony/dotenv": "^4.0",
         "symfony/profiler-pack": "^1.0"
     },
