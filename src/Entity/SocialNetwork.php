@@ -17,6 +17,11 @@ class SocialNetwork
     private $id;
 
     /**
+     * @ORM\Column(name="name", type="string", length=255, nullable=true)
+     */
+    private $name;
+
+    /**
      * @ORM\Column(name="icon", type="string", length=255)
      */
     private $icon;
@@ -25,7 +30,6 @@ class SocialNetwork
      * @ORM\Column(name="link", type="string", length=255)
      */
     private $link;
-
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Freelancer", inversedBy="socialNetworks")
@@ -36,6 +40,16 @@ class SocialNetwork
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName($name): void
+    {
+        $this->name = $name;
     }
 
     public function getIcon(): ?string

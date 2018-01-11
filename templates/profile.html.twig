@@ -95,7 +95,7 @@
                             <div class="profile-social">
                                 <ul class="social">
                                     {% for socialNetwork in freelancer.socialNetworks %}
-                                        <li><a class="ripple-centered" href="{{ socialNetwork.link }}" target="_blank"><i class="rsicon {{ socialNetwork.icon }}"></i></a></li>
+                                        <li><a class="ripple-centered" href="{{ socialNetwork.link }}" title="{{ socialNetwork.name }}" target="_blank"><i class="rsicon {{ socialNetwork.icon }}"></i></a></li>
                                     {% endfor %}
                                 </ul>
                             </div>
@@ -160,9 +160,9 @@
                                                     <h4 class="portfolio-cat">{{ project.tag }}</h4>
 
                                                     <div class="btn-group">
-                                                        <a class="btn-link" href="{{ project.link }}" target="_blank"><i
+                                                        <a class="btn-link" title="projects link" href="{{ project.link }}" target="_blank"><i
                                                                     class="rsicon rsicon-link"></i></a>
-                                                        <a class="portfolioFancybox btn-zoom" data-fancybox-group="portfolioFancybox1"
+                                                        <a class="portfolioFancybox btn-zoom" data-fancybox-group="portfolioFancybox1" title="project description modal"
                                                            href="#portfolio{{ project.id }}-inline1"><i class="rsicon rsicon-eye"></i></a>
                                                     </div>
                                                 </div>

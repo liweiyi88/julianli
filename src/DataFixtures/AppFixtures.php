@@ -90,16 +90,19 @@ class AppFixtures extends Fixture
 
         $sn1 = new SocialNetwork();
         $sn1->setFreelancer($freelancer);
+        $sn1->setName('Github');
         $sn1->setIcon('rsicon-github');
         $sn1->setLink('https://github.com/liweiyi88');
 
         $sn2 = new SocialNetwork();
         $sn2->setFreelancer($freelancer);
+        $sn2->setName('LinkedIn');
         $sn2->setIcon('rsicon-linkedin');
         $sn2->setLink('https://www.linkedin.com/in/jweiyi/');
 
         $sn3 = new SocialNetwork();
         $sn3->setFreelancer($freelancer);
+        $sn3->setName('Twitter');
         $sn3->setIcon('rsicon-twitter');
         $sn3->setLink('https://twitter.com/liweiyi88?lang=en');
 
