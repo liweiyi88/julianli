@@ -15,13 +15,11 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            pattern: ^/freelancer
             anonymous: ~
-            http_basic: ~
             provider: our_db_provider
-#            form_login:
-#                login_path: login
-#                check_path: login
+            form_login:
+                login_path: login
+                check_path: login
 
             # activate different ways to authenticate
 
