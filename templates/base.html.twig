@@ -71,6 +71,42 @@
                 <script type="text/javascript" src="{{ asset('js/plugins/jquery.owlcarousel/owl.carousel.min.js') }}"></script>
                 <script type="text/javascript" src="{{ asset('js/options.js') }}"></script>
                 <script type="text/javascript" src="{{ asset('js/site.js') }}"></script>
+
+                <script type="application/ld+json">
+                {
+                    "@context": "http://schema.org",
+                    "@type": "Organization",
+                    "name": "JulianLi",
+                    "url": "http://julianli.co",
+                    "logo": "http://julianli.co/img/favicon/apple-icon-72x72.png",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Melbourne, Australia",
+                        "postalCode": "3000",
+                        "streetAddress": "530 Collins St"
+                    },
+                    "founder": {
+                        "@context" : "http://schema.org",
+                        "@type" : "Person",
+                        "name" : "Julian Li",
+                        "url" : "http://julianli.co",
+                        "sameAs" : [
+                            "https://twitter.com/liweiyi88",
+                            "https://www.linkedin.com/in/jweiyi/",
+                            "https://github.com/liweiyi88"
+                        ],
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Melbourne, Australia",
+                            "postalCode": "3000",
+                            "streetAddress": "530 Collins St"
+                        },
+                        "email": "weiyi.li713@gmail.com",
+                        "image": "http://julianli.co/img/uploads/julian.jpg",
+                        "jobTitle": "Software Engineer"
+                    }
+                }
+                </script>
             {% endblock %}
     {% endblock %}
 </html>
