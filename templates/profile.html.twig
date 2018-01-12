@@ -1,4 +1,14 @@
 {% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style type="text/css">
+        .contact-error {
+            color: red;
+        }
+    </style>
+{% endblock %}
+
 {% block body %}
     <body class="home header-has-img loading">
     {% block mobile_nav %}
