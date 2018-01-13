@@ -6,6 +6,7 @@
         "doctrine/doctrine-fixtures-bundle": "^3.0",
         "javiereguiluz/easyadmin-bundle": "^1.17",
         "sensio/framework-extra-bundle": "^5.1",
+        "sensiolabs/security-checker": "^4.1",
         "symfony/asset": "^4.0",
         "symfony/console": "^4.0",
         "symfony/flex": "^1.0",
@@ -49,7 +50,8 @@
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
-            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd"
+            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd",
+            "security-checker security:check": "script"
         },
         "post-install-cmd": [
             "@auto-scripts"
