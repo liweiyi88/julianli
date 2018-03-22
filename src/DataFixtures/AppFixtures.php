@@ -200,9 +200,11 @@ Insipidity the sufficient discretion imprudence resolution sir him decisively. P
 Ignorant branched humanity led now marianne too strongly entrance. Rose to shew bore no ye of paid rent form. Old design are dinner better nearer silent excuse. She which are maids boy sense her shade. Considered reasonable we affronting on expression in. So cordial anxious mr delight. Shot his has must wish from sell nay. Remark fat set why are sudden depend change entire wanted. Performed remainder attending led fat residence far. 
 </p>'
         );
+        $post1->setIsPublished(true);
         $post1->setTags($tags);
 
         $post2 = new Post();
+        $post2->setIsPublished(true);
         $post2->setFreelancer($freelancer);
         $post2->setCreatedAt(new \DateTime('2015-04-23 10:32:23'));
         $post2->setTitle('How to become a geek in 10 steps');
@@ -224,6 +226,7 @@ Lose eyes get fat shew. Winter can indeed letter oppose way change tended now. S
         $post2->setTags($tags);
 
         $post3 = new Post();
+        $post3->setIsPublished(true);
         $post3->setFreelancer($freelancer);
         $post3->setCreatedAt(new \DateTime('2012-01-23 10:32:23'));
         $post3->setTitle('What can I learn from the universe?');
@@ -239,6 +242,7 @@ Ladies others the six desire age. Bred am soon par'
         $post3->setTags($tags);
 
         $post4 = new Post();
+        $post4->setIsPublished(true);
         $post4->setFreelancer($freelancer);
         $post4->setCreatedAt(new \DateTime('2017-04-03 00:12:23'));
         $post4->setTitle('I know nothing about Z language');
@@ -254,6 +258,7 @@ Ladies others the six desire age. Bred am soon par'
         $post4->setTags($tags);
 
         $post5 = new Post();
+        $post5->setIsPublished(true);
         $post5->setFreelancer($freelancer);
         $post5->setCreatedAt(new \DateTime('2011-11-12 00:33:14'));
         $post5->setTitle('Today I learn Z language');
@@ -269,6 +274,7 @@ Ladies others the six desire age. Bred am soon par'
         $post5->setTags($tags);
 
         $post6 = new Post();
+        $post6->setIsPublished(true);
         $post6->setFreelancer($freelancer);
         $post6->setCreatedAt(new \DateTime('2015-06-20 11:23:13'));
         $post6->setTitle('Z is the future!');

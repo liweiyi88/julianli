@@ -14,7 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Post
 {
-    const NUM_ITEMS = 5;
+    public const NUM_ITEMS = 5;
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -62,6 +62,11 @@ class Post
      * @ORM\JoinTable(name="posts_tags")
      */
     private $tags;
+
+    /**
+     * @ORM\Column(name="is_published", type="boolean", nullable=true)
+     */
+    private $isPublished;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Freelancer", inversedBy="posts")
@@ -115,7 +120,7 @@ class Post
         $this->coverImageUrl = $coverImageUrl;
     }
 
-    public function setCoverImageFile(File $image = null)
+    public function setCoverImageFile(File $image = null): void
     {
         $this->coverImageFile = $image;
 
@@ -171,6 +176,16 @@ class Post
     public function setTags(?array $tags): void
     {
         $this->tags = $tags;
+    }
+
+    public function getisPublished(): bool
+    {
+        return $this->isPublished;
+    }
+
+    public function setIsPublished($isPublished): void
+    {
+        $this->isPublished = $isPublished;
     }
 
     public function getFreelancer(): ?Freelancer

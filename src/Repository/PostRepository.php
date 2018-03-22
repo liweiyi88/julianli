@@ -16,7 +16,7 @@ class PostRepository extends ServiceEntityRepository
         parent::__construct($registry, Post::class);
     }
 
-    public function findLatest($page = 1): Pagerfanta
+    public function findLatestPublished($page = 1): Pagerfanta
     {
         $query = $this->getEntityManager()
             ->createQuery(
@@ -25,6 +25,7 @@ class PostRepository extends ServiceEntityRepository
                 FROM App:POST p
                 JOIN p.freelancer f
                 LEFT JOIN p.tags t
+                WHERE p.isPublished = TRUE
                 ORDER BY p.id DESC
             '
             );

@@ -1,6 +1,33 @@
-#easy_admin:
-#    entities:
-#        # List the entity class name you want to manage
-#        - App\Entity\Product
-#        - App\Entity\Category
-#        - App\Entity\User
+easy_admin:
+    site_name: 'Julian Li'
+    entities:
+        # List the entity class name you want to manage
+        Freelancer:
+            class: App\Entity\Freelancer
+        Education:
+            class: App\Entity\Education
+        Experience:
+            class: App\Entity\Experience
+        Skill:
+            class: App\Entity\Skill
+        SocialNetwork:
+            class: App\Entity\SocialNetwork
+        Project:
+            class: App\Entity\Project
+            list:
+                fields: ['id', 'title', 'shortDescription', 'coverImageStyleSize', { property: 'coverImageUrl', type: 'image', base_path: '%app.path.projects%' }, 'tag', 'freelancer']
+            show:
+                fields: [{ property: 'coverImageUrl', type: 'image', base_path: '%app.path.projects%' }, { property: 'innerImageUrl', type: 'image', base_path: '%app.path.projects%' }]
+            form:
+                fields: ['title', 'shortDescription', 'description', 'coverImageStyleSize', 'link', { property: 'coverImageFile', type: 'vich_image' }, { property: 'innerImageFile', type: 'vich_image' }, 'tag', 'freelancer']
+        Post:
+            class: App\Entity\Post
+            list:
+                fields: ['id', 'title', 'slug', 'isPublished', { property: 'coverImageUrl', type: 'image', base_path: '%app.path.posts%' }, 'tags', 'createdAt']
+            show:
+                fields:
+                    - { property: 'coverImageUrl', type: 'image', base_path: '%app.path.posts%' }
+            form:
+                fields: ['title', 'slug', 'isPublished', 'content', { property: 'coverImageFile', type: 'vich_image' }, 'tags', 'freelancer']
+        Tag:
+            class: App\Entity\Tag

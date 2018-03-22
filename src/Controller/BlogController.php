@@ -18,7 +18,7 @@ class BlogController extends Controller
      */
     public function index(int $page, PostRepository $postRepository, FreelancerRepository $freelancerRepository)
     {
-        $posts = $postRepository->findLatest($page);
+        $posts = $postRepository->findLatestPublished($page);
         $freelancer = $freelancerRepository->findFreeLancer();
         return $this->render('blog/blog_list.html.twig', ['posts' => $posts, 'freelancer' => $freelancer]);
     }
