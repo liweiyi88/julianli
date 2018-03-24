@@ -178,7 +178,7 @@ class Post
         $this->tags = $tags;
     }
 
-    public function getisPublished(): bool
+    public function getIsPublished(): ?bool
     {
         return $this->isPublished;
     }
