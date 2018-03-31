@@ -28,25 +28,24 @@ RUN apt-get update -q && \
         git \
         graphviz \
         mysql-client \
-        php7.1 \
-        php7.1-bcmath \
-        php7.1-common \
-        php7.1-curl \
-        php7.1-dom \
-        php7.1-fpm \
-        php7.1-gd \
-        php7.1-iconv \
-        php7.1-intl \
-        php7.1-json \
-        php7.1-mbstring \
-        php7.1-mcrypt \
-        php7.1-mysql \
-        php7.1-pdo \
-        php7.1-phar \
-        php7.1-sqlite \
-        php7.1-xdebug \
-        php7.1-xml \
-        php7.1-zip \
+        php7.2 \
+        php7.2-bcmath \
+        php7.2-common \
+        php7.2-curl \
+        php7.2-dom \
+        php7.2-fpm \
+        php7.2-gd \
+        php7.2-iconv \
+        php7.2-intl \
+        php7.2-json \
+        php7.2-mbstring \
+        php7.2-mysql \
+        php7.2-pdo \
+        php7.2-phar \
+        php7.2-sqlite \
+        php7.2-xdebug \
+        php7.2-xml \
+        php7.2-zip \
         php-apcu \
         php-uuid \
         supervisor \
@@ -58,8 +57,8 @@ RUN apt-get update -q && \
 
     mkdir /run/php
 
-COPY php.ini /etc/php/7.1/cli/conf.d/50-setting.ini
-COPY pool.conf /etc/php/7.1/fpm/pool.d/www.conf
+COPY php.ini /etc/php/7.2/cli/conf.d/50-setting.ini
+COPY pool.conf /etc/php/7.2/fpm/pool.d/www.conf
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
