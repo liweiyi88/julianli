@@ -19,7 +19,7 @@ easy_admin:
             show:
                 fields: [{ property: 'coverImageUrl', type: 'image', base_path: '%app.path.projects%' }, { property: 'innerImageUrl', type: 'image', base_path: '%app.path.projects%' }]
             form:
-                fields: ['title', 'shortDescription', 'description', 'coverImageStyleSize', 'link', { property: 'coverImageFile', type: 'vich_image' }, { property: 'innerImageFile', type: 'vich_image' }, 'tag', 'freelancer']
+                fields: ['title', 'shortDescription', { property: 'description', css_class: 'awesome-ckeditor', type: 'textarea'}, 'coverImageStyleSize', 'link', { property: 'coverImageFile', type: 'vich_image' }, { property: 'innerImageFile', type: 'vich_image' }, 'tag', 'freelancer']
         Post:
             class: App\Entity\Post
             list:
@@ -28,6 +28,11 @@ easy_admin:
                 fields:
                     - { property: 'coverImageUrl', type: 'image', base_path: '%app.path.posts%' }
             form:
-                fields: ['title', 'slug', 'isPublished', 'content', { property: 'coverImageFile', type: 'vich_image' }, 'tags', 'freelancer']
+                fields: ['title', 'slug', 'isPublished', { property: 'content', css_class: 'awesome-ckeditor', type: 'textarea' }, { property: 'coverImageFile', type: 'vich_image' }, 'tags', 'freelancer']
         Tag:
             class: App\Entity\Tag
+    design:
+        assets:
+            js:
+                - 'https://cdn.ckeditor.com/ckeditor5/1.0.0-beta.1/classic/ckeditor.js'
+                - '/js/ckeditorcustom.js'
