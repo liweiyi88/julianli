@@ -16,9 +16,9 @@ class TagRepository extends ServiceEntityRepository
     /*
     public function findBySomething($value)
     {
-        return $this->createQueryBuilder('t')
-            ->where('t.something = :value')->setParameter('value', $value)
-            ->orderBy('t.id', 'ASC')
+        return $this->createQueryBuilder('s')
+            ->where('s.something = :value')->setParameter('value', $value)
+            ->orderBy('s.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
