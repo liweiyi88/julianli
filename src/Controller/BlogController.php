@@ -13,10 +13,16 @@ use Symfony\Component\HttpFoundation\Response;
 class BlogController extends Controller
 {
     /**
+     * @param int $page
+     * @param PostRepository $postRepository
+     * @param FreelancerRepository $freelancerRepository
+     *
      * @Route("/blog/list", defaults={"page": "1"}, name="blog_list")
      * @Route("/blog/list/{page}", requirements={"page": "[1-9]\d*"}, name="blog_list_paginated")
+     *
+     * @return Response
      */
-    public function index(int $page, PostRepository $postRepository, FreelancerRepository $freelancerRepository)
+    public function index(int $page, PostRepository $postRepository, FreelancerRepository $freelancerRepository): Response
     {
         $posts = $postRepository->findLatestPublished($page);
         $freelancer = $freelancerRepository->findFreeLancer();
@@ -24,8 +30,13 @@ class BlogController extends Controller
     }
 
     /**
+     * @param Post $post
+     * @param FreelancerRepository $freelancerRepository
+     *
      * @Route("/posts/{slug}", name="blog_post")
      * @Method("GET")
+     *
+     * @return Response
      */
     public function postShow(Post $post, FreelancerRepository $freelancerRepository): Response
     {

@@ -11,13 +11,18 @@ use App\Repository\FreelancerRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class ProfileController extends BaseController
 {
     /**
+     * @param FreelancerRepository $freelancerRepo
+     *
      * @Route("/", name="home")
+     *
+     * @return Response
      */
-    public function index(Request $request, FreelancerRepository $freelancerRepo)
+    public function index(FreelancerRepository $freelancerRepo): Response
     {
         $freelancer = $freelancerRepo->findFreeLancer();
 
@@ -30,9 +35,20 @@ class ProfileController extends BaseController
     }
 
     /**
+     * @param Request      $request
+     * @param  EmailManager $emailManager
+     *
      * @Route("/api/contact", name="contact")
+     *
+     * @return Response
+     *
+     * @throws \InvalidArgumentException
+     * @throws \App\Api\ApiProblemException
+     * @throws \LogicException
+     * @throws \Symfony\Component\Form\Exception\AlreadySubmittedException;
+     * @throws \Symfony\Component\Form\Exception\LogicException
      */
-    public function postContact(Request $request, EmailManager $emailManager)
+    public function postContact(Request $request, EmailManager $emailManager): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
@@ -46,11 +62,21 @@ class ProfileController extends BaseController
         $message = $emailManager->createPlianMessageFromContact($contact);
         $emailManager->sendEmail($message);
 
-        $response = $this->createApiResponse($contact, 200);
-        return $response;
+        return $this->createApiResponse($contact, 200);
     }
 
-    private function processForm(Request $request, FormInterface $form)
+    /**
+     * @param Request       $request
+     * @param FormInterface $form
+     *
+     * @return void
+     *
+     * @throws \App\Api\ApiProblemException
+     * @throws \InvalidArgumentException
+     * @throws \Symfony\Component\Form\Exception\AlreadySubmittedException;
+     * @throws \LogicException;
+     */
+    private function processForm(Request $request, FormInterface $form): void
     {
         $data = json_decode($request->getContent(), true);
         if ($data === null) {
@@ -59,11 +85,16 @@ class ProfileController extends BaseController
             throw new ApiProblemException($apiProblem);
         }
 
-        $clearMissing = $request->getMethod() != 'PATCH';
+        $clearMissing = $request->getMethod() !== 'PATCH';
         $form->submit($data, $clearMissing);
     }
 
-    private function getErrorsFromForm(FormInterface $form)
+    /**
+     * @param FormInterface $form
+     *
+     * @return array
+     */
+    private function getErrorsFromForm(FormInterface $form): array
     {
         $errors = array();
         foreach ($form->getErrors() as $error) {
@@ -71,17 +102,21 @@ class ProfileController extends BaseController
         }
 
         foreach ($form->all() as $childForm) {
-            if ($childForm instanceof FormInterface) {
-                if ($childErrors = $this->getErrorsFromForm($childForm)) {
-                    $errors[$childForm->getName()] = $childErrors;
-                }
+            if ($childForm instanceof FormInterface && $childErrors = $this->getErrorsFromForm($childForm)) {
+                $errors[$childForm->getName()] = $childErrors;
             }
         }
 
         return $errors;
     }
 
-    private function throwApiProblemValidationException(FormInterface $form)
+    /**
+     * @param FormInterface $form
+     *
+     * @throws \App\Api\ApiProblemException
+     * @throws \InvalidArgumentException
+     */
+    private function throwApiProblemValidationException(FormInterface $form): void
     {
         $errors = $this->getErrorsFromForm($form);
 

@@ -17,7 +17,12 @@ class EmailManager
         $this->hostEmail = $hostEmail;
     }
 
-    public function createPlianMessageFromContact(Contact $contact)
+    /**
+     * @param Contact $contact
+     *
+     * @return \Swift_Message
+     */
+    public function createPlianMessageFromContact(Contact $contact): \Swift_Message
     {
         $message = (new \Swift_Message($contact->getSubject()))
             ->setFrom($this->hostEmail)
@@ -27,7 +32,10 @@ class EmailManager
         return $message;
     }
 
-    public function sendEmail(\Swift_Message $message)
+    /**
+     * @param \Swift_Message $message
+     */
+    public function sendEmail(\Swift_Message $message): void
     {
         $this->mailer->send($message);
     }

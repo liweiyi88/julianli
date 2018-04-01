@@ -15,7 +15,15 @@ class BaseController extends AbstractController
         $this->serializer = $serializer;
     }
 
-    protected function createApiResponse($data, $statusCode = 200)
+    /**
+     * @param $data
+     * @param int  $statusCode
+     *
+     * @return Response
+     *
+     * @throws \InvalidArgumentException
+     */
+    protected function createApiResponse($data, int $statusCode = 200): Response
     {
         $json = $this->serialize($data);
 
@@ -28,7 +36,13 @@ class BaseController extends AbstractController
         );
     }
 
-    protected function serialize($data, $format = 'json')
+    /**
+     * @param $data
+     * @param string $format
+     *
+     * @return string
+     */
+    protected function serialize($data, $format = 'json'): string
     {
         return $this->serializer->serialize($data, $format);
     }

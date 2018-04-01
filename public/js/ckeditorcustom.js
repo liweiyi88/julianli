@@ -6,7 +6,7 @@ $(document).ready(function () {
             ClassicEditor
                 .create( el , {
                     ckfinder: {
-                        uploadUrl: '/api/uploads'
+                        uploadUrl: '/file/upload'
                     }
                 })
                 .then( function (editor) {
