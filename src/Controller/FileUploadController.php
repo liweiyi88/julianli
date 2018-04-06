@@ -40,16 +40,20 @@ class FileUploadController extends AbstractController
         $this->denyAccessUnlessGranted('ROLE_USER', null, 'unable to upload the file');
 
         $fileName = null;
-        /** @var UploadedFile $file */
+        /**
+ * @var UploadedFile $file 
+*/
         foreach ($request->files as $file) {
             $fileName = $file->getClientOriginalName().'.'.$file->guessClientExtension();
             $file->move($this->projectDir.'/public/img/uploads/blog', $fileName);
         }
 
         //must return json and have { "uploaded":"true" } in the response to make ckeditor5 work (without showing pop up).
-        return new JsonResponse([
+        return new JsonResponse(
+            [
             'uploaded' => 'true',
             'url' => '/img/uploads/blog/'.$fileName
-        ]);
+            ]
+        );
     }
 }

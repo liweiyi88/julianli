@@ -13,8 +13,8 @@ use Symfony\Component\HttpFoundation\Response;
 class BlogController extends Controller
 {
     /**
-     * @param int $page
-     * @param PostRepository $postRepository
+     * @param int                  $page
+     * @param PostRepository       $postRepository
      * @param FreelancerRepository $freelancerRepository
      *
      * @Route("/blog/list", defaults={"page": "1"}, name="blog_list")
@@ -30,7 +30,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @param Post $post
+     * @param Post                 $post
      * @param FreelancerRepository $freelancerRepository
      *
      * @Route("/posts/{slug}", name="blog_post")
