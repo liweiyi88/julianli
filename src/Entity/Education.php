@@ -17,19 +17,14 @@ class Education
     private $id;
 
     /**
-     * @ORM\Column(name="degree", type="string", length=255)
-     */
-    private $degree;
-
-    /**
      * @ORM\Column(name="date_range", type="string", length=255)
      */
     private $dateRange;
 
     /**
-     * @ORM\Column(name="university", type="string", length=255)
+     * @ORM\Column(name="degree", type="string", length=255)
      */
-    private $university;
+    private $degree;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Freelancer", inversedBy="education")
@@ -37,51 +32,86 @@ class Education
      */
     private $freelancer;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+    /**
+     * @ORM\Column(name="university", type="string", length=255)
+     */
+    private $university;
 
-    public function getDegree(): ?string
-    {
-        return $this->degree;
-    }
-
-    public function setDegree(?string $degree): void
-    {
-        $this->degree = $degree;
-    }
-
+    /**
+     * @return null|string
+     */
     public function getDateRange(): ?string
     {
         return $this->dateRange;
     }
 
-    public function setDateRange(?string $dateRange): void
+    /**
+     * @return null|string
+     */
+    public function getDegree(): ?string
     {
-        $this->dateRange = $dateRange;
+        return $this->degree;
     }
 
-    public function getUniversity(): ?string
-    {
-        return $this->university;
-    }
-
-    public function setUniversity(?string $university): void
-    {
-        $this->university = $university;
-    }
-
+    /**
+     * @return Freelancer|null
+     */
     public function getFreelancer(): ?Freelancer
     {
         return $this->freelancer;
     }
 
+    /**
+     * @return int|null
+     */
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getUniversity(): ?string
+    {
+        return $this->university;
+    }
+
+    /**
+     * @param null|string $dateRange
+     */
+    public function setDateRange(?string $dateRange): void
+    {
+        $this->dateRange = $dateRange;
+    }
+
+    /**
+     * @param null|string $degree
+     */
+    public function setDegree(?string $degree): void
+    {
+        $this->degree = $degree;
+    }
+
+    /**
+     * @param Freelancer $freelancer
+     */
     public function setFreelancer(Freelancer $freelancer): void
     {
         $this->freelancer = $freelancer;
     }
 
+    /**
+     * @param null|string $university
+     */
+    public function setUniversity(?string $university): void
+    {
+        $this->university = $university;
+    }
+
+    /**
+     * @return string
+     */
     public function __toString()
     {
         return $this->degree.' at '.$this->university;

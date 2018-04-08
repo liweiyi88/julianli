@@ -96,7 +96,7 @@ class ProfileController extends BaseController
      */
     private function getErrorsFromForm(FormInterface $form): array
     {
-        $errors = array();
+        $errors = [];
         foreach ($form->getErrors() as $error) {
             $errors[] = $error->getMessage();
         }
