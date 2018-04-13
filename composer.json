@@ -6,7 +6,6 @@
         "doctrine/doctrine-fixtures-bundle": "^3.0",
         "easycorp/easyadmin-bundle": "^1.17",
         "league/flysystem-aws-s3-v3": "^1.0",
-        "oneup/flysystem-bundle": "^3.0",
         "sensio/framework-extra-bundle": "^5.1",
         "sensiolabs/security-checker": "^4.1",
         "symfony/asset": "^4.0",
