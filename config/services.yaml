@@ -29,7 +29,7 @@ services:
 
     App\Controller\FileUploadController:
         arguments:
-            $projectDir: '%kernel.project_dir%'
+            App\Service\FileStorage\FileStorageInterface: '@App\Service\FileStorage\S3'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
@@ -60,4 +60,9 @@ services:
     AWS\S3\S3Client:
         public: false
         factory: 'App\Service\FileStorage\Factory\S3Factory:create'
+
+    App\Service\FileStorage\S3:
+        public: false
+        arguments:
+            Aws\S3\S3Client: '@AWS\S3\S3Client'
 

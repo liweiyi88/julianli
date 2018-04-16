@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Service\FileStorage\Factory\ConfigurationFactory;
+use App\Service\FileStorage\FileStorageInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,11 +17,11 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class FileUploadController extends AbstractController
 {
-    private $projectDir;
+    private $fileStorage;
 
-    public function __construct($projectDir)
+    public function __construct(FileStorageInterface $fileStorage)
     {
-        $this->projectDir = $projectDir;
+        $this->fileStorage = $fileStorage;
     }
 
     /**
@@ -43,7 +45,9 @@ class FileUploadController extends AbstractController
         /** @var UploadedFile $file **/
         foreach ($request->files as $file) {
             $fileName = $file->getClientOriginalName().'.'.$file->guessClientExtension();
-            $file->move($this->projectDir.'/public/img/uploads/blog', $fileName);
+            $response = $this->fileStorage->put(['Key' => $fileName, 'SourceFile' => $file->getRealPath()]);
+
+            //TODO: conver to response like below.
         }
 
         //must return json and have { "uploaded":"true" } in the response to make ckeditor5 work (without showing pop up).
