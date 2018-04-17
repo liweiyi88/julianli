@@ -4,6 +4,9 @@ parameters:
     locale: 'en'
     mailer_host_email: '%env(MAILER_HOST_EMAIL)%'
     mailer_admin_email: '%env(MAILER_ADMIN_EMAIL)%'
+    aws_key: '%env(AWS_S3_KEY)%'
+    aws_secret: '%env(AWS_S3_SECRET)%'
+    aws_s3_region: '%env(AWS_S3_REGION)%'
 
 services:
     # default configuration for services in *this* file
@@ -26,7 +29,7 @@ services:
 
     App\Controller\FileUploadController:
         arguments:
-            $projectDir: '%kernel.project_dir%'
+            App\Service\CloudStorage\Interfaces\CloudStorageInterface: '@App\Service\CloudStorage\S3'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
@@ -42,8 +45,24 @@ services:
         tags:
             - { name: kernel.event_subscriber, event: kernel.exception}
 
-
     App\CustomPagerfanta\CustomView:
         public: false
         tags: [{ name: pagerfanta.view, alias: custom_view }]
+
+    App\Service\CloudStorage\Factory\S3Factory:
+        public: false
+        arguments:
+            $key: '%aws_key%'
+            $region: '%aws_s3_region%'
+            $secret: '%aws_secret%'
+            $version: ~
+
+    AWS\S3\S3Client:
+        public: false
+        factory: 'App\Service\CloudStorage\Factory\S3Factory:create'
+
+    App\Service\CloudStorage\S3:
+        public: false
+        arguments:
+            Aws\S3\S3Client: '@AWS\S3\S3Client'
 
