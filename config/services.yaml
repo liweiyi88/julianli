@@ -29,7 +29,7 @@ services:
 
     App\Controller\FileUploadController:
         arguments:
-            App\Service\CloudStorage\CloudStorageInterface: '@App\Service\CloudStorage\S3'
+            App\Service\CloudStorage\Interfaces\CloudStorageInterface: '@App\Service\CloudStorage\S3'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
