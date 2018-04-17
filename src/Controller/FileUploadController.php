@@ -41,7 +41,7 @@ class FileUploadController extends AbstractController
         $this->denyAccessUnlessGranted('ROLE_USER', null, 'unable to upload the file');
         $fileName = null;
 
-        if ($request->files->coun-t() !== 1) {
+        if ($request->files->count() !== 1) {
             throw new \OutOfBoundsException('only process a single file at once');
         }
 
