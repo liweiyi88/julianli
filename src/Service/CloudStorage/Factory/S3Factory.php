@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Service\FileStorage\Factory;
+namespace App\Service\CloudStorage\Factory;
 
 use Aws\S3\S3Client;
 

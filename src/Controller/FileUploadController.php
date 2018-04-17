@@ -3,8 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Service\FileStorage\Factory\ConfigurationFactory;
-use App\Service\FileStorage\FileStorageInterface;
+use App\Service\CloudStorage\CloudStorageInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,7 +18,7 @@ class FileUploadController extends AbstractController
 {
     private $fileStorage;
 
-    public function __construct(FileStorageInterface $fileStorage)
+    public function __construct(CloudStorageInterface $fileStorage)
     {
         $this->fileStorage = $fileStorage;
     }
@@ -35,27 +34,26 @@ class FileUploadController extends AbstractController
      *
      * @throws AccessDeniedException
      * @throws FileException
+     * @throws \OutOfBoundsException
      */
     public function upload(Request $request): Response
     {
         $this->denyAccessUnlessGranted('ROLE_USER', null, 'unable to upload the file');
-
         $fileName = null;
 
-        /** @var UploadedFile $file **/
-        foreach ($request->files as $file) {
-            $fileName = $file->getClientOriginalName().'.'.$file->guessClientExtension();
-            $response = $this->fileStorage->put(['Key' => $fileName, 'SourceFile' => $file->getRealPath()]);
-
-            //TODO: conver to response like below.
+        if ($request->files->coun-t() !== 1) {
+            throw new \OutOfBoundsException('only process a single file at once');
         }
 
+        /** @var UploadedFile $file */
+        $file = $request->files->get('upload');
+        $fileName = $file->getClientOriginalName().'.'.$file->guessClientExtension();
+        $response = $this->fileStorage->upload(['Key' => $fileName, 'SourceFile' => $file->getRealPath()]);
+
         //must return json and have { "uploaded":"true" } in the response to make ckeditor5 work (without showing pop up).
-        return new JsonResponse(
-            [
-                'uploaded' => 'true',
-                'url' => '/img/uploads/blog/'.$fileName
-            ]
-        );
+        return new JsonResponse([
+            'uploaded' => 'true',
+            'url' => $response->getDestination()
+        ]);
     }
 }

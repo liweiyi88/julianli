@@ -29,7 +29,7 @@ services:
 
     App\Controller\FileUploadController:
         arguments:
-            App\Service\FileStorage\FileStorageInterface: '@App\Service\FileStorage\S3'
+            App\Service\CloudStorage\CloudStorageInterface: '@App\Service\CloudStorage\S3'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
@@ -49,7 +49,7 @@ services:
         public: false
         tags: [{ name: pagerfanta.view, alias: custom_view }]
 
-    App\Service\FileStorage\Factory\S3Factory:
+    App\Service\CloudStorage\Factory\S3Factory:
         public: false
         arguments:
             $key: '%aws_key%'
@@ -59,9 +59,9 @@ services:
 
     AWS\S3\S3Client:
         public: false
-        factory: 'App\Service\FileStorage\Factory\S3Factory:create'
+        factory: 'App\Service\CloudStorage\Factory\S3Factory:create'
 
-    App\Service\FileStorage\S3:
+    App\Service\CloudStorage\S3:
         public: false
         arguments:
             Aws\S3\S3Client: '@AWS\S3\S3Client'
