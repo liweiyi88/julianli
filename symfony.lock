@@ -116,12 +116,6 @@
     "jms/metadata": {
         "version": "1.6.0"
     },
-    "league/flysystem": {
-        "version": "1.0.44"
-    },
-    "league/flysystem-aws-s3-v3": {
-        "version": "1.0.19"
-    },
     "monolog/monolog": {
         "version": "1.23.0"
     },
