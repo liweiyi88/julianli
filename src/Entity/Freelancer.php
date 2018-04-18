@@ -255,9 +255,9 @@ class Freelancer implements UserInterface, \Serializable
         $this->username = $username;
     }
 
-    public function eraseCredentials()
+    public function eraseCredentials(): void
     {
-        return;
+        return null;
     }
 
     public function serialize()
@@ -271,7 +271,7 @@ class Freelancer implements UserInterface, \Serializable
         );
     }
 
-    public function unserialize($serialized)
+    public function unserialize($serialized): void
     {
         list (
             $this->id,
