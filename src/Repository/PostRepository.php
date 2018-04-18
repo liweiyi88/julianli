@@ -43,6 +43,22 @@ class PostRepository extends ServiceEntityRepository
         return $this->createPaginator($query, $page);
     }
 
+    public function findLatestPublishedPosts($page = 1): Pagerfanta
+    {
+        $query = $this->getEntityManager()
+            ->createQuery(
+                '
+                SELECT p, f, t
+                FROM App:POST p
+                JOIN p.freelancer f
+                LEFT JOIN p.tags t
+                WHERE p.isPublished = TRUE
+                ORDER BY p.id DESC
+                '
+            );
+        return $this->createPaginator($query, $page);
+    }
+
     /**
      * @param Query $query
      * @param int $page

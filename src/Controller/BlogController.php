@@ -24,7 +24,12 @@ class BlogController extends Controller
      */
     public function index(int $page, PostRepository $postRepository, FreelancerRepository $freelancerRepository): Response
     {
-        $posts = $postRepository->findLatestPublishedPublicPosts($page);
+        if ($this->isGranted('ROLE_USER')) {
+            $posts = $postRepository->findLatestPublishedPosts($page);
+        } else {
+            $posts = $postRepository->findLatestPublishedPublicPosts($page);
+        }
+
         $freelancer = $freelancerRepository->findFreeLancer();
         return $this->render('blog/blog_list.html.twig', ['posts' => $posts, 'freelancer' => $freelancer]);
     }
