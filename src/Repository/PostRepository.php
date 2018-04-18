@@ -36,7 +36,7 @@ class PostRepository extends ServiceEntityRepository
                 FROM App:POST p
                 JOIN p.freelancer f
                 LEFT JOIN p.tags t
-                WHERE p.isPublished = TRUE AND (p.limitVisibility = FALSE OR p.limitVisibility IS NULL)
+                WHERE p.isPublished = TRUE AND p.isPublic = TRUE
                 ORDER BY p.id DESC
                 '
             );

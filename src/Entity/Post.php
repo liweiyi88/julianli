@@ -69,9 +69,9 @@ class Post
     private $isPublished;
 
     /**
-     * @ORM\Column(name="limit_visibility", type="boolean", nullable=true)
+     * @ORM\Column(name="is_public", type="boolean", nullable=true)
      */
-    private $limitVisibility;
+    private $isPublic;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Freelancer", inversedBy="posts")
@@ -115,14 +115,14 @@ class Post
         return $this->id;
     }
 
+    public function getIsPublic(): ?bool
+    {
+        return $this->isPublic;
+    }
+
     public function getIsPublished(): ?bool
     {
         return $this->isPublished;
-    }
-
-    public function getLimitVisibility(): ?bool
-    {
-        return $this->limitVisibility;
     }
 
     public function getSlug(): ?string
@@ -183,14 +183,14 @@ class Post
         $this->id = $id;
     }
 
-    public function setIsPublished($isPublished): void
+    public function setIsPublished(bool $isPublished): void
     {
         $this->isPublished = $isPublished;
     }
 
-    public function setLimitVisibility(?bool $limitVisibility): void
+    public function setIsPublic(bool $isPublic): void
     {
-        $this->limitVisibility = $limitVisibility;
+        $this->isPublic = $isPublic;
     }
 
     public function setSlug(?string $slug): void

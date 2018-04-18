@@ -23,12 +23,12 @@ easy_admin:
         Post:
             class: App\Entity\Post
             list:
-                fields: ['id', 'title', 'slug', 'isPublished', 'limitVisibility', { property: 'coverImageUrl', type: 'image', base_path: '%app.path.posts%' }, 'tags', 'createdAt']
+                fields: ['id', 'title', 'slug', 'isPublished', 'isPublic', { property: 'coverImageUrl', type: 'image', base_path: '%app.path.posts%' }, 'tags', 'createdAt']
             show:
                 fields:
                     - { property: 'coverImageUrl', type: 'image', base_path: '%app.path.posts%' }
             form:
-                fields: ['title', 'slug', 'isPublished', 'limitVisibility', { property: 'content', css_class: 'awesome-ckeditor', type: 'textarea' }, { property: 'coverImageFile', type: 'vich_image' }, 'tags', 'freelancer']
+                fields: ['title', 'slug', 'isPublished', 'isPublic', { property: 'content', css_class: 'awesome-ckeditor', type: 'textarea' }, { property: 'coverImageFile', type: 'vich_image' }, 'tags', 'freelancer']
         Tag:
             class: App\Entity\Tag
     design:

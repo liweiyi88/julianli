@@ -44,7 +44,7 @@ class BlogController extends Controller
     {
         $freelancer = $freelancerRepository->findFreeLancer();
 
-        if ($post->getLimitVisibility()) {
+        if (!$post->getIsPublic()) {
             $this->denyAccessUnlessGranted('ROLE_USER', null, 'Please login to get the access to the post');
         }
 
