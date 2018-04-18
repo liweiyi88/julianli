@@ -69,6 +69,11 @@ class Post
     private $isPublished;
 
     /**
+     * @ORM\Column(name="is_public", type="boolean", nullable=true)
+     */
+    private $isPublic;
+
+    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Freelancer", inversedBy="posts")
      * @ORM\JoinColumn(nullable=true)
      */
@@ -80,34 +85,14 @@ class Post
         $this->createdAt = new \DateTime();
     }
 
-    public function getId(): ?int
+    public function getContent(): ?string
     {
-        return $this->id;
+        return $this->content;
     }
 
-    public function setId(int $id): void
+    public function getCoverImageFile(): ?File
     {
-        $this->id = $id;
-    }
-
-    public function getTitle(): ?string
-    {
-        return $this->title;
-    }
-
-    public function setTitle(?string $title): void
-    {
-        $this->title = $title;
-    }
-
-    public function getSlug(): ?string
-    {
-        return $this->slug;
-    }
-
-    public function setSlug(?string $slug): void
-    {
-        $this->slug = $slug;
+        return $this->coverImageFile;
     }
 
     public function getCoverImageUrl(): ?string
@@ -115,9 +100,54 @@ class Post
         return $this->coverImageUrl;
     }
 
-    public function setCoverImageUrl(?string $coverImageUrl): void
+    public function getCreatedAt(): ?\DateTime
     {
-        $this->coverImageUrl = $coverImageUrl;
+        return $this->createdAt;
+    }
+
+    public function getFreelancer(): ?Freelancer
+    {
+        return $this->freelancer;
+    }
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getIsPublic(): ?bool
+    {
+        return $this->isPublic;
+    }
+
+    public function getIsPublished(): ?bool
+    {
+        return $this->isPublished;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function getTags(): Collection
+    {
+        return $this->tags;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function getUpdatedAt(): ?\DateTime
+    {
+        return $this->updatedAt;
+    }
+
+    public function setContent(string $content): void
+    {
+        $this->content = $content;
     }
 
     public function setCoverImageFile(File $image = null): void
@@ -133,34 +163,9 @@ class Post
         }
     }
 
-    public function getCoverImageFile(): ?File
+    public function setCoverImageUrl(?string $coverImageUrl): void
     {
-        return $this->coverImageFile;
-    }
-
-    public function getUpdatedAt(): ?\DateTime
-    {
-        return $this->updatedAt;
-    }
-
-    public function setUpdatedAt(?\DateTime $updatedAt): void
-    {
-        $this->updatedAt = $updatedAt;
-    }
-
-    public function getCreatedAt(): ?\DateTime
-    {
-        return $this->createdAt;
-    }
-
-    public function getContent(): ?string
-    {
-        return $this->content;
-    }
-
-    public function setContent(string $content): void
-    {
-        $this->content = $content;
+        $this->coverImageUrl = $coverImageUrl;
     }
 
     public function setCreatedAt(?\DateTime $createdAt): void
@@ -168,9 +173,29 @@ class Post
         $this->createdAt = $createdAt;
     }
 
-    public function getTags(): Collection
+    public function setFreelancer(Freelancer $freelancer): void
     {
-        return $this->tags;
+        $this->freelancer = $freelancer;
+    }
+
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    public function setIsPublished(bool $isPublished): void
+    {
+        $this->isPublished = $isPublished;
+    }
+
+    public function setIsPublic(bool $isPublic): void
+    {
+        $this->isPublic = $isPublic;
+    }
+
+    public function setSlug(?string $slug): void
+    {
+        $this->slug = $slug;
     }
 
     public function setTags(?array $tags): void
@@ -178,24 +203,14 @@ class Post
         $this->tags = $tags;
     }
 
-    public function getIsPublished(): ?bool
+    public function setTitle(?string $title): void
     {
-        return $this->isPublished;
+        $this->title = $title;
     }
 
-    public function setIsPublished($isPublished): void
+    public function setUpdatedAt(?\DateTime $updatedAt): void
     {
-        $this->isPublished = $isPublished;
-    }
-
-    public function getFreelancer(): ?Freelancer
-    {
-        return $this->freelancer;
-    }
-
-    public function setFreelancer(Freelancer $freelancer): void
-    {
-        $this->freelancer = $freelancer;
+        $this->updatedAt = $updatedAt;
     }
 
     public function __toString(): ?string

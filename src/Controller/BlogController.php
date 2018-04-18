@@ -24,7 +24,7 @@ class BlogController extends Controller
      */
     public function index(int $page, PostRepository $postRepository, FreelancerRepository $freelancerRepository): Response
     {
-        $posts = $postRepository->findLatestPublished($page);
+        $posts = $postRepository->findLatestPublishedPublicPosts($page);
         $freelancer = $freelancerRepository->findFreeLancer();
         return $this->render('blog/blog_list.html.twig', ['posts' => $posts, 'freelancer' => $freelancer]);
     }
@@ -37,10 +37,17 @@ class BlogController extends Controller
      * @Method("GET")
      *
      * @return Response
+     *
+     * @throws \Symfony\Component\Security\Core\Exception\AccessDeniedException
      */
     public function postShow(Post $post, FreelancerRepository $freelancerRepository): Response
     {
         $freelancer = $freelancerRepository->findFreeLancer();
+
+        if (!$post->getIsPublic()) {
+            $this->denyAccessUnlessGranted('ROLE_USER', null, 'Please login to get the access to the post');
+        }
+
         return $this->render('blog/post_show.html.twig', ['post' => $post, 'freelancer' => $freelancer]);
     }
 }

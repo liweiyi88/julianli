@@ -23,7 +23,7 @@ class AppFixtures extends Fixture
         $this->encoder = $encoder;
     }
 
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $freelancer = new Freelancer();
         $freelancer->setEmail('weiyi.li713@gmail.com');
@@ -202,6 +202,7 @@ Ignorant branched humanity led now marianne too strongly entrance. Rose to shew 
         );
         $post1->setIsPublished(true);
         $post1->setTags($tags);
+        $post1->setIsPublic(true);
 
         $post2 = new Post();
         $post2->setIsPublished(true);
@@ -224,6 +225,7 @@ Lose eyes get fat shew. Winter can indeed letter oppose way change tended now. S
 </p>'
         );
         $post2->setTags($tags);
+        $post2->setIsPublic(true);
 
         $post3 = new Post();
         $post3->setIsPublished(true);
@@ -240,6 +242,7 @@ Her extensive perceived may any sincerity extremity. Indeed add rather may prett
 Ladies others the six desire age. Bred am soon par'
         );
         $post3->setTags($tags);
+        $post3->setIsPublic(true);
 
         $post4 = new Post();
         $post4->setIsPublished(true);
@@ -256,6 +259,7 @@ Her extensive perceived may any sincerity extremity. Indeed add rather may prett
 Ladies others the six desire age. Bred am soon par'
         );
         $post4->setTags($tags);
+        $post4->setIsPublic(true);
 
         $post5 = new Post();
         $post5->setIsPublished(true);
@@ -272,6 +276,7 @@ Her extensive perceived may any sincerity extremity. Indeed add rather may prett
 Ladies others the six desire age. Bred am soon par'
         );
         $post5->setTags($tags);
+        $post5->setIsPublic(true);
 
         $post6 = new Post();
         $post6->setIsPublished(true);
@@ -288,6 +293,7 @@ Her extensive perceived may any sincerity extremity. Indeed add rather may prett
 Ladies others the six desire age. Bred am soon par'
         );
         $post6->setTags($tags);
+        $post6->setIsPublic(true);
 
         $manager->persist($freelancer);
         $manager->persist($education);
