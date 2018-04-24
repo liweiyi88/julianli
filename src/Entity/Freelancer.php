@@ -242,7 +242,6 @@ class Freelancer implements UserInterface, \Serializable
 
     public function getSalt(): void
     {
-
     }
 
     public function getUsername(): string
@@ -257,7 +256,6 @@ class Freelancer implements UserInterface, \Serializable
 
     public function eraseCredentials(): void
     {
-
     }
 
     public function serialize()
