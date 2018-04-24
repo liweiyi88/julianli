@@ -2,7 +2,9 @@
 
 namespace App\Command;
 
+use App\Service\CloudStorage\Interfaces\CloudStorageInterface;
 use Doctrine\DBAL\Connection;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -14,6 +16,11 @@ use Symfony\Component\Process\Process;
 class DbBackupCommand extends Command
 {
     protected static $defaultName = 'db:backup';
+
+    /**
+     * @var CloudStorageInterface $cloudStorage
+     */
+    private $cloudStorage;
 
     /**
      * @var Connection $connection
@@ -31,17 +38,31 @@ class DbBackupCommand extends Command
     private $filesystem;
 
     /**
+     * @var LoggerInterface $logger
+     */
+    private $logger;
+
+    /**
+     * @param CloudStorageInterface $cloudStorage
      * @param Connection $connection
      * @param ContainerInterface $container
      * @param Filesystem $filesystem
+     * @param LoggerInterface $logger
      *
      * @throws \Symfony\Component\Console\Exception\LogicException
      */
-    public function __construct(Connection $connection, ContainerInterface $container, Filesystem $filesystem)
-    {
+    public function __construct(
+        CloudStorageInterface $cloudStorage,
+        Connection $connection,
+        ContainerInterface $container,
+        Filesystem $filesystem,
+        LoggerInterface $logger
+    ) {
+        $this->cloudStorage = $cloudStorage;
         $this->container = $container;
         $this->connection = $connection;
         $this->filesystem = $filesystem;
+        $this->logger = $logger;
         parent::__construct();
     }
 
@@ -54,8 +75,9 @@ class DbBackupCommand extends Command
      * @param InputInterface $input
      * @param OutputInterface $output
      *
-     * @return int|null|void
+     * @return void
      *
+     * @throws \Exception
      * @throws \Symfony\Component\DependencyInjection\Exception\InvalidArgumentException
      * @throws \Symfony\Component\Filesystem\Exception\FileNotFoundException;
      * @throws \Symfony\Component\Filesystem\Exception\IOException
@@ -63,7 +85,7 @@ class DbBackupCommand extends Command
      * @throws \Symfony\Component\Process\Exception\ProcessFailedException
      * @throws \Symfony\Component\Process\Exception\RuntimeException
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): void
     {
         $projectDir = $this->container->getParameter('kernel.project_dir');
 
@@ -72,16 +94,25 @@ class DbBackupCommand extends Command
         $database = $this->connection->getDatabase();
         $host = $this->connection->getHost();
 
-        $file = $projectDir.'/'.'backup_'.(new \DateTime('now'))->format('Ymd').'.sql';
+        $fileName = (new \DateTime('now'))->format('Ymd').'.sql';
+        $filePath = $projectDir.'/'.'backup_'.$fileName;
 
-        $process = new Process(\sprintf('mysqldump -h %s -B %s -u %s --password=%s > %s', $host, $database, $username, $password, $file));
+        $process = new Process(\sprintf('mysqldump -h %s -B %s -u %s --password=%s > %s', $host, $database, $username, $password, $filePath));
         $process->mustRun();
 
-        if (!$this->filesystem->exists($file)) {
+        if (!$this->filesystem->exists($filePath)) {
             throw new FileNotFoundException('backup file not found');
         }
 
-        //TODO: send to S3
-        $this->filesystem->remove($file);
+        try {
+            $this->cloudStorage->upload([
+                'Key' => 'db_backups/'.$fileName,
+                'SourceFile' => $filePath
+            ]);
+        } catch (\Exception $e) {
+            $this->logger->error($e->getMessage());
+        }
+
+        $this->filesystem->remove($filePath);
     }
 }
