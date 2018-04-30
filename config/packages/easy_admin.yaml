@@ -34,5 +34,5 @@ easy_admin:
     design:
         assets:
             js:
-                - 'https://cdn.ckeditor.com/ckeditor5/1.0.0-beta.1/classic/ckeditor.js'
+                - 'https://cdn.ckeditor.com/ckeditor5/10.0.0/classic/ckeditor.js'
                 - '/js/ckeditorcustom.js'
