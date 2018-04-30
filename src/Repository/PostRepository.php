@@ -17,6 +17,27 @@ class PostRepository extends ServiceEntityRepository
     }
 
     /**
+     * @param Query $query
+     * @param int $page
+     *
+     * @return \Pagerfanta\Pagerfanta
+     *
+     * @throws \Pagerfanta\Exception\LessThan1CurrentPageException
+     * @throws \Pagerfanta\Exception\LessThan1MaxPerPageException
+     * @throws \Pagerfanta\Exception\NotIntegerCurrentPageException
+     * @throws \Pagerfanta\Exception\NotIntegerMaxPerPageException
+     * @throws \Pagerfanta\Exception\OutOfRangeCurrentPageException
+     */
+    public function createPaginator(Query $query, int $page): Pagerfanta
+    {
+        $paginator = new Pagerfanta(new DoctrineORMAdapter($query));
+        $paginator->setMaxPerPage(Post::NUM_ITEMS);
+        $paginator->setCurrentPage($page);
+
+        return $paginator;
+    }
+
+    /**
      * @param int $page
      *
      * @return Pagerfanta
@@ -59,24 +80,13 @@ class PostRepository extends ServiceEntityRepository
         return $this->createPaginator($query, $page);
     }
 
-    /**
-     * @param Query $query
-     * @param int $page
-     *
-     * @return \Pagerfanta\Pagerfanta
-     *
-     * @throws \Pagerfanta\Exception\LessThan1CurrentPageException
-     * @throws \Pagerfanta\Exception\LessThan1MaxPerPageException
-     * @throws \Pagerfanta\Exception\NotIntegerCurrentPageException
-     * @throws \Pagerfanta\Exception\NotIntegerMaxPerPageException
-     * @throws \Pagerfanta\Exception\OutOfRangeCurrentPageException
-     */
-    public function createPaginator(Query $query, int $page): Pagerfanta
+    public function findUpdatedAtToday(): ?array
     {
-        $paginator = new Pagerfanta(new DoctrineORMAdapter($query));
-        $paginator->setMaxPerPage(Post::NUM_ITEMS);
-        $paginator->setCurrentPage($page);
+        $qb = $this->createQueryBuilder('p');
+        $qb->where('p.createdAt between :start_at and :end_at');
+        $qb->setParameter('start_at', (new \DateTime('now'))->setTime(0, 0));
+        $qb->setParameter('end_at', (new \DateTime('now'))->setTime(23,59, 59));
 
-        return $paginator;
+        return $qb->getQuery()->getResult();
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Command;
 
+use App\Repository\PostRepository;
 use App\Service\CloudStorage\Interfaces\CloudStorageInterface;
 use Doctrine\DBAL\Connection;
 use Psr\Log\LoggerInterface;
@@ -43,11 +44,17 @@ class DbBackupCommand extends Command
     private $logger;
 
     /**
+     * @var PostRepository $postRepository
+     */
+    private $postRepository;
+
+    /**
      * @param CloudStorageInterface $cloudStorage
      * @param Connection $connection
      * @param ContainerInterface $container
      * @param Filesystem $filesystem
      * @param LoggerInterface $logger
+     * @param PostRepository $postRepository
      *
      * @throws \Symfony\Component\Console\Exception\LogicException
      */
@@ -56,13 +63,15 @@ class DbBackupCommand extends Command
         Connection $connection,
         ContainerInterface $container,
         Filesystem $filesystem,
-        LoggerInterface $logger
+        LoggerInterface $logger,
+        PostRepository $postRepository
     ) {
         $this->cloudStorage = $cloudStorage;
         $this->container = $container;
         $this->connection = $connection;
         $this->filesystem = $filesystem;
         $this->logger = $logger;
+        $this->postRepository = $postRepository;
         parent::__construct();
     }
 
@@ -87,6 +96,10 @@ class DbBackupCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output): void
     {
+        if (!$this->postRepository->findUpdatedAtToday()) {
+            return;
+        }
+
         $projectDir = $this->container->getParameter('kernel.project_dir');
 
         $username = $this->connection->getUsername();
