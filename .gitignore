@@ -19,3 +19,7 @@ supervisord.pid
 
 ansible/playbook.retry
 ansible/deploy.retry
+###> symfony/phpunit-bridge ###
+.phpunit
+/phpunit.xml
+###< symfony/phpunit-bridge ###
