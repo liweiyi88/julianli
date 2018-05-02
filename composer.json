@@ -30,8 +30,9 @@
     },
     "require-dev": {
         "phpstan/phpstan": "^0.9.1",
-        "symfony/dotenv": "^4.0",
         "symfony/debug-pack": "*",
+        "symfony/dotenv": "^4.0",
+        "symfony/phpunit-bridge": "^4.0",
         "symfony/profiler-pack": "*"
     },
     "config": {
