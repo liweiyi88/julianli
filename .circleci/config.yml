@@ -1,14 +1,14 @@
 version: 2
 jobs:
     build:
-        timezone:
-            Australia/Melbourne
         docker:
             - image: circleci/php:7.2.5-node-browsers
         steps:
             - checkout
             - run: sudo composer self-update
             - run: composer install -n --prefer-dist
+            - run: sudo apt-get install -y libzip-dev
+            - run: sudo docker-php-ext-install zip
             - run: ./vendor/bin/simple-phpunit
 
     deploy:
