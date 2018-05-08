@@ -9,7 +9,7 @@ jobs:
             - checkout
             - run: sudo composer self-update
             - run: composer install -n --prefer-dist
-            - run: phpunit
+            - run: ./vendor/bin/simple-phpunit
 
     deploy:
         working_directory: ~/julianli
@@ -29,7 +29,6 @@ jobs:
                 key: julianli-{{ .Branch }}-{{ checksum "./ansible/requirements.yml" }}-v1
                 paths:
                     - "./root/.ansible/roles"
-
 
             - run: echo $ANSIBLE_VAULT_PASS > ./ansible/.vault-pass.txt
             - run: ansible-playbook ansible/deploy.yml -i ansible/hosts.ini --vault-password-file=./ansible/.vault-pass.txt
