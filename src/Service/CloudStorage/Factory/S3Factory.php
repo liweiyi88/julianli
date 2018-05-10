@@ -21,8 +21,6 @@ class S3Factory
     }
 
     /**
-     * @return \Aws\S3\S3Client
-     *
      * @throws \InvalidArgumentException
      */
     public function create(): S3Client

@@ -2,12 +2,12 @@
 
 namespace App\Controller;
 
-use App\Contact\Contact;
 use App\Api\ApiProblem;
 use App\Api\ApiProblemException;
-use App\Email\EmailManager;
 use App\Form\ContactType;
 use App\Repository\FreelancerRepository;
+use App\Service\Email\Contact;
+use App\Service\Email\EmailManager;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -36,7 +36,7 @@ class ProfileController extends BaseController
 
     /**
      * @param Request      $request
-     * @param  EmailManager $emailManager
+     * @param EmailManager $emailManager
      *
      * @Route("/api/contact", name="contact")
      *
@@ -50,8 +50,7 @@ class ProfileController extends BaseController
      */
     public function postContact(Request $request, EmailManager $emailManager): Response
     {
-        $contact = new Contact();
-        $form = $this->createForm(ContactType::class, $contact);
+        $form = $this->createForm(ContactType::class, new Contact());
         $this->processForm($request, $form);
 
         if (!$form->isValid()) {
@@ -59,8 +58,7 @@ class ProfileController extends BaseController
         }
 
         $contact = $form->getData();
-        $message = $emailManager->createPlianMessageFromContact($contact);
-        $emailManager->sendEmail($message);
+        $emailManager->sendEmail($contact);
 
         return $this->createApiResponse($contact, 200);
     }

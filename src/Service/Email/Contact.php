@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Contact;
+namespace App\Service\Email;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -10,78 +10,58 @@ class Contact
      * @Assert\NotBlank(message="At least tell me how can I call you?")
      */
     private $name;
+
     /**
      * @Assert\Email(message="I could not contact you through an invalid email address")
      */
     private $email;
+
     /**
      * @Assert\NotBlank(message="A brief subject is good")
      */
     private $subject;
+
     /**
      * @Assert\NotBlank(message="Please let me know your request")
      */
     private $message;
 
-    /**
-     * @return mixed
-     */
+
     public function getName()
     {
         return $this->name;
     }
 
-    /**
-     * @param mixed $name
-     */
-    public function setName($name): void
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getEmail()
+    public function getEmail(): string
     {
         return $this->email;
     }
 
-    /**
-     * @param mixed $email
-     */
-    public function setEmail($email): void
+    public function setEmail(string $email): void
     {
         $this->email = $email;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getSubject()
+    public function getSubject(): ?string
     {
         return $this->subject;
     }
 
-    /**
-     * @param mixed $subject
-     */
-    public function setSubject($subject): void
+    public function setSubject(string $subject): void
     {
         $this->subject = $subject;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getMessage()
+    public function getMessage(): string
     {
         return $this->message;
     }
 
-    /**
-     * @param mixed $message
-     */
     public function setMessage($message): void
     {
         $this->message = $message;
