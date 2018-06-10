@@ -27,7 +27,7 @@ class Contact
     private $message;
 
 
-    public function getName()
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -37,7 +37,7 @@ class Contact
         $this->name = $name;
     }
 
-    public function getEmail(): string
+    public function getEmail(): ?string
     {
         return $this->email;
     }
@@ -57,7 +57,7 @@ class Contact
         $this->subject = $subject;
     }
 
-    public function getMessage(): string
+    public function getMessage(): ?string
     {
         return $this->message;
     }
