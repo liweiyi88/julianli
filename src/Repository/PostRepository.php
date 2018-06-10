@@ -85,7 +85,7 @@ class PostRepository extends ServiceEntityRepository
         $qb = $this->createQueryBuilder('p');
         $qb->where('p.createdAt between :start_at and :end_at');
         $qb->setParameter('start_at', (new \DateTime('now'))->setTime(0, 0));
-        $qb->setParameter('end_at', (new \DateTime('now'))->setTime(23,59, 59));
+        $qb->setParameter('end_at', (new \DateTime('now'))->setTime(23, 59, 59));
 
         return $qb->getQuery()->getResult();
     }

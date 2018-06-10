@@ -18,9 +18,6 @@ class S3UploadedResponse implements UploadedResponseInterface
         $this->result = $result;
     }
 
-    /**
-     * @return string
-     */
     public function getDestination(): ?string
     {
         $array = $this->result->toArray();

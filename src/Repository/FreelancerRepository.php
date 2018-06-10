@@ -13,6 +13,13 @@ class FreelancerRepository extends ServiceEntityRepository
         parent::__construct($registry, Freelancer::class);
     }
 
+    /**
+     * Find one single freelancer.
+     *
+     * @return mixed
+     *
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
     public function findFreeLancer()
     {
         $qb = $this->createQueryBuilder('f');
@@ -21,17 +28,4 @@ class FreelancerRepository extends ServiceEntityRepository
 
         return $qb->getQuery()->getOneOrNullResult();
     }
-
-    /*
-    public function findBySomething($value)
-    {
-        return $this->createQueryBuilder('f')
-            ->where('f.something = :value')->setParameter('value', $value)
-            ->orderBy('f.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
 }

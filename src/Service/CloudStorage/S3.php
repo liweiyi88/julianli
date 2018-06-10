@@ -14,7 +14,9 @@ class S3 implements CloudStorageInterface
     public const DEFAULT_ENCRYPTION = 'AES256';
     public const DEFAULT_ACL = 'public-read';
 
-    /** @var S3Client $s3Client */
+    /**
+     * @var S3Client $s3Client
+     */
     private $s3Client;
 
     public function __construct(S3Client $s3Client)
@@ -24,6 +26,8 @@ class S3 implements CloudStorageInterface
 
     /**
      * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
+     *
+     * @return void
      *
      * @throws \Symfony\Component\OptionsResolver\Exception\AccessException
      */
