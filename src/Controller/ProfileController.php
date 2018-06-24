@@ -5,8 +5,9 @@ namespace App\Controller;
 use App\Api\ApiProblem;
 use App\Api\ApiProblemException;
 use App\Form\ContactType;
+use App\Form\Requests\Contact;
 use App\Repository\FreelancerRepository;
-use App\Service\Email\Contact;
+use App\Repository\PostRepository;
 use App\Service\Email\EmailManager;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\Form\FormInterface;
@@ -16,21 +17,18 @@ use Symfony\Component\HttpFoundation\Response;
 class ProfileController extends BaseController
 {
     /**
-     * @param FreelancerRepository $freelancerRepo
-     *
      * @Route("/", name="home")
-     *
-     * @return Response
      */
-    public function index(FreelancerRepository $freelancerRepo): Response
+    public function index(FreelancerRepository $freelancerRepo, PostRepository $postRepo): Response
     {
         $freelancer = $freelancerRepo->findFreeLancer();
+        $latestPosts = $postRepo->findLatestPublishedPublicPosts();
 
         return $this->render(
-            'profile.html.twig',
-            array(
-            'freelancer' => $freelancer
-            )
+            'profile.html.twig', [
+                'freelancer' => $freelancer,
+                'posts' => $latestPosts
+            ]
         );
     }
 
@@ -63,17 +61,6 @@ class ProfileController extends BaseController
         return $this->createApiResponse($contact, 200);
     }
 
-    /**
-     * @param Request       $request
-     * @param FormInterface $form
-     *
-     * @return void
-     *
-     * @throws \App\Api\ApiProblemException
-     * @throws \InvalidArgumentException
-     * @throws \Symfony\Component\Form\Exception\AlreadySubmittedException;
-     * @throws \LogicException;
-     */
     private function processForm(Request $request, FormInterface $form): void
     {
         $data = json_decode($request->getContent(), true);
@@ -87,11 +74,6 @@ class ProfileController extends BaseController
         $form->submit($data, $clearMissing);
     }
 
-    /**
-     * @param FormInterface $form
-     *
-     * @return array
-     */
     private function getErrorsFromForm(FormInterface $form): array
     {
         $errors = [];
@@ -108,12 +90,6 @@ class ProfileController extends BaseController
         return $errors;
     }
 
-    /**
-     * @param FormInterface $form
-     *
-     * @throws \App\Api\ApiProblemException
-     * @throws \InvalidArgumentException
-     */
     private function throwApiProblemValidationException(FormInterface $form): void
     {
         $errors = $this->getErrorsFromForm($form);

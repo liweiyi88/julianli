@@ -27,19 +27,7 @@
                 <button class="btn-sidebar btn-sidebar-close"><i class="rsicon rsicon-close"></i></button>
 
                 <div class="widget-area">
-                    <aside class="widget widget-profile">
-                        <div class="profile-photo">
-                            <img src="{{ asset('img/uploads/julian-2.jpg') }}" alt="{{ freelancer.firstName }} {{ freelancer.lastName }}"/>
-                        </div>
-                        <div class="profile-info">
-                            <h2 class="profile-title">{{ freelancer.firstName }} {{ freelancer.lastName }}</h2>
-
-                            <h3 class="profile-position">{{ freelancer.title }}</h3>
-                        </div>
-                    </aside>
-                    <!-- .widget-profile -->
-
-                    {% include 'widgets/twitter.html.twig' %}
+                   {% block widget_posts %}{% endblock %}
                 </div>
                 <!-- .widget-area -->
             </div>

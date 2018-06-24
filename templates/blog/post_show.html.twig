@@ -10,7 +10,7 @@
             <div class="container">
                 <!-- START: PAGE CONTENT -->
                 <div class="row animate-up">
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                         <main class="post-single">
                             <article class="post-content section-box">
                                 {% if post.coverImageUrl is not empty %}
@@ -73,20 +73,25 @@
                         <!-- .post-single -->
                     </div>
 
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <div class="sidebar sidebar-default">
-                            <div class="widget-area">
-                                <aside class="widget widget-profile">
-                                    <div class="profile-photo">
-                                        <img src="{{ asset('img/uploads/julian-2.jpg') }}" alt="{{ post.freelancer.firstName }} {{ post.freelancer.lastName }}"/>
-                                    </div>
-                                    <div class="profile-info">
-                                        <h2 class="profile-title">{{ post.freelancer.firstName }} {{ post.freelancer.lastName }}</h2>
-                                        <h3 class="profile-position">{{ post.freelancer.title }}</h3>
-                                    </div>
-                                </aside><!-- .widget-profile -->
-
-                                {% include 'widgets/twitter.html.twig' %}
+                            <div class="widget-area" style="margin-top: 200px">
+                                <aside class="widget widget-recent-posts">
+                                    <h2 class="widget-title">Recent posts</h2>
+                                    <ul>
+                                        {% for post in posts %}
+                                            <li>
+                                                <div class="post-tag">
+                                                    {% for tag in post.tags %}
+                                                        <b>#{{ tag.name }}</b>
+                                                    {% endfor %}
+                                                </div>
+                                                <h3 class="post-title"><a href="{{ path('blog_post', {slug: post.slug}) }}">{{ post.title }}</a></h3>
+                                                <div class="post-info"><i class="rsicon rsicon-eye"></i>{{ random(20) }} page views</div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </aside>
                             </div><!-- .widget-area -->
                         </div><!-- .sidebar -->
                     </div><!-- .col-sm-4 -->

@@ -2,6 +2,7 @@
 
 namespace App\Service\Email;
 
+use App\Form\Requests\Contact;
 use Swift_Mailer;
 use Swift_Message;
 
