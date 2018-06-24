@@ -4,10 +4,10 @@ namespace App\Controller;
 
 use App\Api\ApiProblem;
 use App\Api\ApiProblemException;
-use App\Form\ContactType;
-use App\Form\Requests\Contact;
+use App\Requests\Contact;
 use App\Repository\FreelancerRepository;
 use App\Repository\PostRepository;
+use App\Requests\Form\ContactType;
 use App\Service\Email\EmailManager;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\Form\FormInterface;

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Form;
+namespace App\Requests\Form;
 
-use App\Form\Requests\Contact;
+use App\Requests\Contact;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;

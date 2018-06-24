@@ -7,12 +7,10 @@ use App\Service\CloudStorage\Interfaces\CloudStorageInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class FileUploadController extends AbstractController
 {
@@ -24,17 +22,9 @@ class FileUploadController extends AbstractController
     }
 
     /**
-     * @param Request $request
-     *
      * @Method("POST")
      *
      * @Route("/file/upload", name="file_upload")
-     *
-     * @return Response
-     *
-     * @throws AccessDeniedException
-     * @throws FileException
-     * @throws \OutOfBoundsException
      */
     public function upload(Request $request): Response
     {
