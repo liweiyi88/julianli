@@ -33,7 +33,31 @@
         <!-- .mobile-nav -->
     {% endblock %}
 
-   {% block sidebar %} {{ parent() }} {% endblock %}
+    {% block sidebar %}
+        <div class="sidebar sidebar-fixed">
+            <button class="btn-sidebar btn-sidebar-close"><i class="rsicon rsicon-close"></i></button>
+
+            <div class="widget-area">
+                <aside class="widget widget-recent-posts">
+                    <h2 class="widget-title">Recent posts</h2>
+                    <ul>
+                    {% for post in posts %}
+                        <li>
+                            <div class="post-tag">
+                                {% for tag in post.tags %}
+                                    <b>#{{ tag.name }}</b>
+                                {% endfor %}
+                            </div>
+                            <h3 class="post-title"><a href="{{ path('blog_post', {slug: post.slug}) }}">{{ post.title }}</a></h3>
+                            <div class="post-info"><i class="rsicon rsicon-eye"></i>{{ random(20) }} page views</div>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </aside>
+            </div>
+            <!-- .widget-area -->
+        </div>
+    {% endblock %}
 
     <div class="wrapper">
         {% block header %}

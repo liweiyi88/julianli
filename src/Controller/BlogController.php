@@ -13,46 +13,56 @@ use Symfony\Component\HttpFoundation\Response;
 class BlogController extends Controller
 {
     /**
-     * @param int                  $page
-     * @param PostRepository       $postRepository
-     * @param FreelancerRepository $freelancerRepository
-     *
+     * @var FreelancerRepository
+     */
+    private $freelancerRepository;
+
+    /**
+     * @var PostRepository
+     */
+    private $postRepository;
+
+    public function __construct(FreelancerRepository $freelancerRepository, PostRepository $postRepository)
+    {
+        $this->freelancerRepository = $freelancerRepository;
+        $this->postRepository = $postRepository;
+    }
+
+    /**
      * @Route("/blog/list", defaults={"page": "1"}, name="blog_list")
      * @Route("/blog/list/{page}", requirements={"page": "[1-9]\d*"}, name="blog_list_paginated")
-     *
-     * @return Response
      */
-    public function index(int $page, PostRepository $postRepository, FreelancerRepository $freelancerRepository): Response
+    public function index(int $page): Response
     {
         if ($this->isGranted('ROLE_USER')) {
-            $posts = $postRepository->findLatestPublishedPosts($page);
+            $posts = $this->postRepository->findLatestPublishedPosts($page);
         } else {
-            $posts = $postRepository->findLatestPublishedPublicPosts($page);
+            $posts = $this->postRepository->findLatestPublishedPublicPosts($page);
         }
 
-        $freelancer = $freelancerRepository->findFreeLancer();
+        $freelancer = $this->freelancerRepository->findFreeLancer();
         return $this->render('blog/blog_list.html.twig', ['posts' => $posts, 'freelancer' => $freelancer]);
     }
 
     /**
-     * @param Post                 $post
-     * @param FreelancerRepository $freelancerRepository
-     *
      * @Route("/posts/{slug}", name="blog_post")
+     *
      * @Method("GET")
-     *
-     * @return Response
-     *
-     * @throws \Symfony\Component\Security\Core\Exception\AccessDeniedException
      */
-    public function postShow(Post $post, FreelancerRepository $freelancerRepository): Response
+    public function postShow(Post $post): Response
     {
-        $freelancer = $freelancerRepository->findFreeLancer();
+        $freelancer = $this->freelancerRepository->findFreeLancer();
+
+        $latestPosts = $this->postRepository->findLatestPublishedPublicPosts();
 
         if (!$post->getIsPublic()) {
             $this->denyAccessUnlessGranted('ROLE_USER', null, 'Please login to get the access to the post');
         }
 
-        return $this->render('blog/post_show.html.twig', ['post' => $post, 'freelancer' => $freelancer]);
+        return $this->render('blog/post_show.html.twig', [
+            'post' => $post,
+            'freelancer' => $freelancer,
+            'posts' => $latestPosts
+        ]);
     }
 }
