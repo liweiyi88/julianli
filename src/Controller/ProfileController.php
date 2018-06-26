@@ -25,7 +25,8 @@ class ProfileController extends BaseController
         $latestPosts = $postRepo->findLatestPublishedPublicPosts();
 
         return $this->render(
-            'profile.html.twig', [
+            'profile.html.twig',
+            [
                 'freelancer' => $freelancer,
                 'posts' => $latestPosts
             ]

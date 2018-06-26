@@ -16,7 +16,7 @@ class BaseController extends AbstractController
     }
 
     /**
-     * @param $data
+     * @param object $data
      * @param int  $statusCode
      *
      * @return Response
@@ -37,7 +37,7 @@ class BaseController extends AbstractController
     }
 
     /**
-     * @param $data
+     * @param object $data
      * @param string $format
      *
      * @return string

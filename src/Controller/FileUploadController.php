@@ -39,7 +39,8 @@ class FileUploadController extends AbstractController
         $fileName = $file->getClientOriginalName().'.'.$file->guessClientExtension();
         $response = $this->fileStorage->upload(['Key' => 'posts/'.$fileName, 'SourceFile' => $file->getRealPath()]);
 
-        //must return json and have { "uploaded":"true" } in the response to make ckeditor5 work (without showing pop up).
+        // Must return json and have { "uploaded":"true" } in the response
+        // to make ckeditor5 work (without showing pop up).
         return new JsonResponse([
             'uploaded' => 'true',
             'url' => $response->getDestination()
