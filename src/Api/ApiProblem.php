@@ -58,7 +58,7 @@ class ApiProblem
         );
     }
 
-    public function set(string $name, string $value): void
+    public function set($name, $value): void
     {
         $this->extraData[$name] = $value;
     }
