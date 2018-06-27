@@ -7,12 +7,10 @@ use App\Service\CloudStorage\Interfaces\CloudStorageInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class FileUploadController extends AbstractController
 {
@@ -24,17 +22,9 @@ class FileUploadController extends AbstractController
     }
 
     /**
-     * @param Request $request
-     *
      * @Method("POST")
      *
      * @Route("/file/upload", name="file_upload")
-     *
-     * @return Response
-     *
-     * @throws AccessDeniedException
-     * @throws FileException
-     * @throws \OutOfBoundsException
      */
     public function upload(Request $request): Response
     {
@@ -49,7 +39,8 @@ class FileUploadController extends AbstractController
         $fileName = $file->getClientOriginalName().'.'.$file->guessClientExtension();
         $response = $this->fileStorage->upload(['Key' => 'posts/'.$fileName, 'SourceFile' => $file->getRealPath()]);
 
-        //must return json and have { "uploaded":"true" } in the response to make ckeditor5 work (without showing pop up).
+        // Must return json and have { "uploaded":"true" } in the response
+        // to make ckeditor5 work (without showing pop up).
         return new JsonResponse([
             'uploaded' => 'true',
             'url' => $response->getDestination()

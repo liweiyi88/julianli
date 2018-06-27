@@ -110,7 +110,14 @@ class DbBackupCommand extends Command
         $fileName = (new \DateTime('now'))->format('Ymd').'.sql';
         $filePath = $projectDir.'/'.'backup_'.$fileName;
 
-        $process = new Process(\sprintf('mysqldump -h %s -B %s -u %s --password=%s > %s', $host, $database, $username, $password, $filePath));
+        $process = new Process(\sprintf(
+            'mysqldump -h %s -B %s -u %s --password=%s > %s',
+            $host,
+            $database,
+            $username,
+            $password,
+            $filePath
+        ));
         $process->mustRun();
 
         if (!$this->filesystem->exists($filePath)) {

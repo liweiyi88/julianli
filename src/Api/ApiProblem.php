@@ -9,8 +9,8 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class ApiProblem
 {
-    const TYPE_VALIDATION_ERROR = 'validation_error';
-    const TYPE_INVALID_REQUEST_BODY_FORMAT = 'invalid_body_format';
+    public const TYPE_VALIDATION_ERROR = 'validation_error';
+    public const TYPE_INVALID_REQUEST_BODY_FORMAT = 'invalid_body_format';
 
     private static $titles = array(
         self::TYPE_VALIDATION_ERROR => 'There was a validation error',
@@ -33,9 +33,7 @@ class ApiProblem
             // no type? The default is about:blank and the title should
             // be the standard status code message
             $type = 'about:blank';
-            $title = isset(Response::$statusTexts[$statusCode])
-                ? Response::$statusTexts[$statusCode]
-                : 'Unknown status code :(';
+            $title = Response::$statusTexts[$statusCode] ?? 'Unknown status code :(';
         } else {
             if (!isset(self::$titles[$type])) {
                 throw new \InvalidArgumentException('No title for type '.$type);
@@ -48,7 +46,7 @@ class ApiProblem
         $this->title = $title;
     }
 
-    public function toArray()
+    public function toArray(): array
     {
         return array_merge(
             $this->extraData,
@@ -60,7 +58,7 @@ class ApiProblem
         );
     }
 
-    public function set($name, $value)
+    public function set(string $name, string $value): void
     {
         $this->extraData[$name] = $value;
     }

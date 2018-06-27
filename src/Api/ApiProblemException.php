@@ -8,8 +8,12 @@ class ApiProblemException extends HttpException
 {
     private $apiProblem;
 
-    public function __construct(ApiProblem $apiProblem, \Exception $previous = null, array $headers = array(), $code = 0)
-    {
+    public function __construct(
+        ApiProblem $apiProblem,
+        \Exception $previous = null,
+        array $headers = [],
+        $code = 0
+    ) {
         $this->apiProblem = $apiProblem;
         $statusCode = $apiProblem->getStatusCode();
         $message = $apiProblem->getTitle();
@@ -17,7 +21,7 @@ class ApiProblemException extends HttpException
         parent::__construct($statusCode, $message, $previous, $headers, $code);
     }
 
-    public function getApiProblem()
+    public function getApiProblem(): ApiProblem
     {
         return $this->apiProblem;
     }
