@@ -21,7 +21,7 @@ class ApiProblemException extends HttpException
         parent::__construct($statusCode, $message, $previous, $headers, $code);
     }
 
-    public function getApiProblem()
+    public function getApiProblem(): ApiProblem
     {
         return $this->apiProblem;
     }
