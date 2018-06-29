@@ -7,6 +7,7 @@ parameters:
     aws_key: '%env(AWS_S3_KEY)%'
     aws_secret: '%env(AWS_S3_SECRET)%'
     aws_s3_region: '%env(AWS_S3_REGION)%'
+    redis_host: '%env(REDIS_CONNECTION)%'
 
 services:
     # default configuration for services in *this* file
@@ -27,17 +28,8 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
-    App\Controller\FileUploadController:
-        arguments:
-            App\Service\CloudStorage\Interfaces\CloudStorageInterface: '@App\Service\CloudStorage\S3'
-
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
-
-    App\Service\Email\EmailManager:
-        arguments:
-            $hostEmail: '%mailer_host_email%'
-            $adminEmail: '%mailer_admin_email%'
 
     App\EventSubscriber\ApiExceptionSubscriber:
         arguments:
@@ -46,23 +38,16 @@ services:
             - { name: kernel.event_subscriber, event: kernel.exception}
 
     App\CustomPagerfanta\CustomView:
-        public: false
         tags: [{ name: pagerfanta.view, alias: custom_view }]
 
-    App\Service\CloudStorage\Factory\S3Factory:
-        public: false
-        arguments:
-            $key: '%aws_key%'
-            $region: '%aws_s3_region%'
-            $secret: '%aws_secret%'
-            $version: ~
-
-    AWS\S3\S3Client:
-        public: false
+    Aws\S3\S3Client:
         factory: 'App\Service\CloudStorage\Factory\S3Factory:create'
 
-    App\Service\CloudStorage\S3:
-        public: false
-        arguments:
-            Aws\S3\S3Client: '@AWS\S3\S3Client'
+    ########################
+    # Binding the interfaces
+    ########################
+    App\Service\CloudStorage\Interfaces\CloudStorageInterface: '@App\Service\CloudStorage\S3'
+
+    Psr\SimpleCache\CacheInterface:
+        factory: 'App\Service\Cache\RedisFactory:create'
 

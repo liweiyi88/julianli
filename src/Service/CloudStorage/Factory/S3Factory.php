@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Service\CloudStorage\Factory;
 
 use Aws\S3\S3Client;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 class S3Factory
 {
@@ -12,12 +13,12 @@ class S3Factory
     private $secret;
     private $version;
 
-    public function __construct(string $key, string $region, string $secret, ?string $version = null)
+    public function __construct(ParameterBagInterface $parameterBag)
     {
-        $this->key = $key;
-        $this->region = $region;
-        $this->secret = $secret;
-        $this->version = $version ?? 'latest';
+        $this->key = $parameterBag->get('aws_key');
+        $this->region = $parameterBag->get('aws_s3_region');
+        $this->secret = $parameterBag->get('aws_secret');
+        $this->version = 'latest';
     }
 
     /**
