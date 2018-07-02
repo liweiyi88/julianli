@@ -19,7 +19,7 @@ class BaseController extends AbstractController
      * @param object $data
      * @param int  $statusCode
      *
-     * @return Response
+     * @return \Symfony\Component\HttpFoundation\Response
      *
      * @throws \InvalidArgumentException
      */
@@ -42,7 +42,7 @@ class BaseController extends AbstractController
      *
      * @return string
      */
-    protected function serialize($data, $format = 'json'): string
+    protected function serialize($data, string $format = 'json'): string
     {
         return $this->serializer->serialize($data, $format);
     }

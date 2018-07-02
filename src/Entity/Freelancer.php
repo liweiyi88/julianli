@@ -235,7 +235,7 @@ class Freelancer implements UserInterface, \Serializable
         return $this->password;
     }
 
-    public function setPassword(string $password)
+    public function setPassword(string $password): void
     {
         $this->password = $password;
     }
@@ -249,7 +249,7 @@ class Freelancer implements UserInterface, \Serializable
         return $this->username;
     }
 
-    public function setUsername(string $username)
+    public function setUsername(string $username): void
     {
         $this->username = $username;
     }
@@ -258,24 +258,23 @@ class Freelancer implements UserInterface, \Serializable
     {
     }
 
-    public function serialize()
+    public function serialize(): string
     {
-        return serialize(
-            array(
+        return serialize([
             $this->id,
             $this->username,
             $this->password
-            )
+            ]
         );
     }
 
     public function unserialize($serialized): void
     {
-        list (
+        [
             $this->id,
             $this->username,
             $this->password
-            ) = unserialize($serialized);
+        ] = \unserialize($serialized, ['allowed_classes' => true]);
     }
 
     public function __toString()

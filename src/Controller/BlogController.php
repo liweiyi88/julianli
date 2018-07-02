@@ -13,12 +13,12 @@ use Symfony\Component\HttpFoundation\Response;
 class BlogController extends Controller
 {
     /**
-     * @var FreelancerRepository
+     * @var \App\Repository\FreelancerRepository
      */
     private $freelancerRepository;
 
     /**
-     * @var PostRepository
+     * @var \App\Repository\PostRepository
      */
     private $postRepository;
 

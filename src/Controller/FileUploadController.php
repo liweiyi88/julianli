@@ -14,6 +14,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 class FileUploadController extends AbstractController
 {
+    /**
+     * @var \App\Service\CloudStorage\Interfaces\CloudStorageInterface
+     */
     private $fileStorage;
 
     public function __construct(CloudStorageInterface $fileStorage)
