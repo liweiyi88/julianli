@@ -5,7 +5,6 @@ namespace App\Service\Email;
 use App\Requests\Contact;
 use Swift_Mailer;
 use Swift_Message;
-use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 class EmailManager
 {
@@ -15,11 +14,11 @@ class EmailManager
     private $adminEmail;
     private $hostEmail;
 
-    public function __construct(Swift_Mailer $mailer, ParameterBagInterface $parameterBag)
+    public function __construct(Swift_Mailer $mailer, string $adminEmail, string $hostEmail)
     {
         $this->mailer = $mailer;
-        $this->adminEmail = $parameterBag->get('mailer_admin_email');
-        $this->hostEmail = $parameterBag->get('mailer_host_email');
+        $this->adminEmail = $adminEmail;
+        $this->hostEmail = $hostEmail;
     }
 
     public function sendEmail(Contact $contact): void

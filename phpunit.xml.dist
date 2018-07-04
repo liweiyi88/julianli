@@ -24,7 +24,7 @@
     </testsuites>
 
     <filter>
-        <whitelist>
+        <whitelist processUncoveredFilesFromWhitelist="true">
             <directory>./src/Api/</directory>
             <directory>./src/Service/</directory>
             <directory>./src/Controller/</directory>

@@ -264,8 +264,7 @@ class Freelancer implements UserInterface, \Serializable
             $this->id,
             $this->username,
             $this->password
-            ]
-        );
+            ]);
     }
 
     public function unserialize($serialized): void

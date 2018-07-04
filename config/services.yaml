@@ -1,11 +1,12 @@
 parameters:
     locale: 'en'
-    mailer_host_email: '%env(MAILER_HOST_EMAIL)%'
-    mailer_admin_email: '%env(MAILER_ADMIN_EMAIL)%'
-    aws_key: '%env(AWS_S3_KEY)%'
-    aws_secret: '%env(AWS_S3_SECRET)%'
-    aws_s3_region: '%env(AWS_S3_REGION)%'
-    redis_host: '%env(REDIS_CONNECTION)%'
+    app.mailer_host_email: '%env(MAILER_HOST_EMAIL)%'
+    app.mailer_admin_email: '%env(MAILER_ADMIN_EMAIL)%'
+    app.aws_key: '%env(AWS_S3_KEY)%'
+    app.aws_secret: '%env(AWS_S3_SECRET)%'
+    app.aws_s3_region: '%env(AWS_S3_REGION)%'
+    app.aws_s3_version: 'latest'
+    app.redis_host: '%env(REDIS_CONNECTION)%'
 
 services:
     _defaults:
@@ -21,6 +22,11 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
+    App\Service\Email\EmailManager:
+        arguments:
+            $adminEmail: '%app.mailer_admin_email%'
+            $hostEmail: '%app.mailer_host_email%'
+
     App\EventSubscriber\ApiExceptionSubscriber:
         arguments:
             $debug: '%kernel.debug%'
@@ -31,7 +37,8 @@ services:
         tags: [{ name: pagerfanta.view, alias: custom_view }]
 
     Aws\S3\S3Client:
-        factory: 'App\Service\CloudStorage\Factory\S3Factory:create'
+        factory: ['App\Service\CloudStorage\Factory\S3Factory',create]
+        arguments: ['%app.aws_key%', '%app.aws_s3_region%', '%app.aws_key%', '%app.aws_s3_version%']
 
     ########################
     # Binding the interfaces
@@ -39,5 +46,6 @@ services:
     App\Service\CloudStorage\Interfaces\CloudStorageInterface: '@App\Service\CloudStorage\S3'
 
     Psr\SimpleCache\CacheInterface:
-        factory: 'App\Service\Cache\RedisFactory:create'
+        factory: ['App\Service\Cache\RedisFactory', create]
+        arguments: ['%app.redis_host%']
 
