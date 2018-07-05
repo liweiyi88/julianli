@@ -34,18 +34,7 @@ class ProfileController extends BaseController
     }
 
     /**
-     * @param Request      $request
-     * @param EmailManager $emailManager
-     *
      * @Route("/api/contact", name="contact")
-     *
-     * @return Response
-     *
-     * @throws \InvalidArgumentException
-     * @throws \App\Api\ApiProblemException
-     * @throws \LogicException
-     * @throws \Symfony\Component\Form\Exception\AlreadySubmittedException;
-     * @throws \Symfony\Component\Form\Exception\LogicException
      */
     public function postContact(Request $request, EmailManager $emailManager): Response
     {

@@ -55,7 +55,7 @@ class BlogController extends Controller
 
         $latestPosts = $this->postRepository->findLatestPublishedPublicPosts();
 
-        if (!$post->getIsPublic()) {
+        if (!$post->isPublic()) {
             $this->denyAccessUnlessGranted('ROLE_USER', null, 'Please login to get the access to the post');
         }
 

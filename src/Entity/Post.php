@@ -65,11 +65,15 @@ class Post
 
     /**
      * @ORM\Column(name="is_published", type="boolean", nullable=true)
+     *
+     * @var bool
      */
     private $isPublished;
 
     /**
      * @ORM\Column(name="is_public", type="boolean", nullable=true)
+     *
+     * @var bool
      */
     private $isPublic;
 
@@ -115,12 +119,12 @@ class Post
         return $this->id;
     }
 
-    public function getIsPublic(): ?bool
+    public function isPublic(): ?bool
     {
         return $this->isPublic;
     }
 
-    public function getIsPublished(): ?bool
+    public function isPublished(): ?bool
     {
         return $this->isPublished;
     }
