@@ -1,5 +1,9 @@
 ---
 - hosts: digitalocean
+  become: yes
+
+  vars:
+      - redis_bind: 127.0.0.1
 
   vars_files:
       - ./vars/deploy_vault.yml
@@ -8,3 +12,4 @@
 
   roles:
       - nginx
+      - DavidWittman.redis
