@@ -53,15 +53,20 @@ class Post
     private $createdAt;
 
     /**
-     * @ORM\Column(name="update_at", type="datetime", nullable=true)
+     * @ORM\Column(name="page_views", type="integer", nullable=true)
      */
-    private $updatedAt;
+    private $pageViews;
 
     /**
      * @ORM\ManyToMany(targetEntity="Tag", inversedBy="posts")
      * @ORM\JoinTable(name="posts_tags")
      */
     private $tags;
+
+    /**
+     * @ORM\Column(name="update_at", type="datetime", nullable=true)
+     */
+    private $updatedAt;
 
     /**
      * @ORM\Column(name="is_published", type="boolean", nullable=true)
@@ -87,6 +92,11 @@ class Post
     {
         $this->tags = new ArrayCollection();
         $this->createdAt = new \DateTime();
+    }
+
+    public function pageViewCacheKey(): string
+    {
+        return \sprintf('post.%s.view', $this->id);
     }
 
     public function getContent(): ?string
@@ -137,6 +147,11 @@ class Post
     public function getTags(): Collection
     {
         return $this->tags;
+    }
+
+    public function getPageViews(): int
+    {
+        return $this->pageViews ?? 0;
     }
 
     public function getTitle(): ?string
@@ -205,6 +220,11 @@ class Post
     public function setTags(?array $tags): void
     {
         $this->tags = $tags;
+    }
+
+    public function setPageViews(int $pageViews): void
+    {
+        $this->pageViews = $pageViews;
     }
 
     public function setTitle(?string $title): void

@@ -19,10 +19,14 @@ class ProfileController extends BaseController
     /**
      * @Route("/", name="home")
      */
-    public function index(FreelancerRepository $freelancerRepo, PostRepository $postRepo): Response
-    {
+    public function index(
+        FreelancerRepository $freelancerRepo,
+        PostRepository $postRepo
+    ): Response {
         $freelancer = $freelancerRepo->findFreeLancer();
         $latestPosts = $postRepo->findLatestPublishedPublicPosts();
+
+        $this->attachPageViews($latestPosts);
 
         return $this->render(
             'profile.html.twig',

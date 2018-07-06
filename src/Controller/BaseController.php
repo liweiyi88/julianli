@@ -2,16 +2,27 @@
 
 namespace App\Controller;
 
+use App\Entity\Post;
+use App\Service\Cache\Cache;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\SerializerInterface;
 
 class BaseController extends AbstractController
 {
-    private $serializer;
+    /**
+     * @var \App\Service\Cache\Cache
+     */
+    protected $cache;
 
-    public function __construct(SerializerInterface $serializer)
+    /**
+     * @var \Symfony\Component\Serializer\SerializerInterface
+     */
+    protected $serializer;
+
+    public function __construct(Cache $cache, SerializerInterface $serializer)
     {
+        $this->cache = $cache;
         $this->serializer = $serializer;
     }
 
@@ -45,5 +56,14 @@ class BaseController extends AbstractController
     protected function serialize($data, string $format = 'json'): string
     {
         return $this->serializer->serialize($data, $format);
+    }
+
+    protected function attachPageViews(\Countable $posts): void
+    {
+        /** @var \App\Entity\Post $post */
+        foreach ($posts as $post) {
+            $pageViews = $this->cache->get($post->pageViewCacheKey(), $post->getPageViews());
+            $post->setPageViews($pageViews);
+        }
     }
 }
