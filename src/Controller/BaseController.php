@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Post;
 use App\Service\Cache\Cache;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -58,7 +57,7 @@ class BaseController extends AbstractController
         return $this->serializer->serialize($data, $format);
     }
 
-    protected function attachPageViews(\Countable $posts): void
+    protected function attachPageViews(iterable $posts): void
     {
         /** @var \App\Entity\Post $post */
         foreach ($posts as $post) {
