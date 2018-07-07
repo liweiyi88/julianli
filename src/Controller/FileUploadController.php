@@ -14,6 +14,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 class FileUploadController extends AbstractController
 {
+    /**
+     * @var \App\Service\CloudStorage\Interfaces\CloudStorageInterface
+     */
     private $fileStorage;
 
     public function __construct(CloudStorageInterface $fileStorage)
@@ -31,7 +34,7 @@ class FileUploadController extends AbstractController
         $this->denyAccessUnlessGranted('ROLE_USER', null, 'unable to upload the file');
 
         if ($request->files->count() !== 1) {
-            throw new \OutOfBoundsException('only process a single file at once');
+            throw new \OutOfBoundsException('It can only process a single file at once.');
         }
 
         /** @var UploadedFile $file */

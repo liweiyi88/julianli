@@ -7,30 +7,17 @@ use Aws\S3\S3Client;
 
 class S3Factory
 {
-    private $key;
-    private $region;
-    private $secret;
-    private $version;
-
-    public function __construct(string $key, string $region, string $secret, ?string $version = null)
-    {
-        $this->key = $key;
-        $this->region = $region;
-        $this->secret = $secret;
-        $this->version = $version ?? 'latest';
-    }
-
     /**
      * @throws \InvalidArgumentException
      */
-    public function create(): S3Client
+    public static function create($key, $region, $secret, $version): S3Client
     {
         return new S3Client([
-            'version'     => $this->version,
-            'region'      => $this->region,
+            'version'     => $version,
+            'region'      => $region,
             'credentials' => [
-                'key'    => $this->key,
-                'secret' => $this->secret,
+                'key'    => $key,
+                'secret' => $secret,
             ]
         ]);
     }

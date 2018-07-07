@@ -3,7 +3,7 @@ security:
         App\Entity\Freelancer:
             algorithm: bcrypt
             cost:      12
-    # https://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+
     providers:
         our_db_provider:
             entity:
@@ -20,14 +20,6 @@ security:
             form_login:
                 login_path: login
                 check_path: login
-
-            # activate different ways to authenticate
-
-            #
-            # https://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
-
-            # form_login: ~
-            # https://symfony.com/doc/current/cookbook/security/form_login_setup.html
 
     access_control:
 #        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }

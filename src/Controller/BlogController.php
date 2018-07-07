@@ -5,25 +5,32 @@ namespace App\Controller;
 use App\Entity\Post;
 use App\Repository\FreelancerRepository;
 use App\Repository\PostRepository;
+use App\Service\Cache\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Serializer\SerializerInterface;
 
-class BlogController extends Controller
+class BlogController extends BaseController
 {
     /**
-     * @var FreelancerRepository
+     * @var \App\Repository\FreelancerRepository
      */
     private $freelancerRepository;
 
     /**
-     * @var PostRepository
+     * @var \App\Repository\PostRepository
      */
     private $postRepository;
 
-    public function __construct(FreelancerRepository $freelancerRepository, PostRepository $postRepository)
-    {
+    public function __construct(
+        Cache $cache,
+        SerializerInterface $serializer,
+        FreelancerRepository $freelancerRepository,
+        PostRepository $postRepository
+    ) {
+        parent::__construct($cache, $serializer);
+
         $this->freelancerRepository = $freelancerRepository;
         $this->postRepository = $postRepository;
     }
@@ -55,9 +62,13 @@ class BlogController extends Controller
 
         $latestPosts = $this->postRepository->findLatestPublishedPublicPosts();
 
-        if (!$post->getIsPublic()) {
+        $this->attachPageViews($latestPosts);
+
+        if (!$post->isPublic()) {
             $this->denyAccessUnlessGranted('ROLE_USER', null, 'Please login to get the access to the post');
         }
+
+        $this->cache->increment($post->pageViewCacheKey());
 
         return $this->render('blog/post_show.html.twig', [
             'post' => $post,

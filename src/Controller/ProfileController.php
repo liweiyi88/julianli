@@ -19,10 +19,14 @@ class ProfileController extends BaseController
     /**
      * @Route("/", name="home")
      */
-    public function index(FreelancerRepository $freelancerRepo, PostRepository $postRepo): Response
-    {
+    public function index(
+        FreelancerRepository $freelancerRepo,
+        PostRepository $postRepo
+    ): Response {
         $freelancer = $freelancerRepo->findFreeLancer();
         $latestPosts = $postRepo->findLatestPublishedPublicPosts();
+
+        $this->attachPageViews($latestPosts);
 
         return $this->render(
             'profile.html.twig',
@@ -34,18 +38,7 @@ class ProfileController extends BaseController
     }
 
     /**
-     * @param Request      $request
-     * @param EmailManager $emailManager
-     *
      * @Route("/api/contact", name="contact")
-     *
-     * @return Response
-     *
-     * @throws \InvalidArgumentException
-     * @throws \App\Api\ApiProblemException
-     * @throws \LogicException
-     * @throws \Symfony\Component\Form\Exception\AlreadySubmittedException;
-     * @throws \Symfony\Component\Form\Exception\LogicException
      */
     public function postContact(Request $request, EmailManager $emailManager): Response
     {

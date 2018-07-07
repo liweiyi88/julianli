@@ -49,7 +49,7 @@
                                 {% endfor %}
                             </div>
                             <h3 class="post-title"><a href="{{ path('blog_post', {slug: post.slug}) }}">{{ post.title }}</a></h3>
-                            <div class="post-info"><i class="rsicon rsicon-eye"></i>{{ random(20) }} page views</div>
+                            <div class="post-info"><i class="rsicon rsicon-eye"></i>{{ post.pageViews }} page views</div>
                         </li>
                     {% endfor %}
                     </ul>

@@ -11,17 +11,17 @@ class S3Test extends TestCase
 {
     public function testUpload(): void
     {
-        $s3ClientStub = $this
+        $s3ClientMock = $this
             ->getMockBuilder(S3Client::class)
             ->disableOriginalConstructor()
             ->setMethods(['putObject'])
             ->getMock();
 
-        $s3ClientStub
+        $s3ClientMock
             ->method('putObject')
             ->willReturn(new Result(['ObjectURL' => 'test_url']));
 
-        $s3 = new S3($s3ClientStub);
+        $s3 = new S3($s3ClientMock);
 
         self::assertSame('test_url', $s3->upload(['Key' => 'test', 'SourceFile' => 'test_file'])->getDestination());
     }

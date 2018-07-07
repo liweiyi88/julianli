@@ -2,17 +2,16 @@ FIG=docker-compose
 RUN=$(FIG) run --rm app
 EXEC=$(FIG) exec app
 CONSOLE=bin/console
+DEBUG=docker exec -it app bash
 
 .DEFAULT_GOAL := help
 .PHONY: help start stop reset db db-diff db-migrate db-rollback db-load watch clear clean build up perm cc
-
 help:
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
 ##
 ## Project setup
 ##---------------------------------------------------------------------------
-
 start:          ## Install and start the project
 start: build up db perm .env
 
@@ -38,7 +37,6 @@ cc:             ## Clear the cache in dev env
 cc:
 	$(RUN) $(CONSOLE) cache:clear --no-warmup
 	$(RUN) $(CONSOLE) cache:warmup
-
 ##
 ## Database
 ##---------------------------------------------------------------------------
@@ -71,3 +69,9 @@ composer.lock: composer.json
 
 .env: .env.dist
 	@$(RUN) composer run-script post-install-cmd
+##
+## Tests
+##---------------------------------------------------------------------------
+debug:
+	$(DEBUG)
+##

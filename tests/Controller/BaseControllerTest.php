@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace App\Tests\Controller;
 
 use App\Controller\BaseController;
+use App\Service\Cache\Cache;
+use Psr\SimpleCache\CacheInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -15,9 +17,13 @@ class BaseControllerTest extends KernelTestCase
     {
         parent::setUp();
 
-        $kernel = self::bootKernel();
+        self::bootKernel();
 
-        $this->controller = new BaseController($kernel->getContainer()->get('serializer'));
+        $container = self::$container;
+        $store = $this->createMock(CacheInterface::class);
+        $cache = new Cache($store);
+
+        $this->controller = new BaseController($cache, $container->get('serializer'));
     }
 
     public function testCreateApiResponse(): void
