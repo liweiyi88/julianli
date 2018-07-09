@@ -14,6 +14,9 @@ services:
         autoconfigure: true
         public: false
         bind:
+            $adminEmail: '%app.mailer_admin_email%'
+            $debug: '%kernel.debug%'
+            $hostEmail: '%app.mailer_host_email%'
             App\Service\CloudStorage\Interfaces\CloudStorageInterface: '@App\Service\CloudStorage\S3'
             Psr\SimpleCache\CacheInterface: '@Symfony\Component\Cache\Simple\RedisCache'
 
@@ -24,17 +27,6 @@ services:
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
-
-    App\Service\Email\EmailManager:
-        arguments:
-            $adminEmail: '%app.mailer_admin_email%'
-            $hostEmail: '%app.mailer_host_email%'
-
-    App\EventSubscriber\ApiExceptionSubscriber:
-        arguments:
-            $debug: '%kernel.debug%'
-        tags:
-            - { name: kernel.event_subscriber, event: kernel.exception}
 
     App\CustomPagerfanta\CustomView:
         tags: [{ name: pagerfanta.view, alias: custom_view }]
