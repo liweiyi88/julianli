@@ -38,10 +38,12 @@ workflows:
     version: 2
     build_deploy:
         jobs:
-            - build
+            - build:
+                filters:
+                    branches:
+                        ignore:
+                            - master
             - deploy:
                 filters:
                     branches:
                         only: master
-                requires:
-                    - build
