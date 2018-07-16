@@ -4,13 +4,12 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Service\CloudStorage\Interfaces\CloudStorageInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
 class FileUploadController extends AbstractController
 {
@@ -25,9 +24,7 @@ class FileUploadController extends AbstractController
     }
 
     /**
-     * @Method("POST")
-     *
-     * @Route("/file/upload", name="file_upload")
+     * @Route("/file/upload", name="file_upload", methods={"POST"})
      */
     public function upload(Request $request): Response
     {

@@ -7,6 +7,9 @@ use Aws\Result;
 use Aws\S3\S3Client;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers \App\Service\CloudStorage\S3
+ */
 class S3Test extends TestCase
 {
     public function testUpload(): void

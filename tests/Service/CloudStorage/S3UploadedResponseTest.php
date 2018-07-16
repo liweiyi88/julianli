@@ -7,6 +7,9 @@ use App\Service\CloudStorage\S3UploadedResponse;
 use Aws\Result;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers \App\Service\CloudStorage\S3UploadedResponse
+ */
 class S3UploadedResponseTest extends TestCase
 {
     public function testGetDestination(): void

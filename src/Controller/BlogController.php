@@ -6,10 +6,9 @@ use App\Entity\Post;
 use App\Repository\FreelancerRepository;
 use App\Repository\PostRepository;
 use App\Service\Cache\Cache;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Component\Routing\Annotation\Route;
 
 class BlogController extends BaseController
 {
@@ -52,9 +51,7 @@ class BlogController extends BaseController
     }
 
     /**
-     * @Route("/posts/{slug}", name="blog_post")
-     *
-     * @Method("GET")
+     * @Route("/posts/{slug}", name="blog_post", methods={"GET"})
      */
     public function postShow(Post $post): Response
     {

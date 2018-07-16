@@ -14,6 +14,11 @@ class Cache
         $this->store = $cache;
     }
 
+    public function clear(): void
+    {
+        $this->store->clear();
+    }
+
     public function get(string $key, $default = null)
     {
         $value = $this->store->get($key);

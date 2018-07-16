@@ -9,10 +9,10 @@ use App\Repository\FreelancerRepository;
 use App\Repository\PostRepository;
 use App\Requests\Form\ContactType;
 use App\Service\Email\EmailManager;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
 class ProfileController extends BaseController
 {

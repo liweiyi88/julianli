@@ -40,18 +40,10 @@ class BaseController extends AbstractController
         return new Response(
             $json,
             $statusCode,
-            array(
-            'Content-Type' => 'application/json'
-            )
+            ['Content-Type' => 'application/json']
         );
     }
 
-    /**
-     * @param object $data
-     * @param string $format
-     *
-     * @return string
-     */
     protected function serialize($data, string $format = 'json'): string
     {
         return $this->serializer->serialize($data, $format);

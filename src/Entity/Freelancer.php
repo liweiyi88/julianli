@@ -227,7 +227,7 @@ class Freelancer implements UserInterface, \Serializable
 
     public function getRoles(): array
     {
-        return array('ROLE_USER');
+        return ['ROLE_USER'];
     }
 
     public function getPassword(): string
