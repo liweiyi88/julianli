@@ -19,7 +19,7 @@ class ApiExceptionSubscriber implements EventSubscriberInterface
         $this->debug = $debug;
     }
 
-    public function onKernelException(GetResponseForExceptionEvent $event)
+    public function onKernelException(GetResponseForExceptionEvent $event): void
     {
         if (strpos($event->getRequest()->getPathInfo(), '/api') !== 0) {
             return;
@@ -37,9 +37,7 @@ class ApiExceptionSubscriber implements EventSubscriberInterface
         if ($e instanceof ApiProblemException) {
             $apiProblem = $e->getApiProblem();
         } else {
-            $apiProblem = new ApiProblem(
-                $statusCode
-            );
+            $apiProblem = new ApiProblem($statusCode);
 
             /*
              * If it's an HttpException message (e.g. for 404, 403),
@@ -54,19 +52,14 @@ class ApiExceptionSubscriber implements EventSubscriberInterface
 
         $data = $apiProblem->toArray();
 
-        $response = new JsonResponse(
-            $data,
-            $apiProblem->getStatusCode()
-        );
+        $response = new JsonResponse($data, $apiProblem->getStatusCode());
         $response->headers->set('Content-Type', 'application/problem+json');
 
         $event->setResponse($response);
     }
 
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
-        return array(
-            KernelEvents::EXCEPTION => 'onKernelException'
-        );
+        return [KernelEvents::EXCEPTION => 'onKernelException'];
     }
 }

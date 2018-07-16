@@ -6,7 +6,7 @@ use Pagerfanta\View\Template\DefaultTemplate;
 
 class CustomTemplate extends DefaultTemplate
 {
-    static protected $defaultOptions = array(
+    static protected $defaultOptions = [
         'previous_message'   => '<i class="rsicon rsicon-chevron_left"></i>',
         'next_message'       => '<i class="rsicon rsicon-chevron_right"></i>',
         'css_disabled_class' => 'disabled',
@@ -18,7 +18,7 @@ class CustomTemplate extends DefaultTemplate
         'span_template'      => '<span class="%class%">%text%</span>',
         'rel_previous'        => 'prev',
         'rel_next'            => 'next'
-    );
+    ];
 
     public function previousDisabled()
     {
@@ -42,10 +42,10 @@ class CustomTemplate extends DefaultTemplate
 
     public function pageWithText($page, $text, $prevornext = null, $rel = null)
     {
-        $search = array('%href%', '%text%', '%rel%', '%prevornext%');
+        $search = ['%href%', '%text%', '%rel%', '%prevornext%'];
 
         $href = $this->generateRoute($page);
-        $replace = $rel ? array($href, $text, ' rel="' . $rel . '"', $prevornext) : array($href, $text, '');
+        $replace = $rel ? [$href, $text, ' rel="' . $rel . '"', $prevornext] : [$href, $text, ''];
 
         return str_replace($search, $replace, $this->option('page_template'));
     }
