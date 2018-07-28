@@ -2,8 +2,8 @@ framework:
     messenger:
         transports:
             # Uncomment the following line to enable a transport named "amqp"
-            # amqp: '%env(MESSENGER_TRANSPORT_DSN)%'
+            sqs: enqueue://default?&topic[name]=julianli&queue[name]=julianli
 
         routing:
             # Route your messages to the transports
-            # 'App\Message\YourMessage': amqp
+            'App\Requests\Contact': sqs
