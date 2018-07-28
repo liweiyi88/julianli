@@ -31,6 +31,9 @@ services:
     App\CustomPagerfanta\CustomView:
         tags: [{ name: pagerfanta.view, alias: custom_view }]
 
+    App\MessageHandler\ContactHandler:
+        tags: [messenger.message_handler]
+
     Aws\S3\S3Client:
         factory: ['App\Service\CloudStorage\Factory\S3Factory',create]
         arguments: ['%app.aws_key%', '%app.aws_s3_region%', '%app.aws_key%', '%app.aws_s3_version%']

@@ -8,10 +8,10 @@ use App\Requests\Contact;
 use App\Repository\FreelancerRepository;
 use App\Repository\PostRepository;
 use App\Requests\Form\ContactType;
-use App\Service\Email\EmailManager;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ProfileController extends BaseController
@@ -40,7 +40,7 @@ class ProfileController extends BaseController
     /**
      * @Route("/api/contact", name="contact")
      */
-    public function postContact(Request $request, EmailManager $emailManager): Response
+    public function postContact(Request $request, MessageBusInterface $bus): Response
     {
         $form = $this->createForm(ContactType::class, new Contact());
         $this->processForm($request, $form);
@@ -50,7 +50,8 @@ class ProfileController extends BaseController
         }
 
         $contact = $form->getData();
-        $emailManager->sendEmail($contact);
+
+        $bus->dispatch($contact);
 
         return $this->createApiResponse($contact, 200);
     }
