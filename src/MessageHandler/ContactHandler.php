@@ -6,8 +6,9 @@ namespace App\MessageHandler;
 use App\Requests\Contact;
 use App\Service\Mailer;
 use Swift_Message;
+use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 
-class ContactHandler
+class ContactHandler implements MessageHandlerInterface
 {
     private $adminEmail;
     private $hostEmail;
