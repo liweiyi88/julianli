@@ -5,8 +5,6 @@ namespace App\Controller;
 use App\Api\ApiProblem;
 use App\Api\ApiProblemException;
 use App\Requests\Contact;
-use App\Repository\FreelancerRepository;
-use App\Repository\PostRepository;
 use App\Requests\Form\ContactType;
 use App\Service\Email\EmailManager;
 use Symfony\Component\Form\FormInterface;
@@ -19,19 +17,16 @@ class ProfileController extends BaseController
     /**
      * @Route("/", name="home")
      */
-    public function index(
-        FreelancerRepository $freelancerRepo,
-        PostRepository $postRepo
-    ): Response {
-        $freelancer = $freelancerRepo->findFreeLancer();
-        $latestPosts = $postRepo->findLatestPublishedPublicPosts();
+    public function index(): Response
+    {
+        $latestPosts = $this->postRepository->findLatestPublishedPublicPosts();
 
         $this->attachPageViews($latestPosts);
 
         return $this->render(
             'profile.html.twig',
             [
-                'freelancer' => $freelancer,
+                'freelancer' => $this->freelancerRepository->findFreeLancer(),
                 'posts' => $latestPosts
             ]
         );
