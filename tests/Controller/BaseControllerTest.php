@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace App\Tests\Controller;
 
 use App\Controller\BaseController;
+use App\Entity\Freelancer;
+use App\Entity\Post;
 use App\Service\Cache\Cache;
 use Psr\SimpleCache\CacheInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
@@ -21,9 +23,15 @@ class BaseControllerTest extends KernelTestCase
 
         $container = self::$container;
         $store = $this->createMock(CacheInterface::class);
+
+        /** @var CacheInterface $store */
         $cache = new Cache($store);
 
-        $this->controller = new BaseController($cache, $container->get('serializer'));
+        $this->controller = new BaseController(
+            $cache,
+            $container->get('doctrine')->getRepository(Freelancer::class),
+            $container->get('doctrine')->getRepository(Post::class),
+            $container->get('serializer'));
     }
 
     public function testCreateApiResponse(): void
