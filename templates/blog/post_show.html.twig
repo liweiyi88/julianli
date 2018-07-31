@@ -1,7 +1,9 @@
 {% extends 'layout.html.twig' %}
 {% block body %}
-<body class="page-single header-has-img loading">
+<body class="header-has-img loading">
     {% block mobile_nav %} {{ parent() }} {% endblock %}
+
+    {% block sidebar %} {{ parent() }} {% endblock %}
 
     <div class="wrapper">
         {% block header %} {{ parent() }} {% endblock %}
@@ -10,7 +12,7 @@
             <div class="container">
                 <!-- START: PAGE CONTENT -->
                 <div class="row animate-up">
-                    <div class="col-sm-8">
+                    <div class="col-sm-12">
                         <main class="post-single">
                             <article class="post-content section-box">
                                 {% if post.coverImageUrl is not empty %}
@@ -72,29 +74,6 @@
                         </main>
                         <!-- .post-single -->
                     </div>
-
-                    <div class="col-sm-4">
-                        <div class="sidebar sidebar-default">
-                            <div class="widget-area" style="margin-top: 200px">
-                                <aside class="widget widget-recent-posts">
-                                    <h2 class="widget-title">Recent posts</h2>
-                                    <ul>
-                                        {% for post in posts %}
-                                            <li>
-                                                <div class="post-tag">
-                                                    {% for tag in post.tags %}
-                                                        <b>#{{ tag.name }}</b>
-                                                    {% endfor %}
-                                                </div>
-                                                <h3 class="post-title"><a href="{{ path('blog_post', {slug: post.slug}) }}">{{ post.title }}</a></h3>
-                                                <div class="post-info"><i class="rsicon rsicon-eye"></i>{{ post.pageViews }} page views</div>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                </aside>
-                            </div><!-- .widget-area -->
-                        </div><!-- .sidebar -->
-                    </div><!-- .col-sm-4 -->
                 </div><!-- .row -->
                 <!-- END: PAGE CONTENT -->
 
