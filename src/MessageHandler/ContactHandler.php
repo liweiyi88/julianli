@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace App\MessageHandler;
 
 use App\Requests\Contact;
-use App\Service\Mailer;
+use Swift_Mailer;
 use Swift_Message;
 use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 
@@ -14,7 +14,7 @@ class ContactHandler implements MessageHandlerInterface
     private $hostEmail;
     private $mailer;
 
-    public function __construct(string $adminEmail, string $hostEmail, Mailer $mailer)
+    public function __construct(string $adminEmail, string $hostEmail, Swift_Mailer $mailer)
     {
         $this->adminEmail = $adminEmail;
         $this->hostEmail = $hostEmail;
@@ -28,8 +28,8 @@ class ContactHandler implements MessageHandlerInterface
         $message = (new Swift_Message($contact->getSubject()))
             ->setFrom($this->hostEmail)
             ->setTo($this->adminEmail)
-            ->setBody($content, Mailer::CONTENT_TEXT);
+            ->setBody($content, 'text/plain');
 
-        $this->mailer->sendEmail($message);
+        $this->mailer->send($message);
     }
 }

@@ -29,6 +29,7 @@
             <directory>./src/Api/</directory>
             <directory>./src/Service/</directory>
             <directory>./src/Controller/</directory>
+            <directory>./src/MessageHandler/</directory>
         </whitelist>
     </filter>
 
