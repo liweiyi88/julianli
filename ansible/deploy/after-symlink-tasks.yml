@@ -1,0 +1,3 @@
+---
+- name: Restart queue worker
+  command: "/usr/bin/supervisorctl restart julianli:"
