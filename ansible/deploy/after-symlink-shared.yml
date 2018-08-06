@@ -1,20 +1,23 @@
 ---
 - name: Install composer dependencies
   environment:
-    APP_ENV: prod
+    APP_ENV: "prod"
+    ENQUEUE_DSN: "{{ sqs_dsn }}"
   composer:
     command: install
     working_dir: "{{ ansistrano_release_path.stdout }}"
 
 - name: Clear the cache
   environment:
-    APP_ENV: prod
-  command: "{{ release_console_path }} cache:clear --no-warmup --env=prod"
+    APP_ENV: "prod"
+    ENQUEUE_DSN: "{{ sqs_dsn }}"
+  command: "{{ release_console_path }} cache:clear"
 
 - name: Warm up the cache
   environment:
-    APP_ENV: prod
-  command: "{{ release_console_path }} cache:warmup --env=prod"
+    APP_ENV: "prod"
+    ENQUEUE_DSN: "{{ sqs_dsn }}"
+  command: "{{ release_console_path }} cache:warmup"
 
 - name: Setup directory permissions for var/
   file:
@@ -27,6 +30,7 @@
   environment:
       APP_ENV: "prod"
       DATABASE_URL: "{{ database_url }}"
+      ENQUEUE_DSN: "{{ sqs_dsn }}"
   command: "{{ release_console_path }} doctrine:database:create --if-not-exists --env=prod"
   register: create_db_output
   changed_when: not create_db_output.stdout|search('already exists. Skipped')
@@ -35,6 +39,7 @@
   environment:
     APP_ENV: "prod"
     DATABASE_URL: "{{ database_url }}"
+    ENQUEUE_DSN: "{{ sqs_dsn }}"
   command: "{{ release_console_path }} doctrine:migrations:migrate --no-interaction --env=prod"
   register: run_migrations_output
   changed_when: not run_migrations_output.stdout|search('No migrations to execute')
