@@ -13,6 +13,7 @@
         <env name="APP_ENV" value="test" />
         <env name="APP_DEBUG" value="1" />
         <env name="APP_SECRET" value="s$cretf0rt3st" />
+        <env name="KERNEL_CLASS" value="App\Kernel" />
         <env name="SHELL_VERBOSITY" value="-1" />
         <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak" />
         <!-- define your env variables for the test env here -->
@@ -29,6 +30,7 @@
             <directory>./src/Api/</directory>
             <directory>./src/Service/</directory>
             <directory>./src/Controller/</directory>
+            <directory>./src/MessageHandler/</directory>
         </whitelist>
     </filter>
 
