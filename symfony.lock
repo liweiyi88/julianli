@@ -167,6 +167,12 @@
     "jms/metadata": {
         "version": "1.6.0"
     },
+    "knplabs/knp-markdown-bundle": {
+        "version": "1.7.0"
+    },
+    "michelf/php-markdown": {
+        "version": "1.8.0"
+    },
     "monolog/monolog": {
         "version": "1.23.0"
     },

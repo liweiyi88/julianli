@@ -15,6 +15,7 @@
         "easycorp/easyadmin-bundle": "^1.17",
         "enqueue/messenger-adapter": "^0.1.1",
         "enqueue/sqs": "^0.8.32",
+        "knplabs/knp-markdown-bundle": "^1.7",
         "predis/predis": "^1.1",
         "sensio/framework-extra-bundle": "^5.2",
         "sensiolabs/security-checker": "^4.1",
