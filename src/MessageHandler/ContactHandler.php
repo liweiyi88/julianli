@@ -23,9 +23,9 @@ class ContactHandler implements MessageHandlerInterface
 
     public function __invoke(Contact $contact)
     {
-        $content = \sprintf("Email from %s \r\nMessage: \r\n%s", $contact->getEmail(), $contact->getMessage());
+        $content = \sprintf("Email from %s \r\nMessage: \r\n%s", $contact->email, $contact->message);
 
-        $message = (new Swift_Message($contact->getSubject()))
+        $message = (new Swift_Message($contact->subject))
             ->setFrom($this->hostEmail)
             ->setTo($this->adminEmail)
             ->setBody($content, 'text/plain');

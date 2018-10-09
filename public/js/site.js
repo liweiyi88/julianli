@@ -800,6 +800,7 @@
 
             $.ajax({
                 url: rsFormAction,
+                contentType: "application/ld+json",
                 data: JSON.stringify({
                     email: rsFormEmail.val(),
                     subject: rsFormSubject.val(),
