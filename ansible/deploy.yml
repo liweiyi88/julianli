@@ -7,7 +7,7 @@
     - ./vars/deploy_vars.yml
 
   roles:
-    - carlosbuenosvinos.ansistrano-deploy
+    - ansistrano.deploy
 
   vars:
     ansistrano_deploy_to: "{{ project_root_dir }}"
