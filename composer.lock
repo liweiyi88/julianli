@@ -166,16 +166,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.69.1",
+            "version": "3.69.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "975bdc3181d08438174ce70cf25e361e18506242"
+                "reference": "cf01c814404a28a76a2431f80d2e6ea82c9045c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/975bdc3181d08438174ce70cf25e361e18506242",
-                "reference": "975bdc3181d08438174ce70cf25e361e18506242",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/cf01c814404a28a76a2431f80d2e6ea82c9045c8",
+                "reference": "cf01c814404a28a76a2431f80d2e6ea82c9045c8",
                 "shasum": ""
             },
             "require": {
@@ -245,7 +245,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-10-05T21:06:02+00:00"
+            "time": "2018-10-11T22:32:08+00:00"
         },
         {
             "name": "behat/transliterator",
@@ -7759,16 +7759,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.0.4",
+            "version": "v4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "fa6ee28600d21d49b2b4e1006b48426cec8e579c"
+                "reference": "d0230c5c77a7e3cfa69446febf340978540958c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/fa6ee28600d21d49b2b4e1006b48426cec8e579c",
-                "reference": "fa6ee28600d21d49b2b4e1006b48426cec8e579c",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/d0230c5c77a7e3cfa69446febf340978540958c0",
+                "reference": "d0230c5c77a7e3cfa69446febf340978540958c0",
                 "shasum": ""
             },
             "require": {
@@ -7784,7 +7784,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.0-dev"
+                    "dev-master": "4.1-dev"
                 }
             },
             "autoload": {
@@ -7806,7 +7806,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2018-09-18T07:03:24+00:00"
+            "time": "2018-10-10T09:24:14+00:00"
         },
         {
             "name": "phpstan/phpdoc-parser",
@@ -7983,7 +7983,7 @@
                 "laravel/socialite": ">=1,<1.0.99|>=2,<2.0.10",
                 "magento/magento1ce": "<1.9.3.9",
                 "magento/magento1ee": ">=1.9,<1.14.3.2",
-                "magento/product-community-edition": ">=2,<2.2.5",
+                "magento/product-community-edition": ">=2,<2.2.6",
                 "monolog/monolog": ">=1.8,<1.12",
                 "namshi/jose": "<2.2",
                 "onelogin/php-saml": "<2.10.4",
@@ -8042,7 +8042,7 @@
                 "symfony/web-profiler-bundle": ">=2,<2.3.19|>=2.4,<2.4.9|>=2.5,<2.5.4",
                 "symfony/yaml": ">=2,<2.0.22|>=2.1,<2.1.7",
                 "thelia/backoffice-default-template": ">=2.1,<2.1.2",
-                "thelia/thelia": ">=2.1,<2.1.2|>=2.1.0-beta1,<2.1.3",
+                "thelia/thelia": ">=2.1.0-beta1,<2.1.3|>=2.1,<2.1.2",
                 "theonedemon/phpwhois": "<=4.2.5",
                 "titon/framework": ">=0,<9.9.99",
                 "truckersmp/phpwhois": "<=4.3.1",
@@ -8098,7 +8098,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2018-10-05T18:14:02+00:00"
+            "time": "2018-10-11T11:25:15+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",

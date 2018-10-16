@@ -13,6 +13,14 @@ Encore
 
     // the following line enables hashed filenames (e.g. app.abc123.css)
     .enableVersioning(Encore.isProduction())
+    .enableReactPreset()
+    .configureBabel((babelConfig) => {
+        if (Encore.isProduction()) {
+            babelConfig.plugins.push(
+                'transform-react-remove-prop-types'
+            );
+        }
+    })
 
 // uncomment to define the assets of the project
 //.addEntry('js/app', './assets/js/app.js')
