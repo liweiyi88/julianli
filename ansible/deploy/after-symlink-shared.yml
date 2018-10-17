@@ -2,6 +2,7 @@
 - name: Install composer dependencies
   environment:
     APP_ENV: "prod"
+    BUGSNAG_API_KEY: ""
     ENQUEUE_DSN: "{{ sqs_dsn }}"
   composer:
     command: install
@@ -10,12 +11,14 @@
 - name: Clear the cache
   environment:
     APP_ENV: "prod"
+    BUGSNAG_API_KEY: ""
     ENQUEUE_DSN: "{{ sqs_dsn }}"
   command: "{{ release_console_path }} cache:clear"
 
 - name: Warm up the cache
   environment:
     APP_ENV: "prod"
+    BUGSNAG_API_KEY: ""
     ENQUEUE_DSN: "{{ sqs_dsn }}"
   command: "{{ release_console_path }} cache:warmup"
 
@@ -29,6 +32,7 @@
 - name: Create DB if not exists
   environment:
       APP_ENV: "prod"
+      BUGSNAG_API_KEY: ""
       DATABASE_URL: "{{ database_url }}"
       ENQUEUE_DSN: "{{ sqs_dsn }}"
   command: "{{ release_console_path }} doctrine:database:create --if-not-exists --env=prod"
@@ -38,6 +42,7 @@
 - name: Run migrations
   environment:
     APP_ENV: "prod"
+    BUGSNAG_API_KEY: ""
     DATABASE_URL: "{{ database_url }}"
     ENQUEUE_DSN: "{{ sqs_dsn }}"
   command: "{{ release_console_path }} doctrine:migrations:migrate --no-interaction --env=prod"
