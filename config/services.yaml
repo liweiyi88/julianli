@@ -38,3 +38,5 @@ services:
     Symfony\Component\Cache\Simple\RedisCache:
         factory: ['App\Service\Cache\RedisFactory', create]
         arguments: ['%app.redis_host%']
+
+    Bugsnag\Client: '@bugsnag'
