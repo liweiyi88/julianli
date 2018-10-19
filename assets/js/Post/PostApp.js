@@ -8,12 +8,20 @@ export default class PostApp extends Component
 
         this.state = {
             posts: [
-                {id:1, title: 'Welcome one', published: true, public:true, slug:'fsdfdsfsd'},
-                {id:2, title: 'Welcome two', published: false, public: false, slug:'sdfdsf'}
-            ]
+                {id:1, title: 'Welcome one', content:'fake content 1', published: true, public:true, slug:'fake-content'},
+                {id:2, title: 'Welcome two', content:'real fake content', published: false, public: false, slug:'real-fake-content'}
+            ],
+            editingPost: {}
         };
 
+        this.handleEditPost = this.handleEditPost.bind(this);
         this.handleDeletePost = this.handleDeletePost.bind(this);
+    }
+
+    handleEditPost(post) {
+        this.setState({
+            editingPost: post
+        });
     }
 
     handleDeletePost(id) {
@@ -30,6 +38,7 @@ export default class PostApp extends Component
                 {...this.props}
                 {...this.state}
                 onDeletePost={this.handleDeletePost}
+                onEditPost={this.handleEditPost}
             />
         )
     }

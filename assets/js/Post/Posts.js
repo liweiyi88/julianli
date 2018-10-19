@@ -1,16 +1,18 @@
 import React from 'react';
+import PostForm from './PostForm';
 import PostList from './PostList';
 
 export default function Posts(props) {
 
-    const {posts, onDeletePost} = props;
+    const {editingPost, posts, onEditPost, onDeletePost} = props;
 
     return (
         <div>
-            <h1>Post list</h1>
+            <h1>My posts</h1>
 
-            <table>
-                <thead>
+            { posts.length > 0 ? (
+                <table>
+                    <thead>
                     <tr>
                         <th>Title</th>
                         <th>Slug</th>
@@ -18,12 +20,25 @@ export default function Posts(props) {
                         <th>Is public</th>
                         <th>Actions</th>
                     </tr>
-                </thead>
-                <PostList
-                    posts={posts}
-                    onDeletePost={onDeletePost}
-                />
-            </table>
+                    </thead>
+                    <PostList
+                        posts={posts}
+                        onEditPost={onEditPost}
+                        onDeletePost={onDeletePost}
+                    />
+                </table>) : (
+                    <h2>You have not written any post yet.</h2>
+                )
+            }
+
+            <div>
+                <button>New story</button>
+            </div>
+
+            <br/>
+            <br/>
+
+            <PostForm editingPost={editingPost} a={'c'}/>
         </div>
     )
 }
