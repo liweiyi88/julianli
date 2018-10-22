@@ -1,5 +1,6 @@
 import React from 'react';
 import {Component} from 'react';
+import PropTypes from 'prop-types';
 
 export default class PostForm extends Component {
     constructor(props) {
@@ -11,6 +12,42 @@ export default class PostForm extends Component {
             slug: '',
             content: ''
         };
+
+        this.handleCancelClick = this.handleCancelClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(event) {
+        const target = event.target;
+
+        this.setState({
+            [target.name]: target.type === 'checkbox'
+                ? target.checked
+                : target.value
+        });
+    }
+
+    handleCancelClick(event) {
+        event.preventDefault();
+
+        const {onCancelPost} = this.props;
+
+        onCancelPost();
+
+        this.setState({
+            id: '',
+            title: '',
+            slug: '',
+            content: ''
+        });
+    }
+
+    hasEditingPost(editingPost) {
+        if (editingPost === undefined) {
+            return false;
+        }
+
+        return Object.getOwnPropertyNames(editingPost).length > 0;
     }
 
     render() {
@@ -19,22 +56,30 @@ export default class PostForm extends Component {
 
         return (
             <form>
-                { Object.getOwnPropertyNames(editingPost).length > 0 && (<div>Id: {editingPost.id}</div>)}
+                { this.hasEditingPost(editingPost) > 0 && (<div>Id: {editingPost.id}</div>)}
                 <div>
                     <label htmlFor="post_title">Title</label>
-                    <input type="text" id="post_title" value={editingPost ? editingPost.title : title}/>
+                    <input onChange={this.handleChange} type="text" name="title" id="post_title" value={this.hasEditingPost(editingPost) ? editingPost.title : title}/>
                 </div>
 
                 <div>
                     <label htmlFor="post_slug">Slug</label>
-                    <input type="text" id="post_slug" value={editingPost ? editingPost.slug : slug}/>
+                    <input onChange={this.handleChange} type="text" name="slug" id="post_slug" value={this.hasEditingPost(editingPost) ? editingPost.slug : slug}/>
                 </div>
 
                 <div>
                     <label htmlFor="post_content">Content</label>
-                    <textarea id="post_content" value={editingPost ? editingPost.content : content}/>
+                    <textarea onChange={this.handleChange} id="content" name="content" value={this.hasEditingPost(editingPost) ? editingPost.content : content}/>
                 </div>
+
+                <button type="submit">{this.hasEditingPost(editingPost) > 0 ? "Edit" : "Save"}</button>
+                <button type="cancel" onClick={this.handleCancelClick}>Cancel</button>
             </form>
         );
     }
 }
+
+PostForm.propTypes = {
+    editingPost: PropTypes.object,
+    onCancelPost: PropTypes.func.isRequired
+};

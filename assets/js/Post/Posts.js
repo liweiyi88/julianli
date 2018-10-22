@@ -1,10 +1,11 @@
 import React from 'react';
 import PostForm from './PostForm';
 import PostList from './PostList';
+import PropTypes from 'prop-types';
 
 export default function Posts(props) {
 
-    const {editingPost, posts, onEditPost, onDeletePost} = props;
+    const {editingPost, posts, onEditPost, onCancelPost, onDeletePost} = props;
 
     return (
         <div>
@@ -38,7 +39,17 @@ export default function Posts(props) {
             <br/>
             <br/>
 
-            <PostForm editingPost={editingPost} a={'c'}/>
+            <PostForm editingPost={editingPost} onCancelPost={onCancelPost}/>
         </div>
     )
 }
+
+Posts.propTypes = {
+    editingPost: PropTypes.object,
+    posts: PropTypes.array.isRequired,
+    onEditPost: PropTypes.func.isRequired,
+    onCancelPost: PropTypes.func.isRequired,
+    onDeletePost: PropTypes.func.isRequired
+};
+
+

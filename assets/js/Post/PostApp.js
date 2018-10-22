@@ -14,8 +14,15 @@ export default class PostApp extends Component
             editingPost: {}
         };
 
+        this.handleCancelPostSubmit = this.handleCancelPostSubmit.bind(this);
         this.handleEditPost = this.handleEditPost.bind(this);
         this.handleDeletePost = this.handleDeletePost.bind(this);
+    }
+
+    handleCancelPostSubmit() {
+        this.setState({
+            editingPost: {}
+        });
     }
 
     handleEditPost(post) {
@@ -37,6 +44,7 @@ export default class PostApp extends Component
             <Posts
                 {...this.props}
                 {...this.state}
+                onCancelPost={this.handleCancelPostSubmit}
                 onDeletePost={this.handleDeletePost}
                 onEditPost={this.handleEditPost}
             />
