@@ -19,6 +19,7 @@
         "build": "encore production"
     },
     "dependencies": {
+        "react-select": "^2.1.0",
         "sass-loader": "^7.1.0"
     }
 }
