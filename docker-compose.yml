@@ -2,8 +2,7 @@ version: "2"
 
 services:
     app:
-        build:
-            context: docker
+        image: julianli/julianli_app
         container_name: app
         depends_on:
             - db
