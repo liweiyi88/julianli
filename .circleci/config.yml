@@ -1,10 +1,12 @@
 version: 2
 jobs:
     test:
-        docker:
-            - image: julianli/julianli_app
+        machine:
+            - enabled: true
+            - image: circleci/classic:201711-01
         steps:
             - checkout
+            - run: docker -- pull julianli/julianli_app
             - run: docker run --rm -it -v $(pwd):/app julianli/julianli_app /usr/local/bin/composer self-update
             - run: docker run --rm -it -v $(pwd):/app julianli/julianli_app /usr/local/bin/composer install -n --prefer-dist
             - run: docker run --rm -it -v $(pwd):/app julianli/julianli_app "./cs"
