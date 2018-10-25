@@ -5,9 +5,8 @@ jobs:
             - image: julianli/julianli_app
         steps:
             - checkout
-            - run: sudo composer self-update
-            - run: composer install -n --prefer-dist
-            - run: sudo apt-get install -y libzip-dev
+            - run: docker run --rm -it -v $(pwd):/app julianli/julianli_app /usr/local/bin/composer self-update
+            - run: docker run --rm -it -v $(pwd):/app julianli/julianli_app /usr/local/bin/composer install -n --prefer-dist
             - run: docker run --rm -it -v $(pwd):/app julianli/julianli_app "./cs"
 
     deploy:
