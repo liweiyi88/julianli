@@ -1,15 +1,14 @@
 version: 2
 jobs:
-    build:
+    test:
         docker:
-            - image: circleci/php:7.2-apache-node-browsers-legacy
+            - image: julianli/julianli_app
         steps:
             - checkout
             - run: sudo composer self-update
             - run: composer install -n --prefer-dist
             - run: sudo apt-get install -y libzip-dev
-            - run: sudo docker-php-ext-install zip
-            - run: ./cs
+            - run: docker run --rm -it -v $(pwd):/app julianli/julianli_app "./cs"
 
     deploy:
         working_directory: ~/julianli
