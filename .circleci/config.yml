@@ -2,8 +2,8 @@ version: 2
 jobs:
     test:
         machine:
-            - enabled: true
-            - image: circleci/classic:201711-01
+            enabled: true
+            image: circleci/classic
         steps:
             - checkout
             - run: docker -- pull julianli/julianli_app
