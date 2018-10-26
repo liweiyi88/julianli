@@ -6,7 +6,7 @@ jobs:
             image: circleci/classic
         steps:
             - checkout
-            - run: docker pull $APP_DOCKER_IMAGE_NAME
+            - run: docker pull $APP_DOCKER_IMAGE_NAME:dev
             - run: docker run --rm -it -v $(pwd):/app $APP_DOCKER_IMAGE_NAME /usr/local/bin/composer install -n --prefer-dist
             - run: docker run --rm -it -v $(pwd):/app $APP_DOCKER_IMAGE_NAME "./cs"
 
