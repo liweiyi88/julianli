@@ -1,11 +1,12 @@
-FIG=docker-compose
-RUN=$(FIG) run --rm app
-EXEC=$(FIG) exec app
+DOCKER_COMPOSE?=docker-compose
+RUN=$(DOCKER_COMPOSE) run --rm app
+EXEC?=$(DOCKER_COMPOSE) exec app
+COMPOSER=$(EXEC) composer
 CONSOLE=bin/console
 DEBUG=docker exec -it app bash
 
 .DEFAULT_GOAL := help
-.PHONY: help start stop reset db db-diff db-migrate db-rollback db-load watch clear clean build up perm cc
+.PHONY: help start stop reset db db-diff db-migrate db-rollback db-load watch clear clean build up perm cc vendor
 help:
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
@@ -13,10 +14,10 @@ help:
 ## Project setup
 ##---------------------------------------------------------------------------
 start:          ## Install and start the project
-start: build up db perm .env
+start: build up db perm vendor
 
 stop:           ## Remove docker containers
-	$(FIG) rm -v --force --stop
+	$(DOCKER_COMPOSE) rm -v --force --stop
 
 reset:          ## Reset the whole project
 reset: stop start
@@ -48,30 +49,17 @@ db: vendor
 	$(RUN) $(CONSOLE) doctrine:migrations:migrate --no-interaction
 	$(RUN) $(CONSOLE) doctrine:fixtures:load --no-interaction -q
 
-# Internal rules
-
 build:
-	$(FIG) build
+	$(DOCKER_COMPOSE) build
 
 up:
-	$(FIG) up -d
+	$(DOCKER_COMPOSE) up -d
 
 perm:
 	-$(EXEC) chmod -R 777 var
 
-# Rules from files
+vendor:
+	$(COMPOSER) install -n
 
-vendor: composer.lock
-	@$(RUN) composer install
-
-composer.lock: composer.json
-	@echo compose.lock is not up to date.
-
-.env: .env.dist
-	@$(RUN) composer run-script post-install-cmd
-##
-## Tests
-##---------------------------------------------------------------------------
 ssh:
 	$(DEBUG)
-##
