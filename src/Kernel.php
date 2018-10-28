@@ -9,6 +9,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Kernel as BaseKernel;
 use Symfony\Component\Routing\RouteCollectionBuilder;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class Kernel extends BaseKernel
 {
@@ -21,7 +22,9 @@ class Kernel extends BaseKernel
         parent::boot();
 
         $this->container->get('bugsnag')->registerCallback(function ($report) {
-            if ($report->getName() === NotFoundHttpException::class) {
+            if ($report->getName() === NotFoundHttpException::class ||
+                $report->getName() === AccessDeniedException::class
+            ) {
                 return false;
             }
         });
