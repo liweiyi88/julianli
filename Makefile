@@ -6,7 +6,7 @@ CONSOLE=bin/console
 DEBUG=docker exec -it app bash
 
 .DEFAULT_GOAL := help
-.PHONY: help start stop reset db db-diff db-migrate db-rollback db-load watch clear clean build up perm cc vendor
+.PHONY: help start stop reset db clear clean build up perm cc vendor
 help:
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
