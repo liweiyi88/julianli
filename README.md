@@ -1,4 +1,4 @@
-# My website, experimental playground and a place to share ideas
+# My website, experiments and knowledge sharing
 [![CircleCI](https://circleci.com/gh/liweiyi88/julianli/tree/master.svg?style=svg)](https://circleci.com/gh/liweiyi88/julianli/tree/master)
 
 ## Framework, Tools And Features
@@ -10,6 +10,6 @@
 * Supervisord is used for managing worker commands.
 * Rest api is built by [api-platform](https://api-platform.com/).
 
-## Topic, Article And Ideas
+## Articles And Ideas
 * [Using Symfony Messenger With AWS SQS](http://julianli.co/posts/symfony-messenger-with-sqs)
 * [Asynchronous messaging](https://medium.com/@weiyi.li713/integrate-web-application-with-external-systems-by-using-message-queue-ac201469c02d)
