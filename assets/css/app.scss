@@ -19,6 +19,10 @@ body {
   @apply bg-red text-white;
 }
 
+.btn-green {
+  @apply bg-green text-white;
+}
+
 .btn-blue:hover {
   @apply bg-blue-dark;
 }

@@ -11,15 +11,19 @@ export default function Posts(props) {
         <div className={`container mx-auto`}>
             <h1 className={`mt-10 mb-4 flex justify-center`}>My posts</h1>
 
+            <div className={`flex mt-4 flex-row-reverse`}>
+                <button className={`btn btn-green`}>New story</button>
+            </div>
+
             <div className={`flex justify-center`}>
             { posts.length > 0 ? (
-                <div className={`table-auto table border-solid`}>
-                    <div className={`table-row mt-4`}>
-                        <div className={`table-cell p-2`}>Title</div>
-                        <div className={`table-cell p-2`}>Slug</div>
-                        <div className={`table-cell p-2`}>Is published</div>
-                        <div className={`table-cell p-2`}>Is public</div>
-                        <div className={`table-cell p-2`}>Actions</div>
+                <div className={`flex flex-col border-collapse w-full justify-center`}>
+                    <div className={`flex mt-4 bg-grey rounded`}>
+                        <div className={`w-1/5 table-cell p-3 text-xl`}>Title</div>
+                        <div className={`w-1/5 table-cell p-3 text-xl`}>Slug</div>
+                        <div className={`w-1/5 table-cell p-3 text-xl`}>Is published</div>
+                        <div className={`w-1/5 table-cell p-3 text-xl`}>Is public</div>
+                        <div className={`w-1/5 table-cell p-3 text-xl`}>Actions</div>
                     </div>
                     <PostList
                         posts={posts}
@@ -30,10 +34,6 @@ export default function Posts(props) {
                     <h2>You have not written any post yet.</h2>
                 )
             }
-            </div>
-
-            <div>
-                <button>New story</button>
             </div>
 
             <br/>
