@@ -22,7 +22,7 @@ Encore
         }
     })
 
-// uncomment to define the assets of the project
+    .createSharedEntry('layout', ['./assets/js/layout.js'])
     .addEntry('post', './assets/js/post.js')
 //.addStyleEntry('css/app', './assets/css/app.scss')
 
@@ -30,7 +30,10 @@ Encore
 //.enableTypeScriptLoader()
 
 // uncomment if you use Sass/SCSS files
-    .enableSassLoader()
+    .enableSassLoader(function (options) {}, {
+        resolveUrlLoader: false
+    })
+    .enablePostCssLoader()
 
 // uncomment for legacy applications that require $/jQuery as a global variable
 //.autoProvidejQuery()

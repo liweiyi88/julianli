@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+@tailwind preflight;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.btn {
+  @apply font-bold py-2 px-4 rounded;
+}
+.btn-blue {
+  @apply bg-blue text-white;
+}
+
+.btn-red {
+  @apply bg-red text-white;
+}
+
+.btn-blue:hover {
+  @apply bg-blue-dark;
+}

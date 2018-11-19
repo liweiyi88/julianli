@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Manage Articles</title>
 
-    {% block stylesheets %}{% endblock %}
+    {% block stylesheets %}
+        <link href="{{ asset('build/layout.css') }}" rel="stylesheet" />
+    {% endblock %}
 </head>
 {% block body %}
     <body>
@@ -14,6 +16,8 @@
     </body>
 
     {% block javascripts %}
+        <script src="{{ asset('build/manifest.js') }}"></script>
+        <script src="{{ asset('build/layout.js') }}"></script>
         <script src="{{ asset('build/post.js') }}"></script>
     {% endblock %}
 {% endblock %}

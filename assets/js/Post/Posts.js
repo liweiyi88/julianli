@@ -8,29 +8,29 @@ export default function Posts(props) {
     const {editingPost, posts, onEditPost, onCancelPost, onDeletePost} = props;
 
     return (
-        <div>
-            <h1>My posts</h1>
+        <div className={`container mx-auto`}>
+            <h1 className={`mt-10 mb-4 flex justify-center`}>My posts</h1>
 
+            <div className={`flex justify-center`}>
             { posts.length > 0 ? (
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Slug</th>
-                        <th>Is published</th>
-                        <th>Is public</th>
-                        <th>Actions</th>
-                    </tr>
-                    </thead>
+                <div className={`table-auto table border-solid`}>
+                    <div className={`table-row mt-4`}>
+                        <div className={`table-cell p-2`}>Title</div>
+                        <div className={`table-cell p-2`}>Slug</div>
+                        <div className={`table-cell p-2`}>Is published</div>
+                        <div className={`table-cell p-2`}>Is public</div>
+                        <div className={`table-cell p-2`}>Actions</div>
+                    </div>
                     <PostList
                         posts={posts}
                         onEditPost={onEditPost}
                         onDeletePost={onDeletePost}
                     />
-                </table>) : (
+                </div>) : (
                     <h2>You have not written any post yet.</h2>
                 )
             }
+            </div>
 
             <div>
                 <button>New story</button>
