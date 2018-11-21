@@ -165,16 +165,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.72.1",
+            "version": "3.74.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "5e36d7d70917133a244f62ff81d38871669951b5"
+                "reference": "96c8eb175b3e1641237659e08ea869e4ba4b5765"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5e36d7d70917133a244f62ff81d38871669951b5",
-                "reference": "5e36d7d70917133a244f62ff81d38871669951b5",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/96c8eb175b3e1641237659e08ea869e4ba4b5765",
+                "reference": "96c8eb175b3e1641237659e08ea869e4ba4b5765",
                 "shasum": ""
             },
             "require": {
@@ -244,7 +244,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-11-16T21:17:38+00:00"
+            "time": "2018-11-20T21:04:36+00:00"
         },
         {
             "name": "behat/transliterator",
@@ -1897,7 +1897,7 @@
         },
         {
             "name": "enqueue/amqp-tools",
-            "version": "0.8.40",
+            "version": "0.8.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-enqueue/amqp-tools.git",
@@ -1948,7 +1948,7 @@
         },
         {
             "name": "enqueue/async-event-dispatcher",
-            "version": "0.8.40",
+            "version": "0.8.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-enqueue/async-event-dispatcher.git",
@@ -2008,16 +2008,16 @@
         },
         {
             "name": "enqueue/enqueue",
-            "version": "0.8.40",
+            "version": "0.8.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-enqueue/enqueue.git",
-                "reference": "7d36b820727a42a79c54a593a9d3e9f6ffeecdf6"
+                "reference": "ba33593f712db7d128a9f160be89870062986b58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-enqueue/enqueue/zipball/7d36b820727a42a79c54a593a9d3e9f6ffeecdf6",
-                "reference": "7d36b820727a42a79c54a593a9d3e9f6ffeecdf6",
+                "url": "https://api.github.com/repos/php-enqueue/enqueue/zipball/ba33593f712db7d128a9f160be89870062986b58",
+                "reference": "ba33593f712db7d128a9f160be89870062986b58",
                 "shasum": ""
             },
             "require": {
@@ -2091,20 +2091,20 @@
                 "queue",
                 "rabbitmq"
             ],
-            "time": "2018-09-18T13:30:59+00:00"
+            "time": "2018-11-12T11:25:29+00:00"
         },
         {
             "name": "enqueue/enqueue-bundle",
-            "version": "0.8.40",
+            "version": "0.8.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-enqueue/enqueue-bundle.git",
-                "reference": "ada287130a27805998196063488ca8107d16cef7"
+                "reference": "5410d31e397170f756cababb46b0ffa3907df471"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-enqueue/enqueue-bundle/zipball/ada287130a27805998196063488ca8107d16cef7",
-                "reference": "ada287130a27805998196063488ca8107d16cef7",
+                "url": "https://api.github.com/repos/php-enqueue/enqueue-bundle/zipball/5410d31e397170f756cababb46b0ffa3907df471",
+                "reference": "5410d31e397170f756cababb46b0ffa3907df471",
                 "shasum": ""
             },
             "require": {
@@ -2159,7 +2159,7 @@
                 "queue",
                 "rabbitmq"
             ],
-            "time": "2018-08-08T15:15:17+00:00"
+            "time": "2018-11-05T14:27:26+00:00"
         },
         {
             "name": "enqueue/messenger-adapter",
@@ -2221,7 +2221,7 @@
         },
         {
             "name": "enqueue/null",
-            "version": "0.8.40",
+            "version": "0.8.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-enqueue/null.git",
@@ -2274,16 +2274,16 @@
         },
         {
             "name": "enqueue/sqs",
-            "version": "0.8.40",
+            "version": "0.8.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-enqueue/sqs.git",
-                "reference": "2995d0ee30eae858aa96b5a8cad564f529f81962"
+                "reference": "14ae3cd817e9dd5c39057328ac571a74814ee22e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-enqueue/sqs/zipball/2995d0ee30eae858aa96b5a8cad564f529f81962",
-                "reference": "2995d0ee30eae858aa96b5a8cad564f529f81962",
+                "url": "https://api.github.com/repos/php-enqueue/sqs/zipball/14ae3cd817e9dd5c39057328ac571a74814ee22e",
+                "reference": "14ae3cd817e9dd5c39057328ac571a74814ee22e",
                 "shasum": ""
             },
             "require": {
@@ -2329,7 +2329,7 @@
                 "queue",
                 "sqs"
             ],
-            "time": "2018-07-21T13:51:03+00:00"
+            "time": "2018-10-25T16:40:35+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
