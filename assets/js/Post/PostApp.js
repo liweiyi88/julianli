@@ -7,6 +7,7 @@ export default class PostApp extends Component
         super(props);
 
         this.state = {
+            node: {},
             posts: [
                 {
                     id:1,
@@ -16,19 +17,37 @@ export default class PostApp extends Component
                     public:true,
                     slug:'fake-content'
                 },
-                // {id:2, title: 'Welcome two', content:'real fake content', published: false, public: false, slug:'real-fake-content'}
+                {id:2, title: 'Welcome two', content:'real fake content', published: false, public: false, slug:'real-fake-content'}
             ],
-            editingPost: {}
+            editingPost: {},
+            clickPosition: {},
+            editingMenuId: null
         };
 
         this.handleCancelPostSubmit = this.handleCancelPostSubmit.bind(this);
         this.handleEditPost = this.handleEditPost.bind(this);
         this.handleDeletePost = this.handleDeletePost.bind(this);
+        this.handleClickPosition = this.handleClickPosition.bind(this);
+        this.handleEditMenuId = this.handleEditMenuId.bind(this);
     }
 
     handleCancelPostSubmit() {
         this.setState({
             editingPost: {}
+        });
+    }
+
+    handleDeletePost(id) {
+        this.setState((prevState) => {
+            return {
+                posts: prevState.posts.filter(post => post.id !== id)
+            }
+        });
+    }
+
+    handleEditMenuId(postId) {
+        this.setState({
+            editingMenuId: postId
         });
     }
 
@@ -38,10 +57,11 @@ export default class PostApp extends Component
         });
     }
 
-    handleDeletePost(id) {
-        this.setState((prevState) => {
-            return {
-                posts: prevState.posts.filter(post => post.id !== id)
+    handleClickPosition(e) {
+        this.setState({
+            clickPosition: {
+                x: e.clientX,
+                y: e.clientY
             }
         });
     }
@@ -54,6 +74,8 @@ export default class PostApp extends Component
                 onCancelPost={this.handleCancelPostSubmit}
                 onDeletePost={this.handleDeletePost}
                 onEditPost={this.handleEditPost}
+                onClickPosition={this.handleClickPosition}
+                onEditMenuClick={this.handleEditMenuId}
             />
         )
     }
