@@ -8,6 +8,8 @@ export default class PostList extends Component{
     constructor(props) {
         super(props);
 
+        this.menuRefs = [];
+
         this.shortDescription = this.shortDescription.bind(this);
         this.handleClick = this.handleClick.bind(this);
 
@@ -17,12 +19,12 @@ export default class PostList extends Component{
         };
     }
 
-    componentWillMount() {
-        document.addEventListener('mousedown', this.handleClick, false);
+    UNSAFE_componentWillMount() {
+        document.addEventListener('click', this.handleClick, false);
     }
 
     componentWillUnmount() {
-        document.removeEventListener('mousedown', this.handleClick, false);
+        document.removeEventListener('click', this.handleClick, false);
     }
 
     shortDescription(content) {
@@ -36,40 +38,39 @@ export default class PostList extends Component{
     }
 
     handleClick(e) {
-        console.log(e.target);
+        let inside = false;
 
-        var postId = null;
-        if (e.target.attributes.getNamedItem('data-value') !== null) {
-             postId = e.target.attributes.getNamedItem('data-value').value;
+        this.menuRefs.forEach((value, postId) => {
+            if (value.contains(e.target)) {
+
+                this.props.editingMenuId === postId ? this.props.onEditMenuClick(null) : this.props.onEditMenuClick(postId);
+
+                let nodeCoor = value.getBoundingClientRect();
+
+                let editIconY =  window.scrollY + nodeCoor.y - 96;
+                if (window.innerHeight - nodeCoor.y > 96) {
+                    editIconY = window.scrollY + nodeCoor.y + 21;
+                }
+
+                this.setState({
+                    editIconX: nodeCoor.x - 38,
+                    editIconY: editIconY
+                });
+
+                inside = true;
+            }
+        });
+
+        if (inside === false) {
+            this.props.onEditMenuClick(null);
         }
-
-        if (postId !== undefined && postId !== null) {
-
-            this.props.onEditMenuClick(postId);
-
-            let nodeCoor = ReactDOM
-                .findDOMNode(e.target)
-                .getBoundingClientRect();
-
-
-            let editIconY = window.innerHeight - nodeCoor.y < 96 ? nodeCoor.y - 96 : nodeCoor.y + 96/2 - 20;
-
-            this.setState({
-                editIconX: nodeCoor.x - 96 / 2 + 12,
-                editIconY: editIconY
-            })
-            return;
-        }
-
-        this.props.onEditMenuClick(null);
-    };
+    }
 
     render () {
-        const {editingMenuId, clickPosition, posts, onEditPost, onDeletePost, } = this.props;
+        const { editingMenuId, posts } = this.props;
 
-        const ctrans = 'translate('+this.state.editIconX+'px, '+this.state.editIconY+'px)';
-        const css = {
-            transform: ctrans,
+        const transformCss = {
+            transform: 'translate('+this.state.editIconX+'px, '+this.state.editIconY+'px)',
             willChange: 'transform'
         };
 
@@ -81,15 +82,17 @@ export default class PostList extends Component{
 
                     <div className={`flex mt-4 mb-4 text-grey-dark text-base`}>
                         <div className={`pr-2`}>{post.published ? 'Published' : 'Draft' }</div> <div>{post.public ? 'Public' : 'Private' }</div>
-                        <div className={`cursor-pointer`}>
-                            <svg data-value={post.id} width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg"><path d="M4 7.33L10.03 14l.5.55.5-.55 5.96-6.6-.98-.9-5.98 6.6h1L4.98 6.45z"></path></svg>
-                            {editingMenuId == post.id &&
-                                <div className={`absolute pin w-24 h-24 pl-3 pt-2 pb-2 pr-2 rounded shadow border text-sm bg-white`}
-                                     style={css}
+                        <div className={`cursor-pointer`} ref={(ref) => {this.menuRefs[post.id] = ref}}>
+                            <svg width="21" pointerEvents="none" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                                <path pointerEvents="none" d="M4 7.33L10.03 14l.5.55.5-.55 5.96-6.6-.98-.9-5.98 6.6h1L4.98 6.45z"></path>
+                            </svg>
+                            {editingMenuId === post.id &&
+                                <div className={`menu`}
+                                     style={transformCss}
                                 >
                                     <ul className={`list-reset`}>
-                                        <li className={`pt-4`}>Edit post</li>
-                                        <li className={`pt-4`}>Delete post</li>
+                                        <li className={`pt-4 hover:text-black`}>Edit post</li>
+                                        <li className={`pt-4 hover:text-black`}>Delete post</li>
                                     </ul>
                                 </div>
                             }
@@ -101,9 +104,8 @@ export default class PostList extends Component{
     }
 }
 
-Posts.propTypes = {
-    clickPosition: PropTypes.object,
+PostList.propTypes = {
+    editingMenuId: PropTypes.number,
     posts: PropTypes.array.isRequired,
-    onEditPost: PropTypes.func.isRequired,
-    onDeletePost: PropTypes.func.isRequired,
+    onEditMenuClick: PropTypes.func.isRequired
 };

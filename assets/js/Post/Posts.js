@@ -1,20 +1,13 @@
 import React from 'react';
-import PostForm from './PostForm';
 import PostList from './PostList';
 import PropTypes from 'prop-types';
 
 export default function Posts(props) {
 
     const {
-        clickPosition,
-        editingPost,
         editingMenuId,
         posts,
-        onEditPost,
         onEditMenuClick,
-        onCancelPost,
-        onDeletePost,
-        onClickPosition
     } = props;
 
     return (
@@ -30,12 +23,8 @@ export default function Posts(props) {
             <div className={`flex flex-col`}>
             { posts.length > 0 ? (
                     <PostList
-                        clickPosition={clickPosition}
                         posts={posts}
-                        onEditPost={onEditPost}
                         onEditMenuClick={onEditMenuClick}
-                        onDeletePost={onDeletePost}
-                        onClickPosition={onClickPosition}
                         editingMenuId={editingMenuId}
                     />
             ) : (
@@ -43,24 +32,14 @@ export default function Posts(props) {
                 )
             }
             </div>
-
-            <br/>
-            <br/>
-
-            <PostForm editingPost={editingPost} onCancelPost={onCancelPost}/>
         </div>
     )
 }
 
 Posts.propTypes = {
-    clickPosition: PropTypes.object,
-    editingPost: PropTypes.object,
     posts: PropTypes.array.isRequired,
-    onEditPost: PropTypes.func.isRequired,
-    onEditMenuClick: PropTypes.func.isRequired,
-    onCancelPost: PropTypes.func.isRequired,
-    onDeletePost: PropTypes.func.isRequired,
-    onClickPosition: PropTypes.func.isRequired
+    editingMenuId: PropTypes.number,
+    onEditMenuClick: PropTypes.func.isRequired
 };
 
 
