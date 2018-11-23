@@ -15,9 +15,10 @@ export default class PostApp extends Component
                     content:'As a developer, I was hurry to implement what I had learnt by creating some side projects a few years ago. However, Those side projects became a burden and they even made me frustrated with writing code for self-learning. The reason is simple, the scope of those projects were too big, I gradually lost my confidence and finally gave up Last year, I changed my strategy in terms of coding for self-learning. I began to learn some specific tools/concepts and try to create small but deliverable prototypes rather than try to achieve some general and popular ideas (e.g. CRM, CMS and E-commerce etc). I spent a few weeks on understanding what are the best use cases for using Message Queue, what are most popular Message Queue service providers and how to implement Background workers by using Symfony. Then, I spent another few weeks on reading the source code from Laravel Queue and completing a prototype. As an extra challenge, I also learnt how to provision servers with Ansible and build a automatic CI/CD pipeline with Circle CI and Ansistrano. It was a great fun and I gained the happiness of self-learning again!',
                     published: true,
                     public:true,
-                    slug:'fake-content'
+                    slug:'fake-content',
+                    createdAt: 'Jun 21, 2018'
                 },
-                {id:200, title: 'Welcome two', content:'real fake content', published: false, public: false, slug:'real-fake-content'}
+                {id:200, title: 'Welcome two', content:'real fake content', published: false, public: false, slug:'real-fake-content', createdAt: 'Apr 2, 2018'}
             ],
             editingPost: {},
             editingMenuId: null

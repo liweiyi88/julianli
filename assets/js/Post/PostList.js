@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Posts from "./Posts";
-import ReactDOM from "react-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faToggleOn, faToggleOff } from '@fortawesome/free-solid-svg-icons'
 
 export default class PostList extends Component{
 
@@ -27,14 +27,14 @@ export default class PostList extends Component{
         document.removeEventListener('click', this.handleClick, false);
     }
 
-    shortDescription(content) {
+    shortDescription(content, limit) {
         let output = content.trim().split(' ');
 
-        if (output.length > 30) {
-            return output.slice(0, 30).join(' ') + '...';
+        if (output.length > limit) {
+            return output.slice(0, limit).join(' ') + '...';
         }
 
-        return output.slice(0, 30).join(' ') + '...';
+        return output.slice(0, limit).join(' ') + '...';
     }
 
     handleClick(e) {
@@ -78,10 +78,19 @@ export default class PostList extends Component{
             posts.map((post) => (
                 <div className={`flex-col mt-4 border-b`} key={post.id}>
                     <div className={`text-2xl font-bold`}>{post.title}</div>
-                    <div className={`text-grey-darker text-lg mt-4 leading-normal`}>{this.shortDescription(post.content)}</div>
+                    <div className={`text-grey-darker text-lg mt-4 leading-normal`}>{this.shortDescription(post.content, 30)}</div>
 
                     <div className={`flex mt-4 mb-4 text-grey-dark text-base`}>
-                        <div className={`pr-2`}>{post.published ? 'Published' : 'Draft' }</div> <div>{post.public ? 'Public' : 'Private' }</div>
+                        <div className={`pr-3`}>Created on {post.createdAt}</div>
+                        {post.published ? (
+                            <div className={`pr-2 text-green`}>Published
+                                <span className={`pl-1 cursor-pointer`}><FontAwesomeIcon icon={faToggleOn} size="lg"/></span>
+                            </div>
+                        ) : (
+                            <div className={`pr-2 text-orange`}>Draft
+                                <span className={`pl-1 cursor-pointer`}><FontAwesomeIcon icon={faToggleOff} size="lg"/></span>
+                            </div>
+                        )}
                         <div className={`cursor-pointer`} ref={(ref) => {this.menuRefs[post.id] = ref}}>
                             <svg width="21" pointerEvents="none" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
                                 <path pointerEvents="none" d="M4 7.33L10.03 14l.5.55.5-.55 5.96-6.6-.98-.9-5.98 6.6h1L4.98 6.45z"></path>

@@ -22,7 +22,7 @@ Encore
         }
     })
 
-    .createSharedEntry('layout', ['./assets/js/layout.js'])
+    .createSharedEntry('layout', './assets/js/layout.js')
     .addEntry('post', './assets/js/post.js')
 //.addStyleEntry('css/app', './assets/css/app.scss')
 
