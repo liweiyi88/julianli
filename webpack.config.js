@@ -22,14 +22,9 @@ Encore
         }
     })
 
-    .createSharedEntry('layout', './assets/js/layout.js')
+    .addEntry('layout', './assets/js/layout.js')
     .addEntry('post', './assets/js/post.js')
-//.addStyleEntry('css/app', './assets/css/app.scss')
-
-// uncomment if you use TypeScript
-//.enableTypeScriptLoader()
-
-// uncomment if you use Sass/SCSS files
+    .enableSingleRuntimeChunk()
     .enableSassLoader(function (options) {}, {
         resolveUrlLoader: false
     })

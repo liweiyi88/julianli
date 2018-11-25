@@ -7,7 +7,7 @@
     <title>Manage Articles</title>
 
     {% block stylesheets %}
-        <link href="{{ asset('build/layout.css') }}" rel="stylesheet" />
+        {{ encore_entry_link_tags('layout') }}
     {% endblock %}
 </head>
 {% block body %}
@@ -16,9 +16,8 @@
     </body>
 
     {% block javascripts %}
-        <script src="{{ asset('build/manifest.js') }}"></script>
-        <script src="{{ asset('build/layout.js') }}"></script>
-        <script src="{{ asset('build/post.js') }}"></script>
+        {{ encore_entry_script_tags('post') }}
+        {{ encore_entry_script_tags('layout') }}
     {% endblock %}
 {% endblock %}
 </html>

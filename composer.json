@@ -38,6 +38,7 @@
         "symfony/swiftmailer-bundle": "^3.1",
         "symfony/twig-bundle": "^4.1",
         "symfony/validator": "^4.1",
+        "symfony/webpack-encore-bundle": "^1.0",
         "symfony/webpack-encore-pack": "*",
         "symfony/yaml": "^4.1",
         "vich/uploader-bundle": "^1.7",

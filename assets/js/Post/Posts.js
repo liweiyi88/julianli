@@ -16,7 +16,7 @@ export default function Posts(props) {
                 <div className={`text-4xl font-bold`}>My posts</div>
 
                 <div>
-                    <button className={`btn btn-green`}>New story</button>
+                    <button className={`btn btn-green hover:bg-green-dark`}>New story</button>
                 </div>
             </div>
 

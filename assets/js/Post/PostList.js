@@ -87,7 +87,16 @@ export default class PostList extends Component{
                                 <span className={`pl-1 cursor-pointer`}><FontAwesomeIcon icon={faToggleOn} size="lg"/></span>
                             </div>
                         ) : (
-                            <div className={`pr-2 text-orange`}>Draft
+                            <div className={`pr-2 text-red-light`}>Draft
+                                <span className={`pl-1 cursor-pointer`}><FontAwesomeIcon icon={faToggleOff} size="lg"/></span>
+                            </div>
+                        )}
+                        {post.public ? (
+                            <div className={`pr-2 text-green`}>Public
+                                <span className={`pl-1 cursor-pointer`}><FontAwesomeIcon icon={faToggleOn} size="lg"/></span>
+                            </div>
+                        ) : (
+                            <div className={`pr-2 text-orange-light`}>Private
                                 <span className={`pl-1 cursor-pointer`}><FontAwesomeIcon icon={faToggleOff} size="lg"/></span>
                             </div>
                         )}
