@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faToggleOn, faToggleOff } from '@fortawesome/free-solid-svg-icons'
+import {shortDescription} from '../Utils/Str'
 
 export default class PostList extends Component{
 
@@ -10,7 +11,6 @@ export default class PostList extends Component{
 
         this.menuRefs = [];
 
-        this.shortDescription = this.shortDescription.bind(this);
         this.handleClick = this.handleClick.bind(this);
 
         this.state = {
@@ -25,16 +25,6 @@ export default class PostList extends Component{
 
     componentWillUnmount() {
         document.removeEventListener('click', this.handleClick, false);
-    }
-
-    shortDescription(content, limit) {
-        let output = content.trim().split(' ');
-
-        if (output.length > limit) {
-            return output.slice(0, limit).join(' ') + '...';
-        }
-
-        return output.slice(0, limit).join(' ') + '...';
     }
 
     handleClick(e) {
@@ -78,7 +68,7 @@ export default class PostList extends Component{
             posts.map((post) => (
                 <div className={`flex-col mt-4 border-b`} key={post.id}>
                     <div className={`text-2xl font-bold`}>{post.title}</div>
-                    <div className={`text-grey-darker text-lg mt-4 leading-normal`}>{this.shortDescription(post.content, 30)}</div>
+                    <div className={`text-grey-darker text-lg mt-4 leading-normal`}>{shortDescription(post.content, 30)}</div>
 
                     <div className={`flex mt-4 mb-4 text-grey-dark text-base`}>
                         <div className={`pr-3`}>Created on {post.createdAt}</div>
