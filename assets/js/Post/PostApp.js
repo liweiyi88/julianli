@@ -28,12 +28,46 @@ export default class PostApp extends Component
         this.handleEditPost = this.handleEditPost.bind(this);
         this.handleDeletePost = this.handleDeletePost.bind(this);
         this.handleEditMenuId = this.handleEditMenuId.bind(this);
+        this.handlePublishToggleClick = this.handlePublishToggleClick.bind(this);
+        this.handlePublicToggleClick = this.handlePublicToggleClick.bind(this);
     }
 
     handleCancelPostSubmit() {
         this.setState({
             editingPost: {}
         });
+    }
+
+    handlePublishToggleClick(event, id) {
+        this.setState((prevState) => {
+            return {
+                posts: prevState.posts.map(post => {
+                    if (post.id !== id) {
+                        return post;
+                    }
+
+                    post.published = !post.published;
+
+                    return post;
+                })
+            }
+        })
+    }
+
+    handlePublicToggleClick(event, id) {
+        this.setState((prevState) => {
+            return {
+                posts: prevState.posts.map(post => {
+                    if (post.id !== id) {
+                        return post;
+                    }
+
+                    post.public = !post.public;
+
+                    return post;
+                })
+            }
+        })
     }
 
     handleDeletePost(id) {
@@ -65,6 +99,8 @@ export default class PostApp extends Component
                 onDeletePost={this.handleDeletePost}
                 onEditPost={this.handleEditPost}
                 onEditMenuClick={this.handleEditMenuId}
+                onPublishToggleClick={this.handlePublishToggleClick}
+                onPublicToggleClick={this.handlePublicToggleClick}
             />
         )
     }

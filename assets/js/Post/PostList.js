@@ -44,7 +44,7 @@ export default class PostList extends Component{
         }).then((result) => {
             if (result.value === true) {
 
-                this.props.onDeletePost(postId)
+                this.props.onDeletePost(postId);
 
                 const message = alert.mixin({
                     toast: true,
@@ -91,7 +91,7 @@ export default class PostList extends Component{
     }
 
     render () {
-        const { editingMenuId, posts } = this.props;
+        const { editingMenuId, posts, onPublishToggleClick, onPublicToggleClick } = this.props;
 
         const transformCss = {
             transform: 'translate('+this.state.editIconX+'px, '+this.state.editIconY+'px)',
@@ -107,21 +107,21 @@ export default class PostList extends Component{
                     <div className={`flex mt-4 mb-4 text-grey-dark text-base`}>
                         <div className={`pr-3`}>Created on {post.createdAt}</div>
                         {post.published ? (
-                            <div className={`pr-2 text-green`}>Published
-                                <span className={`pl-1 cursor-pointer`}><FontAwesomeIcon icon={faToggleOn} size="lg"/></span>
+                            <div className={`pr-2 text-green transition`}>Published
+                                <span onClick={(event) => onPublishToggleClick(event, post.id)} className={`pl-1 cursor-pointer`}><FontAwesomeIcon icon={faToggleOn} size="lg"/></span>
                             </div>
                         ) : (
-                            <div className={`pr-2 text-red-light`}>Draft
-                                <span className={`pl-1 cursor-pointer`}><FontAwesomeIcon icon={faToggleOff} size="lg"/></span>
+                            <div className={`pr-2 text-red-light transition`}>Draft
+                                <span onClick={(event) => onPublishToggleClick(event, post.id)} className={`pl-1 cursor-pointer`}><FontAwesomeIcon icon={faToggleOff} size="lg"/></span>
                             </div>
                         )}
                         {post.public ? (
-                            <div className={`pr-2 text-green`}>Public
-                                <span className={`pl-1 cursor-pointer`}><FontAwesomeIcon icon={faToggleOn} size="lg"/></span>
+                            <div className={`pr-2 text-green transition`}>Public
+                                <span onClick={(event) => onPublicToggleClick(event, post.id)} className={`pl-1 cursor-pointer`}><FontAwesomeIcon icon={faToggleOn} size="lg"/></span>
                             </div>
                         ) : (
-                            <div className={`pr-2 text-orange-light`}>Private
-                                <span className={`pl-1 cursor-pointer`}><FontAwesomeIcon icon={faToggleOff} size="lg"/></span>
+                            <div className={`pr-2 text-orange-light transition`}>Private
+                                <span onClick={(event) => onPublicToggleClick(event, post.id)} className={`pl-1 cursor-pointer`}><FontAwesomeIcon icon={faToggleOff} size="lg"/></span>
                             </div>
                         )}
                         <div className={`cursor-pointer`} ref={(ref) => {this.menuRefs[post.id] = ref}}>
@@ -150,5 +150,7 @@ PostList.propTypes = {
     editingMenuId: PropTypes.number,
     posts: PropTypes.array.isRequired,
     onEditMenuClick: PropTypes.func.isRequired,
-    onDeletePost: PropTypes.func.isRequired
+    onDeletePost: PropTypes.func.isRequired,
+    onPublishToggleClick: PropTypes.func.isRequired,
+    onPublicToggleClick: PropTypes.func.isRequired
 };

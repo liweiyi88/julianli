@@ -8,7 +8,9 @@ export default function Posts(props) {
         editingMenuId,
         posts,
         onEditMenuClick,
-        onDeletePost
+        onDeletePost,
+        onPublishToggleClick,
+        onPublicToggleClick
     } = props;
 
     return (
@@ -28,6 +30,8 @@ export default function Posts(props) {
                         onEditMenuClick={onEditMenuClick}
                         editingMenuId={editingMenuId}
                         onDeletePost={onDeletePost}
+                        onPublishToggleClick={onPublishToggleClick}
+                        onPublicToggleClick={onPublicToggleClick}
                     />
             ) : (
                     <h2>You have not written any post yet.</h2>
@@ -42,7 +46,9 @@ Posts.propTypes = {
     posts: PropTypes.array.isRequired,
     editingMenuId: PropTypes.number,
     onEditMenuClick: PropTypes.func.isRequired,
-    onDeletePost: PropTypes.func.isRequired
+    onDeletePost: PropTypes.func.isRequired,
+    onPublishToggleClick: PropTypes.func.isRequired,
+    onPublicToggleClick: PropTypes.func.isRequired
 };
 
 
