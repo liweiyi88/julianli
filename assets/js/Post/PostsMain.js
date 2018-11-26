@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Posts from './Posts';
 
-export default class PostApp extends Component
+export default class PostsMain extends Component
 {
     constructor(props) {
         super(props);
@@ -30,6 +30,11 @@ export default class PostApp extends Component
         this.handleEditMenuId = this.handleEditMenuId.bind(this);
         this.handlePublishToggleClick = this.handlePublishToggleClick.bind(this);
         this.handlePublicToggleClick = this.handlePublicToggleClick.bind(this);
+        this.handleCreatePostRedirect = this.handleCreatePostRedirect.bind(this);
+    }
+
+    handleCreatePostRedirect() {
+        window.location.href = '/admin/posts/create';
     }
 
     handleCancelPostSubmit() {
@@ -101,6 +106,7 @@ export default class PostApp extends Component
                 onEditMenuClick={this.handleEditMenuId}
                 onPublishToggleClick={this.handlePublishToggleClick}
                 onPublicToggleClick={this.handlePublicToggleClick}
+                onNewPostClick={this.handleCreatePostRedirect}
             />
         )
     }

@@ -22,16 +22,13 @@ Encore
         }
     })
 
-    .addEntry('layout', './assets/js/layout.js')
-    .addEntry('post', './assets/js/post.js')
+    .addEntry('posts_main', './assets/js/posts_main.js')
+    .addEntry('post_create', './assets/js/post_create.js')
     .enableSingleRuntimeChunk()
     .enableSassLoader(function (options) {}, {
         resolveUrlLoader: false
     })
     .enablePostCssLoader()
-
-// uncomment for legacy applications that require $/jQuery as a global variable
-//.autoProvidejQuery()
 ;
 
 module.exports = Encore.getWebpackConfig();

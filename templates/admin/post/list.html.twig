@@ -1,0 +1,17 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %} Manage Articles {% endblock %}
+
+ {% block stylesheets %}
+     {{ encore_entry_link_tags('posts_main') }}
+ {% endblock %}
+
+{% block body %}
+    <body>
+        <div id="post"></div>
+    </body>
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('posts_main') }}
+    {% endblock %}
+{% endblock %}
