@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faToggleOn, faToggleOff } from '@fortawesome/free-solid-svg-icons'
 import {shortDescription} from '../Utils/Str'
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import withReactContent from 'sweetalert2-react-content'
 
 export default class PostList extends Component{
 
@@ -12,6 +14,7 @@ export default class PostList extends Component{
         this.menuRefs = [];
 
         this.handleClick = this.handleClick.bind(this);
+        this.handleDeleteClick = this.handleDeleteClick.bind(this);
 
         this.state = {
             editIconX: 0,
@@ -27,13 +30,44 @@ export default class PostList extends Component{
         document.removeEventListener('click', this.handleClick, false);
     }
 
+    handleDeleteClick(event, postId) {
+        const alert = withReactContent(Swal);
+
+        alert.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.value === true) {
+
+                this.props.onDeletePost(postId)
+
+                const message = alert.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+
+                message({
+                    type: 'success',
+                    title: 'Delete Successfully'
+                }).then();
+            }
+        })
+    }
+
     handleClick(e) {
         let inside = false;
 
         this.menuRefs.forEach((value, postId) => {
-            if (value.contains(e.target)) {
+            if (value !== null && value.contains(e.target)) {
 
-                this.props.editingMenuId === postId ? this.props.onEditMenuClick(null) : this.props.onEditMenuClick(postId);
+                this.props.onEditMenuClick(postId);
 
                 let nodeCoor = value.getBoundingClientRect();
 
@@ -100,7 +134,7 @@ export default class PostList extends Component{
                                 >
                                     <ul className={`list-reset`}>
                                         <li className={`pt-4 hover:text-black`}>Edit post</li>
-                                        <li className={`pt-4 hover:text-black`}>Delete post</li>
+                                        <li onClick={(event) => this.handleDeleteClick(event, post.id)} className={`pt-4 hover:text-black`}>Delete post</li>
                                     </ul>
                                 </div>
                             }
@@ -115,5 +149,6 @@ export default class PostList extends Component{
 PostList.propTypes = {
     editingMenuId: PropTypes.number,
     posts: PropTypes.array.isRequired,
-    onEditMenuClick: PropTypes.func.isRequired
+    onEditMenuClick: PropTypes.func.isRequired,
+    onDeletePost: PropTypes.func.isRequired
 };
