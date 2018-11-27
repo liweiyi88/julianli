@@ -22,7 +22,13 @@ export default class PostForm extends Component {
     }
 
     componentDidMount() {
-        var simplemde = new SimpleMDE({ element: document.getElementById('content') });
+        const simplemde = new SimpleMDE({ element: document.getElementById('content') });
+
+        simplemde.codemirror.on('change', () =>{
+            this.setState({
+                content: simplemde.value()
+            });
+        });
     }
 
     handleTagsSelectChange(selectedOption) {
@@ -32,6 +38,7 @@ export default class PostForm extends Component {
 
     handleChange(event) {
         const target = event.target;
+        console.log(target);
 
         this.setState({
             [target.name]: target.type === 'checkbox'
@@ -59,13 +66,15 @@ export default class PostForm extends Component {
             {value:4, label:'Security'}
         ];
 
+        const toggle = this.hasEditingPost(editingPost) ? editingPost.public : true;
+
         return (
             <div className={`w-full`}>
                 <div className={`flex flex-row-reverse`}>
                     <div><button className={`bg-transparent hover:bg-green text-green-dark hover:text-white py-2 px-4 border border-green hover:border-transparent rounded`}>Ready to publish?</button></div>
                     <div className={`flex items-center mr-4`}>
                         <Toggle
-                            toggle={false}
+                            toggle={toggle}
                             toggleOnText={`It is now public`}
                             toggleOnTextColor={`text-green`}
                             toggleOffText={`It is now private`}

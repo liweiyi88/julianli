@@ -20,7 +20,6 @@ export default class PostsMain extends Component
                 },
                 {id:200, title: 'Welcome two', content:'real fake content', published: false, public: false, slug:'real-fake-content', createdAt: 'Apr 2, 2018'}
             ],
-            editingPost: {},
             editingMenuId: null
         };
 
