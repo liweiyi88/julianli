@@ -41,3 +41,7 @@ body {
   -o-transition:all 0.3s ease-in-out;
   transition:all 0.3s ease-in-out;
 }
+
+.CodeMirror {
+  z-index: 0 !important;
+}

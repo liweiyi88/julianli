@@ -3,6 +3,7 @@ import {Component} from 'react';
 import PropTypes from 'prop-types';
 import CreatableSelect from 'react-select/lib/Creatable';
 import SimpleMDE from 'simplemde';
+import Toggle from './Toggle';
 
 export default class PostForm extends Component {
     constructor(props) {
@@ -16,7 +17,6 @@ export default class PostForm extends Component {
             selectedTags: null
         };
 
-        this.handleCancelClick = this.handleCancelClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleTagsSelectChange = this.handleTagsSelectChange.bind(this);
     }
@@ -40,21 +40,6 @@ export default class PostForm extends Component {
         });
     }
 
-    handleCancelClick(event) {
-        event.preventDefault();
-
-        const {onCancelPost} = this.props;
-
-        onCancelPost();
-
-        this.setState({
-            id: '',
-            title: '',
-            slug: '',
-            content: ''
-        });
-    }
-
     hasEditingPost(editingPost) {
         if (editingPost === undefined) {
             return false;
@@ -75,9 +60,21 @@ export default class PostForm extends Component {
         ];
 
         return (
-            <form className={`w-full`}>
+            <div className={`w-full`}>
+                <div className={`flex flex-row-reverse`}>
+                    <div><button className={`bg-transparent hover:bg-green text-green-dark hover:text-white py-2 px-4 border border-green hover:border-transparent rounded`}>Ready to publish?</button></div>
+                    <div className={`flex items-center mr-4`}>
+                        <Toggle
+                            toggle={false}
+                            toggleOnText={`It is now public`}
+                            toggleOnTextColor={`text-green`}
+                            toggleOffText={`It is now private`}
+                            toggleOffTextColor={`text-orange`}
+                        />
+                    </div>
+                </div>
                 { this.hasEditingPost(editingPost) > 0 && (<div>Id: {editingPost.id}</div>)}
-                <div>
+                <div className={`mt-5`}>
                     <input
                         className={`form-input focus:outline-none focus:bg-white focus:border-blue`}
                         onChange={this.handleChange}
@@ -101,10 +98,6 @@ export default class PostForm extends Component {
                 </div>
 
                 <div className={`mt-5`}>
-                    <textarea onChange={this.handleChange} id='content' name='content' value={this.hasEditingPost(editingPost) ? editingPost.content : content}/>
-                </div>
-
-                <div className={`mt-5`}>
                     <CreatableSelect
                         theme={(theme) => ({
                             ...theme,
@@ -118,6 +111,7 @@ export default class PostForm extends Component {
                         options={tags}
                         onChange={this.handleTagsSelectChange}
                         isMulti
+                        placeholder={`Add a tags..`}
                         isValidNewOption={(inputValue, selectValue, selectOptions) => {
                             const isNotDuplicated = !selectOptions
                                 .map(option => option.label)
@@ -128,14 +122,16 @@ export default class PostForm extends Component {
                     />
                 </div>
 
-                <button type='submit'>{this.hasEditingPost(editingPost) > 0 ? 'Edit' : 'Save'}</button>
-                <button type='cancel' onClick={this.handleCancelClick}>Cancel</button>
-            </form>
+                <div className={`mt-5`}>
+                    <textarea onChange={this.handleChange} id='content' name='content' value={this.hasEditingPost(editingPost) ? editingPost.content : content}/>
+                </div>
+
+
+            </div>
         );
     }
 }
 
 PostForm.propTypes = {
-    editingPost: PropTypes.object,
-    onCancelPost: PropTypes.func.isRequired
+    editingPost: PropTypes.object
 };

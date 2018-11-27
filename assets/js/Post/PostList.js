@@ -107,11 +107,13 @@ export default class PostList extends Component{
                     <div className={`flex mt-4 mb-4 text-grey-dark text-base`}>
                         <div className={`pr-3`}>Created on {post.createdAt}</div>
                         {post.published ? (
-                            <div className={`pr-2 text-green transition`}>Published
-                                <span onClick={(event) => onPublishToggleClick(event, post.id)} className={`pl-1 cursor-pointer`}><FontAwesomeIcon icon={faToggleOn} size="lg"/></span>
+                            <div className={`pr-2 transition`}>
+                                <span className={`mr-1 text-green`}>Published</span>
+                                <span onClick={(event) => onPublishToggleClick(event, post.id)} className={`text-green cursor-pointer`}><FontAwesomeIcon icon={faToggleOn} size="lg"/></span>
                             </div>
                         ) : (
-                            <div className={`pr-2 text-red-light transition`}>Draft
+                            <div className={`pr-2 text-red-light transition`}>
+                                <span>Draft</span>
                                 <span onClick={(event) => onPublishToggleClick(event, post.id)} className={`pl-1 cursor-pointer`}><FontAwesomeIcon icon={faToggleOff} size="lg"/></span>
                             </div>
                         )}
