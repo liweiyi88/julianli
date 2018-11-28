@@ -9,13 +9,14 @@ export default function Toggle(props) {
         toggleOnText,
         toggleOnTextColor,
         toggleOffText,
-        toggleOffTextColor
+        toggleOffTextColor,
+        onToggleClick
     } = props;
 
     return toggle ? (
-        <ToggleOn toggleOnText={toggleOnText} textColor={toggleOnTextColor}/>
+        <ToggleOn toggleOnText={toggleOnText} textColor={toggleOnTextColor} onToggleClick={onToggleClick}/>
     ) : (
-        <ToggleOff toggleOffText={toggleOffText} textColor={toggleOffTextColor}/>
+        <ToggleOff toggleOffText={toggleOffText} textColor={toggleOffTextColor} onToggleClick={onToggleClick}/>
     )
 }
 
@@ -24,5 +25,6 @@ Toggle.propTypes = {
     toggleOnText: PropTypes.string.isRequired,
     toggleOnTextColor: PropTypes.string.isRequired,
     toggleOffText: PropTypes.string.isRequired,
-    toggleOffTextColor: PropTypes.string.isRequired
+    toggleOffTextColor: PropTypes.string.isRequired,
+    onToggleClick: PropTypes.func
 };

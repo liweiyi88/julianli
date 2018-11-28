@@ -14,7 +14,9 @@ export default class PostForm extends Component {
             title: '',
             slug: '',
             content: '',
-            selectedTags: null
+            selectedTags: null,
+            published: null,
+            public: true
         };
 
         this.handleChange = this.handleChange.bind(this);

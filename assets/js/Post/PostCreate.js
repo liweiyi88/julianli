@@ -5,10 +5,6 @@ export default class PostCreate extends Component
 {
     constructor(props) {
         super(props);
-
-        this.state = {
-            editingPost: {}
-        };
     }
 
     render() {

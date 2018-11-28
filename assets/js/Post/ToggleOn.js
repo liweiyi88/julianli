@@ -8,13 +8,13 @@ export default function ToggleOn(props) {
         id,
         toggleOnText,
         textColor,
-        onToggle
+        onToggleClick
     } = props;
 
     return (
         <div>
             <span className={`mr-1 ${textColor}`}>{toggleOnText}</span>
-            <span onClick={(event) => onToggle(event, id)}><FontAwesomeIcon className={`cursor-pointer ${textColor}`} icon={faToggleOn} size="lg"/></span>
+            <span onClick={(event) => onToggleClick(event, id)}><FontAwesomeIcon className={`cursor-pointer ${textColor}`} icon={faToggleOn} size="lg"/></span>
         </div>
     );
 }
@@ -23,5 +23,5 @@ ToggleOn.propTypes = {
     id: PropTypes.number,
     toggleOnText: PropTypes.string.isRequired,
     textColor: PropTypes.string.isRequired,
-    onToggle: PropTypes.func
+    onToggleClick: PropTypes.func
 };

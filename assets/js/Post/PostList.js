@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faToggleOn, faToggleOff } from '@fortawesome/free-solid-svg-icons'
 import {shortDescription} from '../Utils/Str'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import withReactContent from 'sweetalert2-react-content'
+import Toggle from './Toggle'
 
 export default class PostList extends Component{
 
@@ -106,26 +105,28 @@ export default class PostList extends Component{
 
                     <div className={`flex mt-4 mb-4 text-grey-dark text-base`}>
                         <div className={`pr-3`}>Created on {post.createdAt}</div>
-                        {post.published ? (
-                            <div className={`pr-2 transition`}>
-                                <span className={`mr-1 text-green`}>Published</span>
-                                <span onClick={(event) => onPublishToggleClick(event, post.id)} className={`text-green cursor-pointer`}><FontAwesomeIcon icon={faToggleOn} size="lg"/></span>
-                            </div>
-                        ) : (
-                            <div className={`pr-2 text-red-light transition`}>
-                                <span>Draft</span>
-                                <span onClick={(event) => onPublishToggleClick(event, post.id)} className={`pl-1 cursor-pointer`}><FontAwesomeIcon icon={faToggleOff} size="lg"/></span>
-                            </div>
-                        )}
-                        {post.public ? (
-                            <div className={`pr-2 text-green transition`}>Public
-                                <span onClick={(event) => onPublicToggleClick(event, post.id)} className={`pl-1 cursor-pointer`}><FontAwesomeIcon icon={faToggleOn} size="lg"/></span>
-                            </div>
-                        ) : (
-                            <div className={`pr-2 text-orange-light transition`}>Private
-                                <span onClick={(event) => onPublicToggleClick(event, post.id)} className={`pl-1 cursor-pointer`}><FontAwesomeIcon icon={faToggleOff} size="lg"/></span>
-                            </div>
-                        )}
+                        <div className={`pr-2 transition w-20`}>
+                            <Toggle
+                                toggle={post.published}
+                                toggleOnText={`Published`}
+                                toggleOnTextColor={`text-green`}
+                                toggleOffText={`Draft`}
+                                toggleOffTextColor={`text-red-light`}
+                                onToggleClick={(event) => onPublishToggleClick(event, post.id)}
+                            />
+                        </div>
+
+                        <div className={`pr-2 transition w-20`}>
+                            <Toggle
+                                toggle={post.public}
+                                toggleOnText={`Public`}
+                                toggleOnTextColor={`text-green`}
+                                toggleOffText={`Private`}
+                                toggleOffTextColor={`text-orange-light`}
+                                onToggleClick={(event) => onPublicToggleClick(event, post.id)}
+                            />
+                        </div>
+
                         <div className={`cursor-pointer`} ref={(ref) => {this.menuRefs[post.id] = ref}}>
                             <svg width="21" pointerEvents="none" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
                                 <path pointerEvents="none" d="M4 7.33L10.03 14l.5.55.5-.55 5.96-6.6-.98-.9-5.98 6.6h1L4.98 6.45z"></path>
