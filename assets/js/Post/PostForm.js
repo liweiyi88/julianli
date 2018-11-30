@@ -11,6 +11,7 @@ export default function PostForm(props) {
         isPublic,
         tags,
         onTagsSelectedChange,
+        onPublicToggleClick,
         onElementChange,
         selectedTags
     } = props;
@@ -31,6 +32,7 @@ export default function PostForm(props) {
                         toggleOnTextColor={`text-green`}
                         toggleOffText={`It is now private`}
                         toggleOffTextColor={`text-orange`}
+                        onToggleClick={onPublicToggleClick}
                     />
                 </div>
             </div>
@@ -93,5 +95,6 @@ export default function PostForm(props) {
 PostForm.propTypes = {
     tags: PropTypes.array.isRequired,
     onElementChange: PropTypes.func.isRequired,
-    onTagsSelectedChange: PropTypes.func.isRequired
+    onTagsSelectedChange: PropTypes.func.isRequired,
+    onPublicToggleClick: PropTypes.func
 };

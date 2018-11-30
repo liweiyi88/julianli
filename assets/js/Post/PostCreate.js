@@ -18,6 +18,7 @@ export default class PostCreate extends Component
 
         this.handleFormElementChange = this.handleFormElementChange.bind(this);
         this.handleTagsSelectChange = this.handleTagsSelectChange.bind(this);
+        this.handlePublicToggleClick = this.handlePublicToggleClick.bind(this);
     }
 
     componentDidMount() {
@@ -28,6 +29,14 @@ export default class PostCreate extends Component
                 content: simplemde.value()
             });
         });
+    }
+
+    handlePublicToggleClick() {
+        this.setState((prevState) => {
+            return {
+                isPublic: !prevState.isPublic
+            }
+        })
     }
 
     handleTagsSelectChange(selectedOption) {
@@ -60,6 +69,7 @@ export default class PostCreate extends Component
                         tags={tags}
                         onElementChange={this.handleFormElementChange}
                         onTagsSelectedChange={this.handleTagsSelectChange}
+                        onPublicToggleClick={this.handlePublicToggleClick}
                     />
                 </div>
             </div>

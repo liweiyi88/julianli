@@ -107,7 +107,7 @@ export default class PostList extends Component{
                         <div className={`pr-3`}>Created on {post.createdAt}</div>
                         <div className={`pr-2 transition w-20`}>
                             <Toggle
-                                toggle={post.published}
+                                toggle={post.isPublished}
                                 toggleOnText={`Published`}
                                 toggleOnTextColor={`text-green`}
                                 toggleOffText={`Draft`}
@@ -118,7 +118,7 @@ export default class PostList extends Component{
 
                         <div className={`pr-2 transition w-20`}>
                             <Toggle
-                                toggle={post.public}
+                                toggle={post.isPublic}
                                 toggleOnText={`Public`}
                                 toggleOnTextColor={`text-green`}
                                 toggleOffText={`Private`}
