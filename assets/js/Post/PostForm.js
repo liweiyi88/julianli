@@ -93,6 +93,11 @@ export default function PostForm(props) {
 }
 
 PostForm.propTypes = {
+    title: PropTypes.string,
+    slug: PropTypes.string,
+    content: PropTypes.string,
+    isPublic: PropTypes.bool,
+    selectedTags: PropTypes.array,
     tags: PropTypes.array.isRequired,
     onElementChange: PropTypes.func.isRequired,
     onTagsSelectedChange: PropTypes.func.isRequired,
