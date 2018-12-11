@@ -131,14 +131,8 @@
     "enqueue/amqp-tools": {
         "version": "0.8.23"
     },
-    "enqueue/async-event-dispatcher": {
-        "version": "0.7",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
-            "version": "0.7",
-            "ref": "9e937ccb79e08b978f91fb816d4e6d645813113a"
-        }
+    "enqueue/dsn": {
+        "version": "0.9.0"
     },
     "enqueue/enqueue": {
         "version": "0.8.33"
@@ -281,6 +275,9 @@
     "queue-interop/queue-interop": {
         "version": "0.6.1"
     },
+    "ralouphie/getallheaders": {
+        "version": "2.0.5"
+    },
     "ramsey/uuid": {
         "version": "3.8.0"
     },
@@ -331,6 +328,9 @@
             "version": "3.3",
             "ref": "9f94d3ea453cd8a3b95db7f82592d7344fe3a76a"
         }
+    },
+    "symfony/contracts": {
+        "version": "v1.0.2"
     },
     "symfony/css-selector": {
         "version": "v4.1.2"
@@ -547,6 +547,9 @@
     },
     "symfony/var-dumper": {
         "version": "v4.0.2"
+    },
+    "symfony/var-exporter": {
+        "version": "v4.2.1"
     },
     "symfony/web-profiler-bundle": {
         "version": "3.3",
