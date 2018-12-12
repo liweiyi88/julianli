@@ -43,19 +43,21 @@ export default class PostList extends Component{
         }).then((result) => {
             if (result.value === true) {
 
-                this.props.onDeletePost(postId);
+                this.props.onDeletePost(postId)
+                    .then(() => {
+                        const message = alert.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 2000
+                        });
 
-                const message = alert.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 2000
-                });
-
-                message({
-                    type: 'success',
-                    title: 'Delete Successfully'
-                }).then();
+                        message({
+                            type: 'success',
+                            title: 'Delete Successfully'
+                        }).then();
+                    }
+                );
             }
         })
     }
@@ -99,7 +101,7 @@ export default class PostList extends Component{
 
         return (
             posts.map((post) => (
-                <div className={`flex-col mt-4 border-b`} key={post.id}>
+                <div className={post.isDeleting ? `flex-col mt-4 border-b opacity-50` : `flex-col mt-4 border-b`} key={post.id}>
                     <div className={`text-2xl font-bold`}>{post.title}</div>
                     <div className={`text-grey-darker text-lg mt-4 leading-normal`}>{shortDescription(post.content, 30)}</div>
 

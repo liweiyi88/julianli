@@ -7,6 +7,7 @@ export default function Posts(props) {
     const {
         editingMenuId,
         posts,
+        isLoading,
         onEditMenuClick,
         onDeletePost,
         onPublishToggleClick,
@@ -25,32 +26,31 @@ export default function Posts(props) {
             </div>
 
             <div className={`flex flex-col`}>
-            { posts.length > 0 ? (
-                    <PostList
-                        posts={posts}
-                        onEditMenuClick={onEditMenuClick}
-                        editingMenuId={editingMenuId}
-                        onDeletePost={onDeletePost}
-                        onPublishToggleClick={onPublishToggleClick}
-                        onPublicToggleClick={onPublicToggleClick}
-                    />
-            ) : (
-                    <h2>You have not written any post yet.</h2>
-                )
-            }
+                {isLoading ?  (
+                    <div className={`mt-5`}>{props.loader}</div>
+                ) :  <PostList
+                    posts={posts}
+                    onEditMenuClick={onEditMenuClick}
+                    editingMenuId={editingMenuId}
+                    onDeletePost={onDeletePost}
+                    onPublishToggleClick={onPublishToggleClick}
+                    onPublicToggleClick={onPublicToggleClick}
+                />}
             </div>
         </div>
     )
 }
 
 Posts.propTypes = {
+    isLoading: PropTypes.bool.isRequired,
     posts: PropTypes.array.isRequired,
     editingMenuId: PropTypes.number,
     onEditMenuClick: PropTypes.func.isRequired,
     onDeletePost: PropTypes.func.isRequired,
     onPublishToggleClick: PropTypes.func.isRequired,
     onPublicToggleClick: PropTypes.func.isRequired,
-    onNewPostClick: PropTypes.func.isRequired
+    onNewPostClick: PropTypes.func.isRequired,
+    loader: PropTypes.any
 };
 
 

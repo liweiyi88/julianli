@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Posts from './Posts';
-import {getPosts} from "../Api/api";
+import {getPosts, deletePost} from "../Api/api";
+import ContentLoader from "react-content-loader";
 
 export default class PostsMain extends Component
 {
@@ -9,7 +10,8 @@ export default class PostsMain extends Component
 
         this.state = {
             posts: [],
-            editingMenuId: null
+            editingMenuId: null,
+            isLoading: true
         };
 
         this.handleEditPost = this.handleEditPost.bind(this);
@@ -24,7 +26,8 @@ export default class PostsMain extends Component
         getPosts()
             .then((data) => {
                 this.setState({
-                    posts: data
+                    posts: data,
+                    isLoading: false
                 })
             });
     }
@@ -68,9 +71,24 @@ export default class PostsMain extends Component
     handleDeletePost(id) {
         this.setState((prevState) => {
             return {
-                posts: prevState.posts.filter(post => post.id !== id)
-            }
+                posts: prevState.posts.map(post => {
+                    if (post.id !== id) {
+                        return post;
+                    }
+
+                    return {...post, isDeleting: true};
+                })
+            };
         });
+
+        return deletePost(id)
+            .then(() => {
+                this.setState((prevState) => {
+                    return {
+                        posts: prevState.posts.filter(post => post.id !== id)
+                    };
+                });
+            });
     }
 
     handleEditMenuId(postId) {
@@ -96,6 +114,23 @@ export default class PostsMain extends Component
                 onPublishToggleClick={this.handlePublishToggleClick}
                 onPublicToggleClick={this.handlePublicToggleClick}
                 onNewPostClick={this.handleCreatePostRedirect}
+                loader={<ContentLoader
+                    height={150}
+                    width={600}
+                    speed={2}
+                    primaryColor="#f3f3f3"
+                    secondaryColor="#ecebeb"
+                >
+                    <rect x="0" y="0" rx="3" ry="3" width="70" height="10" />
+                    <rect x="80" y="0" rx="3" ry="3" width="100" height="10" />
+                    <rect x="190" y="0" rx="3" ry="3" width="10" height="10" />
+                    <rect x="15" y="20" rx="3" ry="3" width="130" height="10" />
+                    <rect x="155" y="20" rx="3" ry="3" width="130" height="10" />
+                    <rect x="15" y="40" rx="3" ry="3" width="90" height="10" />
+                    <rect x="115" y="40" rx="3" ry="3" width="60" height="10" />
+                    <rect x="185" y="40" rx="3" ry="3" width="60" height="10" />
+                    <rect x="0" y="60" rx="3" ry="3" width="30" height="10" />
+                </ContentLoader>}
             />
         )
     }
