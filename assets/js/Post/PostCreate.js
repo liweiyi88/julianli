@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PostForm from './PostForm';
 import SimpleMDE from "simplemde";
+import {getTags} from "../Api/api";
 
 export default class PostCreate extends Component
 {
@@ -8,6 +9,7 @@ export default class PostCreate extends Component
         super(props);
 
         this.state = {
+            tags: null,
             title: '',
             slug: '',
             content: '',
@@ -29,6 +31,15 @@ export default class PostCreate extends Component
                 content: simplemde.value()
             });
         });
+
+        getTags()
+            .then((data) => {
+                this.setState({
+                    tags: data.map(tag => {
+                        return {value:tag.id, label:tag.name}
+                    })
+                })
+            });
     }
 
     handlePublicToggleClick() {
@@ -54,19 +65,12 @@ export default class PostCreate extends Component
     }
 
     render() {
-        const tags = [
-            {value:1, label:'Life style'},
-            {value:2, label:'Symfony'},
-            {value:3, label:'Tech'},
-            {value:4, label:'Security'}
-        ];
 
         return (
             <div className={`container mx-auto w-3/4`}>
                 <div className={`flex items-center mt-10 mb-4 justify-center md:flex md:items-center mb-6`}>
                     <PostForm
                         {...this.state}
-                        tags={tags}
                         onElementChange={this.handleFormElementChange}
                         onTagsSelectedChange={this.handleTagsSelectChange}
                         onPublicToggleClick={this.handlePublicToggleClick}

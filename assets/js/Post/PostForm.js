@@ -98,7 +98,6 @@ PostForm.propTypes = {
     content: PropTypes.string,
     isPublic: PropTypes.bool,
     selectedTags: PropTypes.array,
-    tags: PropTypes.array.isRequired,
     onElementChange: PropTypes.func.isRequired,
     onTagsSelectedChange: PropTypes.func.isRequired,
     onPublicToggleClick: PropTypes.func

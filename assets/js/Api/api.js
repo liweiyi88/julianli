@@ -44,3 +44,8 @@ export function createPost(post) {
         }
     });
 }
+
+export function getTags() {
+    return fetchJson('/api/tags')
+        .then(data => data['hydra:member'])
+}
