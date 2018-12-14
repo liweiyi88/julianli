@@ -40,3 +40,8 @@ services:
         arguments: ['%app.redis_host%']
 
     Bugsnag\Client: '@bugsnag'
+
+    Symfony\Component\Serializer\Normalizer\DateTimeNormalizer:
+        arguments:
+            $defaultContext:
+                datetime_format: 'M j, Y'
