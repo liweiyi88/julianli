@@ -15,7 +15,8 @@ export default class PostCreate extends Component
             content: '',
             selectedTags: null,
             isPublished: null,
-            isPublic: true
+            isPublic: true,
+            isTagsLoading: true
         };
 
         this.handleFormElementChange = this.handleFormElementChange.bind(this);
@@ -35,6 +36,7 @@ export default class PostCreate extends Component
         getTags()
             .then((data) => {
                 this.setState({
+                    isTagsLoading: false,
                     tags: data.map(tag => {
                         return {value:tag.id, label:tag.name}
                     })
