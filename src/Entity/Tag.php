@@ -28,7 +28,7 @@ class Tag
     private $id;
 
     /**
-     * @Groups({"read"})
+     * @Groups({"read", "write"})
      *
      * @ORM\Column(name="name", type="string", length=255)
      */

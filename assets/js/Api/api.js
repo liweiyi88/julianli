@@ -45,6 +45,16 @@ export function createPost(post) {
     });
 }
 
+export function createTag(tag) {
+    return fetchJson('/api/tags', {
+        method: 'POST',
+        body: JSON.stringify(tag),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+}
+
 export function getTags() {
     return fetchJson('/api/tags')
         .then(data => data['hydra:member'])

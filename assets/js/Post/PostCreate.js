@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PostForm from './PostForm';
 import SimpleMDE from "simplemde";
-import {getTags} from "../Api/api";
+import {createTag, getTags} from "../Api/api";
 
 export default class PostCreate extends Component
 {
@@ -9,11 +9,11 @@ export default class PostCreate extends Component
         super(props);
 
         this.state = {
-            tags: null,
+            tags: [],
             title: '',
             slug: '',
             content: '',
-            selectedTags: null,
+            selectedTags: [],
             isPublished: null,
             isPublic: true,
             isTagsLoading: true
@@ -22,6 +22,7 @@ export default class PostCreate extends Component
         this.handleFormElementChange = this.handleFormElementChange.bind(this);
         this.handleTagsSelectChange = this.handleTagsSelectChange.bind(this);
         this.handlePublicToggleClick = this.handlePublicToggleClick.bind(this);
+        this.handleNewTagCreation = this.handleNewTagCreation.bind(this);
     }
 
     componentDidMount() {
@@ -52,6 +53,24 @@ export default class PostCreate extends Component
         })
     }
 
+    handleNewTagCreation(inputValue) {
+        this.setState({
+            isTagsLoading: true
+        });
+
+        let tagPayload = {name:inputValue};
+
+        createTag(tagPayload).then((response) => {
+            let tag = {label: response.name, value: response.id};
+
+            this.setState({
+                isTagsLoading: false,
+                selectedTags: [...this.state.selectedTags, tag],
+                tags: [...this.state.tags, tag]
+            });
+        });
+    }
+
     handleTagsSelectChange(selectedOption) {
         this.setState({ selectedTags: selectedOption });
     }
@@ -75,6 +94,7 @@ export default class PostCreate extends Component
                         {...this.state}
                         onElementChange={this.handleFormElementChange}
                         onTagsSelectedChange={this.handleTagsSelectChange}
+                        onNewTagCreation={this.handleNewTagCreation}
                         onPublicToggleClick={this.handlePublicToggleClick}
                     />
                 </div>

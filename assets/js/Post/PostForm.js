@@ -10,6 +10,7 @@ export default function PostForm(props) {
         content,
         isPublic,
         tags,
+        onNewTagCreation,
         onTagsSelectedChange,
         onPublicToggleClick,
         onElementChange,
@@ -71,6 +72,7 @@ export default function PostForm(props) {
                         }
                     })}
 
+                    onCreateOption={onNewTagCreation}
                     isLoading={isTagsLoading}
                     isDisabled={isTagsLoading}
                     value={selectedTags}
@@ -105,5 +107,6 @@ PostForm.propTypes = {
     selectedTags: PropTypes.array,
     onElementChange: PropTypes.func.isRequired,
     onTagsSelectedChange: PropTypes.func.isRequired,
+    onNewTagCreation: PropTypes.func.isRequired,
     onPublicToggleClick: PropTypes.func
 };
