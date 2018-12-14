@@ -36,7 +36,7 @@ export function deletePost(id) {
 }
 
 export function createPost(post) {
-    return fetchJson('/posts', {
+    return fetchJson('/api/posts', {
         method: 'POST',
         body: JSON.stringify(post),
         headers: {
@@ -57,5 +57,10 @@ export function createTag(tag) {
 
 export function getTags() {
     return fetchJson('/api/tags')
+        .then(data => data['hydra:member'])
+}
+
+export function getFreelancers() {
+    return fetchJson('/api/freelancers')
         .then(data => data['hydra:member'])
 }

@@ -35,8 +35,6 @@ class Freelancer implements UserInterface, \Serializable
     private $email;
 
     /**
-     * @Groups({"read"})
-     *
      * @ORM\Column(name="username", type="string", length=25, unique=true)
      */
     private $username;
@@ -47,11 +45,15 @@ class Freelancer implements UserInterface, \Serializable
     private $password;
 
     /**
+     * @Groups({"read"})
+     *
      * @ORM\Column(name="first_name", type="string", length=255)
      */
     private $firstName;
 
     /**
+     * @Groups({"read"})
+     *
      * @ORM\Column(name="last_name", type="string", length=255)
      */
     private $lastName;

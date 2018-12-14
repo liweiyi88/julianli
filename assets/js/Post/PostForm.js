@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CreatableSelect from 'react-select/lib/Creatable';
+import Select from 'react-select';
 import Toggle from './Toggle';
 
 export default function PostForm(props) {
@@ -10,12 +11,17 @@ export default function PostForm(props) {
         content,
         isPublic,
         tags,
+        authors,
         onNewTagCreation,
         onTagsSelectedChange,
+        onAuthorSelectedChange,
         onPublicToggleClick,
         onElementChange,
+        selectedAuthor,
         selectedTags,
-        isTagsLoading
+        isTagsLoading,
+        isAuthorsLoading,
+        onPublishPost
     } = props;
 
     return (
@@ -23,6 +29,7 @@ export default function PostForm(props) {
             <div className={`flex flex-row-reverse`}>
                 <div>
                     <button
+                        onClick={onPublishPost}
                         className={`bg-transparent hover:bg-green text-green-dark hover:text-white py-2 px-4 border border-green hover:border-transparent rounded`}>Ready
                         to publish?
                     </button>
@@ -63,6 +70,25 @@ export default function PostForm(props) {
             </div>
 
             <div className={`mt-5`}>
+                <Select
+                    theme={(theme) => ({
+                        ...theme,
+                        spacing: {
+                            ...theme.spacing,
+                            controlHeight: '3rem'
+                        }
+                    })}
+
+                    isLoading={isAuthorsLoading}
+                    isDisabled={isAuthorsLoading}
+                    value={selectedAuthor}
+                    options={authors}
+                    onChange={onAuthorSelectedChange}
+                    placeholder={`Select the author..`}
+                />
+            </div>
+
+            <div className={`mt-5`}>
                 <CreatableSelect
                     theme={(theme) => ({
                         ...theme,
@@ -79,7 +105,7 @@ export default function PostForm(props) {
                     options={tags}
                     onChange={onTagsSelectedChange}
                     isMulti
-                    placeholder={`Add a tags..`}
+                    placeholder={`Add tags..`}
                     isValidNewOption={(inputValue, selectValue, selectOptions) => {
                         const isNotDuplicated = !selectOptions
                             .map(option => option.label)
@@ -98,6 +124,7 @@ export default function PostForm(props) {
 }
 
 PostForm.propTypes = {
+    authors: PropTypes.array.isRequired,
     isTagsLoading: PropTypes.bool,
     title: PropTypes.string,
     slug: PropTypes.string,
@@ -105,8 +132,12 @@ PostForm.propTypes = {
     content: PropTypes.string,
     isPublic: PropTypes.bool,
     selectedTags: PropTypes.array,
+    selectedAuthor: PropTypes.object,
+    onAuthorSelectedChange: PropTypes.func.isRequired,
     onElementChange: PropTypes.func.isRequired,
     onTagsSelectedChange: PropTypes.func.isRequired,
     onNewTagCreation: PropTypes.func.isRequired,
-    onPublicToggleClick: PropTypes.func
+    onPublicToggleClick: PropTypes.func,
+    onPublishPost: PropTypes.func.isRequired,
+    isAuthorsLoading: PropTypes.bool.isRequired
 };
