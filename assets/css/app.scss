@@ -45,3 +45,7 @@ body {
 .CodeMirror {
   z-index: 0 !important;
 }
+
+.label {
+  @apply rounded-full bg-blue-dark text-white uppercase px-2 py-1 text-xs font-bold ml-3;
+}

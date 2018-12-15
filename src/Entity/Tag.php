@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
@@ -32,45 +31,20 @@ class Tag
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
-    private $name;
+    public $name;
 
     /**
      * @ORM\ManyToMany(targetEntity="Post", mappedBy="tags")
      */
-    private $posts;
-
-    public function __construct()
-    {
-        $this->posts = new ArrayCollection();
-    }
+    public $posts;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function __construct()
     {
-        return $this->name;
-    }
-
-    public function setName($name): void
-    {
-        $this->name = $name;
-    }
-
-    public function getPosts(): Collection
-    {
-        return $this->posts;
-    }
-
-    public function setPosts(Collection $posts): void
-    {
-        $this->posts = $posts;
-    }
-
-    public function __toString()
-    {
-        return $this->name;
+        $this->posts = new ArrayCollection();
     }
 }

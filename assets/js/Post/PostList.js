@@ -102,7 +102,14 @@ export default class PostList extends Component{
         return (
             posts.map((post) => (
                 <div className={post.isDeleting ? `flex-col mt-4 border-b opacity-50` : `flex-col mt-4 border-b`} key={post.id}>
-                    <div className={`text-2xl font-bold`}>{post.title}</div>
+                    <div className={`flex items-center`}>
+                        <div className={`text-2xl font-bold`}>{post.title}</div>
+                        <div>
+                            {post.tags.map(tag => (
+                                <span key={tag.id} className={`label`}>{tag.name}</span>
+                            ))}
+                        </div>
+                    </div>
                     <div className={`text-grey-darker text-lg mt-4 leading-normal`}>{shortDescription(post.content, 30)}</div>
 
                     <div className={`flex mt-4 mb-4 text-grey-dark text-base`}>

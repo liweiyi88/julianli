@@ -165,16 +165,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.81.2",
+            "version": "3.81.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "1dd023879874ce22a7f8e2b2e014166cd1160b0d"
+                "reference": "0e07e92ec7042316ffc79ef290cf7bbb7d7be24b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/1dd023879874ce22a7f8e2b2e014166cd1160b0d",
-                "reference": "1dd023879874ce22a7f8e2b2e014166cd1160b0d",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0e07e92ec7042316ffc79ef290cf7bbb7d7be24b",
+                "reference": "0e07e92ec7042316ffc79ef290cf7bbb7d7be24b",
                 "shasum": ""
             },
             "require": {
@@ -244,7 +244,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-12-07T19:55:05+00:00"
+            "time": "2018-12-14T22:50:05+00:00"
         },
         {
             "name": "behat/transliterator",
@@ -820,16 +820,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.9.0",
+            "version": "v2.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "21fdabe2fc01e004e1966f200d900554876bc63c"
+                "reference": "ec74d6e300d78fbc896669c3ca57ef9719adc9c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/21fdabe2fc01e004e1966f200d900554876bc63c",
-                "reference": "21fdabe2fc01e004e1966f200d900554876bc63c",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/ec74d6e300d78fbc896669c3ca57ef9719adc9c6",
+                "reference": "ec74d6e300d78fbc896669c3ca57ef9719adc9c6",
                 "shasum": ""
             },
             "require": {
@@ -898,7 +898,7 @@
                 "php",
                 "queryobject"
             ],
-            "time": "2018-12-04T04:39:48+00:00"
+            "time": "2018-12-14T04:51:13+00:00"
         },
         {
             "name": "doctrine/doctrine-bundle",
@@ -1905,22 +1905,22 @@
         },
         {
             "name": "enqueue/amqp-tools",
-            "version": "0.9.0",
+            "version": "0.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-enqueue/amqp-tools.git",
-                "reference": "b154d15e12d3a5b99f65b35b53ccf7d7b6bc4d95"
+                "reference": "def836131c7ffc28120cd2a351d7d829e79b42bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-enqueue/amqp-tools/zipball/b154d15e12d3a5b99f65b35b53ccf7d7b6bc4d95",
-                "reference": "b154d15e12d3a5b99f65b35b53ccf7d7b6bc4d95",
+                "url": "https://api.github.com/repos/php-enqueue/amqp-tools/zipball/def836131c7ffc28120cd2a351d7d829e79b42bb",
+                "reference": "def836131c7ffc28120cd2a351d7d829e79b42bb",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1.3",
                 "queue-interop/amqp-interop": "^0.8",
-                "queue-interop/queue-interop": "^0.7"
+                "queue-interop/queue-interop": "^0.7|^0.8"
             },
             "require-dev": {
                 "enqueue/dsn": "0.9.x-dev",
@@ -1953,20 +1953,20 @@
                 "messaging",
                 "queue"
             ],
-            "time": "2018-11-22T13:57:31+00:00"
+            "time": "2018-12-13T15:31:01+00:00"
         },
         {
             "name": "enqueue/dsn",
-            "version": "0.9.0",
+            "version": "0.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-enqueue/dsn.git",
-                "reference": "ba711b04a3e4c2f599d36bd058e0cbcdbbd06acf"
+                "reference": "5d011c648395307c740d8c0e420f8a9faebce72f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-enqueue/dsn/zipball/ba711b04a3e4c2f599d36bd058e0cbcdbbd06acf",
-                "reference": "ba711b04a3e4c2f599d36bd058e0cbcdbbd06acf",
+                "url": "https://api.github.com/repos/php-enqueue/dsn/zipball/5d011c648395307c740d8c0e420f8a9faebce72f",
+                "reference": "5d011c648395307c740d8c0e420f8a9faebce72f",
                 "shasum": ""
             },
             "require": {
@@ -1999,20 +1999,20 @@
                 "dsn",
                 "parse"
             ],
-            "time": "2018-11-23T08:22:22+00:00"
+            "time": "2018-11-28T17:29:36+00:00"
         },
         {
             "name": "enqueue/enqueue",
-            "version": "0.9.1",
+            "version": "0.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-enqueue/enqueue.git",
-                "reference": "fd8e0c8afa3ebc5c367d884d8b408eb34fc6aad1"
+                "reference": "b552e850c4b6248484b24e4453b4365c1d2332e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-enqueue/enqueue/zipball/fd8e0c8afa3ebc5c367d884d8b408eb34fc6aad1",
-                "reference": "fd8e0c8afa3ebc5c367d884d8b408eb34fc6aad1",
+                "url": "https://api.github.com/repos/php-enqueue/enqueue/zipball/b552e850c4b6248484b24e4453b4365c1d2332e0",
+                "reference": "b552e850c4b6248484b24e4453b4365c1d2332e0",
                 "shasum": ""
             },
             "require": {
@@ -2022,7 +2022,7 @@
                 "psr/container": "^1",
                 "psr/log": "^1",
                 "queue-interop/amqp-interop": "^0.8",
-                "queue-interop/queue-interop": "^0.7",
+                "queue-interop/queue-interop": "^0.7|^0.8",
                 "ramsey/uuid": "^2|^3.5"
             },
             "require-dev": {
@@ -2087,20 +2087,20 @@
                 "queue",
                 "rabbitmq"
             ],
-            "time": "2018-11-27T17:54:18+00:00"
+            "time": "2018-12-13T15:31:01+00:00"
         },
         {
             "name": "enqueue/enqueue-bundle",
-            "version": "0.9.1",
+            "version": "0.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-enqueue/enqueue-bundle.git",
-                "reference": "637d26688f983dc2c312a0a1ac9a94b8605f0c8e"
+                "reference": "e27255d531c570119b4caf513e47d7816d4e76b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-enqueue/enqueue-bundle/zipball/637d26688f983dc2c312a0a1ac9a94b8605f0c8e",
-                "reference": "637d26688f983dc2c312a0a1ac9a94b8605f0c8e",
+                "url": "https://api.github.com/repos/php-enqueue/enqueue-bundle/zipball/e27255d531c570119b4caf513e47d7816d4e76b2",
+                "reference": "e27255d531c570119b4caf513e47d7816d4e76b2",
                 "shasum": ""
             },
             "require": {
@@ -2108,7 +2108,7 @@
                 "enqueue/null": "^0.9",
                 "php": "^7.1.3",
                 "queue-interop/amqp-interop": "^0.8",
-                "queue-interop/queue-interop": "^0.7",
+                "queue-interop/queue-interop": "^0.7|^0.8",
                 "symfony/framework-bundle": "^3.4|^4"
             },
             "require-dev": {
@@ -2161,7 +2161,7 @@
                 "queue",
                 "rabbitmq"
             ],
-            "time": "2018-11-27T17:54:18+00:00"
+            "time": "2018-12-13T15:31:01+00:00"
         },
         {
             "name": "enqueue/messenger-adapter",
@@ -2223,21 +2223,21 @@
         },
         {
             "name": "enqueue/null",
-            "version": "0.9.0",
+            "version": "0.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-enqueue/null.git",
-                "reference": "1dd978218a2fe66d1387cf28becc742e2f2f3fa6"
+                "reference": "7d3e5b5836501fde5de1f5867ce070e4b7cc09a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-enqueue/null/zipball/1dd978218a2fe66d1387cf28becc742e2f2f3fa6",
-                "reference": "1dd978218a2fe66d1387cf28becc742e2f2f3fa6",
+                "url": "https://api.github.com/repos/php-enqueue/null/zipball/7d3e5b5836501fde5de1f5867ce070e4b7cc09a1",
+                "reference": "7d3e5b5836501fde5de1f5867ce070e4b7cc09a1",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1.3",
-                "queue-interop/queue-interop": "^0.7"
+                "queue-interop/queue-interop": "^0.7|^0.8"
             },
             "require-dev": {
                 "enqueue/test": "0.9.x-dev",
@@ -2269,27 +2269,27 @@
                 "queue",
                 "testing"
             ],
-            "time": "2018-11-22T13:57:31+00:00"
+            "time": "2018-12-13T15:31:01+00:00"
         },
         {
             "name": "enqueue/sqs",
-            "version": "0.9.1",
+            "version": "0.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-enqueue/sqs.git",
-                "reference": "0ad0fc79444aa129e2f1c51967640c59e91aff50"
+                "reference": "2678fd2ce314853ff3ecb2a3de19de87f8c21b22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-enqueue/sqs/zipball/0ad0fc79444aa129e2f1c51967640c59e91aff50",
-                "reference": "0ad0fc79444aa129e2f1c51967640c59e91aff50",
+                "url": "https://api.github.com/repos/php-enqueue/sqs/zipball/2678fd2ce314853ff3ecb2a3de19de87f8c21b22",
+                "reference": "2678fd2ce314853ff3ecb2a3de19de87f8c21b22",
                 "shasum": ""
             },
             "require": {
                 "aws/aws-sdk-php": "~3.26",
                 "enqueue/dsn": "^0.9",
                 "php": "^7.1.3",
-                "queue-interop/queue-interop": "^0.7"
+                "queue-interop/queue-interop": "^0.7|^0.8"
             },
             "require-dev": {
                 "enqueue/test": "0.9.x-dev",
@@ -2323,7 +2323,7 @@
                 "queue",
                 "sqs"
             ],
-            "time": "2018-11-27T17:54:18+00:00"
+            "time": "2018-12-13T15:31:01+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -3590,21 +3590,21 @@
         },
         {
             "name": "queue-interop/amqp-interop",
-            "version": "0.8.0",
+            "version": "0.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/queue-interop/amqp-interop.git",
-                "reference": "b68bb2c0597ec7c04440bb3e4cb8b7894af701bf"
+                "reference": "2029c3b3b9f10cc1c0a219650f66ab68fcfe656d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/queue-interop/amqp-interop/zipball/b68bb2c0597ec7c04440bb3e4cb8b7894af701bf",
-                "reference": "b68bb2c0597ec7c04440bb3e4cb8b7894af701bf",
+                "url": "https://api.github.com/repos/queue-interop/amqp-interop/zipball/2029c3b3b9f10cc1c0a219650f66ab68fcfe656d",
+                "reference": "2029c3b3b9f10cc1c0a219650f66ab68fcfe656d",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1.3",
-                "queue-interop/queue-interop": "^0.7"
+                "queue-interop/queue-interop": "^0.7|^0.8"
             },
             "require-dev": {
                 "phpunit/phpunit": "~5.4.0"
@@ -3624,20 +3624,20 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-11-16T09:18:43+00:00"
+            "time": "2018-12-13T13:42:47+00:00"
         },
         {
             "name": "queue-interop/queue-interop",
-            "version": "0.7.1",
+            "version": "0.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/queue-interop/queue-interop.git",
-                "reference": "e04bcaff5b6d1b779c2c8199dced4e25ba7019e1"
+                "reference": "b43af85f635439fa2c9a6d8fd486489da4869741"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/queue-interop/queue-interop/zipball/e04bcaff5b6d1b779c2c8199dced4e25ba7019e1",
-                "reference": "e04bcaff5b6d1b779c2c8199dced4e25ba7019e1",
+                "url": "https://api.github.com/repos/queue-interop/queue-interop/zipball/b43af85f635439fa2c9a6d8fd486489da4869741",
+                "reference": "b43af85f635439fa2c9a6d8fd486489da4869741",
                 "shasum": ""
             },
             "require": {
@@ -3645,7 +3645,7 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "^5.5",
-                "queue-interop/queue-spec": "0.6.x-dev"
+                "queue-interop/queue-spec": "^0.6@dev"
             },
             "type": "library",
             "extra": {
@@ -3671,7 +3671,7 @@
                 "messaging",
                 "queue"
             ],
-            "time": "2018-11-20T17:29:44+00:00"
+            "time": "2018-11-22T17:53:21+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -8240,12 +8240,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "9fd088ff8176ceb154c7d3cc0d1241af80e5c93e"
+                "reference": "3557820049b07ea0fd088e4151ec200f474b58de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/9fd088ff8176ceb154c7d3cc0d1241af80e5c93e",
-                "reference": "9fd088ff8176ceb154c7d3cc0d1241af80e5c93e",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/3557820049b07ea0fd088e4151ec200f474b58de",
+                "reference": "3557820049b07ea0fd088e4151ec200f474b58de",
                 "shasum": ""
             },
             "conflict": {
@@ -8376,7 +8376,7 @@
                 "symfony/yaml": ">=2,<2.0.22|>=2.1,<2.1.7",
                 "tecnickcom/tcpdf": "<6.2.22",
                 "thelia/backoffice-default-template": ">=2.1,<2.1.2",
-                "thelia/thelia": ">=2.1.0-beta1,<2.1.3|>=2.1,<2.1.2",
+                "thelia/thelia": ">=2.1,<2.1.2|>=2.1.0-beta1,<2.1.3",
                 "theonedemon/phpwhois": "<=4.2.5",
                 "titon/framework": ">=0,<9.9.99",
                 "truckersmp/phpwhois": "<=4.3.1",
@@ -8385,6 +8385,7 @@
                 "typo3/cms-core": ">=8,<8.7.21|>=9,<9.5.2",
                 "typo3/flow": ">=1,<1.0.4|>=1.1,<1.1.1|>=2,<2.0.1|>=2.3,<2.3.16|>=3,<3.0.10|>=3.1,<3.1.7|>=3.2,<3.2.7|>=3.3,<3.3.5",
                 "typo3/neos": ">=1.1,<1.1.3|>=1.2,<1.2.13|>=2,<2.0.4",
+                "ua-parser/uap-php": "<3.8",
                 "wallabag/tcpdf": "<6.2.22",
                 "willdurand/js-translation-bundle": "<2.1.1",
                 "yiisoft/yii": ">=1.1.14,<1.1.15",
@@ -8433,7 +8434,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2018-12-11T16:56:18+00:00"
+            "time": "2018-12-14T13:12:19+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -8751,16 +8752,16 @@
         },
         {
             "name": "symfony/maker-bundle",
-            "version": "v1.9.0",
+            "version": "v1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/maker-bundle.git",
-                "reference": "e873047b6022a0343c9354f65d5d47b9e351dd53"
+                "reference": "aa37ea1323ac888913bdd3e5f83d846798729449"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/e873047b6022a0343c9354f65d5d47b9e351dd53",
-                "reference": "e873047b6022a0343c9354f65d5d47b9e351dd53",
+                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/aa37ea1323ac888913bdd3e5f83d846798729449",
+                "reference": "aa37ea1323ac888913bdd3e5f83d846798729449",
                 "shasum": ""
             },
             "require": {
@@ -8813,7 +8814,7 @@
                 "scaffold",
                 "scaffolding"
             ],
-            "time": "2018-11-03T18:25:11+00:00"
+            "time": "2018-12-13T18:54:47+00:00"
         },
         {
             "name": "symfony/phpunit-bridge",

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Posts from './Posts';
-import {getPosts, deletePost} from "../Api/api";
+import {getPosts, deletePost, updatePost} from "../Api/api";
 import ContentLoader from "react-content-loader";
 
 export default class PostsMain extends Component
@@ -45,6 +45,8 @@ export default class PostsMain extends Component
                     }
 
                     post.isPublished = !post.isPublished;
+
+                    updatePost(post);
 
                     return post;
                 })

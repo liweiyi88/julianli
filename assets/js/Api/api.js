@@ -29,12 +29,6 @@ export function getPosts() {
         .then(data => data['hydra:member']);
 }
 
-export function deletePost(id) {
-    return fetchJson(`/api/posts/${id}`, {
-        method: 'DELETE'
-    });
-}
-
 export function createPost(post) {
     return fetchJson('/api/posts', {
         method: 'POST',
@@ -42,6 +36,30 @@ export function createPost(post) {
         headers: {
             'Content-Type': 'application/json'
         }
+    });
+}
+
+export function updatePost(post) {
+    let updatePost = Object.assign({}, post);
+
+    updatePost.tags = post.tags.map(tag => {
+        return tag['@id'];
+    });
+
+    updatePost.freelancer = post.freelancer['@id'];
+
+    return fetchJson('/api/posts/'+updatePost.id, {
+        method: 'PUT',
+        body: JSON.stringify(updatePost),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+}
+
+export function deletePost(id) {
+    return fetchJson(`/api/posts/${id}`, {
+        method: 'DELETE'
     });
 }
 

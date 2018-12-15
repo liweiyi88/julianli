@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -38,14 +37,14 @@ class Post
      *
      * @ORM\Column(name="title", type="string", length=255, nullable=true)
      */
-    private $title;
+    public $title;
 
     /**
      * @Groups({"read", "write"})
      *
      * @ORM\Column(name="slug", type="string", length=255)
      */
-    private $slug;
+    public $slug;
 
     /**
      * @ORM\Column(name="cover_image_url", type="string", length=255, nullable=true)
@@ -77,10 +76,12 @@ class Post
     private $pageViews;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="posts")
+     * @Groups({"read", "write"})
+     *
+     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="posts", cascade={"persist"})
      * @ORM\JoinTable(name="posts_tags")
      */
-    private $tags;
+    public $tags;
 
     /**
      * @ORM\Column(name="update_at", type="datetime", nullable=true)
@@ -160,24 +161,9 @@ class Post
         return $this->isPublished;
     }
 
-    public function getSlug(): ?string
-    {
-        return $this->slug;
-    }
-
-    public function getTags(): Collection
-    {
-        return $this->tags;
-    }
-
     public function getPageViews(): int
     {
         return $this->pageViews ?? 0;
-    }
-
-    public function getTitle(): ?string
-    {
-        return $this->title;
     }
 
     public function getUpdatedAt(): ?\DateTime
@@ -233,24 +219,9 @@ class Post
         $this->isPublic = $isPublic;
     }
 
-    public function setSlug(?string $slug): void
-    {
-        $this->slug = $slug;
-    }
-
-    public function setTags(?array $tags): void
-    {
-        $this->tags = $tags;
-    }
-
     public function setPageViews(int $pageViews): void
     {
         $this->pageViews = $pageViews;
-    }
-
-    public function setTitle(?string $title): void
-    {
-        $this->title = $title;
     }
 
     public function setUpdatedAt(?\DateTime $updatedAt): void
