@@ -3,6 +3,10 @@ RUN=$(DOCKER_COMPOSE) run --rm app
 EXEC?=$(DOCKER_COMPOSE) exec app
 COMPOSER=$(EXEC) composer
 CONSOLE=bin/console
+PHPSTAN=$(EXEC) vendor/bin/phpstan analyse -l 4 -c phpstan.neon src
+PHPCS=$(EXEC) vendor/bin/phpcs --standard=PSR2 src --ignore=src/Migrations,src/DataFixtures
+PHPUNIT=$(EXEC) vendor/bin/simple-phpunit
+ESLINT=$(EXEC) node_modules/.bin/eslint assets
 DEBUG=docker exec -it app bash
 
 .DEFAULT_GOAL := help
@@ -77,3 +81,20 @@ node_modules: yarn.lock
 
 ssh:
 	$(DEBUG)
+
+##
+## CI Pipeline
+##---------------------------------------------------------------------------
+ci: eslint test-phpunit phpcs phpstan
+
+eslint:
+	$(ESLINT)
+
+test-phpunit:
+	$(PHPUNIT)
+
+phpstan:
+	$(PHPSTAN)
+
+phpcs:
+	$(PHPCS)

@@ -11,7 +11,7 @@ jobs:
             - run: make build
             - run: make up
             - run: make node_modules assets-prod
-            - run: docker run --rm -it -v $(pwd):/app $APP_DOCKER_IMAGE_NAME:dev "./cs"
+            - run: make ci
             - save_cache:
                 paths:
                     - ./vendor

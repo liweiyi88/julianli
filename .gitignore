@@ -21,14 +21,6 @@ supervisord.pid
 
 ansible/playbook.retry
 ansible/deploy.retry
-###> symfony/phpunit-bridge ###
-.phpunit
 /phpunit.xml
-###< symfony/phpunit-bridge ###
-
-###> symfony/webpack-encore-bundle ###
-/node_modules/
-/public/build/
 npm-debug.log
-yarn-error.log
-###< symfony/webpack-encore-bundle ###
+docker-dev.lock
