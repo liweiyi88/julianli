@@ -16,7 +16,8 @@ jobs:
             - run: docker pull $APP_DOCKER_IMAGE_NAME:dev
             - run: make build
             - run: make up
-            - run: make vendor node_modules assets-prod
+            - run: make node_modules assets-prod
+            - run: make vendor cc
             - run: make ci
             - save_cache:
                 paths:

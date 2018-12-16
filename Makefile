@@ -32,11 +32,8 @@ reset: stop start
 
 clear:          ## Remove all the cache, the logs, the sessions and the built assets
 clear: perm rm-docker-dev.lock
-	-$(EXEC) rm -rf var/cache/*
-	-$(EXEC) rm -rf var/sessions/*
 	-$(EXEC) rm -rf supervisord.log supervisord.pid npm-debug.log .tmp
-	-$(EXEC) $(CONSOLE) redis:flushall -n
-	rm -rf var/logs/*
+	rm -rf var
 
 clean:          ## Clear and remove dependencies
 clean: clear
@@ -44,7 +41,7 @@ clean: clear
 
 cc:             ## Clear the cache in dev env
 cc:
-	$(RUN) $(CONSOLE) cache:clear --no-warmup
+	$(RUN) $(CONSOLE) cache:clear
 	$(RUN) $(CONSOLE) cache:warmup
 ##
 ## Database
