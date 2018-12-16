@@ -6,7 +6,7 @@ ENV LANG="en_US.UTF-8" \
     TERM="xterm" \
     DEBIAN_FRONTEND="noninteractive" \
     SYMFONY_ALLOW_APPDEV=1 \
-    NODE_VERSION=6.9.4 \
+    NODE_VERSION=11.0.0 \
     COMPOSER_ALLOW_SUPERUSER=1
 
 EXPOSE 80
@@ -55,6 +55,11 @@ RUN apt-get update -q && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
+
+    curl -L -o /tmp/nodejs.tar.gz https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.gz && \
+    tar xfvz /tmp/nodejs.tar.gz -C /usr/local --strip-components=1 && \
+    rm -f /tmp/nodejs.tar.gz && \
+    npm install yarn -g && \
 
     mkdir /run/php
 

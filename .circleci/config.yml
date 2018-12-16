@@ -1,6 +1,7 @@
 version: 2
 jobs:
     test:
+        working_directory: ~/app
         machine:
             enabled: true
             image: circleci/classic
@@ -8,7 +9,16 @@ jobs:
             - checkout
             - run: docker pull $APP_DOCKER_IMAGE_NAME:dev
             - run: docker run --rm -it -v $(pwd):/app $APP_DOCKER_IMAGE_NAME:dev /usr/local/bin/composer install -n --prefer-dist
+            - run: make node_modules assets-prod
             - run: docker run --rm -it -v $(pwd):/app $APP_DOCKER_IMAGE_NAME:dev "./cs"
+            - save_cache:
+                paths:
+                    - ./vendor
+                key: composer-{{ checksum "composer.lock" }}
+            - save_cache:
+                paths:
+                    - ./node_modules
+                key: npm-{{ checksum "yarn.lock" }}
 
     deploy:
         working_directory: ~/julianli

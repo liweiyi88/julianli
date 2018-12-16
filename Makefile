@@ -19,6 +19,10 @@ start: build up db perm vendor
 stop:           ## Remove docker containers
 	$(DOCKER_COMPOSE) rm -v --force --stop
 
+assets:
+assets-prod: node_modules
+	$(EXEC) yarn encore production
+
 reset:          ## Reset the whole project
 reset: stop start
 
@@ -60,6 +64,9 @@ perm:
 
 vendor:
 	$(COMPOSER) install -n
+
+node_modules: yarn.lock
+	$(EXEC) yarn install
 
 ssh:
 	$(DEBUG)
