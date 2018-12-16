@@ -7,10 +7,16 @@ jobs:
             image: circleci/classic
         steps:
             - checkout
+
+            - restore_cache:
+                  key: composer-{{ checksum "composer.lock" }}
+            - restore_cache:
+                  key: npm-{{ checksum "yarn.lock" }}
+
             - run: docker pull $APP_DOCKER_IMAGE_NAME:dev
             - run: make build
             - run: make up
-            - run: make node_modules assets-prod
+            - run: make vendor node_modules assets-prod
             - run: make ci
             - save_cache:
                 paths:
