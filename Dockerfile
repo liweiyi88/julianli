@@ -34,7 +34,6 @@ RUN apt-get update -q && \
         php7.2-intl \
         php7.2-json \
         php7.2-mbstring \
-        php7.2-mcrypt \
         php7.2-opcache \
         php7.2-pdo \
         php7.2-phar \
@@ -49,7 +48,7 @@ RUN apt-get update -q && \
 
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 
-    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 COPY . /app
 
@@ -57,9 +56,7 @@ COPY docker/prod/entrypoint.sh /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
-RUN chmod 0444 gcloud-service-key.json && \
-
-    mkdir /run/php && \
+RUN mkdir /run/php && \
     mkdir var && \
 
     cp docker/prod/php.ini /etc/php/7.2/cli/conf.d/50-setting.ini && \
