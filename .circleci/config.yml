@@ -8,7 +8,8 @@ jobs:
         steps:
             - checkout
             - run: docker pull $APP_DOCKER_IMAGE_NAME:dev
-            - run: docker run --rm -it -v $(pwd):/app $APP_DOCKER_IMAGE_NAME:dev /usr/local/bin/composer install -n --prefer-dist
+            - run: make build
+            - run: make up
             - run: make node_modules assets-prod
             - run: docker run --rm -it -v $(pwd):/app $APP_DOCKER_IMAGE_NAME:dev "./cs"
             - save_cache:

@@ -27,7 +27,7 @@ reset:          ## Reset the whole project
 reset: stop start
 
 clear:          ## Remove all the cache, the logs, the sessions and the built assets
-clear: perm
+clear: perm rm-docker-dev.lock
 	-$(EXEC) rm -rf var/cache/*
 	-$(EXEC) rm -rf var/sessions/*
 	-$(EXEC) rm -rf supervisord.log supervisord.pid npm-debug.log .tmp
@@ -53,11 +53,18 @@ db: vendor
 	$(RUN) $(CONSOLE) doctrine:migrations:migrate --no-interaction
 	$(RUN) $(CONSOLE) doctrine:fixtures:load --no-interaction -q
 
-build:
-	$(DOCKER_COMPOSE) build
+build: docker-dev.lock
+
+docker-dev.lock: $(DOCKER_FILES)
+	$(DOCKER_COMPOSE) pull --ignore-pull-failures
+	$(DOCKER_COMPOSE) build --force-rm --pull
+	touch docker-dev.lock
+
+rm-docker-dev.lock:
+	rm -f docker-dev.lock
 
 up:
-	$(DOCKER_COMPOSE) up -d
+	$(DOCKER_COMPOSE) up -d --remove-orphans
 
 perm:
 	-$(EXEC) chmod -R 777 var
