@@ -26,24 +26,28 @@ export default function PostForm(props) {
 
     return (
         <div className={`w-full`}>
-            <div className={`flex flex-row-reverse`}>
-                <div>
-                    <button
-                        onClick={onPublishPost}
-                        className={`bg-transparent hover:bg-green text-green-dark hover:text-white py-2 px-4 border border-green hover:border-transparent rounded`}>Ready
-                        to publish?
-                    </button>
+            <div className={`flex flex-row-reverse justify-between`}>
+                <div className={`flex flex-row-reverse`}>
+                    <div>
+                        <button
+                            onClick={onPublishPost}
+                            className={`bg-transparent hover:bg-green text-green-dark hover:text-white py-2 px-4 border border-green hover:border-transparent rounded`}>Ready
+                            to publish?
+                        </button>
+                    </div>
+                    <div className={`flex items-center mr-4`}>
+                        <Toggle
+                            toggle={isPublic}
+                            toggleOnText={`It is now public`}
+                            toggleOnTextColor={`text-green`}
+                            toggleOffText={`It is now private`}
+                            toggleOffTextColor={`text-orange`}
+                            onToggleClick={onPublicToggleClick}
+                        />
+                    </div>
                 </div>
-                <div className={`flex items-center mr-4`}>
-                    <Toggle
-                        toggle={isPublic}
-                        toggleOnText={`It is now public`}
-                        toggleOnTextColor={`text-green`}
-                        toggleOffText={`It is now private`}
-                        toggleOffTextColor={`text-orange`}
-                        onToggleClick={onPublicToggleClick}
-                    />
-                </div>
+
+                <div className={`flex items-center mr-4`}><a className="text-blue-darker hover:text-blue-darkest" href="/admin/posts">Back to list</a></div>
             </div>
 
             <div className={`mt-5`}>

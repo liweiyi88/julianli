@@ -8,6 +8,7 @@ PHPCS=$(EXEC) vendor/bin/phpcs --standard=PSR2 src --ignore=src/Migrations,src/D
 PHPUNIT=$(EXEC) vendor/bin/simple-phpunit
 ESLINT=$(EXEC) node_modules/.bin/eslint assets
 DEBUG=docker exec -it app bash
+DOCKER_FILES=$(shell find ./docker/dev/ -type f -name '*')
 
 .DEFAULT_GOAL := help
 .PHONY: help start stop reset db clear clean build up perm cc vendor
