@@ -31,8 +31,8 @@ export default function PostForm(props) {
                     <div>
                         <button
                             onClick={onPublishPost}
-                            className={`bg-transparent hover:bg-green text-green-dark hover:text-white py-2 px-4 border border-green hover:border-transparent rounded`}>Ready
-                            to publish?
+                            className={`bg-transparent hover:bg-green text-green-dark hover:text-white py-2 px-4 border border-green hover:border-transparent rounded`}>
+                            Save and publish
                         </button>
                     </div>
                     <div className={`flex items-center mr-4`}>

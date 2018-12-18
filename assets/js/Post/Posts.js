@@ -27,7 +27,7 @@ export default function Posts(props) {
 
             <div className={`flex flex-col`}>
                 {isLoading ?  (
-                    <div className={`mt-5`}>{props.loader}</div>
+                    <div>{props.loader}</div>
                 ) :  <PostList
                     posts={posts}
                     onEditMenuClick={onEditMenuClick}

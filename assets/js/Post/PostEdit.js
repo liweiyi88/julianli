@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import PostForm from './PostForm';
 import SimpleMDE from "simplemde";
-import {createPost, createTag, getFreelancers, getPost, getTags, updatePost} from "../Api/api";
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+import withReactContent from 'sweetalert2-react-content';
+import {createTag, getFreelancers, getPost, getTags, updatePost} from "../Api/api";
+import Loader from "../UtilComponent/Loader";
 
 export default class PostEdit extends Component
 {
@@ -9,6 +12,7 @@ export default class PostEdit extends Component
         super(props);
 
         this.state = {
+            isLoading: true,
             id: null,
             selectedAuthor: null,
             authors: [],
@@ -34,6 +38,7 @@ export default class PostEdit extends Component
     componentDidMount() {
         getPost(this.props.id).then(data => {
             this.setState({
+                isLoading: false,
                 id: data['id'],
                 title: data['title'],
                 slug: data['slug'],
@@ -78,7 +83,13 @@ export default class PostEdit extends Component
     }
 
     handlePublishPost() {
+
+        this.setState({
+            isLoading: true
+        });
+
         let post = {
+            id: this.state.id,
             title: this.state.title,
             slug: this.state.slug,
             freelancer: this.state.selectedAuthor.value,
@@ -92,7 +103,21 @@ export default class PostEdit extends Component
 
         updatePost(post)
             .then(() => {
-                window.location.href = '/admin/posts';
+                const alert = withReactContent(Swal);
+
+                const message = alert.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+
+                message({
+                    type: 'success',
+                    title: 'Updated, now redirecting...'
+                }).then(() => {
+                    window.location.href = '/admin/posts';
+                })
             })
     }
 
@@ -145,7 +170,8 @@ export default class PostEdit extends Component
         return (
             <div className={`container mx-auto w-3/4`}>
                 <div className={`flex items-center mt-10 mb-4 justify-center md:flex md:items-center mb-6`}>
-                    <PostForm
+                    {this.state.isLoading ? (<div>{<Loader/>}</div>) :
+                        <PostForm
                         {...this.state}
                         onElementChange={this.handleFormElementChange}
                         onTagsSelectedChange={this.handleTagsSelectChange}
@@ -153,7 +179,7 @@ export default class PostEdit extends Component
                         onPublicToggleClick={this.handlePublicToggleClick}
                         onAuthorSelectedChange={this.handleAuthorSelectChange}
                         onPublishPost={this.handlePublishPost}
-                    />
+                    />}
                 </div>
             </div>
         )

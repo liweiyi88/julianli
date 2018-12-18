@@ -138,14 +138,14 @@ export default class PostList extends Component{
 
                         <div className={`cursor-pointer`} ref={(ref) => {this.menuRefs[post.id] = ref}}>
                             <svg width="21" pointerEvents="none" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
-                                <path pointerEvents="none" d="M4 7.33L10.03 14l.5.55.5-.55 5.96-6.6-.98-.9-5.98 6.6h1L4.98 6.45z"></path>
+                                <path pointerEvents="none" d="M4 7.33L10.03 14l.5.55.5-.55 5.96-6.6-.98-.9-5.98 6.6h1L4.98 6.45z"/>
                             </svg>
                             {editingMenuId === post.id &&
                                 <div className={`menu`}
                                      style={transformCss}
                                 >
                                     <ul className={`list-reset`}>
-                                        <li className={`pt-4 hover:text-black`}>Edit post</li>
+                                        <li onClick={() => {window.location.href = '/admin/posts/'+post.id+'/edit'}} className={`pt-4 hover:text-black`}>Edit post</li>
                                         <li onClick={(event) => this.handleDeleteClick(event, post.id)} className={`pt-4 hover:text-black`}>Delete post</li>
                                     </ul>
                                 </div>

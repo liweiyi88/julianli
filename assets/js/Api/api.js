@@ -44,17 +44,9 @@ export function createPost(post) {
 }
 
 export function updatePost(post) {
-    let updatePost = Object.assign({}, post);
-
-    updatePost.tags = post.tags.map(tag => {
-        return tag['@id'];
-    });
-
-    updatePost.freelancer = post.freelancer['@id'];
-
-    return fetchJson('/api/posts/'+updatePost.id, {
+    return fetchJson('/api/posts/'+post.id, {
         method: 'PUT',
-        body: JSON.stringify(updatePost),
+        body: JSON.stringify(post),
         headers: {
             'Content-Type': 'application/json'
         }

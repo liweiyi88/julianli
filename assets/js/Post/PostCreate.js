@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import PostForm from './PostForm';
 import SimpleMDE from "simplemde";
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+import withReactContent from 'sweetalert2-react-content';
 import {createPost, createTag, getFreelancers, getTags} from "../Api/api";
+import Loader from "../UtilComponent/Loader";
 
 export default class PostCreate extends Component
 {
@@ -9,6 +12,7 @@ export default class PostCreate extends Component
         super(props);
 
         this.state = {
+            isLoading: false,
             selectedAuthor: null,
             authors: [],
             selectedTags: [],
@@ -61,6 +65,11 @@ export default class PostCreate extends Component
     }
 
     handlePublishPost() {
+
+        this.setState({
+            isLoading: true
+        });
+
         let post = {
             title: this.state.title,
             slug: this.state.slug,
@@ -75,7 +84,21 @@ export default class PostCreate extends Component
 
         createPost(post)
             .then(() => {
-                window.location.href = '/admin/posts';
+                const alert = withReactContent(Swal);
+
+                const message = alert.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+
+                message({
+                    type: 'success',
+                    title: 'Created, redirecting...'
+                }).then(() => {
+                    window.location.href = '/admin/posts';
+                })
             })
     }
 
@@ -128,7 +151,8 @@ export default class PostCreate extends Component
         return (
             <div className={`container mx-auto w-3/4`}>
                 <div className={`flex items-center mt-10 mb-4 justify-center md:flex md:items-center mb-6`}>
-                    <PostForm
+                    {this.state.isLoading ? (<div>{<Loader/>}</div>) :
+                        <PostForm
                         {...this.state}
                         onElementChange={this.handleFormElementChange}
                         onTagsSelectedChange={this.handleTagsSelectChange}
@@ -136,7 +160,7 @@ export default class PostCreate extends Component
                         onPublicToggleClick={this.handlePublicToggleClick}
                         onAuthorSelectedChange={this.handleAuthorSelectChange}
                         onPublishPost={this.handlePublishPost}
-                    />
+                    />}
                 </div>
             </div>
         )
