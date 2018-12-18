@@ -29,6 +29,10 @@ export function getPosts() {
         .then(data => data['hydra:member']);
 }
 
+export function getPost(id) {
+    return fetchJson('/api/posts/'+id);
+}
+
 export function createPost(post) {
     return fetchJson('/api/posts', {
         method: 'POST',
