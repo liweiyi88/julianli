@@ -4,6 +4,7 @@ import {shortDescription} from '../Utils/Str'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import withReactContent from 'sweetalert2-react-content'
 import Toggle from './Toggle'
+import Remarkable from 'remarkable';
 
 export default class PostList extends Component{
 
@@ -99,6 +100,10 @@ export default class PostList extends Component{
             willChange: 'transform'
         };
 
+        const md = new Remarkable({
+            html: true
+        });
+
         return (
             posts.map((post) => (
                 <div className={post.isDeleting ? `flex-col mt-4 border-b opacity-50` : `flex-col mt-4 border-b`} key={post.id}>
@@ -110,7 +115,9 @@ export default class PostList extends Component{
                             ))}
                         </div>
                     </div>
-                    <div className={`text-grey-darker text-lg mt-4 leading-normal`}>{shortDescription(post.content, 30)}</div>
+                    <div className={`text-grey-darker text-lg mt-4 leading-normal`}>
+                        <div dangerouslySetInnerHTML={{ __html: md.render(shortDescription(post.content, 30)).replace(/<(?:.|\n)*?>/gm, '') }} />
+                    </div>
 
                     <div className={`flex mt-4 mb-4 text-grey-dark text-base`}>
                         <div className={`pr-3`}>Created on {post.createdAt}</div>
