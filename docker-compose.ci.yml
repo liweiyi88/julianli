@@ -7,5 +7,4 @@ services:
         - APP_ENV=test
     build:
       cache_from:
-          - ${APP_DOCKER_IMAGE_NAME}:${APP_DOCKER_IMAGE_MD5}
           - ${APP_DOCKER_IMAGE_NAME}:dev
