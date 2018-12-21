@@ -18,7 +18,7 @@ export default function Posts(props) {
     return (
         <div className={`container mx-auto w-3/4 pl-6 pr-6`}>
             <div className={`flex items-center mt-10 mb-4 justify-between`}>
-                <div className={`text-2xl font-black`}>Sweets and bitters of my life</div>
+                <div className={`text-3xl font-black`}>Sweets and bitters of my life</div>
 
                 <div>
                     <button className={`btn btn-green hover:bg-green-dark`} onClick={onNewPostClick}>New story</button>

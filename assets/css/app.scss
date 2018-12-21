@@ -95,3 +95,15 @@ body {
       transform: scale(1.0);
     }
 }
+
+pre {
+  @apply text-xl mb-2 p-2 leading-normal text-grey border border-grey rounded;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+}
+
+pre code {
+  @apply rounded-none bg-transparent whitespace-pre-wrap text-base;
+}
+

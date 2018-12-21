@@ -468,6 +468,7 @@ module.exports = {
   */
 
   width: {
+    '740': '740px',
     'auto': 'auto',
     'px': '1px',
     '1': '0.25rem',

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import CreatableSelect from 'react-select/lib/Creatable';
 import Select from 'react-select';
 import Toggle from './Toggle';
+import Logo from '../../images/logo.png';
 
 export default function PostForm(props) {
     const {
@@ -28,7 +29,7 @@ export default function PostForm(props) {
         <div className={`w-full`}>
             <div className={`flex flex-row-reverse justify-between`}>
                 <div className={`flex flex-row-reverse`}>
-                    <div>
+                    <div className={`flex items-center`}>
                         <button
                             onClick={onPublishPost}
                             className={`bg-transparent hover:bg-green text-green-dark hover:text-white py-2 px-4 border border-green hover:border-transparent rounded`}>
@@ -47,7 +48,11 @@ export default function PostForm(props) {
                     </div>
                 </div>
 
-                <div className={`flex items-center mr-4`}><a className="text-blue-darker hover:text-blue-darkest" href="/admin/posts">Back to list</a></div>
+                <div className={`flex items-center mr-4`}>
+                    <a className="text-blue-darker hover:text-blue-darkest" href="/admin/posts">
+                        <img src={Logo} alt="Logo"/>
+                    </a>
+                </div>
             </div>
 
             <div className={`mt-5`}>

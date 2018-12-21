@@ -24,6 +24,7 @@ Encore
 
     .addEntry('posts_main', './assets/js/posts_main.js')
     .addEntry('post_create', './assets/js/post_create.js')
+    .addEntry('post_show', './assets/js/post_show.js')
     .addEntry('post_edit', './assets/js/post_edit.js')
     .enableSingleRuntimeChunk()
     .enableSassLoader(function (options) {}, {

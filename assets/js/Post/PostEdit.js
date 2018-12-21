@@ -166,7 +166,6 @@ export default class PostEdit extends Component
     }
 
     render() {
-
         return (
             <div className={`container mx-auto w-3/4`}>
                 <div className={`flex items-center mt-10 mb-4 justify-center md:flex md:items-center mb-6`}>
