@@ -12,7 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ApiResource(
  *     normalizationContext={"groups"={"read"}},
- *     denormalizationContext={"groups"={"write"}}
+ *     denormalizationContext={"groups"={"write"}},
+ *     attributes={"order"={"createdAt": "DESC"}}
  * )
  *
  * @ORM\Entity(repositoryClass="App\Repository\PostRepository")

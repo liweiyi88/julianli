@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
 
 @tailwind preflight;
 @tailwind components;
@@ -46,8 +46,12 @@ body {
   z-index: 0 !important;
 }
 
+.label:hover {
+  @apply bg-grey-light;
+}
+
 .label {
-  @apply rounded-full bg-blue-dark text-white uppercase px-2 py-1 text-xs font-bold ml-3;
+  @apply rounded-sm bg-grey-lighter text-grey-darker uppercase px-2 py-1 text-sm ml-3 cursor-pointer;
 }
 
 .spinner {
