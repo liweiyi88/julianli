@@ -108,9 +108,7 @@ export default class PostList extends Component{
             posts.map((post) => (
                 <div className={post.isDeleting ? `flex-col mt-4 border-b opacity-50` : `flex-col mt-4 border-b`} key={post.id}>
                     <div className={`flex items-center`}>
-                        <div className={`text-xl font-bold cursor-pointer`} onClick={()=>{
-                            window.location.href = '/admin/posts/'+post.id+'/show';
-                        }}>{post.title}</div>
+                        <a className={`no-underline text-black text-xl font-bold cursor-pointer`} href={`/admin/posts/`+post.id+`/show`}>{post.title}</a>
                         <div>
                             {post.tags.map(tag => (
                                 <span key={tag.id} className={`label`}>{tag.name}</span>
