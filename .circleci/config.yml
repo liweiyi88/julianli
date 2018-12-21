@@ -2,6 +2,9 @@ version: 2
 jobs:
     test:
         working_directory: ~/app
+        environment:
+            - DOCKER_COMPOSE: "docker-compose -f docker-compose.yml -f docker-compose.ci.yml"
+            - EXEC: "$(DOCKER_COMPOSE) exec -T app"
         machine:
             enabled: true
             image: circleci/classic

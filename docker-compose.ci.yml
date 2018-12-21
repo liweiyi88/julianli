@@ -2,7 +2,7 @@ version: "3.2"
 
 services:
   app:
-    image: ${APP_DOCKER_IMAGE_NAME}:${APP_DOCKER_IMAGE_MD5}
+    image: ${APP_DOCKER_IMAGE_NAME}:dev
     environment:
         - APP_ENV=test
     build:
