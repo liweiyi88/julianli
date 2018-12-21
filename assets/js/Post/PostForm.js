@@ -49,7 +49,7 @@ export default function PostForm(props) {
                 </div>
 
                 <div className={`flex items-center mr-4`}>
-                    <a className="text-blue-darker hover:text-blue-darkest" href="/admin/posts">
+                    <a href="/admin/posts">
                         <img src={Logo} alt="Logo"/>
                     </a>
                 </div>

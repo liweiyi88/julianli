@@ -4,6 +4,7 @@ import Loader from "../UtilComponent/Loader";
 import Remarkable from 'remarkable';
 import hljs from 'highlight.js';
 import Logo from '../../images/logo.png';
+import PropTypes from 'prop-types';
 
 export default class PostShow extends Component
 {
@@ -46,12 +47,16 @@ export default class PostShow extends Component
                 if (lang && hljs.getLanguage(lang)) {
                     try {
                         return hljs.highlight(lang, str).value;
-                    } catch (err) {}
+                    } catch (err) {
+                        console.log(err);
+                    }
                 }
 
                 try {
                     return hljs.highlightAuto(str).value;
-                } catch (err) {}
+                } catch (err) {
+                    console.log(err);
+                }
 
                 return ''; // use external default escaping
             }
@@ -65,7 +70,7 @@ export default class PostShow extends Component
                     {this.state.isLoading ? (<div>{<Loader/>}</div>) : (
                         <div className={`w-full`}>
                             <div className={`flex items-center mr-4`}>
-                                <a className="mb-2 text-blue-darker hover:text-blue-darkest" href="/admin/posts">
+                                <a href="/admin/posts">
                                     <img src={Logo} alt="Logo"/>
                                 </a>
                             </div>
@@ -90,3 +95,7 @@ export default class PostShow extends Component
         )
     }
 }
+
+PostShow.propTypes = {
+    id: PropTypes.string.isRequired
+};
