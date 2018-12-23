@@ -19,7 +19,7 @@ help:
 ## Project setup
 ##---------------------------------------------------------------------------
 start:          ## Install and start the project
-start: build up db perm vendor
+start: build up db perm vendor node_modules assets-dev
 
 stop:           ## Remove docker containers
 	$(DOCKER_COMPOSE) rm -v --force --stop
@@ -27,6 +27,9 @@ stop:           ## Remove docker containers
 assets:
 assets-prod: node_modules
 	$(EXEC) yarn encore production
+
+assets-dev: node_modules
+	$(EXEC) yarn encore dev
 
 reset:          ## Reset the whole project
 reset: stop start
@@ -76,6 +79,7 @@ vendor:
 
 node_modules: yarn.lock
 	$(EXEC) yarn install
+	$(EXEC) npm rebuild node-sass
 
 ssh:
 	$(DEBUG)

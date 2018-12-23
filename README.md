@@ -1,6 +1,10 @@
 # My website, experiments and knowledge sharing
 [![CircleCI](https://circleci.com/gh/liweiyi88/julianli/tree/master.svg?style=svg)](https://circleci.com/gh/liweiyi88/julianli/tree/master)
 
+## How to run it locally
+1. Install docker.
+2. Run `make start`.
+
 ## Framework, tools and features
 * It is a Symfony 4 application.
 * Docker for local development.
