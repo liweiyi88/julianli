@@ -20,6 +20,7 @@ export default class PostsMain extends Component
         this.handlePublishToggleClick = this.handlePublishToggleClick.bind(this);
         this.handlePublicToggleClick = this.handlePublicToggleClick.bind(this);
         this.handleCreatePostRedirect = this.handleCreatePostRedirect.bind(this);
+        this.getUpdatablePost = this.getUpdatablePost.bind(this);
     }
 
     componentDidMount() {
@@ -46,7 +47,7 @@ export default class PostsMain extends Component
 
                     post.isPublished = !post.isPublished;
 
-                    updatePost(post);
+                    updatePost(this.getUpdatablePost(post));
 
                     return post;
                 })
@@ -64,7 +65,7 @@ export default class PostsMain extends Component
 
                     post.isPublic = !post.isPublic;
 
-                    updatePost(post);
+                    updatePost(this.getUpdatablePost(post));
 
                     return post;
                 })
@@ -105,6 +106,17 @@ export default class PostsMain extends Component
         this.setState({
             editingPost: post
         });
+    }
+
+    getUpdatablePost(post) {
+        let updatablePost = Object.assign({}, post);
+
+        updatablePost.freelancer = post.freelancer['@id'];
+        updatablePost.tags = post.tags.map(tag => {
+            return tag['@id'];
+        })
+
+        return updatablePost;
     }
 
     render() {

@@ -74,7 +74,7 @@ export default class PostShow extends Component
                                     <img src={Logo} alt="Logo"/>
                                 </a>
                             </div>
-                            <div className={`flex text-3xl font-bold mb-2`}>
+                            <div className={`flex text-3xl font-bold my-3`}>
                                 <div>{title}</div>
                                 <div>
                                     {tags.map(tag => (
@@ -82,7 +82,7 @@ export default class PostShow extends Component
                                     ))}
                                 </div>
                             </div>
-                            <div className={`text-base font-base italic text-grey mb-4`}>
+                            <div className={`text-base font-base italic text-grey mb-6`}>
                                 by {author['firstName']} {author['lastName']} on {createdAt}
                             </div>
                             <div>
