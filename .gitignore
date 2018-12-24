@@ -2,7 +2,9 @@
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.*.local
-/public/build/
+/public/build/*
+!/public/build/entrypoints.json
+!/public/build/manifest.json
 /public/bundles/
 /var/
 /vendor/
