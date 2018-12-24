@@ -22,7 +22,7 @@ security:
                 check_path: login
 
     access_control:
-#        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api/contact, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/freelancer, roles: ROLE_USER }
         - { path: ^/admin, roles: ROLE_USER }
         - { path: ^/api, roles: ROLE_USER }

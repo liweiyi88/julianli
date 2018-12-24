@@ -809,27 +809,31 @@
                 }),
                 error: function(data) {
                     $('.rsFormSubmit').removeAttr('disabled');
-                    var responseErrors = data['responseJSON']['errors'];
+                    let responseErrors = data['responseJSON']['violations'];
 
-                    var emailError;
-                    if (responseErrors['email'] !== undefined) {
-                        emailError = responseErrors['email'][0];
-                    }
+                    let emailError = '';
+                    let subjectError = '';
+                    let nameError = '';
+                    let messageError = '';
 
-                    var subjectError;
-                    if (responseErrors['subject'] !== undefined) {
-                        subjectError = responseErrors['subject'][0];
-                    }
+                    $.each(responseErrors, function (index, error) {
+                        let propertyPath = error['propertyPath'];
+                        if (propertyPath == 'email') {
+                            emailError = responseErrors[index]['message'];
+                        }
 
-                    var nameError;
-                    if (responseErrors['name'] !== undefined) {
-                        nameError = responseErrors['name'][0];
-                    }
+                        if (propertyPath == 'subject') {
+                            subjectError = responseErrors[index]['message'];
+                        }
 
-                    var messageError;
-                    if (responseErrors['message'] !== undefined) {
-                        messageError = responseErrors['message'][0];
-                    }
+                        if (propertyPath == 'name') {
+                            nameError = responseErrors[index]['message'];
+                        }
+
+                        if (propertyPath == 'message') {
+                            messageError = responseErrors[index]['message'];
+                        }
+                    })
 
                     $('.subject-error').text(subjectError);
                     $('.name-error').text(nameError);
