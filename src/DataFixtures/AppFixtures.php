@@ -176,16 +176,16 @@ class AppFixtures extends Fixture
         $p3->setInnerImageUrl('portfolio-thumb-08-large.jpg');
 
         $tag1 = new Tag();
-        $tag1->setName('Photo');
+        $tag1->name = 'Photo';
         $tag2 = new Tag();
-        $tag2->setName('Nature');
+        $tag2->name = 'Nature';
 
         $tags = [$tag1, $tag2];
         $post1 = new Post();
         $post1->setFreelancer($freelancer);
         $post1->setCreatedAt(new \DateTime('now'));
-        $post1->setTitle('Learning XYZ in 10 days');
-        $post1->setSlug('learning-xyx-in-10-days');
+        $post1->title = 'Learning XYZ in 10 days';
+        $post1->slug = 'learning-xyx-in-10-days';
         $post1->setCoverImageUrl('thumb-449x286-1.jpg');
         $post1->setContent(
             '<p>Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. Judge why maids led sir whose guest drift her point. Him comparison especially friendship was who sufficient attachment favourable how. Luckily but minutes ask picture man perhaps are inhabit. How her good all sang more why. 
@@ -201,15 +201,15 @@ Ignorant branched humanity led now marianne too strongly entrance. Rose to shew 
 </p>'
         );
         $post1->setIsPublished(true);
-        $post1->setTags($tags);
+        $post1->tags = $tags;
         $post1->setIsPublic(true);
 
         $post2 = new Post();
         $post2->setIsPublished(true);
         $post2->setFreelancer($freelancer);
         $post2->setCreatedAt(new \DateTime('2015-04-23 10:32:23'));
-        $post2->setTitle('How to become a geek in 10 steps');
-        $post2->setSlug('how-to-become-a-geek-in-10-steps');
+        $post2->title = 'How to become a geek in 10 steps';
+        $post2->slug = 'how-to-become-a-geek-in-10-steps';
         $post2->setCoverImageUrl('thumb-449x286-5.jpg');
         $post2->setContent(
             '<p>Improve ashamed married expense bed her comfort pursuit mrs. Four time took ye your as fail lady. Up greatest am exertion or marianne. Shy occasional terminated insensible and inhabiting gay. So know do fond to half on. Now who promise was justice new winding. In finished on he speaking suitable advanced if. Boy happiness sportsmen say prevailed offending concealed nor was provision. Provided so as doubtful on striking required. Waiting we to compass assured. 
@@ -224,15 +224,15 @@ Ladies others the six desire age. Bred am soon park past read by lain. As excuse
 Lose eyes get fat shew. Winter can indeed letter oppose way change tended now. So is improve my charmed picture exposed adapted demands. Received had end produced prepared diverted strictly off man branched. Known ye money so large decay voice there to. Preserved be mr cordially incommode as an. He doors quick child an point at. Had share vexed front least style off why him. 
 </p>'
         );
-        $post2->setTags($tags);
+        $post2->tags = $tags;
         $post2->setIsPublic(true);
 
         $post3 = new Post();
         $post3->setIsPublished(true);
         $post3->setFreelancer($freelancer);
         $post3->setCreatedAt(new \DateTime('2012-01-23 10:32:23'));
-        $post3->setTitle('What can I learn from the universe?');
-        $post3->setSlug('what-can-i-learn-from-the-universe');
+        $post3->title = 'What can I learn from the universe?';
+        $post3->slug = 'what-can-i-learn-from-the-universe';
         $post3->setContent(
             ' fortune no mention he. Of mr certainty arranging am smallness by conveying. Him plate you allow built grave. Sigh sang nay sex high yet door game. She dissimilar was favourable unreserved nay expression contrasted saw. Past her find she like bore pain open. Shy lose need eyes son not shot. Jennings removing are his eat dashwood. Middleton as pretended listening he smallness perceived. Now his but two green spoil drift. 
 Certainty determine at of arranging perceived situation or. Or wholly pretty county in oppose. Favour met itself wanted settle put garret twenty. In astonished apartments resolution so an it. Unsatiable on by contrasted to reasonable companions an. On otherwise no admitting to suspicion furniture it. 
@@ -241,15 +241,15 @@ You vexed shy mirth now noise. Talked him people valley add use her depend lette
 Her extensive perceived may any sincerity extremity. Indeed add rather may pretty see. Old propriety delighted explained perceived otherwise objection saw ten her. Doubt merit sir the right these alone keeps. By sometimes intention smallness he northward. Consisted we otherwise arranging commanded discovery it explained. Does cold even song like two yet been. Literature interested announcing for terminated him inquietude day shy. Himself he fertile chicken perhaps waiting if highest no it. Continued promotion has consulted fat improving not way. 
 Ladies others the six desire age. Bred am soon par'
         );
-        $post3->setTags($tags);
+        $post3->tags = $tags;
         $post3->setIsPublic(true);
 
         $post4 = new Post();
         $post4->setIsPublished(true);
         $post4->setFreelancer($freelancer);
         $post4->setCreatedAt(new \DateTime('2017-04-03 00:12:23'));
-        $post4->setTitle('I know nothing about Z language');
-        $post4->setSlug('i-know-nothing-about-z-language');
+        $post4->title = 'I know nothing about Z language';
+        $post4->slug = 'i-know-nothing-about-z-language';
         $post4->setContent(
             ' fortune no mention he. Of mr certainty arranging am smallness by conveying. Him plate you allow built grave. Sigh sang nay sex high yet door game. She dissimilar was favourable unreserved nay expression contrasted saw. Past her find she like bore pain open. Shy lose need eyes son not shot. Jennings removing are his eat dashwood. Middleton as pretended listening he smallness perceived. Now his but two green spoil drift. 
 Certainty determine at of arranging perceived situation or. Or wholly pretty county in oppose. Favour met itself wanted settle put garret twenty. In astonished apartments resolution so an it. Unsatiable on by contrasted to reasonable companions an. On otherwise no admitting to suspicion furniture it. 
@@ -258,15 +258,15 @@ You vexed shy mirth now noise. Talked him people valley add use her depend lette
 Her extensive perceived may any sincerity extremity. Indeed add rather may pretty see. Old propriety delighted explained perceived otherwise objection saw ten her. Doubt merit sir the right these alone keeps. By sometimes intention smallness he northward. Consisted we otherwise arranging commanded discovery it explained. Does cold even song like two yet been. Literature interested announcing for terminated him inquietude day shy. Himself he fertile chicken perhaps waiting if highest no it. Continued promotion has consulted fat improving not way. 
 Ladies others the six desire age. Bred am soon par'
         );
-        $post4->setTags($tags);
+        $post4->tags = $tags;
         $post4->setIsPublic(true);
 
         $post5 = new Post();
         $post5->setIsPublished(true);
         $post5->setFreelancer($freelancer);
         $post5->setCreatedAt(new \DateTime('2011-11-12 00:33:14'));
-        $post5->setTitle('Today I learn Z language');
-        $post5->setSlug('today-i-learn-z-language');
+        $post5->title = 'Today I learn Z language';
+        $post5->slug = 'today-i-learn-z-language';
         $post5->setContent(
             ' fortune no mention he. Of mr certainty arranging am smallness by conveying. Him plate you allow built grave. Sigh sang nay sex high yet door game. She dissimilar was favourable unreserved nay expression contrasted saw. Past her find she like bore pain open. Shy lose need eyes son not shot. Jennings removing are his eat dashwood. Middleton as pretended listening he smallness perceived. Now his but two green spoil drift. 
 Certainty determine at of arranging perceived situation or. Or wholly pretty county in oppose. Favour met itself wanted settle put garret twenty. In astonished apartments resolution so an it. Unsatiable on by contrasted to reasonable companions an. On otherwise no admitting to suspicion furniture it. 
@@ -275,15 +275,15 @@ You vexed shy mirth now noise. Talked him people valley add use her depend lette
 Her extensive perceived may any sincerity extremity. Indeed add rather may pretty see. Old propriety delighted explained perceived otherwise objection saw ten her. Doubt merit sir the right these alone keeps. By sometimes intention smallness he northward. Consisted we otherwise arranging commanded discovery it explained. Does cold even song like two yet been. Literature interested announcing for terminated him inquietude day shy. Himself he fertile chicken perhaps waiting if highest no it. Continued promotion has consulted fat improving not way. 
 Ladies others the six desire age. Bred am soon par'
         );
-        $post5->setTags($tags);
+        $post5->tags = $tags;
         $post5->setIsPublic(true);
 
         $post6 = new Post();
         $post6->setIsPublished(true);
         $post6->setFreelancer($freelancer);
         $post6->setCreatedAt(new \DateTime('2015-06-20 11:23:13'));
-        $post6->setTitle('Z is the future!');
-        $post6->setSlug('z-is-the-future');
+        $post6->title = 'Z is the future!';
+        $post6->slug = 'z-is-the-future';
         $post6->setContent(
             ' fortune no mention he. Of mr certainty arranging am smallness by conveying. Him plate you allow built grave. Sigh sang nay sex high yet door game. She dissimilar was favourable unreserved nay expression contrasted saw. Past her find she like bore pain open. Shy lose need eyes son not shot. Jennings removing are his eat dashwood. Middleton as pretended listening he smallness perceived. Now his but two green spoil drift. 
 Certainty determine at of arranging perceived situation or. Or wholly pretty county in oppose. Favour met itself wanted settle put garret twenty. In astonished apartments resolution so an it. Unsatiable on by contrasted to reasonable companions an. On otherwise no admitting to suspicion furniture it. 
@@ -292,7 +292,7 @@ You vexed shy mirth now noise. Talked him people valley add use her depend lette
 Her extensive perceived may any sincerity extremity. Indeed add rather may pretty see. Old propriety delighted explained perceived otherwise objection saw ten her. Doubt merit sir the right these alone keeps. By sometimes intention smallness he northward. Consisted we otherwise arranging commanded discovery it explained. Does cold even song like two yet been. Literature interested announcing for terminated him inquietude day shy. Himself he fertile chicken perhaps waiting if highest no it. Continued promotion has consulted fat improving not way. 
 Ladies others the six desire age. Bred am soon par'
         );
-        $post6->setTags($tags);
+        $post6->tags = $tags;
         $post6->setIsPublic(true);
 
         $manager->persist($freelancer);

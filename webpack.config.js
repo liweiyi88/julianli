@@ -13,19 +13,29 @@ Encore
 
     // the following line enables hashed filenames (e.g. app.abc123.css)
     .enableVersioning(Encore.isProduction())
+    .enableReactPreset()
+    .configureBabel((babelConfig) => {
+        if (Encore.isProduction()) {
+            babelConfig.plugins.push(
+                'transform-react-remove-prop-types'
+            );
+        }
+    })
 
-// uncomment to define the assets of the project
-//.addEntry('js/app', './assets/js/app.js')
-//.addStyleEntry('css/app', './assets/css/app.scss')
-
-// uncomment if you use TypeScript
-//.enableTypeScriptLoader()
-
-// uncomment if you use Sass/SCSS files
-//.enableSassLoader()
-
-// uncomment for legacy applications that require $/jQuery as a global variable
-//.autoProvidejQuery()
+    .addEntry('posts_main', './assets/js/posts_main.js')
+    .addEntry('post_create', './assets/js/post_create.js')
+    .addEntry('post_show', './assets/js/post_show.js')
+    .addEntry('post_edit', './assets/js/post_edit.js')
+    .enableSingleRuntimeChunk()
+    .enableSassLoader(function (options) {}, {
+        resolveUrlLoader: false
+    })
+    .enablePostCssLoader()
 ;
+
+if (Encore.isProduction()) {
+    Encore.setPublicPath('https://s3-ap-southeast-2.amazonaws.com/julianli/assets');
+    Encore.setManifestKeyPrefix('build/');
+}
 
 module.exports = Encore.getWebpackConfig();

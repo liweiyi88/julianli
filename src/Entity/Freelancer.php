@@ -2,18 +2,27 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
+ * @ApiResource(
+ *     normalizationContext={"groups"={"read"}},
+ *     denormalizationContext={"groups"={"write"}}
+ * )
+ *
  * @ORM\Table(name="freelancer")
  * @ORM\Entity(repositoryClass="App\Repository\FreelancerRepository")
  */
 class Freelancer implements UserInterface, \Serializable
 {
     /**
+     * @Groups({"read"})
+     *
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -36,11 +45,15 @@ class Freelancer implements UserInterface, \Serializable
     private $password;
 
     /**
+     * @Groups({"read"})
+     *
      * @ORM\Column(name="first_name", type="string", length=255)
      */
     private $firstName;
 
     /**
+     * @Groups({"read"})
+     *
      * @ORM\Column(name="last_name", type="string", length=255)
      */
     private $lastName;

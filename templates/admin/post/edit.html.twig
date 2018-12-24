@@ -1,0 +1,18 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}
+    Edit post
+{% endblock %}
+
+ {% block stylesheets %}
+     {{ encore_entry_link_tags('post_edit') }}
+ {% endblock %}
+
+{% block body %}
+    <div id="post" data-id="{{ post.id }}"></div>
+
+    {% block javascripts %}
+        {{ parent() }}
+        {{ encore_entry_script_tags('post_edit') }}
+    {% endblock %}
+{% endblock %}

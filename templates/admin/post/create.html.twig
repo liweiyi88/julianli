@@ -1,0 +1,18 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}
+    Write a new post
+{% endblock %}
+
+ {% block stylesheets %}
+     {{ encore_entry_link_tags('post_create') }}
+ {% endblock %}
+
+{% block body %}
+    <div id="post"></div>
+
+    {% block javascripts %}
+        {{ parent() }}
+        {{ encore_entry_script_tags('post_create') }}
+    {% endblock %}
+{% endblock %}

@@ -6,7 +6,7 @@ use Pagerfanta\View\Template\DefaultTemplate;
 
 class CustomTemplate extends DefaultTemplate
 {
-    static protected $defaultOptions = [
+    protected static $defaultOptions = [
         'previous_message'   => '<i class="rsicon rsicon-chevron_left"></i>',
         'next_message'       => '<i class="rsicon rsicon-chevron_right"></i>',
         'css_disabled_class' => 'disabled',

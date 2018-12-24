@@ -2,20 +2,31 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @ApiResource(
+ *     normalizationContext={"groups"={"read"}},
+ *     denormalizationContext={"groups"={"write"}},
+ *     attributes={"order"={"createdAt": "DESC"}}
+ * )
+ *
  * @ORM\Entity(repositoryClass="App\Repository\PostRepository")
+ *
  * @Vich\Uploadable
  */
 class Post
 {
     public const NUM_ITEMS = 5;
+
     /**
+     * @Groups({"read"})
+     *
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -23,14 +34,18 @@ class Post
     private $id;
 
     /**
+     * @Groups({"read", "write"})
+     *
      * @ORM\Column(name="title", type="string", length=255, nullable=true)
      */
-    private $title;
+    public $title;
 
     /**
+     * @Groups({"read", "write"})
+     *
      * @ORM\Column(name="slug", type="string", length=255)
      */
-    private $slug;
+    public $slug;
 
     /**
      * @ORM\Column(name="cover_image_url", type="string", length=255, nullable=true)
@@ -43,11 +58,15 @@ class Post
     private $coverImageFile;
 
     /**
+     * @Groups({"read", "write"})
+     *
      * @ORM\Column(name="content", type="text")
      */
     private $content;
 
     /**
+     * @Groups({"read"})
+     *
      * @ORM\Column(name="created_at", type="datetime")
      */
     private $createdAt;
@@ -58,10 +77,12 @@ class Post
     private $pageViews;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="posts")
+     * @Groups({"read", "write"})
+     *
+     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="posts", cascade={"persist"})
      * @ORM\JoinTable(name="posts_tags")
      */
-    private $tags;
+    public $tags;
 
     /**
      * @ORM\Column(name="update_at", type="datetime", nullable=true)
@@ -69,20 +90,22 @@ class Post
     private $updatedAt;
 
     /**
-     * @ORM\Column(name="is_published", type="boolean", nullable=true)
+     * @Groups({"read", "write"})
      *
-     * @var bool
+     * @ORM\Column(name="is_published", type="boolean", nullable=true)
      */
     private $isPublished;
 
     /**
-     * @ORM\Column(name="is_public", type="boolean", nullable=true)
+     * @Groups({"read", "write"})
      *
-     * @var bool
+     * @ORM\Column(name="is_public", type="boolean", nullable=true)
      */
     private $isPublic;
 
     /**
+     * @Groups({"read", "write"})
+     *
      * @ORM\ManyToOne(targetEntity="App\Entity\Freelancer", inversedBy="posts")
      * @ORM\JoinColumn(nullable=true)
      */
@@ -129,34 +152,19 @@ class Post
         return $this->id;
     }
 
-    public function isPublic(): ?bool
+    public function getIsPublic(): ?bool
     {
         return $this->isPublic;
     }
 
-    public function isPublished(): ?bool
+    public function getIsPublished(): ?bool
     {
         return $this->isPublished;
-    }
-
-    public function getSlug(): ?string
-    {
-        return $this->slug;
-    }
-
-    public function getTags(): Collection
-    {
-        return $this->tags;
     }
 
     public function getPageViews(): int
     {
         return $this->pageViews ?? 0;
-    }
-
-    public function getTitle(): ?string
-    {
-        return $this->title;
     }
 
     public function getUpdatedAt(): ?\DateTime
@@ -212,24 +220,9 @@ class Post
         $this->isPublic = $isPublic;
     }
 
-    public function setSlug(?string $slug): void
-    {
-        $this->slug = $slug;
-    }
-
-    public function setTags(?array $tags): void
-    {
-        $this->tags = $tags;
-    }
-
     public function setPageViews(int $pageViews): void
     {
         $this->pageViews = $pageViews;
-    }
-
-    public function setTitle(?string $title): void
-    {
-        $this->title = $title;
     }
 
     public function setUpdatedAt(?\DateTime $updatedAt): void

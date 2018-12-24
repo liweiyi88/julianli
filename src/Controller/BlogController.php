@@ -29,7 +29,7 @@ class BlogController extends BaseController
      */
     public function postShow(Post $post): Response
     {
-        if (!$post->isPublic()) {
+        if (!$post->getIsPublic()) {
             $this->denyAccessUnlessGranted('ROLE_USER', null, 'Please login to get the access to the post');
         }
 

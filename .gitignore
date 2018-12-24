@@ -1,6 +1,7 @@
 
 ###> symfony/framework-bundle ###
-.env
+/.env.local
+/.env.*.local
 /public/build/
 /public/bundles/
 /var/
@@ -20,7 +21,6 @@ supervisord.pid
 
 ansible/playbook.retry
 ansible/deploy.retry
-###> symfony/phpunit-bridge ###
-.phpunit
 /phpunit.xml
-###< symfony/phpunit-bridge ###
+npm-debug.log
+docker-dev.lock

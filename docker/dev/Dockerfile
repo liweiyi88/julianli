@@ -6,7 +6,7 @@ ENV LANG="en_US.UTF-8" \
     TERM="xterm" \
     DEBIAN_FRONTEND="noninteractive" \
     SYMFONY_ALLOW_APPDEV=1 \
-    NODE_VERSION=6.9.4 \
+    NODE_VERSION=11.0.0 \
     COMPOSER_ALLOW_SUPERUSER=1
 
 EXPOSE 80
@@ -56,9 +56,26 @@ RUN apt-get update -q && \
 
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
 
+    curl -L -o /tmp/nodejs.tar.gz https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.gz && \
+    tar xfvz /tmp/nodejs.tar.gz -C /usr/local --strip-components=1 && \
+    rm -f /tmp/nodejs.tar.gz && \
+    npm install yarn -g && \
+
     mkdir /run/php
 
+RUN wget -O - https://packagecloud.io/gpg.key | apt-key add - \
+    && echo "deb http://packages.blackfire.io/debian any main" | tee /etc/apt/sources.list.d/blackfire.list \
+    && apt-get update \
+    && apt-get install blackfire-agent \
+    && version=$(php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;") \
+    && curl -A "Docker" -o /tmp/blackfire-probe.tar.gz -D - -L -s https://blackfire.io/api/v1/releases/probe/php/linux/amd64/$version \
+    && tar zxpf /tmp/blackfire-probe.tar.gz -C /tmp \
+    && mv /tmp/blackfire-*.so $(php -r "echo ini_get('extension_dir');")/blackfire.so \
+    && printf "extension=blackfire.so\nblackfire.agent_socket=tcp://blackfire:8707\n" > /etc/php/7.2/cli/conf.d/blackfire.ini \
+    && printf "extension=blackfire.so\nblackfire.agent_socket=tcp://blackfire:8707\n" > /etc/php/7.2/fpm/conf.d/blackfire.ini
+
 COPY php.ini /etc/php/7.2/cli/conf.d/50-setting.ini
+COPY php.ini /etc/php/7.2/fpm/conf.d/50-setting.ini
 COPY pool.conf /etc/php/7.2/fpm/pool.d/www.conf
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY symfony.conf /etc/nginx/symfony.conf
