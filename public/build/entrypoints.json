@@ -1,0 +1,40 @@
+{
+  "entrypoints": {
+    "posts_main": {
+      "js": [
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.b4a93bf8.js",
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/posts_main.92998ce4.js"
+      ],
+      "css": [
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/posts_main.037b99f4.css"
+      ]
+    },
+    "post_create": {
+      "js": [
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.b4a93bf8.js",
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_create.f9620f5d.js"
+      ],
+      "css": [
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_create.27d4292c.css"
+      ]
+    },
+    "post_show": {
+      "js": [
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.b4a93bf8.js",
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_show.17588241.js"
+      ],
+      "css": [
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_show.e297896b.css"
+      ]
+    },
+    "post_edit": {
+      "js": [
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.b4a93bf8.js",
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_edit.bb4c1aea.js"
+      ],
+      "css": [
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_edit.27d4292c.css"
+      ]
+    }
+  }
+}

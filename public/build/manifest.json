@@ -1,0 +1,12 @@
+{
+  "build/post_create.css": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_create.27d4292c.css",
+  "build/post_create.js": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_create.f9620f5d.js",
+  "build/post_edit.css": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_edit.27d4292c.css",
+  "build/post_edit.js": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_edit.bb4c1aea.js",
+  "build/post_show.css": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_show.e297896b.css",
+  "build/post_show.js": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_show.17588241.js",
+  "build/posts_main.css": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/posts_main.037b99f4.css",
+  "build/posts_main.js": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/posts_main.92998ce4.js",
+  "build/runtime.js": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.b4a93bf8.js",
+  "build/images/logo.png": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/images/logo.0045e97a.png"
+}
