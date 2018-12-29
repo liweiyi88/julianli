@@ -24,8 +24,8 @@ function checkStatus(response) {
     throw error
 }
 
-export function getPosts() {
-    return fetchJson('/api/posts');
+export function getPosts(page) {
+    return page > 0 ? fetchJson('/api/posts?page='+page) : fetchJson('/api/posts');
 }
 
 export function getPost(id) {

@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import Posts from './Posts';
-import {getPosts, deletePost, updatePost} from "../Api/api";
-import Loader from "../UtilComponent/Loader";
+import {getPosts, deletePost, updatePost} from '../Api/api';
+import Loader from '../UtilComponent/Loader';
+import PostConstants from '../Constants/PostConstants';
 
 export default class PostsMain extends Component
 {
@@ -12,7 +13,8 @@ export default class PostsMain extends Component
             posts: [],
             editingMenuId: null,
             isLoading: true,
-            pageCount: 0
+            pageCount: 0,
+            currentPage: 0
         };
 
         this.handleEditPost = this.handleEditPost.bind(this);
@@ -31,7 +33,7 @@ export default class PostsMain extends Component
                 this.setState({
                     posts: data['hydra:member'],
                     isLoading: false,
-                    pageCount: data['hydra:totalItems']
+                    pageCount: data['hydra:totalItems'] / PostConstants.itemPerPage
                 })
             });
     }
@@ -111,8 +113,20 @@ export default class PostsMain extends Component
         });
     }
 
-    handlePageClick() {
-        console.log('clicked');
+    handlePageClick(data) {
+        let selectedPage = data.selected;
+
+        this.setState({
+            isLoading: true
+        });
+
+        getPosts(selectedPage+1).then((data) => {
+            this.setState({
+                isLoading: false,
+                posts: data['hydra:member'],
+                currentPage: selectedPage
+            })
+        })
     }
 
     getUpdatablePost(post) {
@@ -121,7 +135,7 @@ export default class PostsMain extends Component
         updatablePost.freelancer = post.freelancer['@id'];
         updatablePost.tags = post.tags.map(tag => {
             return tag['@id'];
-        })
+        });
 
         return updatablePost;
     }

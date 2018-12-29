@@ -119,8 +119,12 @@ pre code {
   @apply bg-green text-white;
 }
 
-.pagination .active > a, .pagination .disabled > a, .pagination .break-me > a {
+.pagination .active > a, .pagination .disabled > a, .pagination {
   @apply cursor-default;
+}
+
+.pagination > li > a {
+  @apply w-full h-full flex items-center justify-center outline-none;
 }
 
 .pagination li:not(.previous):not(.next):not(.break-me) {
@@ -133,6 +137,10 @@ pre code {
 
 .pagination li:hover:not(.disabled):not(.active):not(.break-me) {
   @apply bg-grey-lighter cursor-pointer
+}
+
+.pagination .break-me:hover {
+  @apply cursor-pointer
 }
 
 .previous, .next {
