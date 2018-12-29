@@ -25,8 +25,7 @@ function checkStatus(response) {
 }
 
 export function getPosts() {
-    return fetchJson('/api/posts')
-        .then(data => data['hydra:member']);
+    return fetchJson('/api/posts');
 }
 
 export function getPost(id) {
