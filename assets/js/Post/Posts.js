@@ -1,10 +1,14 @@
 import React from 'react';
 import PostList from './PostList';
 import PropTypes from 'prop-types';
+import ReactPaginate from 'react-paginate';
+import PostConstants from '../Constants/PostConstants';
 
 export default function Posts(props) {
 
     const {
+        currentPage,
+        pageCount,
         editingMenuId,
         posts,
         isLoading,
@@ -12,7 +16,8 @@ export default function Posts(props) {
         onDeletePost,
         onPublishToggleClick,
         onPublicToggleClick,
-        onNewPostClick
+        onNewPostClick,
+        onPageClick
     } = props;
 
     return (
@@ -37,11 +42,34 @@ export default function Posts(props) {
                     onPublicToggleClick={onPublicToggleClick}
                 />}
             </div>
+
+            {!isLoading && (
+                <div className={`mt-12`}>
+                    <ReactPaginate
+                        initialPage={0}
+                        previousLabel={"Prev"}
+                        nextLabel={"Next"}
+                        breakLabel={"..."}
+                        breakClassName={"break-me"}
+                        pageCount={pageCount}
+                        marginPagesDisplayed={PostConstants.marginPagesDisplayed}
+                        pageRangeDisplayed={PostConstants.pageRangeDisplayed}
+                        disableInitialCallback={true}
+                        onPageChange={onPageClick}
+                        containerClassName={"pagination"}
+                        forcePage={currentPage}
+                        subContainerClassName={"pages pagination"}
+                        activeClassName={"active"} />
+                </div>
+            )}
         </div>
     )
 }
 
 Posts.propTypes = {
+    currentPage: PropTypes.number.isRequired,
+    pageCount: PropTypes.number.isRequired,
+    onPageClick: PropTypes.func.isRequired,
     isLoading: PropTypes.bool.isRequired,
     posts: PropTypes.array.isRequired,
     editingMenuId: PropTypes.number,

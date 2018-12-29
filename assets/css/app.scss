@@ -107,3 +107,56 @@ pre code {
   @apply rounded-none bg-transparent whitespace-pre-wrap text-base;
 }
 
+.pagination .disabled {
+  @apply text-grey-light;
+}
+
+.pagination {
+  @apply flex list-reset justify-center;
+}
+
+.pagination .active {
+  @apply bg-green text-white;
+}
+
+.pagination .active > a, .pagination .disabled > a, .pagination {
+  @apply cursor-default;
+}
+
+.pagination > li > a {
+  @apply w-full h-full flex items-center justify-center outline-none;
+}
+
+.pagination li:not(.previous):not(.next):not(.break-me) {
+  @apply border w-8 h-9 mx-1 flex items-center justify-center rounded;
+}
+
+.pagination .break-me {
+  @apply w-8 h-9 flex items-center justify-center;
+}
+
+.pagination li:hover:not(.disabled):not(.active):not(.break-me) {
+  @apply bg-grey-lighter cursor-pointer
+}
+
+.pagination .break-me:hover {
+  @apply cursor-pointer
+}
+
+.previous, .next {
+  @apply w-16 px-2 py-1 border rounded mx-1 flex items-center justify-center;
+}
+
+.previous {
+  &::before {
+    content: "\00ab";
+    @apply pr-1
+  }
+}
+
+.next {
+  &::after {
+    content: "\00bb";
+    @apply pl-1
+  }
+}

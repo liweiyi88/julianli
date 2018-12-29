@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import Posts from './Posts';
-import {getPosts, deletePost, updatePost} from "../Api/api";
-import Loader from "../UtilComponent/Loader";
+import {getPosts, deletePost, updatePost} from '../Api/api';
+import Loader from '../UtilComponent/Loader';
+import PostConstants from '../Constants/PostConstants';
 
 export default class PostsMain extends Component
 {
@@ -11,7 +12,9 @@ export default class PostsMain extends Component
         this.state = {
             posts: [],
             editingMenuId: null,
-            isLoading: true
+            isLoading: true,
+            pageCount: 0,
+            currentPage: 0
         };
 
         this.handleEditPost = this.handleEditPost.bind(this);
@@ -21,14 +24,16 @@ export default class PostsMain extends Component
         this.handlePublicToggleClick = this.handlePublicToggleClick.bind(this);
         this.handleCreatePostRedirect = this.handleCreatePostRedirect.bind(this);
         this.getUpdatablePost = this.getUpdatablePost.bind(this);
+        this.handlePageClick = this.handlePageClick.bind(this);
     }
 
     componentDidMount() {
         getPosts()
             .then((data) => {
                 this.setState({
-                    posts: data,
-                    isLoading: false
+                    posts: data['hydra:member'],
+                    isLoading: false,
+                    pageCount: data['hydra:totalItems'] / PostConstants.itemPerPage
                 })
             });
     }
@@ -108,13 +113,29 @@ export default class PostsMain extends Component
         });
     }
 
+    handlePageClick(data) {
+        let selectedPage = data.selected;
+
+        this.setState({
+            isLoading: true
+        });
+
+        getPosts(selectedPage+1).then((data) => {
+            this.setState({
+                isLoading: false,
+                posts: data['hydra:member'],
+                currentPage: selectedPage
+            })
+        })
+    }
+
     getUpdatablePost(post) {
         let updatablePost = Object.assign({}, post);
 
         updatablePost.freelancer = post.freelancer['@id'];
         updatablePost.tags = post.tags.map(tag => {
             return tag['@id'];
-        })
+        });
 
         return updatablePost;
     }
@@ -130,6 +151,7 @@ export default class PostsMain extends Component
                 onPublishToggleClick={this.handlePublishToggleClick}
                 onPublicToggleClick={this.handlePublicToggleClick}
                 onNewPostClick={this.handleCreatePostRedirect}
+                onPageClick={this.handlePageClick}
                 loader={<Loader />}
             />
         )
