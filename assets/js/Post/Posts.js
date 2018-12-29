@@ -44,7 +44,7 @@ export default function Posts(props) {
             </div>
 
             {!isLoading && (
-                <div className={`mt-12`}>
+                <div className={`my-12`}>
                     <ReactPaginate
                         initialPage={0}
                         previousLabel={"Prev"}
