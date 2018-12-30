@@ -5,6 +5,9 @@
 1. Install docker.
 2. Run `make start`.
 
+## Access the admin locally
+http://localhost:8888/admin/posts with username `julian` and password `abcd`
+
 ## Framework, tools and features
 * It is a Symfony 4 application.
 * Docker for local development.
