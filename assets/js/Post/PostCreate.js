@@ -35,7 +35,10 @@ export default class PostCreate extends Component
     }
 
     componentDidMount() {
-        const simplemde = new SimpleMDE({ element: document.getElementById('content') });
+        const simplemde = new SimpleMDE({
+            element: document.getElementById('content'),
+            spellChecker: false
+        });
 
         simplemde.codemirror.on('change', () =>{
             this.setState({
