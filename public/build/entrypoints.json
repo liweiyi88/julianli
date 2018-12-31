@@ -12,7 +12,7 @@
     "post_create": {
       "js": [
         "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.b4a93bf8.js",
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_create.6c4ede4e.js"
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_create.aee88c8a.js"
       ],
       "css": [
         "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_create.9789c2bd.css"
