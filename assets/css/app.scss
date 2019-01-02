@@ -136,11 +136,11 @@ pre code {
 }
 
 .pagination li:hover:not(.disabled):not(.active):not(.break-me) {
-  @apply bg-grey-lighter cursor-pointer
+  @apply bg-grey-lighter cursor-pointer;
 }
 
 .pagination .break-me:hover {
-  @apply cursor-pointer
+  @apply cursor-pointer;
 }
 
 .previous, .next {
@@ -150,13 +150,25 @@ pre code {
 .previous {
   &::before {
     content: "\00ab";
-    @apply pr-1
+    @apply pr-1;
   }
 }
 
 .next {
   &::after {
     content: "\00bb";
-    @apply pl-1
+    @apply pl-1;
   }
+}
+
+.ais-SearchBox-input {
+  @apply bg-grey-lighter appearance-none border border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight;
+}
+
+.ais-SearchBox-input:focus {
+  @apply outline-none bg-white border-grey;
+}
+
+.ais-SearchBox-submitIcon, .ais-SearchBox-resetIcon {
+  @apply hidden;
 }

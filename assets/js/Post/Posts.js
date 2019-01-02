@@ -22,50 +22,54 @@ export default function Posts(props) {
     } = props;
 
     return (
-        <div className={`container mx-auto w-3/4 pl-6 pr-6`}>
-            <div>
-                <Search />
-            </div>
-            <div className={`flex items-center mt-10 mb-4 justify-between`}>
-                <div className={`text-3xl font-black`}>Sweets and bitters of my life</div>
-
-                <div>
-                    <button className={`btn btn-green hover:bg-green-dark`} onClick={onNewPostClick}>New story</button>
+        <div>
+            <div className={`bg-white border-b border-grey-lighter w-full fixed pin-t pin-x z-100 h-16`}>
+                <div className={`w-2/5 mx-auto pt-3`}>
+                    <Search />
                 </div>
             </div>
+            <div className={`container mx-auto w-3/4 pl-6 pr-6`}>
+                <div className={`flex items-center mt-24 mb-4 justify-between`}>
+                    <div className={`text-3xl font-black`}>Sweets and bitters of my life</div>
 
-            <div className={`flex flex-col`}>
-                {isLoading ?  (
-                    <div>{props.loader}</div>
-                ) :  <PostList
-                    posts={posts}
-                    onEditMenuClick={onEditMenuClick}
-                    editingMenuId={editingMenuId}
-                    onDeletePost={onDeletePost}
-                    onPublishToggleClick={onPublishToggleClick}
-                    onPublicToggleClick={onPublicToggleClick}
-                />}
-            </div>
-
-            {!isLoading && (
-                <div className={`my-12`}>
-                    <ReactPaginate
-                        initialPage={0}
-                        previousLabel={"Prev"}
-                        nextLabel={"Next"}
-                        breakLabel={"..."}
-                        breakClassName={"break-me"}
-                        pageCount={pageCount}
-                        marginPagesDisplayed={PostConstants.marginPagesDisplayed}
-                        pageRangeDisplayed={PostConstants.pageRangeDisplayed}
-                        disableInitialCallback={true}
-                        onPageChange={onPageClick}
-                        containerClassName={"pagination"}
-                        forcePage={currentPage}
-                        subContainerClassName={"pages pagination"}
-                        activeClassName={"active"} />
+                    <div>
+                        <button className={`btn btn-green hover:bg-green-dark`} onClick={onNewPostClick}>New story</button>
+                    </div>
                 </div>
-            )}
+
+                <div className={`flex flex-col`}>
+                    {isLoading ?  (
+                        <div>{props.loader}</div>
+                    ) :  <PostList
+                        posts={posts}
+                        onEditMenuClick={onEditMenuClick}
+                        editingMenuId={editingMenuId}
+                        onDeletePost={onDeletePost}
+                        onPublishToggleClick={onPublishToggleClick}
+                        onPublicToggleClick={onPublicToggleClick}
+                    />}
+                </div>
+
+                {!isLoading && (
+                    <div className={`my-12`}>
+                        <ReactPaginate
+                            initialPage={0}
+                            previousLabel={"Prev"}
+                            nextLabel={"Next"}
+                            breakLabel={"..."}
+                            breakClassName={"break-me"}
+                            pageCount={pageCount}
+                            marginPagesDisplayed={PostConstants.marginPagesDisplayed}
+                            pageRangeDisplayed={PostConstants.pageRangeDisplayed}
+                            disableInitialCallback={true}
+                            onPageChange={onPageClick}
+                            containerClassName={"pagination"}
+                            forcePage={currentPage}
+                            subContainerClassName={"pages pagination"}
+                            activeClassName={"active"} />
+                    </div>
+                )}
+            </div>
         </div>
     )
 }
