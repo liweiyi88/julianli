@@ -3,6 +3,7 @@ import PostList from './PostList';
 import PropTypes from 'prop-types';
 import ReactPaginate from 'react-paginate';
 import PostConstants from '../Constants/PostConstants';
+import Search from "../UtilComponent/Search";
 
 export default function Posts(props) {
 
@@ -22,6 +23,9 @@ export default function Posts(props) {
 
     return (
         <div className={`container mx-auto w-3/4 pl-6 pr-6`}>
+            <div>
+                <Search />
+            </div>
             <div className={`flex items-center mt-10 mb-4 justify-between`}>
                 <div className={`text-3xl font-black`}>Sweets and bitters of my life</div>
 
