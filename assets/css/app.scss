@@ -161,6 +161,8 @@ pre code {
   }
 }
 
+
+//search bar search style
 .ais-SearchBox-input {
   @apply bg-grey-lighter appearance-none border border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight;
 }
@@ -172,3 +174,31 @@ pre code {
 .ais-SearchBox-submitIcon, .ais-SearchBox-resetIcon {
   @apply hidden;
 }
+
+.ais-Hits-list {
+  @apply pl-0 ;
+}
+
+.ais-Hits-item {
+  @apply list-reset h-8 flex items-center;
+}
+
+.ais-Hits-item:hover {
+  @apply bg-grey-lightest;
+}
+
+.ais-Hits-item > a {
+  @apply no-underline text-grey-darker pl-3 w-full;
+}
+
+.ais-Hits {
+  @apply border mt-1 rounded bg-white py-4 shadow;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
