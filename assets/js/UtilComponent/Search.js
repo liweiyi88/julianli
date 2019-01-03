@@ -1,18 +1,41 @@
 import React, {Component} from 'react';
 import algoliasearch from 'algoliasearch';
-import { InstantSearch } from 'react-instantsearch-dom';
-import { SearchBox } from 'react-instantsearch-dom';
-import { Hits } from 'react-instantsearch-dom';
+import { Hits, PoweredBy, SearchBox, InstantSearch, connectStateResults} from 'react-instantsearch-dom';
 
 export default class Search extends Component{
     constructor(props) {
         super(props);
+
+        this.node = null;
 
         this.state = {
             showHits: false,
         };
 
         this.handleSearchBoxType = this.handleSearchBoxType.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    UNSAFE_componentWillMount() {
+        document.addEventListener('click', this.handleClick, false);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('click', this.handleClick, false);
+    }
+
+    handleClick(event) {
+        if (this.node == null) {
+            return;
+        }
+
+        if (this.node.contains(event.target)) {
+            return;
+        }
+
+        this.setState({
+            showHits: false
+        });
     }
 
     handleSearchBoxType(event) {
@@ -49,7 +72,20 @@ export default class Search extends Component{
             searchForFacetValues: algoliaClient.searchForFacetValues,
         };
 
-        const Hit = ({ hit }) => <a href={'/admin/posts/'+ hit.objectID +'/show'}>{hit.title}</a>
+        const Hit = ({ hit }) => <a href={'/admin/posts/'+ hit.objectID +'/show'}>{hit.title}</a>;
+
+        const IndexResults = connectStateResults(
+            ({ searchState, searchResults, children }) =>
+                searchResults && searchResults.nbHits !== 0 ? (
+                    children
+                ) : (
+                    <div className={`py-4 text-grey-darker w-full bg-white border shadow rounded border-b-0 mt-1 rounded-b-none`}>
+                        <div className={`pl-3 h-8 flex items-center`}>
+                            No results has been found for &quot;<b>{searchState.query}</b>&quot;
+                        </div>
+                    </div>
+                )
+        );
 
         return (
             <InstantSearch
@@ -58,7 +94,15 @@ export default class Search extends Component{
             >
                 <SearchBox onChange={this.handleSearchBoxType}/>
 
-                { this.state.showHits && <Hits hitComponent={Hit} />}
+                { this.state.showHits &&
+                    <div ref={node => this.node = node}>
+                        <IndexResults>
+                            <Hits hitComponent={Hit} />
+                        </IndexResults>
+                    </div>
+                }
+                { this.state.showHits && <PoweredBy />}
+
             </InstantSearch>
         )
     }

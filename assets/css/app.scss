@@ -192,7 +192,19 @@ pre code {
 }
 
 .ais-Hits {
-  @apply border mt-1 rounded bg-white py-4 shadow;
+  @apply border border-b-0 mt-1 rounded bg-white py-4 shadow rounded-b-none;
+}
+
+.ais-PoweredBy {
+  @apply bg-white text-right text-base border border-t-0 rounded rounded-t-none shadow flex justify-end;
+}
+
+.ais-PoweredBy-logo {
+  @apply text-xs h-5;
+}
+
+.ais-PoweredBy-text {
+  @apply text-sm text-grey-darkest;
 }
 
 input[type="search"]::-webkit-search-decoration,
@@ -201,4 +213,3 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
-
