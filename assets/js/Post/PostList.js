@@ -5,6 +5,7 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
 import withReactContent from 'sweetalert2-react-content'
 import Toggle from './Toggle'
 import Remarkable from 'remarkable';
+import Route from "../Constants/Route";
 
 export default class PostList extends Component{
 
@@ -108,7 +109,7 @@ export default class PostList extends Component{
             posts.map((post) => (
                 <div className={post.isDeleting ? `flex-col mt-4 border-b opacity-50` : `flex-col mt-4 border-b`} key={post.id}>
                     <div className={`flex items-center`}>
-                        <a className={`no-underline text-black text-xl font-bold cursor-pointer`} href={`/admin/posts/`+post.id+`/show`}>{post.title}</a>
+                        <a className={`no-underline text-black text-xl font-bold cursor-pointer`} href={ Route.home+`/`+post.id+`/show`}>{post.title}</a>
                         <div>
                             {post.tags.map(tag => (
                                 <span key={tag.id} className={`label`}>{tag.name}</span>
@@ -152,7 +153,7 @@ export default class PostList extends Component{
                                      style={transformCss}
                                 >
                                     <ul className={`list-reset`}>
-                                        <li onClick={() => {window.location.href = '/admin/posts/'+post.id+'/edit'}} className={`pt-4 hover:text-black`}>Edit post</li>
+                                        <li onClick={() => {window.location.href = Route.home+'/'+post.id+'/edit'}} className={`pt-4 hover:text-black`}>Edit post</li>
                                         <li onClick={(event) => this.handleDeleteClick(event, post.id)} className={`pt-4 hover:text-black`}>Delete post</li>
                                     </ul>
                                 </div>

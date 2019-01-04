@@ -5,6 +5,7 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 import withReactContent from 'sweetalert2-react-content';
 import {createPost, createTag, getFreelancers, getTags} from "../Api/api";
 import Loader from "../UtilComponent/Loader";
+import Route from "../Constants/Route";
 
 export default class PostCreate extends Component
 {
@@ -100,7 +101,7 @@ export default class PostCreate extends Component
                     type: 'success',
                     title: 'Created, redirecting...'
                 }).then(() => {
-                    window.location.href = '/admin/posts';
+                    window.location.href = Route.home;
                 })
             })
     }

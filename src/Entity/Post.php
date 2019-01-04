@@ -172,11 +172,6 @@ class Post
         return $this->updatedAt;
     }
 
-    public function isSyncWithSearch(): bool
-    {
-        return $this->isPublic && $this->isPublished;
-    }
-
     public function setContent(string $content): void
     {
         $this->content = $content;

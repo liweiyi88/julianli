@@ -6,4 +6,3 @@ algolia_search:
         - name: posts
           class: App\Entity\Post
           enable_serializer_groups: true
-          index_if: isSyncWithSearch
