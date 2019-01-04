@@ -3,6 +3,8 @@
   environment:
     APP_ENV: "prod"
     BUGSNAG_API_KEY: ""
+    ALGOLIA_APP_ID: ""
+    ALGOLIA_API_KEY: ""
     ENQUEUE_DSN: "{{ sqs_dsn }}"
   composer:
     command: install
@@ -12,6 +14,8 @@
   environment:
     APP_ENV: "prod"
     BUGSNAG_API_KEY: ""
+    ALGOLIA_APP_ID: ""
+    ALGOLIA_API_KEY: ""
     ENQUEUE_DSN: "{{ sqs_dsn }}"
   command: "{{ release_console_path }} cache:clear"
 
@@ -19,6 +23,8 @@
   environment:
     APP_ENV: "prod"
     BUGSNAG_API_KEY: ""
+    ALGOLIA_APP_ID: ""
+    ALGOLIA_API_KEY: ""
     ENQUEUE_DSN: "{{ sqs_dsn }}"
   command: "{{ release_console_path }} cache:warmup"
 
@@ -33,6 +39,8 @@
   environment:
       APP_ENV: "prod"
       BUGSNAG_API_KEY: ""
+      ALGOLIA_APP_ID: ""
+      ALGOLIA_API_KEY: ""
       DATABASE_URL: "{{ database_url }}"
       ENQUEUE_DSN: "{{ sqs_dsn }}"
   command: "{{ release_console_path }} doctrine:database:create --if-not-exists --env=prod"
@@ -43,6 +51,8 @@
   environment:
     APP_ENV: "prod"
     BUGSNAG_API_KEY: ""
+    ALGOLIA_APP_ID: ""
+    ALGOLIA_API_KEY: ""
     DATABASE_URL: "{{ database_url }}"
     ENQUEUE_DSN: "{{ sqs_dsn }}"
   command: "{{ release_console_path }} doctrine:migrations:migrate --no-interaction --env=prod"
