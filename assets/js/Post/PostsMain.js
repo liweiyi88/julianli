@@ -3,6 +3,7 @@ import Posts from './Posts';
 import {getPosts, deletePost, updatePost} from '../Api/api';
 import Loader from '../UtilComponent/Loader';
 import PostConstants from '../Constants/PostConstants';
+import Route from "../Constants/Route";
 
 export default class PostsMain extends Component
 {
@@ -39,7 +40,7 @@ export default class PostsMain extends Component
     }
 
     handleCreatePostRedirect() {
-        window.location.href = '/admin/posts/create';
+        window.location.href = Route.create;
     }
 
     handlePublishToggleClick(event, id) {

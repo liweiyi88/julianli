@@ -136,11 +136,11 @@ pre code {
 }
 
 .pagination li:hover:not(.disabled):not(.active):not(.break-me) {
-  @apply bg-grey-lighter cursor-pointer
+  @apply bg-grey-lighter cursor-pointer;
 }
 
 .pagination .break-me:hover {
-  @apply cursor-pointer
+  @apply cursor-pointer;
 }
 
 .previous, .next {
@@ -150,13 +150,66 @@ pre code {
 .previous {
   &::before {
     content: "\00ab";
-    @apply pr-1
+    @apply pr-1;
   }
 }
 
 .next {
   &::after {
     content: "\00bb";
-    @apply pl-1
+    @apply pl-1;
   }
+}
+
+
+//search bar search style
+.ais-SearchBox-input {
+  @apply bg-grey-lighter appearance-none border border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight;
+}
+
+.ais-SearchBox-input:focus {
+  @apply outline-none bg-white border-grey;
+}
+
+.ais-SearchBox-submitIcon, .ais-SearchBox-resetIcon {
+  @apply hidden;
+}
+
+.ais-Hits-list {
+  @apply pl-0 ;
+}
+
+.ais-Hits-item {
+  @apply list-reset h-8 flex items-center;
+}
+
+.ais-Hits-item:hover {
+  @apply bg-grey-lightest;
+}
+
+.ais-Hits-item > a {
+  @apply no-underline text-grey-darker pl-3 w-full;
+}
+
+.ais-Hits {
+  @apply border border-b-0 mt-1 rounded bg-white py-4 shadow rounded-b-none;
+}
+
+.ais-PoweredBy {
+  @apply bg-white text-right text-base border border-t-0 rounded rounded-t-none shadow flex justify-end;
+}
+
+.ais-PoweredBy-logo {
+  @apply text-xs h-5;
+}
+
+.ais-PoweredBy-text {
+  @apply text-sm text-grey-darkest;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
 }

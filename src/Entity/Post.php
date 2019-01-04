@@ -34,14 +34,14 @@ class Post
     private $id;
 
     /**
-     * @Groups({"read", "write"})
+     * @Groups({"read", "write", "searchable"})
      *
      * @ORM\Column(name="title", type="string", length=255, nullable=true)
      */
     public $title;
 
     /**
-     * @Groups({"read", "write"})
+     * @Groups({"read", "write", "searchable"})
      *
      * @ORM\Column(name="slug", type="string", length=255)
      */
@@ -58,14 +58,14 @@ class Post
     private $coverImageFile;
 
     /**
-     * @Groups({"read", "write"})
+     * @Groups({"read", "write", "searchable"})
      *
      * @ORM\Column(name="content", type="text")
      */
     private $content;
 
     /**
-     * @Groups({"read"})
+     * @Groups({"read", "searchable"})
      *
      * @ORM\Column(name="created_at", type="datetime")
      */
@@ -77,7 +77,7 @@ class Post
     private $pageViews;
 
     /**
-     * @Groups({"read", "write"})
+     * @Groups({"read", "write", "searchable"})
      *
      * @ORM\ManyToMany(targetEntity="Tag", inversedBy="posts", cascade={"persist"})
      * @ORM\JoinTable(name="posts_tags")
