@@ -90,7 +90,7 @@ export default class AdminSearch extends Component{
 
         return (
             <InstantSearch
-                indexName='dev_posts'
+                indexName='prod_posts'
                 searchClient={searchClient}
             >
                 <SearchBox onChange={this.handleSearchBoxType}/>
