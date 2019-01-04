@@ -22,7 +22,7 @@ export default class PostList extends Component{
         };
     }
 
-    UNSAFE_componentWillMount() {
+    getSnapshotBeforeUpdate() {
         document.addEventListener('click', this.handleClick, false);
     }
 

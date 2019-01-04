@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import algoliasearch from 'algoliasearch';
 import { Hits, PoweredBy, SearchBox, InstantSearch, connectStateResults} from 'react-instantsearch-dom';
 
-export default class Search extends Component{
+export default class AdminSearch extends Component{
     constructor(props) {
         super(props);
 
@@ -16,7 +16,7 @@ export default class Search extends Component{
         this.handleClick = this.handleClick.bind(this);
     }
 
-    UNSAFE_componentWillMount() {
+    getSnapshotBeforeUpdate() {
         document.addEventListener('click', this.handleClick, false);
     }
 
