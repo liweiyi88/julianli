@@ -4,6 +4,7 @@ import CreatableSelect from 'react-select/lib/Creatable';
 import Select from 'react-select';
 import Toggle from './Toggle';
 import Logo from '../../images/logo.png';
+import Route from "../Constants/Route";
 
 export default function PostForm(props) {
     const {
@@ -49,7 +50,7 @@ export default function PostForm(props) {
                 </div>
 
                 <div className={`flex items-center mr-4`}>
-                    <a href="/admin/posts">
+                    <a href={Route.home}>
                         <img src={Logo} alt="Logo"/>
                     </a>
                 </div>

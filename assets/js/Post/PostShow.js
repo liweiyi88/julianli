@@ -5,6 +5,7 @@ import Remarkable from 'remarkable';
 import hljs from 'highlight.js';
 import Logo from '../../images/logo.png';
 import PropTypes from 'prop-types';
+import Route from "../Constants/Route";
 
 export default class PostShow extends Component
 {
@@ -70,7 +71,7 @@ export default class PostShow extends Component
                     {this.state.isLoading ? (<div>{<Loader/>}</div>) : (
                         <div className={`w-full`}>
                             <div className={`flex items-center mr-4`}>
-                                <a href="/admin/posts">
+                                <a href={Route.home}>
                                     <img src={Logo} alt="Logo"/>
                                 </a>
                             </div>

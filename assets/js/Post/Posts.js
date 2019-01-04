@@ -3,10 +3,9 @@ import PostList from './PostList';
 import PropTypes from 'prop-types';
 import ReactPaginate from 'react-paginate';
 import PostConstants from '../Constants/PostConstants';
-import Search from "../UtilComponent/Search";
+import AdminSearch from "../Search/AdminSearch";
 
 export default function Posts(props) {
-
     const {
         currentPage,
         pageCount,
@@ -25,7 +24,7 @@ export default function Posts(props) {
         <div>
             <div className={`bg-white border-b border-grey-lighter w-full fixed pin-t pin-x z-100 h-16`}>
                 <div className={`w-2/5 mx-auto pt-3`}>
-                    <Search />
+                    <AdminSearch />
                 </div>
             </div>
             <div className={`container mx-auto w-3/4 pl-6 pr-6`}>
