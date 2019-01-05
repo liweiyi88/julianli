@@ -3,7 +3,8 @@
 
 ## How to run it locally
 1. Install docker.
-2. Run `make start`.
+2. Put your `ALGOLIA_APP_ID` and `ALGOLIA_API_KEY` values in the `.env.local` file to make Algolia Search up and running.
+3. Run `make start`.
 
 ## Access the admin locally
 http://localhost:8888/admin/posts with username `julian` and password `abcd`
@@ -17,6 +18,7 @@ http://localhost:8888/admin/posts with username `julian` and password `abcd`
 * Supervisord is used for managing worker commands.
 * Rest api is built with [api-platform](https://api-platform.com/).
 * Admin is built with [React js](https://reactjs.org/) and [Tailwind css](https://tailwindcss.com/).
+* Admin is using Algolia Search.
 ## Articles and ideas
 * [Using Symfony Messenger With AWS SQS (2018)](http://julianli.co/posts/symfony-messenger-with-sqs)
 * [Asynchronous messaging (2017)](https://medium.com/@weiyi.li713/integrate-web-application-with-external-systems-by-using-message-queue-ac201469c02d) 
