@@ -18,7 +18,7 @@ http://localhost:8888/admin/posts with username `julian` and password `abcd`
 * Supervisord is used for managing worker commands.
 * Rest api is built with [api-platform](https://api-platform.com/).
 * Admin is built with [React js](https://reactjs.org/) and [Tailwind css](https://tailwindcss.com/).
-* Admin is using Algolia Search.
+* Admin search bar is built with [Algolia Search](https://www.algolia.com/).
 ## Articles and ideas
 * [Using Symfony Messenger With AWS SQS (2018)](http://julianli.co/posts/symfony-messenger-with-sqs)
 * [Asynchronous messaging (2017)](https://medium.com/@weiyi.li713/integrate-web-application-with-external-systems-by-using-message-queue-ac201469c02d) 
