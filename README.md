@@ -15,6 +15,7 @@ http://localhost:8888/admin/posts with username `julian` and password `abcd`
 * Ansible for server provisioning.
 * [CircleCI](https://circleci.com/) + [Ansistrano](https://github.com/ansistrano/deploy) for CI/CD pipeline.
 * Contact me email is done by AWS SQS + Symfony Messenger.
+* Page views is stored in Redis cache.
 * Supervisord is used for managing worker commands.
 * Rest api is built with [api-platform](https://api-platform.com/).
 * Admin is built with [React js](https://reactjs.org/) and [Tailwind css](https://tailwindcss.com/).
