@@ -23,7 +23,7 @@ export default class PostList extends Component{
         };
     }
 
-    getSnapshotBeforeUpdate() {
+    componentDidMount() {
         document.addEventListener('click', this.handleClick, false);
     }
 

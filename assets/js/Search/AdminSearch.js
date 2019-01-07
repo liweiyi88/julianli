@@ -17,7 +17,7 @@ export default class AdminSearch extends Component{
         this.handleClick = this.handleClick.bind(this);
     }
 
-    getSnapshotBeforeUpdate() {
+    componentDidMount() {
         document.addEventListener('click', this.handleClick, false);
     }
 
@@ -90,7 +90,7 @@ export default class AdminSearch extends Component{
 
         return (
             <InstantSearch
-                indexName='prod_posts'
+                indexName={process.env.NODE_ENV === 'production' ? 'prod_posts' : 'dev_posts'}
                 searchClient={searchClient}
             >
                 <SearchBox onChange={this.handleSearchBoxType}/>
