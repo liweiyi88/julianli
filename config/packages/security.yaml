@@ -23,6 +23,5 @@ security:
 
     access_control:
         - { path: ^/api/contact, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/freelancer, roles: ROLE_USER }
         - { path: ^/admin, roles: ROLE_USER }
         - { path: ^/api, roles: ROLE_USER }
