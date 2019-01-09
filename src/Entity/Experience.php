@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ExperienceRepository")
  */
-class Experience
+final class Experience
 {
     /**
      * @ORM\Id

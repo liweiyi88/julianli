@@ -9,7 +9,7 @@ use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
-class PostRepository extends ServiceEntityRepository
+final class PostRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {

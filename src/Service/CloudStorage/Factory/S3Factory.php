@@ -5,7 +5,7 @@ namespace App\Service\CloudStorage\Factory;
 
 use Aws\S3\S3Client;
 
-class S3Factory
+final class S3Factory
 {
     /**
      * @throws \InvalidArgumentException

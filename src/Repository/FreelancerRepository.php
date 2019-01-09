@@ -6,7 +6,7 @@ use App\Entity\Freelancer;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
-class FreelancerRepository extends ServiceEntityRepository
+final class FreelancerRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {

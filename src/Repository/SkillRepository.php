@@ -6,7 +6,7 @@ use App\Entity\Skill;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
-class SkillRepository extends ServiceEntityRepository
+final class SkillRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
