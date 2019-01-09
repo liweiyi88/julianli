@@ -8,7 +8,7 @@ use Swift_Mailer;
 use Swift_Message;
 use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 
-class ContactHandler implements MessageHandlerInterface
+final class ContactHandler implements MessageHandlerInterface
 {
     private $adminEmail;
     private $hostEmail;

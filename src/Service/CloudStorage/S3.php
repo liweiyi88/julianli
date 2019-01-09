@@ -8,7 +8,7 @@ use App\Service\CloudStorage\Interfaces\UploadedResponseInterface;
 use Aws\S3\S3Client;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class S3 implements CloudStorageInterface
+final class S3 implements CloudStorageInterface
 {
     public const DEFAULT_BUCKET = 'julianli';
     public const DEFAULT_ENCRYPTION = 'AES256';

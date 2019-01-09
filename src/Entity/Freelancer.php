@@ -18,7 +18,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
  * @ORM\Table(name="freelancer")
  * @ORM\Entity(repositoryClass="App\Repository\FreelancerRepository")
  */
-class Freelancer implements UserInterface, \Serializable
+final class Freelancer implements UserInterface, \Serializable
 {
     /**
      * @Groups({"read"})

@@ -6,7 +6,7 @@ use App\Entity\SocialNetwork;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
-class SocialNetworkRepository extends ServiceEntityRepository
+final class SocialNetworkRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {

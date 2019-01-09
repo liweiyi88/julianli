@@ -9,7 +9,7 @@ use Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\Messenger\MessageBusInterface;
 
-class ContactSubscriber implements EventSubscriberInterface
+final class ContactSubscriber implements EventSubscriberInterface
 {
     /**
      * @var \Symfony\Component\Messenger\MessageBusInterface

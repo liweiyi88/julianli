@@ -11,7 +11,7 @@ DEBUG=docker exec -it app bash
 DOCKER_FILES=$(shell find ./docker/dev/ -type f -name '*')
 
 .DEFAULT_GOAL := help
-.PHONY: help start stop reset db clear clean build up perm cc vendor
+.PHONY: help start stop reset db clear clean build up perm cc
 help:
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
@@ -72,10 +72,13 @@ up:
 	$(DOCKER_COMPOSE) up -d --remove-orphans
 
 perm:
-	-$(EXEC) chmod -R 777 var
+	$(EXEC) chmod -R 777 var
 
-vendor:
+vendor: composer.lock
 	$(COMPOSER) install -n
+
+composer.lock: composer.json
+	@echo compose.lock is not up to date.
 
 node_modules: yarn.lock
 	$(EXEC) yarn install

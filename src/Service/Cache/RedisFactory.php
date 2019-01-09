@@ -5,7 +5,7 @@ namespace App\Service\Cache;
 
 use Symfony\Component\Cache\Simple\RedisCache;
 
-class RedisFactory
+final class RedisFactory
 {
     public static function create(string $dsn): RedisCache
     {

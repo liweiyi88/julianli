@@ -5,7 +5,7 @@ namespace App\Service\Cache;
 
 use Psr\SimpleCache\CacheInterface;
 
-class Cache
+final class Cache
 {
     private $store;
 

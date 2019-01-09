@@ -15,7 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *      itemOperations={},
  * )
  */
-class Contact
+final class Contact
 {
     /**
      * @Assert\NotBlank(message="How can I call you?")
