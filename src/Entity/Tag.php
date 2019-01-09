@@ -15,7 +15,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *
  * @ORM\Entity(repositoryClass="App\Repository\TagRepository")
  */
-final class Tag
+class Tag
 {
     /**
      * @Groups({"read"})

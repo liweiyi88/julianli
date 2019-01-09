@@ -20,7 +20,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @Vich\Uploadable
  */
-final class Post
+class Post
 {
     public const NUM_ITEMS = 5;
 

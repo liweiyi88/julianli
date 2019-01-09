@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity(repositoryClass="App\Repository\ProjectRepository")
  * @Vich\Uploadable
  */
-final class Project
+class Project
 {
     /**
      * @ORM\Id

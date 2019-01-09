@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\SocialNetworkRepository")
  */
-final class SocialNetwork
+class SocialNetwork
 {
     /**
      * @ORM\Id
