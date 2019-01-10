@@ -1,4 +1,8 @@
 module.exports = {
+    "globals": {
+        "ALGOLIA_APP_ID": true,
+        "ALGOLIA_SEARCH_ONLY_API_KEY": true
+    },
     parser: "babel-eslint",
     extends: ['eslint:recommended', 'plugin:react/recommended'],
     parserOptions: {
