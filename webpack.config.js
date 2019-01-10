@@ -28,8 +28,8 @@ Encore
     })
     .enablePostCssLoader()
     .configureDefinePlugin((options) => {
-        options.ALGOLIA_SEARCH_ONLY_API_KEY = '0a297293561cc822339db9f46b0b3bd4';
-        options.ALGOLIA_APP_ID = '57OYAZ5QGF'
+        options.ALGOLIA_SEARCH_ONLY_API_KEY = "'0a297293561cc822339db9f46b0b3bd4'";
+        options.ALGOLIA_APP_ID = "'57OYAZ5QGF'";
     })
 ;
 
