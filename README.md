@@ -3,7 +3,8 @@
 
 ## How to run it locally
 1. Install docker.
-2. Put your `ALGOLIA_APP_ID` and `ALGOLIA_API_KEY` values in the `.env.local` file to make Algolia Search up and running.
+2. Put your `ALGOLIA_APP_ID` and `ALGOLIA_API_KEY` values in the `.env.local` file to make Algolia Search data sync up and running.
+3. In `webpack.config.js` file, put your own `ALGOLIA_SEARCH_ONLY_API_KEY` and `ALGOLIA_APP_ID` to make the Algolia search bar up and running. 
 3. Run `make start`.
 
 ## Access the admin locally
