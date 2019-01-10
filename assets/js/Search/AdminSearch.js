@@ -54,7 +54,7 @@ export default class AdminSearch extends Component{
     }
 
     render() {
-        const algoliaClient = algoliasearch('57OYAZ5QGF', 'd24d74854fd96fc71666fa57cad0c60e', {
+        const algoliaClient = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_SEARCH_ONLY_API_KEY, {
             _useRequestCache: true,
         });
 
