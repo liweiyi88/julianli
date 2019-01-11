@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Posts from './Posts';
 import {getPosts, deletePost, updatePost} from '../Api/api';
-import Loader from '../UtilComponent/Loader';
+import Loader from '../Utils/Loader';
 import PostConstants from '../Constants/PostConstants';
 import Route from "../Constants/Route";
 

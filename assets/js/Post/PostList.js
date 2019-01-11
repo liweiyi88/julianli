@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {shortDescription} from '../Utils/Str'
+import {shortDescription} from '../Helpers/Str'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import withReactContent from 'sweetalert2-react-content'
 import Toggle from './Toggle'
