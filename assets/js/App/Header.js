@@ -10,7 +10,7 @@ export default function Header(props) {
         <React.Fragment>
             <Avatar />
             <div className={`text-xl font-extrabold uppercase`}>
-                <NavLink className={`no-underline`} to={`/preview`}>
+                <NavLink className={`no-underline`} to={`/`}>
                     <span className={`text-green mr-1`}>Julian</span><span className={`text-grey-darker`}>Li</span>
                 </NavLink>
             </div>
