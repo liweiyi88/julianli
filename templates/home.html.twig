@@ -1,0 +1,15 @@
+{% extends 'base_new.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('post_create') }}
+{% endblock %}
+
+{% block body %}
+    <body>
+        <div id="app"></div>
+    </body>
+    {% block javascripts %}
+        {{ parent() }}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+{% endblock %}

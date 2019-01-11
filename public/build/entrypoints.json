@@ -2,38 +2,47 @@
   "entrypoints": {
     "posts_main": {
       "js": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.b4a93bf8.js",
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/posts_main.ee3a0ac3.js"
+        "/build/runtime.js",
+        "/build/posts_main.js"
       ],
       "css": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/posts_main.d22334de.css"
+        "/build/posts_main.css"
       ]
     },
     "post_create": {
       "js": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.b4a93bf8.js",
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_create.ab1e8c3c.js"
+        "/build/runtime.js",
+        "/build/post_create.js"
       ],
       "css": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_create.dded9b5d.css"
+        "/build/post_create.css"
       ]
     },
     "post_show": {
       "js": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.b4a93bf8.js",
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_show.5547d526.js"
+        "/build/runtime.js",
+        "/build/post_show.js"
       ],
       "css": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_show.080d22cc.css"
+        "/build/post_show.css"
       ]
     },
     "post_edit": {
       "js": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.b4a93bf8.js",
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_edit.01d523f5.js"
+        "/build/runtime.js",
+        "/build/post_edit.js"
       ],
       "css": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_edit.dded9b5d.css"
+        "/build/post_edit.css"
+      ]
+    },
+    "app": {
+      "js": [
+        "/build/runtime.js",
+        "/build/app.js"
+      ],
+      "css": [
+        "/build/app.css"
       ]
     }
   }

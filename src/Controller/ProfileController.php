@@ -24,4 +24,12 @@ class ProfileController extends BaseController
             ]
         );
     }
+
+    /**
+     * @Route("/preview", name="new_home")
+     */
+    public function preview(): Response
+    {
+        return $this->render('home.html.twig');
+    }
 }
