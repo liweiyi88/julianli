@@ -1,16 +1,13 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-export default function Navbar(props)
+export default function Navbar()
 {
-    const {
-        activeName
-    } = props;
-
     return (
         <nav className={`uppercase mt-3 flex tracking-wide`}>
-            <a href="/articles" className={`${activeName === 'article' ? 'text-black' : 'text-grey-dark'} text-sm font-semibold no-underline hover:text-black mr-5`}>Articles</a>
-            <a href="/projects" className={`${activeName === 'projects' ? 'text-black' : 'text-grey-dark'} text-sm font-semibold no-underline hover:text-black mr-5`}>Projects</a>
-            <a href="/hire-me" className={`${activeName === 'hireMe' ? 'text-black' : 'text-grey-dark'} text-sm font-semibold no-underline hover:text-black mr-5`}>Hire me</a>
+            <NavLink activeStyle={{color:'black'}} to={`/articles`} className={`text-grey-dark text-sm font-semibold no-underline hover:text-black mr-5`}>Articles</NavLink>
+            <NavLink activeStyle={{color:'black'}} to={`/projects`} className={`text-grey-dark text-sm font-semibold no-underline hover:text-black mr-5`}>Projects</NavLink>
+            <NavLink activeStyle={{color:'black'}} to={`/hire-me`} className={`text-grey-dark text-sm font-semibold no-underline hover:text-black mr-5`}>Hire me</NavLink>
         </nav>
     );
 }

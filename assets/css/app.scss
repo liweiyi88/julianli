@@ -7,3 +7,7 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+.active {
+  @apply text-grey-darkest text-sm font-semibold no-underline mr-5;
+}
