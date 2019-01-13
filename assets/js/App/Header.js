@@ -3,9 +3,7 @@ import Avatar from './Avatar';
 import Navbar from './Navbar';
 import {NavLink} from "react-router-dom";
 
-export default function Header(props) {
-    const {activeName} = props;
-
+export default function Header() {
     return (
         <React.Fragment>
             <Avatar />
@@ -14,7 +12,7 @@ export default function Header(props) {
                     <span className={`text-green mr-1`}>Julian</span><span className={`text-grey-darker`}>Li</span>
                 </NavLink>
             </div>
-            <Navbar activeName={activeName}/>
+            <Navbar />
         </React.Fragment>
     )
 }
