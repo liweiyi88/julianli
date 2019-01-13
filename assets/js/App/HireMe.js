@@ -2,7 +2,7 @@ import React from "react";
 
 export default function HireMe() {
     return (
-        <div className={`mt-12 w-full lg:w-3/4`}>
+        <div className={`w-full lg:w-3/4`}>
             <div className={`w-full mb-6`}>
                 <input
                     className={`appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey`}

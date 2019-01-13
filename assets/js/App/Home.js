@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Home() {
     return (
-        <div className={`mt-12 max-w-md`}>
+        <div className={`max-w-md`}>
             <h1 className={`text-2xl font-semibold text-black mb-4`}>
                 Who am I?
             </h1>
