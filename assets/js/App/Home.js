@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer";
 
 export default function Home() {
     return (
@@ -12,6 +13,7 @@ export default function Home() {
                 <p className={`mb-6`}><a href="https://reactjs.org/" target={`_blank`} className={`text-green`}>React</a> and <a href="https://tailwindcss.com/" target={`blank`} className={`text-green`}>Tailwind CSS</a> are my favourite tools for front-end development.</p>
                 <p>Right now, I am following recommendation from <a href="https://refactoringui.com/book/" target={`blank`} className={`text-green`}>Refactoring UI to improve my design skill.</a></p>
             </div>
+            <Footer />
         </div>
     );
 }
