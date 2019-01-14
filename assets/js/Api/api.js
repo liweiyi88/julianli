@@ -77,3 +77,13 @@ export function getFreelancers() {
     return fetchJson('/api/freelancers')
         .then(data => data['hydra:member'])
 }
+
+export function createContact(contact) {
+    return fetchJson('/api/contact', {
+        method: 'POST',
+        body: JSON.stringify(contact),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+}
