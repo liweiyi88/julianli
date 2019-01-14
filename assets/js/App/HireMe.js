@@ -95,6 +95,14 @@ export default class HireMe extends Component{
 
         return (
             <div className={`w-full lg:w-3/4`}>
+                <div className={`text-lg text-grey-darker leading-normal`}>
+                    <h1 className="text-2xl font-semibold text-black mb-4">It&#39;s time to talk</h1>
+                    <p className={`mb-6`}>I am passionate about providing a tailored solution for you. Having said that, I am not just a developer who is able to deliver a high-quality application, moreover I could refine your situation as your adviser and partner.</p>
+
+                    <p className={`mb-6`}>If it sounds good to you, why not get in touch with me for more details?</p>
+
+                    <p className={`mb-6`}>I will usually contact you within 48 hours.</p>
+                </div>
                 {this.state.systemError.trim() !== '' &&
                     <div className={`mb-6`}>
                         <ErrorBlock message={this.state.systemError}/>
