@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function SuccessBlock(props) {
     return (
@@ -7,3 +8,7 @@ export default function SuccessBlock(props) {
         </div>
     );
 }
+
+SuccessBlock.propTypes = {
+    message: PropTypes.string
+};

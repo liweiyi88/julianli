@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 export default function ErrorBlock(props) {
     return (
@@ -7,3 +8,7 @@ export default function ErrorBlock(props) {
         </div>
     );
 }
+
+ErrorBlock.propTypes = {
+    message: PropTypes.string
+};
