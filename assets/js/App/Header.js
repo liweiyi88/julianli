@@ -1,16 +1,16 @@
 import React from 'react';
 import Avatar from './Avatar';
 import Navbar from './Navbar';
-import {NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export default function Header() {
     return (
         <React.Fragment>
             <Avatar />
             <div className={`text-3xl font-extrabold`}>
-                <NavLink className={`no-underline`} to={`/`}>
+                <Link className={`no-underline`} to={`/`} replace>
                     <span className={`text-green mr-1`}>Julian</span><span className={`text-grey-darker`}>Li</span>
-                </NavLink>
+                </Link>
             </div>
             <Navbar />
         </React.Fragment>

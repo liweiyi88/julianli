@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function ButtonSend(props) {
     return (
@@ -13,4 +14,8 @@ export default function ButtonSend(props) {
             </svg>
         </button>
     );
+}
+
+ButtonSend.propTypes = {
+    onButtonClicked: PropTypes.func
 }

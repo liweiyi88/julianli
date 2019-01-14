@@ -10,7 +10,7 @@ import Project from "./App/Project";
 
 render(
     <HashRouter>
-        <div>
+        <div className={`font-sans antialiased`}>
             <div className={`h-4 w-full bg-green`} />
             <div className={`container`}>
                 <div className={`pt-16 pb-8 px-6 md:px-32 xl:px-64`}>

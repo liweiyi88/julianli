@@ -1,12 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i');
 
 @tailwind preflight;
 @tailwind components;
 @tailwind utilities;
-
-body {
-  font-family: 'Roboto', sans-serif;
-}
 
 .active {
   @apply text-grey-darkest text-sm font-semibold no-underline mr-5;
