@@ -1,6 +1,7 @@
 import React from "react";
 import {shortDescription} from "../Helpers/Str";
 import Remarkable from "remarkable";
+import PropTypes from "prop-types";
 
 export default function Article(props) {
 
@@ -31,3 +32,7 @@ export default function Article(props) {
         </div>
     );
 }
+
+Article.propTypes = {
+    articles: PropTypes.array.isRequired
+};
