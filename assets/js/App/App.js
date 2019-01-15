@@ -6,13 +6,15 @@ import Project from "./Project";
 import Article from "./Article";
 import HireMe from "./HireMe";
 import {getPublicPublishedPosts} from "../Api/api";
+import Loader from "../Utils/Loader";
 
 export default class App extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            articles: []
+            articles: [],
+            isLoading: true
         };
     }
 
@@ -20,28 +22,30 @@ export default class App extends Component {
         getPublicPublishedPosts()
             .then((data) => {
                 this.setState({
-                    articles: data['hydra:member']
+                    articles: data['hydra:member'],
+                    isLoading: false
                 })
             });
     }
 
     render() {
-        return (
-            <HashRouter>
-                <div className={`font-sans antialiased`}>
-                    <div className={`h-4 w-full bg-green`} />
-                    <div className={`container`}>
-                        <div className={`pt-16 pb-8 px-6 md:px-32 xl:px-64`}>
-                            <Header />
 
-                            <Route exact path="/" component={Home} />
-                            <Route path="/projects" component={Project} />
-                            <Route path="/articles" component={() => <Article articles={this.state.articles}/>} />
-                            <Route path="/hire-me" component={HireMe} />
-                        </div>
+        let component = this.state.isLoading ? <div><Loader /></div> : <HashRouter>
+            <div className={`font-sans antialiased`}>
+                <div className={`h-4 w-full bg-green`} />
+                <div className={`container`}>
+                    <div className={`pt-16 pb-8 px-6 md:px-32 xl:px-64`}>
+                        <Header />
+
+                        <Route exact path="/" component={Home} />
+                        <Route path="/projects" component={Project} />
+                        <Route path="/articles" component={() => <Article articles={this.state.articles}/>} />
+                        <Route path="/hire-me" component={HireMe} />
                     </div>
                 </div>
-            </HashRouter>
-        )
+            </div>
+        </HashRouter>
+
+        return (component)
     }
 }
