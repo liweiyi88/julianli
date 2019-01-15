@@ -5,7 +5,7 @@ import Home from "./Home";
 import Project from "./Project";
 import Article from "./Article";
 import HireMe from "./HireMe";
-import {getPosts} from "../Api/api";
+import {getPublicPublishedPosts} from "../Api/api";
 
 export default class App extends Component {
     constructor(props) {
@@ -17,7 +17,7 @@ export default class App extends Component {
     }
 
     componentDidMount() {
-        getPosts()
+        getPublicPublishedPosts()
             .then((data) => {
                 this.setState({
                     articles: data['hydra:member']

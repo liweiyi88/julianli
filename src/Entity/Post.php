@@ -7,10 +7,20 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use App\Controller\GetPublicPublishedPostsController;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ApiResource(
+ *     collectionOperations={
+ *         "get",
+ *         "get_public_published" = {
+ *           "method"="GET",
+ *           "path"="/publicPublishedPosts",
+ *           "controller"=GetPublicPublishedPostsController::class,
+ *           "defaults"={"_api_receive"=false},
+ *          }
+ *     },
  *     normalizationContext={"groups"={"read"}},
  *     denormalizationContext={"groups"={"write"}},
  *     attributes={"order"={"createdAt": "DESC"}}

@@ -28,6 +28,10 @@ export function getPosts(page) {
     return page > 0 ? fetchJson('/api/posts?page='+page) : fetchJson('/api/posts');
 }
 
+export function getPublicPublishedPosts() {
+    return fetchJson('/api/publicPublishedPosts');
+}
+
 export function getPost(id) {
     return fetchJson('/api/posts/'+id);
 }
