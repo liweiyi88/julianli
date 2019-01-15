@@ -2,12 +2,12 @@ import React from "react";
 
 export default function Project() {
     return (
-        <div className={`max-w-md`}>
+        <div className={`w-full lg:w-3/4`}>
             <div className={`text-lg text-grey-darker leading-normal`}>
                 <h1 className="text-2xl font-semibold text-black mb-4">
                     Open Projects
                 </h1>
-                <p className={`mb-6`}>Over the past few years, I have been employed to on private projects and I was frustrated that I could not show my ability to the public.</p>
+                <p className={`mb-6`}>Over the past few years, I have been employed to work on private projects and I was frustrated that I could not show my ability to the public.</p>
                 <p className={`mb-6`}>Then, I decided to create open source projects to show what I can do, share what I have learnt and plan what I should do.</p>
 
                 <a href="https://github.com/liweiyi88/julianli" className={`text-lg text-black font-bold no-underline hover:underline`}>My personal website &quot;julianli&quot;</a>
