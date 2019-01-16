@@ -7,7 +7,7 @@ export default function Header() {
     return (
         <React.Fragment>
             <Avatar />
-            <div className={`text-3xl font-extrabold`}>
+            <div className={`hidden md:block text-3xl font-extrabold`}>
                 <Link className={`no-underline`} to={`/`} replace>
                     <span className={`text-green mr-1`}>Julian</span><span className={`text-grey-darker`}>Li</span>
                 </Link>

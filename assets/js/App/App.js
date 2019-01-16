@@ -35,9 +35,9 @@ export default class App extends Component {
 
         let component = this.state.isLoading ? <div><Loader /></div> : <HashRouter>
             <div className={`font-sans antialiased`}>
-                <div className={`h-4 w-full bg-green`} />
+                <div className={`hidden md:block md:h-4 w-full bg-green`} />
                 <div className={`container`}>
-                    <div className={`pt-16 pb-8 px-6 md:pl-32 xl:pl-64`}>
+                    <div className={`py-8 md:pt-16 md:pb-8 px-6 md:px-16 xl:pl-64`}>
                         <Header />
 
                         <Route exact path="/" component={Home} />
