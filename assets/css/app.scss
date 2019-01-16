@@ -72,3 +72,7 @@ p {
 pre ~ h2, pre ~ h1, pre ~ p {
   @apply mt-6 mb-1;
 }
+
+.article h1, .article h2, .article h3 {
+  @apply mb-1;
+}

@@ -41,7 +41,7 @@ export default function ArticleShow(props) {
 
     return (
         <div>
-            <div className={`text-lg text-grey-darker leading-normal`}>
+            <div className={`text-lg text-grey-darker leading-normal article`}>
                 {content}
             </div>
         </div>
