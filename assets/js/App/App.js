@@ -44,7 +44,7 @@ export default class App extends Component {
                         <Route path="/projects" component={Project} />
                         <Route exact path="/articles" component={() => <Article articles={this.state.articles}/>} />
                         <Route path="/hire-me" component={HireMe} />
-                        <Route path="/article/:id" component={ArticleShow} />
+                        <Route path="/article/:slug" component={ArticleShow} />
                     </div>
                 </div>
             </div>

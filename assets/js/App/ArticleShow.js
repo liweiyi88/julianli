@@ -6,16 +6,16 @@ import PropTypes from "prop-types";
 
 export default function ArticleShow(props) {
 
-    const articleId = props.match.params.id;
+    const slug = props.match.params.slug;
     const articles = JSON.parse(localStorage.getItem('articles'));
 
     const article = articles.find((element) => {
-        return parseInt(element['id']) === parseInt(articleId);
+        return element['slug'] === (slug);
     });
 
     const md = new Remarkable({
         html: true,
-        langPrefix: 'rounded-sm hljs language-',
+        langPrefix: 'hljs language-',
         langDefault: 'php',
         highlight: function (str, lang) {
             if (lang && hljs.getLanguage(lang)) {
@@ -37,11 +37,11 @@ export default function ArticleShow(props) {
     });
 
     const content = article === undefined ? <h1>Article not found</h1> :
-        <div className={`text-lg leading-normal text-grey-darker`} dangerouslySetInnerHTML={{ __html: md.render(article.content) }} />;
+        <div className={`text-lg leading-normal text-grey-darker article`} dangerouslySetInnerHTML={{ __html: md.render(article.content) }} />;
 
     return (
         <div>
-            <div className={`text-lg text-grey-darker leading-normal article`}>
+            <div className={`text-lg text-grey-darker leading-normal`}>
                 {content}
             </div>
         </div>

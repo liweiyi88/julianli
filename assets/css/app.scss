@@ -69,10 +69,22 @@ p {
     }
 }
 
-pre ~ h2, pre ~ h1, pre ~ p {
-  @apply mt-6 mb-1;
+pre > code{
+  @apply rounded;
 }
 
 .article h1, .article h2, .article h3 {
-  @apply mb-1;
+  @apply mt-6 mb-1;
+}
+
+.article ol {
+  @apply pl-5 mb-1;
+}
+
+.article p {
+  @apply mt-6 mb-1;
+}
+
+.article h1 + p, .article h2 + p, .article h3 + p {
+  @apply mt-0;
 }
