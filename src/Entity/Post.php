@@ -16,7 +16,7 @@ use Doctrine\ORM\Mapping as ORM;
  *         "get",
  *         "get_public_published" = {
  *           "method"="GET",
- *           "path"="/publicPublishedPosts",
+ *           "path"="/public-published-posts",
  *           "controller"=GetPublicPublishedPostsController::class,
  *           "defaults"={"_api_receive"=false},
  *          }

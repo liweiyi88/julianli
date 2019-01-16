@@ -29,7 +29,7 @@ export function getPosts(page) {
 }
 
 export function getPublicPublishedPosts() {
-    return fetchJson('/api/publicPublishedPosts');
+    return fetchJson('/api/public-published-posts?pagination=false');
 }
 
 export function getPost(id) {

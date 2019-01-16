@@ -2,5 +2,7 @@ api_platform:
     collection:
         pagination:
             items_per_page: 10
+            client_enabled: true
+            enabled_parameter_name: pagination
     mapping:
         paths: ['%kernel.project_dir%/src/Entity', '%kernel.project_dir%/src/Requests']

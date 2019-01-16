@@ -16,7 +16,7 @@ export default function Article(props) {
                 <h1>Articles</h1>
                 <p>Writing articles is a great way to share my knowledge with people who need it.</p>
                 <p>Here are some popular ones.</p>
-                <div className={`mt-6`}>
+                <div className={`mt-12`}>
                     {
                         props.articles.map((article) => (
                             <div key={article.id} className={`mb-6`}>
