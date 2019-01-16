@@ -2,6 +2,7 @@ import React from 'react';
 import Remarkable from "remarkable";
 import hljs from "highlight.js";
 import 'highlight.js/styles/darcula.css'
+import PropTypes from "prop-types";
 
 export default function ArticleShow(props) {
 
@@ -46,3 +47,7 @@ export default function ArticleShow(props) {
         </div>
     );
 }
+
+ArticleShow.propTypes = {
+    match: PropTypes.object.isRequired
+};
