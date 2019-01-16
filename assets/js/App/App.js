@@ -7,6 +7,7 @@ import Article from "./Article";
 import HireMe from "./HireMe";
 import {getPublicPublishedPosts} from "../Api/api";
 import Loader from "../Utils/Loader";
+import ArticleShow from "./ArticleShow";
 
 export default class App extends Component {
     constructor(props) {
@@ -21,6 +22,8 @@ export default class App extends Component {
     componentDidMount() {
         getPublicPublishedPosts()
             .then((data) => {
+                localStorage.setItem('articles', JSON.stringify(data['hydra:member']))
+
                 this.setState({
                     articles: data['hydra:member'],
                     isLoading: false
@@ -34,13 +37,14 @@ export default class App extends Component {
             <div className={`font-sans antialiased`}>
                 <div className={`h-4 w-full bg-green`} />
                 <div className={`container`}>
-                    <div className={`pt-16 pb-8 px-6 md:px-32 xl:px-64`}>
+                    <div className={`pt-16 pb-8 px-6 md:pl-32 xl:pl-64`}>
                         <Header />
 
                         <Route exact path="/" component={Home} />
                         <Route path="/projects" component={Project} />
-                        <Route path="/articles" component={() => <Article articles={this.state.articles}/>} />
+                        <Route exact path="/articles" component={() => <Article articles={this.state.articles}/>} />
                         <Route path="/hire-me" component={HireMe} />
+                        <Route path="/article/:id" component={ArticleShow} />
                     </div>
                 </div>
             </div>

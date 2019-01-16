@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Project() {
     return (
-        <div className={`w-full lg:w-3/4`}>
+        <div className={`w-full lg:w-1/2`}>
             <div className={`text-lg text-grey-darker leading-normal`}>
                 <h1 className="text-2xl font-semibold text-black mb-4">
                     Open Projects

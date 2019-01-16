@@ -2,6 +2,7 @@ import React from "react";
 import {shortDescription} from "../Helpers/Str";
 import Remarkable from "remarkable";
 import PropTypes from "prop-types";
+import {NavLink} from "react-router-dom";
 
 export default function Article(props) {
 
@@ -10,7 +11,7 @@ export default function Article(props) {
     });
 
     return (
-        <div className={`w-full lg:w-3/4`}>
+        <div className={`w-full lg:w-1/2`}>
             <div className={`text-lg text-grey-darker leading-normal`}>
                 <h1 className="text-2xl font-semibold text-black mb-4">
                     Articles
@@ -20,10 +21,10 @@ export default function Article(props) {
                 {
                     props.articles.map((article) => (
                         <div key={article.id} className={`mb-6`}>
-                            <a href="https://github.com/liweiyi88/julianli" className={`text-lg text-black font-bold no-underline hover:underline`}>{article.title}</a>
+                            <NavLink to={'/article/'+article.id} className={`text-lg text-black font-bold no-underline hover:underline`}>{article.title}</NavLink>
                             <div className={`mt-1`} dangerouslySetInnerHTML={{ __html: md.render(shortDescription(article.content, 30)).replace(/<(?:.|\n)*?>/gm, '') }} />
                             <div className={`text-grey-darkest text-base leading-normal mt-2 mb-6`}>
-                                <a href="https://github.com/liweiyi88/julianli" className="text-grey-darker hover:text-black no-underline hover:underline">Read this article →</a>
+                                <NavLink to={'/article/'+article.id} className={`text-grey-darker hover:text-black no-underline hover:underline`}>Read this article →</NavLink>
                             </div>
                         </div>
                     ))

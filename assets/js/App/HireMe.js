@@ -94,7 +94,7 @@ export default class HireMe extends Component{
         let button = this.state.clicked ? <ButtonDisabled /> : <ButtonSend onButtonClicked={this.handleContactSubmit}/>;
 
         return (
-            <div className={`w-full lg:w-3/4`}>
+            <div className={`w-full lg:w-1/2`}>
                 <div className={`text-lg text-grey-darker leading-normal`}>
                     <h1 className="text-2xl font-semibold text-black mb-4">Do you need a help?</h1>
                     <p className={`mb-6`}>I am passionate about providing a tailored solution for you. Having said that, I am not just a developer who is able to deliver a high-quality application, what is more, I could refine your situation as your adviser and partner.</p>
