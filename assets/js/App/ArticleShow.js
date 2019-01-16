@@ -35,7 +35,7 @@ export default function ArticleShow(props) {
         }
     });
 
-    const content = article === undefined ? <h1 className={`text-2xl font-semibold text-black mb-4`}>Article not found</h1> :
+    const content = article === undefined ? <h1>Article not found</h1> :
         <div className={`text-lg leading-normal text-grey-darker`} dangerouslySetInnerHTML={{ __html: md.render(article.content) }} />;
 
     return (

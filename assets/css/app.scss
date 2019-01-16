@@ -4,6 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
+h1 {
+  @apply text-2xl font-semibold text-black mb-4;
+}
+
+h2 {
+  @apply text-xl font-semibold text-black mb-4;
+}
+
+h3 {
+  @apply text-base font-semibold text-black mb-4;
+}
+
+p {
+  @apply mb-6;
+}
+
 .active {
   @apply text-grey-darkest text-sm font-semibold no-underline mr-5;
 }
@@ -51,4 +67,8 @@
       -webkit-transform: scale(1.0);
       transform: scale(1.0);
     }
+}
+
+pre ~ h2, pre ~ h1, pre ~ p {
+  @apply mt-6 mb-1;
 }
