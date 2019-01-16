@@ -21,7 +21,7 @@ export default function Article(props) {
                             <div key={article.id} className={`mb-6`}>
                                 <NavLink to={'/article/'+article.slug} className={`text-lg text-black font-bold no-underline hover:underline`}>{article.title}</NavLink>
                                 <div className={`mt-1`} dangerouslySetInnerHTML={{ __html: md.render(shortDescription(article.content, 30)).replace(/<(?:.|\n)*?>/gm, '') }} />
-                                <div className={`text-grey-darkest text-base leading-normal mt-2 mb-6`}>
+                                <div className={`text-grey-darkest text-base leading-normal mt-3 mb-6`}>
                                     <NavLink to={'/article/'+article.slug} className={`text-grey-darker hover:text-black no-underline hover:underline`}>Read this article →</NavLink>
                                 </div>
                             </div>
