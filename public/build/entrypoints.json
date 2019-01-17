@@ -3,37 +3,46 @@
     "posts_main": {
       "js": [
         "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.b4a93bf8.js",
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/posts_main.ee3a0ac3.js"
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/posts_main.7ba98095.js"
       ],
       "css": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/posts_main.d22334de.css"
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/posts_main.21130b19.css"
       ]
     },
     "post_create": {
       "js": [
         "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.b4a93bf8.js",
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_create.ab1e8c3c.js"
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_create.3cfe9d14.js"
       ],
       "css": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_create.dded9b5d.css"
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_create.b9436ba3.css"
       ]
     },
     "post_show": {
       "js": [
         "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.b4a93bf8.js",
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_show.5547d526.js"
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_show.8d8bedaf.js"
       ],
       "css": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_show.080d22cc.css"
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_show.83709d18.css"
       ]
     },
     "post_edit": {
       "js": [
         "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.b4a93bf8.js",
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_edit.01d523f5.js"
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_edit.3ccc42da.js"
       ],
       "css": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_edit.dded9b5d.css"
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_edit.b9436ba3.css"
+      ]
+    },
+    "app": {
+      "js": [
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.b4a93bf8.js",
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/app.76e75cbc.js"
+      ],
+      "css": [
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/app.7536a3cc.css"
       ]
     }
   }

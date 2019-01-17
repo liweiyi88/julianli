@@ -28,6 +28,10 @@ export function getPosts(page) {
     return page > 0 ? fetchJson('/api/posts?page='+page) : fetchJson('/api/posts');
 }
 
+export function getPublicPublishedPosts() {
+    return fetchJson('/api/public-published-posts?pagination=false');
+}
+
 export function getPost(id) {
     return fetchJson('/api/posts/'+id);
 }
@@ -76,4 +80,14 @@ export function getTags() {
 export function getFreelancers() {
     return fetchJson('/api/freelancers')
         .then(data => data['hydra:member'])
+}
+
+export function createContact(contact) {
+    return fetchJson('/api/contact', {
+        method: 'POST',
+        body: JSON.stringify(contact),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
 }

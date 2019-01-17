@@ -4,7 +4,7 @@ import SimpleMDE from "simplemde";
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import withReactContent from 'sweetalert2-react-content';
 import {createTag, getFreelancers, getPost, getTags, updatePost} from "../Api/api";
-import Loader from "../UtilComponent/Loader";
+import Loader from "../Utils/Loader";
 import Route from "../Constants/Route";
 
 export default class PostEdit extends Component

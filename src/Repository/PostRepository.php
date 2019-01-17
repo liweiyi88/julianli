@@ -4,9 +4,6 @@ namespace App\Repository;
 
 use App\Entity\Post;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\ORM\Query;
-use Pagerfanta\Adapter\DoctrineORMAdapter;
-use Pagerfanta\Pagerfanta;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 final class PostRepository extends ServiceEntityRepository
@@ -16,39 +13,7 @@ final class PostRepository extends ServiceEntityRepository
         parent::__construct($registry, Post::class);
     }
 
-    /**
-     * @param Query $query
-     * @param int $page
-     *
-     * @return \Pagerfanta\Pagerfanta
-     *
-     * @throws \Pagerfanta\Exception\LessThan1CurrentPageException
-     * @throws \Pagerfanta\Exception\LessThan1MaxPerPageException
-     * @throws \Pagerfanta\Exception\NotIntegerCurrentPageException
-     * @throws \Pagerfanta\Exception\NotIntegerMaxPerPageException
-     * @throws \Pagerfanta\Exception\OutOfRangeCurrentPageException
-     */
-    public function createPaginator(Query $query, int $page): Pagerfanta
-    {
-        $paginator = new Pagerfanta(new DoctrineORMAdapter($query));
-        $paginator->setMaxPerPage(Post::NUM_ITEMS);
-        $paginator->setCurrentPage($page);
-
-        return $paginator;
-    }
-
-    /**
-     * @param int $page
-     *
-     * @return Pagerfanta
-     *
-     * @throws \Pagerfanta\Exception\LessThan1CurrentPageException
-     * @throws \Pagerfanta\Exception\LessThan1MaxPerPageException
-     * @throws \Pagerfanta\Exception\NotIntegerCurrentPageException
-     * @throws \Pagerfanta\Exception\NotIntegerMaxPerPageException
-     * @throws \Pagerfanta\Exception\OutOfRangeCurrentPageException
-     */
-    public function findLatestPublishedPublicPosts($page = 1): Pagerfanta
+    public function findLatestPublishedPublicPosts()
     {
         $query = $this->getEntityManager()
             ->createQuery(
@@ -61,23 +26,7 @@ final class PostRepository extends ServiceEntityRepository
                 ORDER BY p.id DESC
                 '
             );
-        return $this->createPaginator($query, $page);
-    }
-
-    public function findLatestPublishedPosts($page = 1): Pagerfanta
-    {
-        $query = $this->getEntityManager()
-            ->createQuery(
-                '
-                SELECT p, f, t
-                FROM App:POST p
-                JOIN p.freelancer f
-                LEFT JOIN p.tags t
-                WHERE p.isPublished = TRUE
-                ORDER BY p.id DESC
-                '
-            );
-        return $this->createPaginator($query, $page);
+        return $query->getResult();
     }
 
     public function findUpdatedAtToday(): ?array
