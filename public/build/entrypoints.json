@@ -39,10 +39,10 @@
     "app": {
       "js": [
         "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.b4a93bf8.js",
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/app.76e75cbc.js"
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/app.336efb6c.js"
       ],
       "css": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/app.7536a3cc.css"
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/app.c345268c.css"
       ]
     }
   }
