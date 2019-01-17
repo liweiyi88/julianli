@@ -3,6 +3,7 @@ import Avatar from './Avatar';
 import Navbar from './Navbar';
 import {Link} from "react-router-dom";
 import MobileNav from "./MobileNav";
+import PropTypes from "prop-types";
 
 export default function Header(props) {
     const menuIcon = props.mobileNavExpand === true ?
@@ -11,7 +12,7 @@ export default function Header(props) {
         </svg> : <svg fill={`currentColor`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                       className="block text-black h-6 w-6 block">
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-        </svg>
+        </svg>;
 
     return (
         <React.Fragment>
@@ -34,4 +35,9 @@ export default function Header(props) {
     )
 }
 
+Header.propTypes = {
+    onMobileMenuHidden: PropTypes.func.isRequired,
+    onMobileMenuClicked: PropTypes.func.isRequired,
+    mobileNavExpand: PropTypes.bool.isRequired
+};
 

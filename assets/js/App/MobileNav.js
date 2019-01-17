@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import PropTypes from "prop-types";
 
 export default function MobileNav(props) {
     return (
@@ -11,4 +12,8 @@ export default function MobileNav(props) {
             </div>
         </div>
     );
+}
+
+MobileNav.propTypes = {
+    onMobileMenuClicked: PropTypes.func.isRequired
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from "prop-types";
 
 export default function Avatar(props) {
     return (
@@ -10,3 +11,7 @@ export default function Avatar(props) {
         </div>
     );
 }
+
+Avatar.propTypes = {
+    onMobileMenuHidden: PropTypes.func.isRequired
+};
