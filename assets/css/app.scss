@@ -88,3 +88,9 @@ pre > code{
 .article h1 + p, .article h2 + p, .article h3 + p {
   @apply mt-0;
 }
+
+input[type=text], textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
