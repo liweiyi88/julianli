@@ -16,7 +16,6 @@
     ansistrano_git_branch: master
     ansistrano_keep_releases: 4
     ansistrano_shared_files: [".env.local"]
-    ansistrano_shared_paths: ["public/img/uploads/blog", "public/img/uploads/project"]
     ansistrano_after_symlink_shared_tasks_file: "{{ playbook_dir }}/deploy/after-symlink-shared.yml"
     ansistrano_after_symlink_tasks_file: "{{ playbook_dir }}/deploy/after-symlink-tasks.yml"
     ansistrano_allow_anonymous_stats: false
