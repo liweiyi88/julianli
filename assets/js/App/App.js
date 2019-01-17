@@ -15,8 +15,24 @@ export default class App extends Component {
 
         this.state = {
             articles: [],
-            isLoading: true
+            isLoading: true,
+            mobileNavExpand: false
         };
+
+        this.handleMobileMenuClicked = this.handleMobileMenuClicked.bind(this);
+        this.handleMobileMenuHidden = this.handleMobileMenuHidden.bind(this);
+    }
+
+    handleMobileMenuClicked() {
+        this.setState((prevState) => {
+            return {mobileNavExpand: !prevState.mobileNavExpand}
+        })
+    }
+
+    handleMobileMenuHidden() {
+        this.setState({
+            mobileNavExpand: false
+        })
     }
 
     componentDidMount() {
@@ -38,7 +54,11 @@ export default class App extends Component {
                 <div className={`hidden md:block md:h-4 w-full bg-green`} />
                 <div className={`container`}>
                     <div className={`py-8 md:pt-16 md:pb-8 px-6 md:px-16 xl:pl-64`}>
-                        <Header />
+                        <Header
+                            mobileNavExpand={this.state.mobileNavExpand}
+                            onMobileMenuClicked={this.handleMobileMenuClicked}
+                            onMobileMenuHidden={this.handleMobileMenuHidden}
+                        />
 
                         <Route exact path="/" component={Home} />
                         <Route path="/projects" component={Project} />
