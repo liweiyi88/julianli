@@ -13,6 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ApiResource(
  *     collectionOperations={
+ *         "post",
  *         "get",
  *         "get_public_published" = {
  *           "method"="GET",
