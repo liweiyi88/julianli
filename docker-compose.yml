@@ -6,7 +6,6 @@ services:
         container_name: app
         depends_on:
             - db
-            - redis
         ports:
             - "8888:80"
         volumes:
@@ -21,9 +20,3 @@ services:
             - "3306:3306"
         volumes:
             - ./lib:/var/lib/mysql
-
-    redis:
-        container_name: redis
-        image: redis:latest
-        ports:
-            - "6379:6379"

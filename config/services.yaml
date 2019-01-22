@@ -18,7 +18,6 @@ services:
             $debug: '%kernel.debug%'
             $hostEmail: '%app.mailer_host_email%'
             App\Service\CloudStorage\Interfaces\CloudStorageInterface: '@App\Service\CloudStorage\S3'
-            Psr\SimpleCache\CacheInterface: '@Symfony\Component\Cache\Simple\RedisCache'
 
     App\:
         resource: '../src/*'
@@ -31,10 +30,6 @@ services:
     Aws\S3\S3Client:
         factory: ['App\Service\CloudStorage\Factory\S3Factory',create]
         arguments: ['%app.aws_key%', '%app.aws_s3_region%', '%app.aws_key%', '%app.aws_s3_version%']
-
-    Symfony\Component\Cache\Simple\RedisCache:
-        factory: ['App\Service\Cache\RedisFactory', create]
-        arguments: ['%app.redis_host%']
 
     Bugsnag\Client: '@bugsnag'
 

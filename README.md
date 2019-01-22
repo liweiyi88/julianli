@@ -19,7 +19,6 @@ http://localhost:8888/admin/posts with username `julian` and password `abcd`
 * [CircleCI](https://circleci.com/) + [Ansistrano](https://github.com/ansistrano/deploy) for CI/CD pipeline.
 * Contact me email is done by AWS SQS + Symfony Messenger.
 * Docker for local development.
-* Page views are stored in Redis cache.
 * Rest api is built with [api-platform](https://api-platform.com/).
 * Supervisord is used for managing worker commands.
 ## Articles and ideas
