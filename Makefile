@@ -3,7 +3,7 @@ RUN=$(DOCKER_COMPOSE) run --rm app
 EXEC?=$(DOCKER_COMPOSE) exec app
 COMPOSER=$(EXEC) composer
 CONSOLE=bin/console
-PHPSTAN=$(EXEC) vendor/bin/phpstan analyse -l 4 -c phpstan.neon src
+PHPSTAN=$(EXEC) vendor/bin/phpstan analyse -l 7 -c phpstan.neon src
 PHPCS=$(EXEC) vendor/bin/phpcs --standard=PSR2 src --ignore=src/Migrations,src/DataFixtures
 PHPUNIT=$(EXEC) vendor/bin/simple-phpunit
 ESLINT=$(EXEC) node_modules/.bin/eslint assets

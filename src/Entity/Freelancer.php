@@ -59,57 +59,12 @@ class Freelancer implements UserInterface, \Serializable
     private $lastName;
 
     /**
-     * @ORM\Column(name="address", type="string", length=255, nullable=true)
-     */
-    private $address;
-
-    /**
-     * @ORM\Column(name="title", type="string", length=255)
-     */
-    private $title;
-
-    /**
-     * @ORM\Column(name="description", type="text")
-     */
-    private $description;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\SocialNetwork", mappedBy="freelancer")
-     */
-    private $socialNetworks;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Skill", mappedBy="freelancer")
-     */
-    private $skills;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Experience", mappedBy="freelancer")
-     */
-    private $experiences;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Education", mappedBy="freelancer")
-     */
-    private $education;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Project", mappedBy="freelancer")
-     */
-    private $projects;
-
-    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Post", mappedBy="freelancer")
      */
     private $posts;
 
     public function __construct()
     {
-        $this->socialNetworks = new ArrayCollection();
-        $this->skills = new ArrayCollection();
-        $this->experiences = new ArrayCollection();
-        $this->education = new ArrayCollection();
-        $this->projects = new ArrayCollection();
         $this->posts = new ArrayCollection();
     }
 
@@ -148,81 +103,6 @@ class Freelancer implements UserInterface, \Serializable
         $this->lastName = $lastName;
     }
 
-    public function getAddress(): ?string
-    {
-        return $this->address;
-    }
-
-    public function setAddress(?string $address): void
-    {
-        $this->address = $address;
-    }
-
-    public function getTitle(): ?string
-    {
-        return $this->title;
-    }
-
-    public function setTitle(?string $title): void
-    {
-        $this->title = $title;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(?string $description): void
-    {
-        $this->description = $description;
-    }
-
-    public function getSocialNetworks(): Collection
-    {
-        return $this->socialNetworks;
-    }
-
-    public function setSocialNetworks(Collection $socialNetworks): void
-    {
-        $this->socialNetworks = $socialNetworks;
-    }
-
-    public function getSkills(): Collection
-    {
-        return $this->skills;
-    }
-
-    public function setSkills(Collection $skills): void
-    {
-        $this->skills = $skills;
-    }
-
-    public function getExperiences(): Collection
-    {
-        return $this->experiences;
-    }
-
-    public function setExperiences(Collection $experiences): void
-    {
-        $this->experiences = $experiences;
-    }
-
-    public function getEducation(): Collection
-    {
-        return $this->education;
-    }
-
-    public function setEducation(Education $education): void
-    {
-        $this->education = $education;
-    }
-
-    public function getProjects(): Collection
-    {
-        return $this->projects;
-    }
-
     public function getPosts(): Collection
     {
         return $this->posts;
@@ -231,11 +111,6 @@ class Freelancer implements UserInterface, \Serializable
     public function setPosts(Collection $posts): void
     {
         $this->posts = $posts;
-    }
-
-    public function setProjects(Collection $projects): void
-    {
-        $this->projects = $projects;
     }
 
     public function getRoles(): array

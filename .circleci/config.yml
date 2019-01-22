@@ -16,7 +16,6 @@ jobs:
             - restore_cache:
                   key: npm-{{ checksum "yarn.lock" }}
 
-            - run: docker pull $APP_DOCKER_IMAGE_NAME:dev
             - run: make build
             - run: make up
             - run: make node_modules assets-prod

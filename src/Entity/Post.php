@@ -4,9 +4,7 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
-use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Serializer\Annotation\Groups;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use App\Controller\GetPublicPublishedPostsController;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -28,8 +26,6 @@ use Doctrine\ORM\Mapping as ORM;
  * )
  *
  * @ORM\Entity(repositoryClass="App\Repository\PostRepository")
- *
- * @Vich\Uploadable
  */
 class Post
 {
@@ -59,16 +55,6 @@ class Post
     public $slug;
 
     /**
-     * @ORM\Column(name="cover_image_url", type="string", length=255, nullable=true)
-     */
-    private $coverImageUrl;
-
-    /**
-     * @Vich\UploadableField(mapping="blogs", fileNameProperty="coverImageUrl")
-     */
-    private $coverImageFile;
-
-    /**
      * @Groups({"read", "write", "searchable"})
      *
      * @ORM\Column(name="content", type="text")
@@ -81,11 +67,6 @@ class Post
      * @ORM\Column(name="created_at", type="datetime")
      */
     private $createdAt;
-
-    /**
-     * @ORM\Column(name="page_views", type="integer", nullable=true)
-     */
-    private $pageViews;
 
     /**
      * @Groups({"read", "write", "searchable"})
@@ -128,24 +109,9 @@ class Post
         $this->createdAt = new \DateTime();
     }
 
-    public function pageViewCacheKey(): string
-    {
-        return \sprintf('post.%s.view', $this->id);
-    }
-
     public function getContent(): ?string
     {
         return $this->content;
-    }
-
-    public function getCoverImageFile(): ?File
-    {
-        return $this->coverImageFile;
-    }
-
-    public function getCoverImageUrl(): ?string
-    {
-        return $this->coverImageUrl;
     }
 
     public function getCreatedAt(): ?\DateTime
@@ -173,11 +139,6 @@ class Post
         return $this->isPublished;
     }
 
-    public function getPageViews(): int
-    {
-        return $this->pageViews ?? 0;
-    }
-
     public function getUpdatedAt(): ?\DateTime
     {
         return $this->updatedAt;
@@ -186,24 +147,6 @@ class Post
     public function setContent(string $content): void
     {
         $this->content = $content;
-    }
-
-    public function setCoverImageFile(File $image = null): void
-    {
-        $this->coverImageFile = $image;
-
-        // VERY IMPORTANT:
-        // It is required that at least one field changes if you are using Doctrine,
-        // otherwise the event listeners won't be called and the file is lost
-        if ($image) {
-            // if 'updatedAt' is not defined in your entity, use another property
-            $this->updatedAt = new \DateTime('now');
-        }
-    }
-
-    public function setCoverImageUrl(?string $coverImageUrl): void
-    {
-        $this->coverImageUrl = $coverImageUrl;
     }
 
     public function setCreatedAt(?\DateTime $createdAt): void
@@ -229,11 +172,6 @@ class Post
     public function setIsPublic(bool $isPublic): void
     {
         $this->isPublic = $isPublic;
-    }
-
-    public function setPageViews(int $pageViews): void
-    {
-        $this->pageViews = $pageViews;
     }
 
     public function setUpdatedAt(?\DateTime $updatedAt): void
