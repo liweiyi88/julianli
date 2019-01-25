@@ -4,7 +4,7 @@ import hljs from "highlight.js";
 import 'highlight.js/styles/darcula.css'
 import PropTypes from "prop-types";
 import Label from "../Utils/Label";
-import Navbar from "./Navbar";
+import AlwaysVisibleNavbar from "./AlwaysVisibleNavbar";
 
 export default function ArticleShow(props) {
 
@@ -41,8 +41,8 @@ export default function ArticleShow(props) {
     const content = article === undefined ? <h1>Article not found</h1> :
         (
             <React.Fragment>
-                <div className={'flex items-baseline'}>
-                    <h1>{article.title}</h1> <div className={'ml-2 text-base'}>{article.createdAt}</div>
+                <div className={'block mb-2 md:mb-0 md:flex items-baseline'}>
+                    <h1>{article.title}</h1> <div className={'md:ml-2 text-base'}>{article.createdAt}</div>
                 </div>
                 <div className={'-ml-3'}>{article.tags.map(tag => <Label key={tag.id} name={tag.name}/>)}</div>
                 <div className={'text-lg leading-normal text-grey-darker article'} dangerouslySetInnerHTML={{ __html: md.render(article.content) }} />
@@ -55,8 +55,8 @@ export default function ArticleShow(props) {
                 {content}
             </div>
 
-            <div className={'mt-12'}>
-                <Navbar />
+            <div className={'mt-12 text-center md:text-left'}>
+                <AlwaysVisibleNavbar />
             </div>
         </div>
     );

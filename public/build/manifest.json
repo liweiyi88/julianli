@@ -1,14 +1,14 @@
 {
   "build/app.css": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/app.c345268c.css",
-  "build/app.js": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/app.30ec5bbb.js",
-  "build/post_create.css": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_create.5c1cb8a5.css",
-  "build/post_create.js": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_create.86a6785c.js",
-  "build/post_edit.css": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_edit.5c1cb8a5.css",
-  "build/post_edit.js": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_edit.10c971eb.js",
+  "build/app.js": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/app.34c0f84d.js",
+  "build/post_create.css": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_create.b9436ba3.css",
+  "build/post_create.js": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_create.3cfe9d14.js",
+  "build/post_edit.css": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_edit.b9436ba3.css",
+  "build/post_edit.js": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_edit.3c2faab2.js",
   "build/post_show.css": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_show.83709d18.css",
-  "build/post_show.js": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_show.f63c7455.js",
-  "build/posts_main.css": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/posts_main.9822464f.css",
-  "build/posts_main.js": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/posts_main.c2d5f00a.js",
-  "build/runtime.js": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.976be25f.js",
+  "build/post_show.js": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_show.8d8bedaf.js",
+  "build/posts_main.css": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/posts_main.21130b19.css",
+  "build/posts_main.js": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/posts_main.7ba98095.js",
+  "build/runtime.js": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.b4a93bf8.js",
   "build/images/logo.png": "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/images/logo.0045e97a.png"
 }
