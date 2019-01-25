@@ -29,8 +29,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Post
 {
-    public const NUM_ITEMS = 5;
-
     /**
      * @Groups({"read"})
      *

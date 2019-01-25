@@ -6,6 +6,7 @@ import withReactContent from 'sweetalert2-react-content';
 import {createTag, getFreelancers, getPost, getTags, updatePost} from "../Api/api";
 import Loader from "../Utils/Loader";
 import Route from "../Constants/Route";
+import PropTypes from "prop-types";
 
 export default class PostEdit extends Component
 {
@@ -184,4 +185,8 @@ export default class PostEdit extends Component
             </div>
         )
     }
+}
+
+PostEdit.propTypes = {
+    id: PropTypes.number().isRequired
 }
