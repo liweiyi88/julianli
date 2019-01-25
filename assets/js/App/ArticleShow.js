@@ -4,6 +4,7 @@ import hljs from "highlight.js";
 import 'highlight.js/styles/darcula.css'
 import PropTypes from "prop-types";
 import Label from "../Utils/Label";
+import Navbar from "./Navbar";
 
 export default function ArticleShow(props) {
 
@@ -52,6 +53,10 @@ export default function ArticleShow(props) {
         <div>
             <div className={`text-lg text-grey-darker leading-normal`}>
                 {content}
+            </div>
+
+            <div className={'mt-12'}>
+                <Navbar />
             </div>
         </div>
     );
