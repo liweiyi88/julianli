@@ -30,7 +30,7 @@
     "post_edit": {
       "js": [
         "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.976be25f.js",
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_edit.0ab6f95e.js"
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_edit.10c971eb.js"
       ],
       "css": [
         "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_edit.5c1cb8a5.css"
@@ -39,7 +39,7 @@
     "app": {
       "js": [
         "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.976be25f.js",
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/app.ece139f5.js"
+        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/app.dcdf98b2.js"
       ],
       "css": [
         "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/app.c345268c.css"
