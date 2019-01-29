@@ -188,5 +188,5 @@ export default class PostEdit extends Component
 }
 
 PostEdit.propTypes = {
-    id: PropTypes.number().isRequired
+    id: PropTypes.string.isRequired
 }

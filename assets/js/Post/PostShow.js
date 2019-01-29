@@ -63,17 +63,26 @@ export default class PostShow extends Component
             }
         });
 
-        const {createdAt, title, content, author, tags} = this.state;
+        const {createdAt, title, content, author, tags, id} = this.state;
 
         return (
             <div className={`mx-auto w-740 px-5`}>
                 <div className={`flex items-center mt-10 mb-4 justify-center md:flex md:items-center mb-6`}>
                     {this.state.isLoading ? (<div>{<Loader/>}</div>) : (
                         <div className={`w-full`}>
-                            <div className={`flex items-center mr-4`}>
-                                <a href={Route.home}>
-                                    <img src={Logo} alt="Logo"/>
-                                </a>
+                            <div className={`flex items-baseline`}>
+                                <div className={'flex flex justify-between w-full'}>
+                                    <div className={'flex'}>
+                                        <a href={Route.home}>
+                                            <img src={Logo} alt="Logo"/>
+                                        </a>
+                                    </div>
+                                    <div className={'flex items-end'}>
+                                        <a href={`/admin/posts/${id}/edit`} className={'no-underline bg-transparent hover:bg-green text-green-dark hover:text-white py-2 px-4 border border-green hover:border-transparent rounded'}>
+                                            Edit
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                             <div className={`flex text-3xl font-bold my-3`}>
                                 <div>{title}</div>
