@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Header from "./Header";
-import {HashRouter, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import Home from "./Home";
 import Project from "./Project";
 import Article from "./Article";
@@ -51,7 +51,7 @@ export default class App extends Component {
     render() {
 
         let component = this.state.isLoading ? <div><Loader /></div> :
-            <HashRouter>
+            <Router>
                 <ScrollToTop>
                     <div className={`font-sans antialiased`}>
                         <div className={`hidden md:block md:h-4 w-full bg-green`} />
@@ -72,7 +72,7 @@ export default class App extends Component {
                         </div>
                     </div>
                 </ScrollToTop>
-            </HashRouter>
+            </Router>
 
         return (component)
     }
