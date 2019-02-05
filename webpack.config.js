@@ -23,6 +23,7 @@ Encore
     .addEntry('post_show', './assets/js/post_show.js')
     .addEntry('post_edit', './assets/js/post_edit.js')
     .addEntry('app', './assets/js/app.js')
+    .addEntry('articles', './assets/js/articles.js')
     .enableSingleRuntimeChunk()
     .enableSassLoader(function (options) {}, {
         resolveUrlLoader: false

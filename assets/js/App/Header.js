@@ -1,7 +1,6 @@
 import React from 'react';
 import Avatar from './Avatar';
 import Navbar from './Navbar';
-import {Link} from "react-router-dom";
 import MobileNav from "./MobileNav";
 import PropTypes from "prop-types";
 
@@ -23,9 +22,9 @@ export default function Header(props) {
                 </div>
             </div>
             <div className={`hidden md:block text-3xl font-extrabold`}>
-                <Link className={`no-underline`} to={`/`} replace>
+                <a href={'/'} className={`no-underline`}>
                     <span className={`text-green mr-1`}>Julian</span><span className={`text-grey-darker`}>Li</span>
-                </Link>
+                </a>
             </div>
 
             {props.mobileNavExpand && <MobileNav onMobileMenuClicked={props.onMobileMenuHidden}/>}

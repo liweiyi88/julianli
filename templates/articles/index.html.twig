@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles -{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('articles') }}
+{% endblock %}
+
+{% block body %}
+    <body>
+    <div id="articles"></div>
+    </body>
+    {% block javascripts %}
+        {{ parent() }}
+        {{ encore_entry_script_tags('articles') }}
+    {% endblock %}
+{% endblock %}

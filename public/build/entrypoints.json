@@ -2,47 +2,56 @@
   "entrypoints": {
     "posts_main": {
       "js": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.ef24db47.js",
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/posts_main.8f093967.js"
+        "/build/runtime.js",
+        "/build/posts_main.js"
       ],
       "css": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/posts_main.9822464f.css"
+        "/build/posts_main.css"
       ]
     },
     "post_create": {
       "js": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.ef24db47.js",
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_create.c5413500.js"
+        "/build/runtime.js",
+        "/build/post_create.js"
       ],
       "css": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_create.5c1cb8a5.css"
+        "/build/post_create.css"
       ]
     },
     "post_show": {
       "js": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.ef24db47.js",
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_show.01ee773b.js"
+        "/build/runtime.js",
+        "/build/post_show.js"
       ],
       "css": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_show.83709d18.css"
+        "/build/post_show.css"
       ]
     },
     "post_edit": {
       "js": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.ef24db47.js",
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_edit.66c22642.js"
+        "/build/runtime.js",
+        "/build/post_edit.js"
       ],
       "css": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/post_edit.5c1cb8a5.css"
+        "/build/post_edit.css"
       ]
     },
     "app": {
       "js": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/runtime.ef24db47.js",
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/app.7fb1ad7f.js"
+        "/build/runtime.js",
+        "/build/app.js"
       ],
       "css": [
-        "https://s3-ap-southeast-2.amazonaws.com/julianli/assets/app.c345268c.css"
+        "/build/app.css"
+      ]
+    },
+    "articles": {
+      "js": [
+        "/build/runtime.js",
+        "/build/articles.js"
+      ],
+      "css": [
+        "/build/articles.css"
       ]
     }
   }
