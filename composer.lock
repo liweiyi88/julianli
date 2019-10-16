@@ -2322,16 +2322,16 @@
         },
         {
             "name": "enqueue/sqs",
-            "version": "0.9.7",
+            "version": "0.9.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-enqueue/sqs.git",
-                "reference": "65fb862aab59016ae85d3074560b09e45f655117"
+                "reference": "de753bae8169108aa2f9eacc77147bd3869516b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-enqueue/sqs/zipball/65fb862aab59016ae85d3074560b09e45f655117",
-                "reference": "65fb862aab59016ae85d3074560b09e45f655117",
+                "url": "https://api.github.com/repos/php-enqueue/sqs/zipball/de753bae8169108aa2f9eacc77147bd3869516b3",
+                "reference": "de753bae8169108aa2f9eacc77147bd3869516b3",
                 "shasum": ""
             },
             "require": {
@@ -2372,7 +2372,7 @@
                 "queue",
                 "sqs"
             ],
-            "time": "2019-01-14T08:26:12+00:00"
+            "time": "2019-06-14T11:53:44+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
