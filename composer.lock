@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f65afab0c4077cfded7a6fc2b6417ac0",
+    "content-hash": "699a4f5a633670fdf9dd664ba97b75db",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -2259,68 +2259,6 @@
             "time": "2019-08-20T05:45:20+00:00"
         },
         {
-            "name": "enqueue/messenger-adapter",
-            "version": "0.2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-enqueue/messenger-adapter.git",
-                "reference": "21e2488461d1ecedc87c2ab579e32518087a289c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-enqueue/messenger-adapter/zipball/21e2488461d1ecedc87c2ab579e32518087a289c",
-                "reference": "21e2488461d1ecedc87c2ab579e32518087a289c",
-                "shasum": ""
-            },
-            "require": {
-                "enqueue/amqp-tools": "^0.9",
-                "enqueue/enqueue-bundle": "^0.9",
-                "symfony/messenger": "^4.2",
-                "symfony/options-resolver": "^3.4|^4.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^7.1",
-                "symfony/yaml": "^3.4|^4.1"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Enqueue\\MessengerAdapter\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
-                    "name": "Samuel Roze",
-                    "email": "samuel.roze@gmail.com"
-                }
-            ],
-            "description": "Enqueue adapter for Symfony Messenger component",
-            "homepage": "http://symfony.com",
-            "keywords": [
-                "Messenger",
-                "enqueue",
-                "symfony"
-            ],
-            "abandoned": "sroze/messenger-enqueue-transport",
-            "time": "2019-03-12T12:49:43+00:00"
-        },
-        {
             "name": "enqueue/null",
             "version": "0.9.12",
             "source": {
@@ -4121,6 +4059,70 @@
             ],
             "description": "A security checker for your composer.lock",
             "time": "2018-02-28T22:10:01+00:00"
+        },
+        {
+            "name": "sroze/messenger-enqueue-transport",
+            "version": "0.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sroze/messenger-enqueue-transport.git",
+                "reference": "a707be977963a386c45a63e9e9a0d63a9eb4421c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sroze/messenger-enqueue-transport/zipball/a707be977963a386c45a63e9e9a0d63a9eb4421c",
+                "reference": "a707be977963a386c45a63e9e9a0d63a9eb4421c",
+                "shasum": ""
+            },
+            "require": {
+                "enqueue/amqp-tools": "^0.9",
+                "enqueue/enqueue-bundle": "^0.9",
+                "symfony/messenger": "^4.3",
+                "symfony/options-resolver": "^3.4|^4.2"
+            },
+            "replace": {
+                "enqueue/messenger-adapter": ">0.2.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.1",
+                "symfony/yaml": "^3.4|^4.1"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Enqueue\\MessengerAdapter\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Samuel Roze",
+                    "email": "samuel.roze@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Enqueue adapter for Symfony Messenger component",
+            "homepage": "http://symfony.com",
+            "keywords": [
+                "Messenger",
+                "enqueue",
+                "symfony"
+            ],
+            "time": "2019-08-11T20:06:19+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -7723,38 +7725,6 @@
             ],
             "description": "Integration with your Symfony app & Webpack Encore!",
             "time": "2019-07-03T00:30:37+00:00"
-        },
-        {
-            "name": "symfony/webpack-encore-pack",
-            "version": "v1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/webpack-encore-pack.git",
-                "reference": "8d7f51379d7ae17aea7cf501d910a11896895ac4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/webpack-encore-pack/zipball/8d7f51379d7ae17aea7cf501d910a11896895ac4",
-                "reference": "8d7f51379d7ae17aea7cf501d910a11896895ac4",
-                "shasum": ""
-            },
-            "require": {
-                "symfony/asset": "^3.3|^4.0"
-            },
-            "type": "symfony-pack",
-            "extra": {
-                "thanks": {
-                    "name": "symfony/webpack-encore",
-                    "url": "https://github.com/symfony/webpack-encore"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A pack for Symfony Encore",
-            "abandoned": "symfony/webpack-encore-bundle",
-            "time": "2018-07-16T10:15:28+00:00"
         },
         {
             "name": "symfony/yaml",
