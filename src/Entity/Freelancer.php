@@ -128,8 +128,9 @@ class Freelancer implements UserInterface, \Serializable
         $this->password = $password;
     }
 
-    public function getSalt(): void
+    public function getSalt(): ?string
     {
+        return null;
     }
 
     public function getUsername(): string
