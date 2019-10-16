@@ -1,6 +1,6 @@
 {
     "devDependencies": {
-        "@babel/preset-react": "^7.0.0",
+        "@babel/preset-react": "^7.6.3",
         "@symfony/webpack-encore": "^0.22.1",
         "algoliasearch": "^3.32.0",
         "babel-eslint": "^10.0.1",
