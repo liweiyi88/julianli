@@ -1,8 +1,7 @@
 security:
     encoders:
         App\Entity\Freelancer:
-            algorithm: bcrypt
-            cost:      12
+            algorithm: auto
 
     providers:
         our_db_provider:
