@@ -16,7 +16,7 @@
         "react-dom": "^16.10.2",
         "react-instantsearch-dom": "^5.7.0",
         "react-paginate": "^6.0.0",
-        "react-router-dom": "^4.3.1",
+        "react-router-dom": "^5.1.2",
         "remarkable": "^1.7.2",
         "simplemde": "^1.11.2",
         "sweetalert2": "^7.29.1",
