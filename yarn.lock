@@ -6554,9 +6554,9 @@ react-lifecycles-compat@^3.0.4:
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
 react-paginate@^6.0.0:
-  version "6.2.1"
-  resolved "https://registry.yarnpkg.com/react-paginate/-/react-paginate-6.2.1.tgz#90735c95c9836edb73597b605c6ffd8d3f2eaa32"
-  integrity sha512-7MaWiVi4SAFYq5tAGcMCaZE6AK4XxCDM0zEo6+ZthVkhYNnKy1LLkO6syYQu+dBvNfukJ7CurOIpGWnkydJiDQ==
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/react-paginate/-/react-paginate-6.3.0.tgz#29cbb5d1645227f4e4f959b9d7f43cfae603f801"
+  integrity sha512-lT/ne7hZzctGDli4QzUAou0JjfZgxKmtl9/r30B5UVonICZIy1u0SrAkdlEZ5ubgzrOykBeCmxkTWi5IyPg4AQ==
   dependencies:
     prop-types "^15.6.1"
 
