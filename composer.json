@@ -19,7 +19,7 @@
         "knplabs/knp-markdown-bundle": "^1.7",
         "predis/predis": "^1.1",
         "sensio/framework-extra-bundle": "^5.2",
-        "sensiolabs/security-checker": "^4.1",
+        "sensiolabs/security-checker": "^6.0",
         "sroze/messenger-enqueue-transport": "^0.3.2",
         "symfony/asset": "^4.2",
         "symfony/cache": "^4.2",
