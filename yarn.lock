@@ -7743,10 +7743,10 @@ sweetalert2-react-content@^1.0.1:
   resolved "https://registry.yarnpkg.com/sweetalert2-react-content/-/sweetalert2-react-content-1.1.0.tgz#38c9790631cab37e03055a617afda6d2f447e1d2"
   integrity sha512-vgmDAGwE4nvFWMkfVO/varrZXLhn2/apOL3O+fi3S2a6NkHWBXP1FGU7HkcmrLvNS1oGC3JcaBP2+r98LRyLIw==
 
-sweetalert2@^7.29.1:
-  version "7.33.1"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-7.33.1.tgz#7e3534d2c2962f875f419cfea5d75ee526d65cd4"
-  integrity sha512-69KYtyhtxejFG0HDb8aVhAwbpAWPSTZwaL5vxDHgojErD2KeFxTmRgmkbiLtMC8UdTFXRmvTPtZTF4459MUb7w==
+sweetalert2@^8.18.4:
+  version "8.18.4"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.18.4.tgz#2b3ecf6ad455feed89a93b038c75e7a8c8095798"
+  integrity sha512-U5e2DWL4ljwqIojkA58It7T+pnFKiYeZYoNXavUwWPcn0JWJ2CKfN08Kb9ygxVBJJDMlk+NNV7DK9K9R5coefQ==
 
 table@^5.2.3:
   version "5.4.6"
