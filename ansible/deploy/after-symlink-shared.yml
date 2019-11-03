@@ -45,7 +45,7 @@
       ENQUEUE_DSN: "{{ sqs_dsn }}"
   command: "{{ release_console_path }} doctrine:database:create --if-not-exists --env=prod"
   register: create_db_output
-  changed_when: not create_db_output.stdout|search('already exists. Skipped')
+  changed_when: not create_db_output.stdout is search("already exists. Skipped")
 
 - name: Run migrations
   environment:
@@ -57,4 +57,4 @@
     ENQUEUE_DSN: "{{ sqs_dsn }}"
   command: "{{ release_console_path }} doctrine:migrations:migrate --no-interaction --env=prod"
   register: run_migrations_output
-  changed_when: not run_migrations_output.stdout|search('No migrations to execute')
+  changed_when: not run_migrations_output.stdout is search('No migrations to execute')
