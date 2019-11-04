@@ -9074,16 +9074,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.2.4",
+            "version": "v4.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "97e59c7a16464196a8b9c77c47df68e4a39a45c4"
+                "reference": "b76bbc3c51f22c570648de48e8c2d941ed5e2cf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/97e59c7a16464196a8b9c77c47df68e4a39a45c4",
-                "reference": "97e59c7a16464196a8b9c77c47df68e4a39a45c4",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/b76bbc3c51f22c570648de48e8c2d941ed5e2cf2",
+                "reference": "b76bbc3c51f22c570648de48e8c2d941ed5e2cf2",
                 "shasum": ""
             },
             "require": {
@@ -9091,6 +9091,7 @@
                 "php": ">=7.0"
             },
             "require-dev": {
+                "ircmaxell/php-yacc": "0.0.4",
                 "phpunit/phpunit": "^6.5 || ^7.0 || ^8.0"
             },
             "bin": [
@@ -9121,7 +9122,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2019-09-01T07:51:21+00:00"
+            "time": "2019-10-25T18:33:07+00:00"
         },
         {
             "name": "phpstan/phpdoc-parser",
@@ -9783,16 +9784,16 @@
         },
         {
             "name": "symfony/maker-bundle",
-            "version": "v1.14.0",
+            "version": "v1.14.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/maker-bundle.git",
-                "reference": "31a7597a99d8315bfa8eb0bfd2247ab880cb0c1b"
+                "reference": "5dfcbc400b168943f15a21d4283ad848605d9bc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/31a7597a99d8315bfa8eb0bfd2247ab880cb0c1b",
-                "reference": "31a7597a99d8315bfa8eb0bfd2247ab880cb0c1b",
+                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/5dfcbc400b168943f15a21d4283ad848605d9bc2",
+                "reference": "5dfcbc400b168943f15a21d4283ad848605d9bc2",
                 "shasum": ""
             },
             "require": {
@@ -9847,7 +9848,7 @@
                 "scaffold",
                 "scaffolding"
             ],
-            "time": "2019-10-21T12:43:48+00:00"
+            "time": "2019-11-04T13:50:13+00:00"
         },
         {
             "name": "symfony/phpunit-bridge",
