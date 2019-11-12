@@ -6758,7 +6758,7 @@
         },
         {
             "name": "symfony/security",
-            "version": "v4.3.6",
+            "version": "v4.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/security.git",
@@ -6840,7 +6840,7 @@
         },
         {
             "name": "symfony/security-bundle",
-            "version": "v4.3.6",
+            "version": "v4.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/security-bundle.git",
