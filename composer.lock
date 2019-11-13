@@ -5158,7 +5158,7 @@
         },
         {
             "name": "symfony/form",
-            "version": "v4.3.7",
+            "version": "v4.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/form.git",
@@ -5689,7 +5689,7 @@
         },
         {
             "name": "symfony/intl",
-            "version": "v4.3.7",
+            "version": "v4.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/intl.git",
@@ -6026,7 +6026,7 @@
         },
         {
             "name": "symfony/options-resolver",
-            "version": "v4.3.7",
+            "version": "v4.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/options-resolver.git",
