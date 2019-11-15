@@ -310,16 +310,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.117.0",
+            "version": "3.117.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "3fc3d2c1962f34becc4313c839ed8b659d045114"
+                "reference": "6951cd08326d939f1fd1097a490fccb9751a59d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3fc3d2c1962f34becc4313c839ed8b659d045114",
-                "reference": "3fc3d2c1962f34becc4313c839ed8b659d045114",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6951cd08326d939f1fd1097a490fccb9751a59d7",
+                "reference": "6951cd08326d939f1fd1097a490fccb9751a59d7",
                 "shasum": ""
             },
             "require": {
@@ -389,7 +389,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-11-13T19:14:25+00:00"
+            "time": "2019-11-14T19:27:06+00:00"
         },
         {
             "name": "behat/transliterator",
@@ -9279,12 +9279,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "e3e6456e753326a096303e96b0f759fe789e63e8"
+                "reference": "261562a9c048aa10932e5e1d596da6c761cf95bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e3e6456e753326a096303e96b0f759fe789e63e8",
-                "reference": "e3e6456e753326a096303e96b0f759fe789e63e8",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/261562a9c048aa10932e5e1d596da6c761cf95bb",
+                "reference": "261562a9c048aa10932e5e1d596da6c761cf95bb",
                 "shasum": ""
             },
             "conflict": {
@@ -9421,7 +9421,7 @@
                 "symfony/security-guard": ">=2.8,<2.8.41|>=3,<3.3.17|>=3.4,<3.4.11|>=4,<4.0.11",
                 "symfony/security-http": ">=2.3,<2.3.41|>=2.4,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.2.12|>=4.3,<4.3.8",
                 "symfony/serializer": ">=2,<2.0.11",
-                "symfony/symfony": ">=2,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
+                "symfony/symfony": ">=2,<2.8.52|>=3,<3.4.35|>=4,<4.2.12|>=4.3,<4.3.8",
                 "symfony/translation": ">=2,<2.0.17",
                 "symfony/validator": ">=2,<2.0.24|>=2.1,<2.1.12|>=2.2,<2.2.5|>=2.3,<2.3.3",
                 "symfony/var-exporter": ">=4.2,<4.2.12|>=4.3,<4.3.8",
@@ -9489,7 +9489,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2019-11-13T10:25:51+00:00"
+            "time": "2019-11-15T09:15:43+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
