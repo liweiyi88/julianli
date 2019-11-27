@@ -34,9 +34,4 @@ Encore
     })
 ;
 
-if (Encore.isProduction()) {
-    Encore.setPublicPath('https://s3-ap-southeast-2.amazonaws.com/julianli/assets');
-    Encore.setManifestKeyPrefix('build/');
-}
-
 module.exports = Encore.getWebpackConfig();
