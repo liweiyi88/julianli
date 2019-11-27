@@ -18,3 +18,4 @@ ansible/deploy.retry
 /phpunit.xml
 npm-debug.log
 docker-dev.lock
+bin/.phpunit

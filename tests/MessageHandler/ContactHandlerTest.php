@@ -14,8 +14,9 @@ class ContactHandlerTest extends KernelTestCase
 {
     public function testInvokeMethod(): void
     {
-        self::bootKernel();
-        $container = self::$container;
+        $kernel = self::bootKernel();
+
+        $container = $kernel->getContainer();
 
         $handler = new ContactHandler(
             'admin@test.com',

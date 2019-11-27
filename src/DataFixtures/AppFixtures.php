@@ -2,13 +2,8 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Education;
-use App\Entity\Experience;
 use App\Entity\Freelancer;
 use App\Entity\Post;
-use App\Entity\Project;
-use App\Entity\Skill;
-use App\Entity\SocialNetwork;
 use App\Entity\Tag;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;

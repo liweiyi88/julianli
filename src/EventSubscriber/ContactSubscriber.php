@@ -5,7 +5,7 @@ namespace App\EventSubscriber;
 use ApiPlatform\Core\EventListener\EventPriorities;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent;
+use Symfony\Component\HttpKernel\Event\ViewEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\Messenger\MessageBusInterface;
 
@@ -21,7 +21,7 @@ final class ContactSubscriber implements EventSubscriberInterface
         $this->bus = $bus;
     }
 
-    public function onContact(GetResponseForControllerResultEvent $event): void
+    public function onContact(ViewEvent $event): void
     {
         $request = $event->getRequest();
 
