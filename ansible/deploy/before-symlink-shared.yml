@@ -1,0 +1,5 @@
+- name: Copy assets to production server
+  copy:
+    src: ./../public/build/
+    dest: "{{ ansistrano_release_path.stdout }}/public/build/"
+#  tags: ['debug']
