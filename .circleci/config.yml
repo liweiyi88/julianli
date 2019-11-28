@@ -41,6 +41,12 @@ jobs:
                 name: Install System Packages
                 command: pip install --upgrade pip & pip install ansible
             - checkout
+            - run:
+                name: Install Nodejs and Yarn
+                command: ./script/yarn_installer.sh
+            - run:
+                name: Build production assets
+                command: yarn encore production
             - restore_cache:
                 key: julianli-{{ .Branch }}-{{ checksum "./ansible/requirements.yml" }}-v1
             - run: ansible-galaxy install -r ansible/requirements.yml
