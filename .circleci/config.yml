@@ -43,7 +43,7 @@ jobs:
             - checkout
             - run:
                 name: Install Nodejs and Yarn
-                command: ./script/yarn_installer.sh
+                command: ./scripts/yarn_installer.sh
             - run:
                 name: Build production assets
                 command: yarn encore production
