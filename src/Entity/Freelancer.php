@@ -40,7 +40,7 @@ class Freelancer implements UserInterface, \Serializable
     private $username;
 
     /**
-     * @ORM\Column(name="password", type="string", length=64)
+     * @ORM\Column(name="password", type="string", length=255)
      */
     private $password;
 

@@ -4,7 +4,7 @@ import {shortDescription} from '../Helpers/Str'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import withReactContent from 'sweetalert2-react-content'
 import Toggle from './Toggle'
-import Remarkable from 'remarkable';
+import { Remarkable } from 'remarkable';
 import Route from "../Constants/Route";
 
 export default class PostList extends Component{

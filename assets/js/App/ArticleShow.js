@@ -1,5 +1,5 @@
 import React from 'react';
-import Remarkable from "remarkable";
+import { Remarkable } from "remarkable";
 import hljs from "highlight.js";
 import 'highlight.js/styles/darcula.css'
 import PropTypes from "prop-types";

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {getPost} from "../Api/api";
 import Loader from "../Utils/Loader";
-import Remarkable from 'remarkable';
+import { Remarkable } from 'remarkable';
 import hljs from 'highlight.js';
 import Logo from '../../images/logo.png';
 import PropTypes from 'prop-types';

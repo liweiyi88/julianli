@@ -1,6 +1,6 @@
 import React from "react";
 import {shortDescription} from "../Helpers/Str";
-import Remarkable from "remarkable";
+import { Remarkable } from 'remarkable';
 import PropTypes from "prop-types";
 import {NavLink} from "react-router-dom";
 
