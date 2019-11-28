@@ -38,12 +38,15 @@ jobs:
                   ANSIBLE_HOST_KEY_CHECKING: no
         steps:
             - run:
-                name: Install System Packages
+                name: Install system packages
                 command: pip install --upgrade pip & pip install ansible
             - checkout
             - run:
-                name: Install Nodejs and Yarn
+                name: Install nodejs and yarn
                 command: ./scripts/yarn_installer.sh
+            - run:
+                name: Install frontend package
+                command: yarn install
             - run:
                 name: Build production assets
                 command: yarn encore production
