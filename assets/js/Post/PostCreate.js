@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PostForm from './PostForm';
 import SimpleMDE from "simplemde";
-import Swal from 'sweetalert2/dist/sweetalert2.js';
+import Swal from 'sweetalert2/dist/sweetalert2.js'
 import withReactContent from 'sweetalert2-react-content';
 import {createPost, createTag, getFreelancers, getTags} from "../Api/api";
 import Loader from "../Utils/Loader";
@@ -97,10 +97,8 @@ export default class PostCreate extends Component
                     timer: 2000
                 });
 
-                message({
-                    type: 'success',
-                    title: 'Created, redirecting...'
-                }).then(() => {
+                message.fire('Created, redirecting...', null, 'success'
+                ).then(() => {
                     window.location.href = Route.home;
                 })
             })

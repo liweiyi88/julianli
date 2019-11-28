@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PostForm from './PostForm';
 import SimpleMDE from "simplemde";
-import Swal from 'sweetalert2/dist/sweetalert2.js';
+import Swal from 'sweetalert2/dist/sweetalert2.js'
 import withReactContent from 'sweetalert2-react-content';
 import {createTag, getFreelancers, getPost, getTags, updatePost} from "../Api/api";
 import Loader from "../Utils/Loader";
@@ -114,10 +114,7 @@ export default class PostEdit extends Component
                     timer: 2000
                 });
 
-                message({
-                    type: 'success',
-                    title: 'Updated, now redirecting...'
-                }).then(() => {
+                message.fire('Updated, now redirecting...', null, 'success').then(() => {
                     window.location.href = Route.home;
                 })
             })
