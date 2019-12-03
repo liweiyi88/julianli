@@ -2,6 +2,9 @@
 [![CircleCI](https://circleci.com/gh/liweiyi88/julianli/tree/master.svg?style=svg)](https://circleci.com/gh/liweiyi88/julianli/tree/master)
 
 ## How to run it locally
+### prerequisite
+* PHP >= 7.4
+
 1. Install docker.
 2. Put your `ALGOLIA_APP_ID` and `ALGOLIA_API_KEY` values in the `.env.local` file to make Algolia Search data sync up and running.
 3. In `webpack.config.js` file, put your own `ALGOLIA_SEARCH_ONLY_API_KEY` and `ALGOLIA_APP_ID` to make the Algolia search bar up and running. 
@@ -11,7 +14,7 @@
 http://localhost:8888/admin/posts with username `julian` and password `abcd`
 
 ## Framework, tools and features
-* It is a Symfony 4 application.
+* It is a Symfony 4.4 application.
 * Admin is built with [React js](https://reactjs.org/) and [Tailwind css](https://tailwindcss.com/).
 * Admin search bar is built with [Algolia Search](https://www.algolia.com/).
 * Ansible for server provisioning.
