@@ -28,24 +28,24 @@ RUN apt-get update -q && \
         git \
         graphviz \
         mysql-client \
-        php7.2 \
-        php7.2-bcmath \
-        php7.2-common \
-        php7.2-curl \
-        php7.2-dom \
-        php7.2-fpm \
-        php7.2-gd \
-        php7.2-iconv \
-        php7.2-intl \
-        php7.2-json \
-        php7.2-mbstring \
-        php7.2-mysql \
-        php7.2-pdo \
-        php7.2-phar \
-        php7.2-sqlite \
-        php7.2-xdebug \
-        php7.2-xml \
-        php7.2-zip \
+        php7.4 \
+        php7.4-bcmath \
+        php7.4-common \
+        php7.4-curl \
+        php7.4-dom \
+        php7.4-fpm \
+        php7.4-gd \
+        php7.4-iconv \
+        php7.4-intl \
+        php7.4-json \
+        php7.4-mbstring \
+        php7.4-mysql \
+        php7.4-pdo \
+        php7.4-phar \
+        php7.4-sqlite \
+        php7.4-xdebug \
+        php7.4-xml \
+        php7.4-zip \
         php-apcu \
         php-uuid \
         supervisor \
@@ -69,14 +69,16 @@ RUN wget -O - https://packages.blackfire.io/gpg.key | apt-key add - \
     && apt-get install blackfire-agent \
     && version=$(php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;") \
     && curl -A "Docker" -o /tmp/blackfire-probe.tar.gz -D - -L -s https://blackfire.io/api/v1/releases/probe/php/linux/amd64/$version \
-    && tar zxpf /tmp/blackfire-probe.tar.gz -C /tmp \
-    && mv /tmp/blackfire-*.so $(php -r "echo ini_get('extension_dir');")/blackfire.so \
-    && printf "extension=blackfire.so\nblackfire.agent_socket=tcp://blackfire:8707\n" > /etc/php/7.2/cli/conf.d/blackfire.ini \
-    && printf "extension=blackfire.so\nblackfire.agent_socket=tcp://blackfire:8707\n" > /etc/php/7.2/fpm/conf.d/blackfire.ini
+    && mkdir -p /tmp/blackfire \
+    && tar zxpf /tmp/blackfire-probe.tar.gz -C /tmp/blackfire \
+    && mv /tmp/blackfire/blackfire-*.so $(php -r "echo ini_get ('extension_dir');")/blackfire.so \
+    && printf "extension=blackfire.so\nblackfire.agent_socket=tcp://blackfire:8707\n" > /etc/php/7.4/cli/conf.d/blackfire.ini \
+    && printf "extension=blackfire.so\nblackfire.agent_socket=tcp://blackfire:8707\n" > /etc/php/7.4/fpm/conf.d/blackfire.ini \
+    && rm -rf /tmp/blackfire /tmp/blackfire-probe.tar.gz
 
-COPY php.ini /etc/php/7.2/cli/conf.d/50-setting.ini
-COPY php.ini /etc/php/7.2/fpm/conf.d/50-setting.ini
-COPY pool.conf /etc/php/7.2/fpm/pool.d/www.conf
+COPY php.ini /etc/php/7.4/cli/conf.d/50-setting.ini
+COPY php.ini /etc/php/7.4/fpm/conf.d/50-setting.ini
+COPY pool.conf /etc/php/7.4/fpm/pool.d/www.conf
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY symfony.conf /etc/nginx/symfony.conf
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf

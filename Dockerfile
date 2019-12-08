@@ -23,22 +23,22 @@ RUN apt-get update -q && \
         nano \
         nginx \
         git \
-        php7.2 \
-        php7.2-bcmath \
-        php7.2-common \
-        php7.2-curl \
-        php7.2-dom \
-        php7.2-fpm \
-        php7.2-gd \
-        php7.2-iconv \
-        php7.2-intl \
-        php7.2-json \
-        php7.2-mbstring \
-        php7.2-opcache \
-        php7.2-pdo \
-        php7.2-phar \
-        php7.2-xml \
-        php7.2-zip \
+        php7.4 \
+        php7.4-bcmath \
+        php7.4-common \
+        php7.4-curl \
+        php7.4-dom \
+        php7.4-fpm \
+        php7.4-gd \
+        php7.4-iconv \
+        php7.4-intl \
+        php7.4-json \
+        php7.4-mbstring \
+        php7.4-opcache \
+        php7.4-pdo \
+        php7.4-phar \
+        php7.4-xml \
+        php7.4-zip \
         php-apcu \
         php-uuid \
         supervisor \
@@ -59,10 +59,10 @@ ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 RUN mkdir /run/php && \
     mkdir var && \
 
-    cp docker/prod/php.ini /etc/php/7.2/cli/conf.d/50-setting.ini && \
-    mv docker/prod/php.ini /etc/php/7.2/fpm/conf.d/50-setting.ini && \
-    rm -rf /etc/php/7.2/fpm/pool.d/www.conf && \
-    mv docker/prod/pool.conf /etc/php/7.2/fpm/pool.d/www.conf && \
+    cp docker/prod/php.ini /etc/php/7.4/cli/conf.d/50-setting.ini && \
+    mv docker/prod/php.ini /etc/php/7.4/fpm/conf.d/50-setting.ini && \
+    rm -rf /etc/php/7.4/fpm/pool.d/www.conf && \
+    mv docker/prod/pool.conf /etc/php/7.4/fpm/pool.d/www.conf && \
     rm -rf /etc/nginx/nginx.conf && \
     mv docker/prod/nginx.conf /etc/nginx/nginx.conf && \
     mv docker/prod/supervisord.conf /etc/supervisor/conf.d/ && \
