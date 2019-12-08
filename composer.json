@@ -50,7 +50,7 @@
         "symfony/css-selector": "^4.2",
         "symfony/debug-pack": "*",
         "symfony/maker-bundle": "^1.5",
-        "symfony/phpunit-bridge": "^4.2",
+        "symfony/phpunit-bridge": "^5.0",
         "symfony/profiler-pack": "*"
     },
     "config": {
