@@ -55,7 +55,7 @@ Ignorant branched humanity led now marianne too strongly entrance. Rose to shew 
 </p>'
         );
         $post1->setIsPublished(true);
-        $post1->tags = $tags;
+        $post1->setTags($tags);
         $post1->setIsPublic(true);
 
         $post2 = new Post();
@@ -77,7 +77,7 @@ Ladies others the six desire age. Bred am soon park past read by lain. As excuse
 Lose eyes get fat shew. Winter can indeed letter oppose way change tended now. So is improve my charmed picture exposed adapted demands. Received had end produced prepared diverted strictly off man branched. Known ye money so large decay voice there to. Preserved be mr cordially incommode as an. He doors quick child an point at. Had share vexed front least style off why him. 
 </p>'
         );
-        $post2->tags = $tags;
+        $post2->setTags($tags);
         $post2->setIsPublic(true);
 
         $post3 = new Post();
@@ -94,7 +94,7 @@ You vexed shy mirth now noise. Talked him people valley add use her depend lette
 Her extensive perceived may any sincerity extremity. Indeed add rather may pretty see. Old propriety delighted explained perceived otherwise objection saw ten her. Doubt merit sir the right these alone keeps. By sometimes intention smallness he northward. Consisted we otherwise arranging commanded discovery it explained. Does cold even song like two yet been. Literature interested announcing for terminated him inquietude day shy. Himself he fertile chicken perhaps waiting if highest no it. Continued promotion has consulted fat improving not way. 
 Ladies others the six desire age. Bred am soon par'
         );
-        $post3->tags = $tags;
+        $post3->setTags($tags);
         $post3->setIsPublic(true);
 
         $post4 = new Post();
@@ -111,7 +111,7 @@ You vexed shy mirth now noise. Talked him people valley add use her depend lette
 Her extensive perceived may any sincerity extremity. Indeed add rather may pretty see. Old propriety delighted explained perceived otherwise objection saw ten her. Doubt merit sir the right these alone keeps. By sometimes intention smallness he northward. Consisted we otherwise arranging commanded discovery it explained. Does cold even song like two yet been. Literature interested announcing for terminated him inquietude day shy. Himself he fertile chicken perhaps waiting if highest no it. Continued promotion has consulted fat improving not way. 
 Ladies others the six desire age. Bred am soon par'
         );
-        $post4->tags = $tags;
+        $post4->setTags($tags);
         $post4->setIsPublic(true);
 
         $post5 = new Post();
@@ -128,7 +128,7 @@ You vexed shy mirth now noise. Talked him people valley add use her depend lette
 Her extensive perceived may any sincerity extremity. Indeed add rather may pretty see. Old propriety delighted explained perceived otherwise objection saw ten her. Doubt merit sir the right these alone keeps. By sometimes intention smallness he northward. Consisted we otherwise arranging commanded discovery it explained. Does cold even song like two yet been. Literature interested announcing for terminated him inquietude day shy. Himself he fertile chicken perhaps waiting if highest no it. Continued promotion has consulted fat improving not way. 
 Ladies others the six desire age. Bred am soon par'
         );
-        $post5->tags = $tags;
+        $post5->setTags($tags);
         $post5->setIsPublic(true);
 
         $post6 = new Post();
@@ -145,7 +145,7 @@ You vexed shy mirth now noise. Talked him people valley add use her depend lette
 Her extensive perceived may any sincerity extremity. Indeed add rather may pretty see. Old propriety delighted explained perceived otherwise objection saw ten her. Doubt merit sir the right these alone keeps. By sometimes intention smallness he northward. Consisted we otherwise arranging commanded discovery it explained. Does cold even song like two yet been. Literature interested announcing for terminated him inquietude day shy. Himself he fertile chicken perhaps waiting if highest no it. Continued promotion has consulted fat improving not way. 
 Ladies others the six desire age. Bred am soon par'
         );
-        $post6->tags = $tags;
+        $post6->setTags($tags);
         $post6->setIsPublic(true);
 
         $manager->persist($freelancer);

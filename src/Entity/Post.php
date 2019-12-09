@@ -183,6 +183,14 @@ class Post
         return $this->tags;
     }
 
+    /**
+     * @param ArrayCollection|Collection|null $tags
+     */
+    public function setTags($tags): void
+    {
+        $this->tags = $tags;
+    }
+
     public function __toString(): ?string
     {
         return $this->title;
