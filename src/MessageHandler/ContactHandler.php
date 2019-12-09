@@ -12,7 +12,7 @@ final class ContactHandler implements MessageHandlerInterface
 {
     private string $adminEmail;
     private string $hostEmail;
-    private Swift_Mailer $mailer;
+    private ?Swift_Mailer $mailer;
 
     public function __construct(string $adminEmail, string $hostEmail, Swift_Mailer $mailer)
     {
