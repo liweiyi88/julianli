@@ -6,12 +6,13 @@ use App\Entity\Freelancer;
 use App\Entity\Post;
 use App\Entity\Tag;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AppFixtures extends Fixture
 {
-    private $encoder;
+    private UserPasswordEncoderInterface $encoder;
 
     public function __construct(UserPasswordEncoderInterface $encoder)
     {
@@ -34,7 +35,7 @@ class AppFixtures extends Fixture
         $tag2 = new Tag();
         $tag2->name = 'Nature';
 
-        $tags = [$tag1, $tag2];
+        $tags = new ArrayCollection([$tag1, $tag2]);
         $post1 = new Post();
         $post1->setFreelancer($freelancer);
         $post1->setCreatedAt(new \DateTime('now'));

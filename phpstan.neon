@@ -1,3 +1,7 @@
 parameters:
-	excludes_analyse:
-		- %rootDir%/../../../src/Migrations/*
+    level: 7
+    excludes_analyse:
+        - %rootDir%/../../../src/Migrations/*
+        - %rootDir%/../../../src/Service/CloudStorage/S3UploadedResponse.php
+        - %rootDir%/../../../src/Requests/Form/ContactType.php
+    checkGenericClassInNonGenericObjectType: false

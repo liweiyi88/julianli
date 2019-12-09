@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
@@ -24,19 +25,21 @@ class Tag
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @Groups({"read", "write"})
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
-    public $name;
+    public string $name;
 
     /**
+     * @var Collection<int, Post>
+     *
      * @ORM\ManyToMany(targetEntity="Post", mappedBy="tags")
      */
-    public $posts;
+    public Collection $posts;
 
     public function getId(): ?int
     {

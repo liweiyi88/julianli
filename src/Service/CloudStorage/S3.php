@@ -43,7 +43,7 @@ final class S3 implements CloudStorageInterface
     }
 
     /**
-     * @param array $options
+     * @param array<string> $options
      *
      * @return \App\Service\CloudStorage\Interfaces\UploadedResponseInterface
      *

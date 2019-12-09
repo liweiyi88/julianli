@@ -10,9 +10,9 @@ use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 
 final class ContactHandler implements MessageHandlerInterface
 {
-    private $adminEmail;
-    private $hostEmail;
-    private $mailer;
+    private string $adminEmail;
+    private string $hostEmail;
+    private Swift_Mailer $mailer;
 
     public function __construct(string $adminEmail, string $hostEmail, Swift_Mailer $mailer)
     {
@@ -21,7 +21,7 @@ final class ContactHandler implements MessageHandlerInterface
         $this->mailer = $mailer;
     }
 
-    public function __invoke(Contact $contact)
+    public function __invoke(Contact $contact): void
     {
         $content = \sprintf("Email from %s \r\nMessage: \r\n%s", $contact->email, $contact->message);
 
