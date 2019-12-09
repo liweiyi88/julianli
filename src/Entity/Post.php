@@ -73,7 +73,7 @@ class Post
      * @ORM\ManyToMany(targetEntity="Tag", inversedBy="posts", cascade={"persist"})
      * @ORM\JoinTable(name="posts_tags")
      */
-    private ?Collection $tags = null;
+    private $tags;
 
     /**
      * @ORM\Column(name="update_at", type="datetime", nullable=true)
@@ -183,9 +183,6 @@ class Post
         return $this->tags;
     }
 
-    /**
-     * @param ArrayCollection|Collection|null $tags
-     */
     public function setTags($tags): void
     {
         $this->tags = $tags;
