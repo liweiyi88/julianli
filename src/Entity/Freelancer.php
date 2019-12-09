@@ -27,41 +27,41 @@ class Freelancer implements UserInterface, \Serializable
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id = null;
 
     /**
      * @ORM\Column(name="email", type="string", length=255)
      */
-    private $email;
+    private string $email;
 
     /**
      * @ORM\Column(name="username", type="string", length=25, unique=true)
      */
-    private $username;
+    private string $username;
 
     /**
      * @ORM\Column(name="password", type="string", length=255)
      */
-    private $password;
+    private string $password;
 
     /**
      * @Groups({"read"})
      *
      * @ORM\Column(name="first_name", type="string", length=255)
      */
-    private $firstName;
+    private string $firstName;
 
     /**
      * @Groups({"read"})
      *
      * @ORM\Column(name="last_name", type="string", length=255)
      */
-    private $lastName;
+    private string $lastName;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Post", mappedBy="freelancer")
      */
-    private $posts;
+    private Collection $posts;
 
     public function __construct()
     {

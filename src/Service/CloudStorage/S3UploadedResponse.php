@@ -8,10 +8,7 @@ use Aws\Result;
 
 final class S3UploadedResponse implements UploadedResponseInterface
 {
-    /**
-     * @var \Aws\Result $result
-     */
-    private $result;
+    private Result $result;
 
     public function __construct(Result $result)
     {

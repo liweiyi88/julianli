@@ -13,7 +13,10 @@ final class PostRepository extends ServiceEntityRepository
         parent::__construct($registry, Post::class);
     }
 
-    public function findLatestPublishedPublicPosts()
+    /**
+     * @return array<int, Post>
+     */
+    public function findLatestPublishedPublicPosts(): array
     {
         $query = $this->getEntityManager()
             ->createQuery(
@@ -29,7 +32,12 @@ final class PostRepository extends ServiceEntityRepository
         return $query->getResult();
     }
 
-    public function findUpdatedAtToday(): ?array
+    /**
+     * @return array<int, Post>
+     *
+     * @throws \Exception
+     */
+    public function findUpdatedAtToday(): array
     {
         $qb = $this->createQueryBuilder('p');
         $qb->where('p.createdAt between :start_at and :end_at');

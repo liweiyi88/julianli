@@ -7,10 +7,7 @@ use Aws\S3\S3Client;
 
 final class S3Factory
 {
-    /**
-     * @throws \InvalidArgumentException
-     */
-    public static function create($key, $region, $secret, $version): S3Client
+    public static function create(string $key, string $region, string $secret, string $version): S3Client
     {
         return new S3Client([
             'version'     => $version,

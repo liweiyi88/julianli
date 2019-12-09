@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Serializer\Annotation\Groups;
 use App\Controller\GetPublicPublishedPostsController;
 use Doctrine\ORM\Mapping as ORM;
@@ -36,35 +37,35 @@ class Post
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id = null;
 
     /**
      * @Groups({"read", "write", "searchable"})
      *
      * @ORM\Column(name="title", type="string", length=255, nullable=true)
      */
-    public $title;
+    public string $title;
 
     /**
      * @Groups({"read", "write", "searchable"})
      *
      * @ORM\Column(name="slug", type="string", length=255)
      */
-    public $slug;
+    public string $slug;
 
     /**
      * @Groups({"read", "write", "searchable"})
      *
      * @ORM\Column(name="content", type="text")
      */
-    private $content;
+    private string $content;
 
     /**
      * @Groups({"read", "searchable"})
      *
      * @ORM\Column(name="created_at", type="datetime")
      */
-    private $createdAt;
+    private \DateTime $createdAt;
 
     /**
      * @Groups({"read", "write", "searchable"})
@@ -72,26 +73,26 @@ class Post
      * @ORM\ManyToMany(targetEntity="Tag", inversedBy="posts", cascade={"persist"})
      * @ORM\JoinTable(name="posts_tags")
      */
-    public $tags;
+    private ?Collection $tags = null;
 
     /**
      * @ORM\Column(name="update_at", type="datetime", nullable=true)
      */
-    private $updatedAt;
+    private ?\DateTime $updatedAt = null;
 
     /**
      * @Groups({"read", "write"})
      *
      * @ORM\Column(name="is_published", type="boolean", nullable=true)
      */
-    private $isPublished;
+    private ?bool $isPublished;
 
     /**
      * @Groups({"read", "write"})
      *
      * @ORM\Column(name="is_public", type="boolean", nullable=true)
      */
-    private $isPublic;
+    private ?bool $isPublic;
 
     /**
      * @Groups({"read", "write"})
@@ -99,7 +100,7 @@ class Post
      * @ORM\ManyToOne(targetEntity="App\Entity\Freelancer", inversedBy="posts")
      * @ORM\JoinColumn(nullable=true)
      */
-    private $freelancer;
+    private ?Freelancer $freelancer = null;
 
     public function __construct()
     {
@@ -175,6 +176,19 @@ class Post
     public function setUpdatedAt(?\DateTime $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
+    }
+
+    public function getTags(): Collection
+    {
+        return $this->tags;
+    }
+
+    /**
+     * @param ArrayCollection|Collection|null $tags
+     */
+    public function setTags($tags): void
+    {
+        $this->tags = $tags;
     }
 
     public function __toString(): ?string

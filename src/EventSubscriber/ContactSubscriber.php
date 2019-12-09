@@ -11,10 +11,7 @@ use Symfony\Component\Messenger\MessageBusInterface;
 
 final class ContactSubscriber implements EventSubscriberInterface
 {
-    /**
-     * @var \Symfony\Component\Messenger\MessageBusInterface
-     */
-    private $bus;
+    private MessageBusInterface $bus;
 
     public function __construct(MessageBusInterface $bus)
     {
@@ -34,6 +31,9 @@ final class ContactSubscriber implements EventSubscriberInterface
         $event->setResponse(new JsonResponse(null, 204));
     }
 
+    /**
+     * @return array<string, array>
+     */
     public static function getSubscribedEvents(): array
     {
         return [
