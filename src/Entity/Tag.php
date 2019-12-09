@@ -25,7 +25,7 @@ class Tag
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private int $id;
+    private ?int $id = null;
 
     /**
      * @Groups({"read", "write"})
@@ -35,8 +35,6 @@ class Tag
     public string $name;
 
     /**
-     * @var Collection<int, Post>
-     *
      * @ORM\ManyToMany(targetEntity="Post", mappedBy="tags")
      */
     public Collection $posts;

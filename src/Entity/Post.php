@@ -37,7 +37,7 @@ class Post
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private int $id;
+    private ?int $id = null;
 
     /**
      * @Groups({"read", "write", "searchable"})
@@ -68,19 +68,17 @@ class Post
     private \DateTime $createdAt;
 
     /**
-     * @var Collection<int, Tag>
-     *
      * @Groups({"read", "write", "searchable"})
      *
      * @ORM\ManyToMany(targetEntity="Tag", inversedBy="posts", cascade={"persist"})
      * @ORM\JoinTable(name="posts_tags")
      */
-    public Collection $tags;
+    private ?Collection $tags = null;
 
     /**
      * @ORM\Column(name="update_at", type="datetime", nullable=true)
      */
-    private ?\DateTime $updatedAt;
+    private ?\DateTime $updatedAt = null;
 
     /**
      * @Groups({"read", "write"})
@@ -102,7 +100,7 @@ class Post
      * @ORM\ManyToOne(targetEntity="App\Entity\Freelancer", inversedBy="posts")
      * @ORM\JoinColumn(nullable=true)
      */
-    private Freelancer $freelancer;
+    private ?Freelancer $freelancer = null;
 
     public function __construct()
     {
@@ -178,6 +176,11 @@ class Post
     public function setUpdatedAt(?\DateTime $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
+    }
+
+    public function getTags(): Collection
+    {
+        return $this->tags;
     }
 
     public function __toString(): ?string

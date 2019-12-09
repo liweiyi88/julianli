@@ -27,7 +27,7 @@ class Freelancer implements UserInterface, \Serializable
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private int $id;
+    private ?int $id = null;
 
     /**
      * @ORM\Column(name="email", type="string", length=255)
@@ -59,8 +59,6 @@ class Freelancer implements UserInterface, \Serializable
     private string $lastName;
 
     /**
-     * @var Collection<int, Post>
-     *
      * @ORM\OneToMany(targetEntity="App\Entity\Post", mappedBy="freelancer")
      */
     private Collection $posts;
@@ -105,17 +103,11 @@ class Freelancer implements UserInterface, \Serializable
         $this->lastName = $lastName;
     }
 
-    /**
-     * @return Collection<int, Post>
-     */
     public function getPosts(): Collection
     {
         return $this->posts;
     }
 
-    /**
-     * @param Collection<int, Post> $posts
-     */
     public function setPosts(Collection $posts): void
     {
         $this->posts = $posts;
@@ -164,9 +156,6 @@ class Freelancer implements UserInterface, \Serializable
             ]);
     }
 
-    /**
-     * @param string $serialized
-     */
     public function unserialize($serialized): void
     {
         [
