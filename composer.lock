@@ -310,16 +310,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.128.2",
+            "version": "3.128.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "a81485e12b2545aff17134bbf29442037f3fcadb"
+                "reference": "9e46eae4974542b8e3e6107de857668b6968081d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a81485e12b2545aff17134bbf29442037f3fcadb",
-                "reference": "a81485e12b2545aff17134bbf29442037f3fcadb",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/9e46eae4974542b8e3e6107de857668b6968081d",
+                "reference": "9e46eae4974542b8e3e6107de857668b6968081d",
                 "shasum": ""
             },
             "require": {
@@ -390,7 +390,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-12-10T19:12:09+00:00"
+            "time": "2019-12-11T19:13:12+00:00"
         },
         {
             "name": "behat/transliterator",
