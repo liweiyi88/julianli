@@ -7561,16 +7561,16 @@
         },
         {
             "name": "symfony/validator",
-            "version": "v4.4.1",
+            "version": "v4.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/validator.git",
-                "reference": "6b1774cf44c378617af362eaa154105952d488f8"
+                "reference": "79eb122bed116c1fbe0769698d5b46acce1860a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/validator/zipball/6b1774cf44c378617af362eaa154105952d488f8",
-                "reference": "6b1774cf44c378617af362eaa154105952d488f8",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/79eb122bed116c1fbe0769698d5b46acce1860a2",
+                "reference": "79eb122bed116c1fbe0769698d5b46acce1860a2",
                 "shasum": ""
             },
             "require": {
@@ -7649,7 +7649,7 @@
             ],
             "description": "Symfony Validator Component",
             "homepage": "https://symfony.com",
-            "time": "2019-11-30T14:03:57+00:00"
+            "time": "2019-12-17T08:15:02+00:00"
         },
         {
             "name": "symfony/var-dumper",
