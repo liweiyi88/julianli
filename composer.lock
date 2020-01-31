@@ -5009,7 +5009,7 @@
         },
         {
             "name": "symfony/form",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/form.git",
@@ -5551,16 +5551,16 @@
         },
         {
             "name": "symfony/intl",
-            "version": "v5.0.3",
+            "version": "v5.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/intl.git",
-                "reference": "2b3694976f02ed6a7894d8a772c9d55cee5d9677"
+                "reference": "519bcb27ea53835c1e8e7f7c8a799c867d570156"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/intl/zipball/2b3694976f02ed6a7894d8a772c9d55cee5d9677",
-                "reference": "2b3694976f02ed6a7894d8a772c9d55cee5d9677",
+                "url": "https://api.github.com/repos/symfony/intl/zipball/519bcb27ea53835c1e8e7f7c8a799c867d570156",
+                "reference": "519bcb27ea53835c1e8e7f7c8a799c867d570156",
                 "shasum": ""
             },
             "require": {
@@ -5622,7 +5622,7 @@
                 "l10n",
                 "localization"
             ],
-            "time": "2020-01-04T14:08:26+00:00"
+            "time": "2020-01-31T09:13:47+00:00"
         },
         {
             "name": "symfony/messenger",
@@ -5891,7 +5891,7 @@
         },
         {
             "name": "symfony/options-resolver",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/options-resolver.git",
