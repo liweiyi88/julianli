@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Header from "./Header";
 import {BrowserRouter as Router, Route} from "react-router-dom";
-import Home from "./Home";
 import Project from "./Project";
 import Article from "./Article";
 import HireMe from "./HireMe";
@@ -63,7 +62,6 @@ export default class App extends Component {
                                     onMobileMenuHidden={this.handleMobileMenuHidden}
                                 />
 
-                                <Route exact path="/" component={Home} />
                                 <Route path="/projects" component={Project} />
                                 <Route exact path="/articles" component={() => <Article articles={this.state.articles}/>} />
                                 <Route path="/hire-me" component={HireMe} />

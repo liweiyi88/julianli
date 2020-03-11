@@ -3,7 +3,7 @@ const Encore = require('@symfony/webpack-encore');
 Encore
     .setOutputPath('public/build/')
     .setPublicPath('/build')
-    .addStyleEntry('app', './css/app.scss')
+    .addStyleEntry('app_css', './assets/css/app.scss')
     .setManifestKeyPrefix('build/')
 
     .cleanupOutputBeforeBuild()
