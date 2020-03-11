@@ -1,15 +1,15 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block stylesheets %}
-    {{ encore_entry_link_tags('app') }}
-{% endblock %}
-
-{% block body %}
-    <body>
-        <div id="app"></div>
-    </body>
-    {% block javascripts %}
-        {{ parent() }}
-        {{ encore_entry_script_tags('app') }}
-    {% endblock %}
+{% block content %}
+    <div class="max-w-md text-lg text-grey-darker leading-normal">
+        <h1>
+            Who am I?
+        </h1>
+        <div>
+            <p>I am Julian Li, a full-stack developer, I live in Melbourne with my wife and daughter.</p>
+            <p>I am experienced in developing complex web applications with/without any PHP framework, equipped with cross-industry domain knowledge.</p>
+            <p><a href="https://reactjs.org/" target="_blank" class="text-green">React</a> and <a href="https://tailwindcss.com/" target="blank" class="text-green">Tailwind CSS</a> are my favourite tools for front-end development.</p>
+            <p>Right now, I am following recommendations from <a href="https://refactoringui.com/book/" target="_blank" class="text-green">Refactoring UI</a> to enhance my design skill.</p>
+        </div>
+    </div>
 {% endblock %}
