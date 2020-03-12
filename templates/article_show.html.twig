@@ -1,0 +1,18 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+    <div class="text-lg text-grey-darker leading-normal">
+            <div class="block mb-2 md:mb-0 md:flex items-baseline">
+                <h1>{{ article.title }}</h1>
+                <div class="md:ml-2 text-base">{{ article.createdAt | date('jS M, Y') }}</div>
+            </div>
+        <div class="-ml-3">
+        {% for tag in article.tags %}
+           <span class="rounded-sm bg-grey-lighter text-grey-darker uppercase px-2 py-1 text-sm ml-3 cursor-pointer hover:bg-grey-light">{{ tag.name }}</span>
+        {% endfor %}
+        </div>
+
+        <div class="text-lg leading-normal text-grey-darker article mt-6">
+            {{ article.content }}
+        </div>
+    </div>
+{% endblock %}

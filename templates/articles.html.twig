@@ -1,0 +1,23 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="max-w-md">
+            <div class="text-lg text-grey-darker leading-normal">
+                <h1>Articles</h1>
+                <p>Writing articles is a great way to share my knowledge with people who need it.<br/>Here are some popular ones.</p>
+                <div class="mt-12">
+                    {% for article in articles %}
+                        <div class="mb-6">
+                            <a href="{{ path('article_show', {slug: article.slug})  }}" class="text-lg text-black font-bold no-underline hover:underline">{{ article.title }}</a>
+                            <div class="mt-1">
+                                {{ article.getShortDescription }}
+                            </div>
+                            <div class="text-grey-darkest text-base leading-normal mt-3 mb-6">
+                                <a href="{{ path('article_show', {slug: article.slug}) }}" class="text-grey-darker hover:text-black no-underline hover:underline">Read this article →</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+{% endblock %}

@@ -188,6 +188,17 @@ class Post
         $this->tags = $tags;
     }
 
+    public function getShortDescription(): string
+    {
+        $output = \explode(' ',$this->content);
+
+        if (\count($output) > 30) {
+            return \implode(' ',\array_slice($output, 0 , 30)) . '...';
+        }
+
+        return $this->content;
+    }
+
     public function __toString(): ?string
     {
         return $this->title;

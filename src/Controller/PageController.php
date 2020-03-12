@@ -2,15 +2,23 @@
 
 namespace App\Controller;
 
+use App\Entity\Post;
+use App\Repository\PostRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class PageController extends AbstractController
 {
+    private PostRepository $postRepository;
+
+    public function __construct(PostRepository $postRepository)
+    {
+        $this->postRepository = $postRepository;
+    }
+
     /**
      * @Route("/", name="home")
-     * @Route("/articles", name="articles")
      * @Route("/article/using-symfony-messenger-with-aws-sqs", name="article_using_symfony_messenger_with_aws_sqs")
      * @Route("/article/keep-learning-in-2018", name="article_keep_learning_in_2018")
      * @Route("/hire-me", name="hire_me")
@@ -25,6 +33,24 @@ class PageController extends AbstractController
      */
     public function projects(): Response
     {
-        return $this->render('project.html.twig');
+        return $this->render('projects.html.twig');
+    }
+
+    /**
+     * @Route("/articles", name="articles")
+     */
+    public function articles(): Response
+    {
+        $articles = $this->postRepository->findLatestPublishedPublicPosts();
+
+        return $this->render('articles.html.twig', ['articles' => $articles]);
+    }
+
+    /**
+     * @Route("/article/{slug}", name="article_show")
+     */
+    public function article_show(Post $post): Response
+    {
+        return $this->render('article_show.html.twig', ['article' => $post]);
     }
 }
