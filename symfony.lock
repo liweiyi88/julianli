@@ -180,6 +180,9 @@
     "laminas/laminas-zendframework-bridge": {
         "version": "1.0.1"
     },
+    "league/flysystem": {
+        "version": "1.0.65"
+    },
     "michelf/php-markdown": {
         "version": "1.8.0"
     },
@@ -599,6 +602,9 @@
     },
     "symfony/yaml": {
         "version": "v4.0.0"
+    },
+    "tackk/cartographer": {
+        "version": "1.1.0"
     },
     "twig/extra-bundle": {
         "version": "v3.0.3"

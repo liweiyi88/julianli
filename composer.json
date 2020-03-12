@@ -39,6 +39,7 @@
         "symfony/validator": "^4.2",
         "symfony/webpack-encore-bundle": "^1.6",
         "symfony/yaml": "^4.2",
+        "tackk/cartographer": "^1.1",
         "twig/extra-bundle": "^3.0",
         "twig/markdown-extra": "^3.0",
         "vich/uploader-bundle": "^1.7",
