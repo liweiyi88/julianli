@@ -19,7 +19,6 @@ class PageController extends AbstractController
 
     /**
      * @Route("/", name="home")
-     * @Route("/hire-me", name="hire_me")
      */
     public function index(): Response
     {
@@ -50,5 +49,13 @@ class PageController extends AbstractController
     public function showArticle(Post $post): Response
     {
         return $this->render('article_show.html.twig', ['article' => $post]);
+    }
+
+    /**
+     * @Route("/hire-me", name="hire_me")
+     */
+    public function contact(): Response
+    {
+        return $this->render('contact.html.twig');
     }
 }

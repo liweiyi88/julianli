@@ -1,79 +1,81 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Julian Li - {% block title %}Freelance Developer Melbourne{% endblock %}</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Julian Li - {% block title %}Freelance Developer Melbourne{% endblock %}</title>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicon/apple-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon/favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ asset('img/favicon/manifest.json') }}">
-    <link rel="mask-icon" href="{{ asset('img/favicon/safari-pinned-tab.svg') }}" color="#5bd5a2">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicon/apple-icon.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon/favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon/favicon-16x16.png') }}">
+        <link rel="manifest" href="{{ asset('img/favicon/manifest.json') }}">
+        <link rel="mask-icon" href="{{ asset('img/favicon/safari-pinned-tab.svg') }}" color="#5bd5a2">
 
-    <meta name="google-site-verification" content="q3ca3reWF7-RXqb8uK-4MnCPlEXp7KuD_Ve1PvOl2ug" />
-    <meta name="description" content="Freelance Developer in Melbourne who offers his ability and knowledge for software development">
-    <meta name="keywords" content="freelance, melbourne, developer, engineer">
+        <meta name="google-site-verification" content="q3ca3reWF7-RXqb8uK-4MnCPlEXp7KuD_Ve1PvOl2ug" />
+        <meta name="description" content="Freelance Developer in Melbourne who offers his ability and knowledge for software development">
+        <meta name="keywords" content="freelance, melbourne, developer, engineer">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@liweiyi88">
-    <meta name="twitter:title" content="{{ block('title') }}">
-    <meta name="twitter:description" content="Julian's website">
-    <meta name="twitter:creator" content="@liweiyi88">
-    <meta name="twitter:image" content="{{ asset('img/favicon/apple-icon-72x72.png') }}">
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@liweiyi88">
+        <meta name="twitter:title" content="{{ block('title') }}">
+        <meta name="twitter:description" content="Julian's website">
+        <meta name="twitter:creator" content="@liweiyi88">
+        <meta name="twitter:image" content="{{ asset('img/favicon/apple-icon-72x72.png') }}">
 
-    {% block stylesheets %}{% endblock %}
-</head>
-{% block body %}
-    {% block javascripts %}
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52548506-5"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
 
-            gtag('config', 'UA-52548506-5');
-        </script>
+        {% block javascripts %}
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52548506-5"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
 
-        <script type="application/ld+json">
-            {
-                "@context": "http://schema.org",
-                "@type": "Organization",
-                "name": "JulianLi",
-                "url": "http://julianli.co",
-                "logo": "http://julianli.co/img/favicon/apple-icon-72x72.png",
-                "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Melbourne, Australia",
-                    "postalCode": "3000",
-                    "streetAddress": "530 Collins St"
-                },
-                "founder": {
-                    "@context" : "http://schema.org",
-                    "@type" : "Person",
-                    "name" : "Julian Li",
-                    "url" : "http://julianli.co",
-                    "sameAs" : [
-                        "https://twitter.com/liweiyi88",
-                        "https://www.linkedin.com/in/jweiyi/",
-                        "https://github.com/liweiyi88",
-                        "https://medium.com/@weiyi.li713"
-                    ],
+              gtag('config', 'UA-52548506-5');
+            </script>
+
+            <script type="application/ld+json">
+                {
+                    "@context": "http://schema.org",
+                    "@type": "Organization",
+                    "name": "JulianLi",
+                    "url": "http://julianli.co",
+                    "logo": "http://julianli.co/img/favicon/apple-icon-72x72.png",
                     "address": {
                         "@type": "PostalAddress",
                         "addressLocality": "Melbourne, Australia",
                         "postalCode": "3000",
                         "streetAddress": "530 Collins St"
                     },
-                    "email": "weiyi.li713@gmail.com",
-                    "image": "http://julianli.co/img/uploads/julian.jpg",
-                    "jobTitle": "Software Engineer"
+                    "founder": {
+                        "@context" : "http://schema.org",
+                        "@type" : "Person",
+                        "name" : "Julian Li",
+                        "url" : "http://julianli.co",
+                        "sameAs" : [
+                            "https://twitter.com/liweiyi88",
+                            "https://www.linkedin.com/in/jweiyi/",
+                            "https://github.com/liweiyi88",
+                            "https://medium.com/@weiyi.li713"
+                        ],
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Melbourne, Australia",
+                            "postalCode": "3000",
+                            "streetAddress": "530 Collins St"
+                        },
+                        "email": "weiyi.li713@gmail.com",
+                        "image": "http://julianli.co/img/uploads/julian.jpg",
+                        "jobTitle": "Software Engineer"
+                    }
                 }
-            }
-        </script>
-    {% endblock %}
-{% endblock %}
+            </script>
+        {% endblock %}
+    </body>
 </html>
