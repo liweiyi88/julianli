@@ -10,6 +10,23 @@
             <div class="hidden md:block md:h-4 w-full bg-green"></div>
             <div class="container">
                 <div class="py-8 md:pt-16 md:pb-8 px-6 md:px-16 xl:pl-64">
+                    <div class="relative z-20 flex justify-between items-center mb-6 md:mb-4">
+                        <div>
+                            <a href="/">
+                                <img src="https://avatars2.githubusercontent.com/u/7248260?s=460&v=4" alt="" class="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 rounded-full" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hidden md:block text-3xl font-extrabold">
+                        <span class="text-green mr-1">Julian</span><span class="text-grey-darker">Li</span>
+                    </div>
+
+                    <nav class="uppercase mt-3 flex flex-col md:flex-row tracking-wide mb-12">
+                        <a href="{{ path('articles') }}" class="text-grey-dark text-base md:text-sm border-b md:border-0 font-semibold no-underline hover:text-black mr-5 mb-6 md:mb-0">Articles</a>
+                        <a href="{{ path('projects') }}" class="text-grey-dark text-base md:text-sm border-b md:border-0 font-semibold no-underline hover:text-black mr-5 mb-6 md:mb-0">Projects</a>
+                        <a href="{{ path('hire_me') }}" class="text-grey-dark text-base md:text-sm border-b md:border-0 font-semibold no-underline hover:text-black mr-5">Hire me</a>
+                    </nav>
+
                     {% block content %}{% endblock %}
                     <footer class="mt-12">
                         <ul class="flex pl-0 items-center">
