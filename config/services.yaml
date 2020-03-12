@@ -2,10 +2,6 @@ parameters:
     locale: 'en'
     app.mailer_host_email: '%env(MAILER_HOST_EMAIL)%'
     app.mailer_admin_email: '%env(MAILER_ADMIN_EMAIL)%'
-    app.aws_key: '%env(AWS_S3_KEY)%'
-    app.aws_secret: '%env(AWS_S3_SECRET)%'
-    app.aws_s3_region: '%env(AWS_S3_REGION)%'
-    app.aws_s3_version: 'latest'
     app.redis_host: '%env(REDIS_CONNECTION)%'
 
 services:
@@ -17,7 +13,6 @@ services:
             $adminEmail: '%app.mailer_admin_email%'
             $debug: '%kernel.debug%'
             $hostEmail: '%app.mailer_host_email%'
-            App\Service\CloudStorage\Interfaces\CloudStorageInterface: '@App\Service\CloudStorage\S3'
 
     App\:
         resource: '../src/*'
@@ -26,10 +21,6 @@ services:
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
-
-    Aws\S3\S3Client:
-        factory: ['App\Service\CloudStorage\Factory\S3Factory',create]
-        arguments: ['%app.aws_key%', '%app.aws_s3_region%', '%app.aws_key%', '%app.aws_s3_version%']
 
     Bugsnag\Client: '@bugsnag'
 
