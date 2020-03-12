@@ -47,7 +47,7 @@ class PageController extends AbstractController
     /**
      * @Route("/article/{slug}", name="article_show")
      */
-    public function article_show(Post $post): Response
+    public function showArticle(Post $post): Response
     {
         return $this->render('article_show.html.twig', ['article' => $post]);
     }
