@@ -39,10 +39,10 @@
     "app": {
       "js": [
         "/build/runtime.ed3c6480.js",
-        "/build/app.24a39f91.js"
+        "/build/app.a3701493.js"
       ],
       "css": [
-        "/build/app.36254fe4.css"
+        "/build/app.f6470948.css"
       ]
     },
     "app_css": {
@@ -50,7 +50,7 @@
         "/build/runtime.ed3c6480.js"
       ],
       "css": [
-        "/build/app_css.c1d650a6.css"
+        "/build/app_css.393fd609.css"
       ]
     }
   }

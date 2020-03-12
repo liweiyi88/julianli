@@ -1,4 +1,13 @@
 {% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+{% endblock %}
+
 {% block content %}
     <div class="text-lg text-grey-darker leading-normal">
             <div class="block mb-2 md:mb-0 md:flex items-baseline">
@@ -12,7 +21,10 @@
         </div>
 
         <div class="text-lg leading-normal text-grey-darker article mt-6">
-            {{ article.content }}
+            {% apply markdown_to_html %}
+                {{ article.content | raw }}
+            {% endapply %}
         </div>
     </div>
 {% endblock %}
+

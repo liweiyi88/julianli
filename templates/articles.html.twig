@@ -10,7 +10,9 @@
                         <div class="mb-6">
                             <a href="{{ path('article_show', {slug: article.slug})  }}" class="text-lg text-black font-bold no-underline hover:underline">{{ article.title }}</a>
                             <div class="mt-1">
-                                {{ article.getShortDescription }}
+                                {% apply markdown_to_html %}
+                                  {{ article.getShortDescription }}
+                                {% endapply %}
                             </div>
                             <div class="text-grey-darkest text-base leading-normal mt-3 mb-6">
                                 <a href="{{ path('article_show', {slug: article.slug}) }}" class="text-grey-darker hover:text-black no-underline hover:underline">Read this article →</a>
