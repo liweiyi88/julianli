@@ -2,11 +2,8 @@ parameters:
     locale: 'en'
     app.mailer_host_email: '%env(MAILER_HOST_EMAIL)%'
     app.mailer_admin_email: '%env(MAILER_ADMIN_EMAIL)%'
-    app.aws_key: '%env(AWS_S3_KEY)%'
-    app.aws_secret: '%env(AWS_S3_SECRET)%'
-    app.aws_s3_region: '%env(AWS_S3_REGION)%'
-    app.aws_s3_version: 'latest'
     app.redis_host: '%env(REDIS_CONNECTION)%'
+    hostUrl: '%env(HOST_URL)%'
 
 services:
     _defaults:
@@ -14,10 +11,12 @@ services:
         autoconfigure: true
         public: false
         bind:
+            $hostUrl: '%hostUrl%'
+            $projectDir: '%kernel.project_dir%'
             $adminEmail: '%app.mailer_admin_email%'
             $debug: '%kernel.debug%'
             $hostEmail: '%app.mailer_host_email%'
-            App\Service\CloudStorage\Interfaces\CloudStorageInterface: '@App\Service\CloudStorage\S3'
+            App\Service\SitemapGenerator\SitemapGeneratorInterface: '@App\Service\SitemapGenerator\CartographerSitemapGenerator'
 
     App\:
         resource: '../src/*'
@@ -27,11 +26,8 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
-    Aws\S3\S3Client:
-        factory: ['App\Service\CloudStorage\Factory\S3Factory',create]
-        arguments: ['%app.aws_key%', '%app.aws_s3_region%', '%app.aws_key%', '%app.aws_s3_version%']
-
-    Bugsnag\Client: '@bugsnag'
+    Bugsnag\Client: ~
+    Tackk\Cartographer\Sitemap: ~
 
     Symfony\Component\Serializer\Normalizer\DateTimeNormalizer:
         arguments:

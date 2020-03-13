@@ -20,6 +20,10 @@ p {
   @apply mb-6;
 }
 
+p > a {
+  @apply text-black;
+}
+
 .active {
   @apply text-grey-darkest text-sm font-semibold no-underline mr-5;
 }

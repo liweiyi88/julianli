@@ -2,47 +2,52 @@
   "entrypoints": {
     "posts_main": {
       "js": [
-        "/build/runtime.js",
-        "/build/posts_main.js"
+        "/build/runtime.ed3c6480.js",
+        "/build/posts_main.89693529.js"
       ],
       "css": [
-        "/build/posts_main.css"
+        "/build/posts_main.01a02584.css"
       ]
     },
     "post_create": {
       "js": [
-        "/build/runtime.js",
-        "/build/post_create.js"
+        "/build/runtime.ed3c6480.js",
+        "/build/post_create.d1741daf.js"
       ],
       "css": [
-        "/build/post_create.css"
+        "/build/post_create.844d3fc6.css"
       ]
     },
     "post_show": {
       "js": [
-        "/build/runtime.js",
-        "/build/post_show.js"
+        "/build/runtime.ed3c6480.js",
+        "/build/post_show.fa1c9f1e.js"
       ],
       "css": [
-        "/build/post_show.css"
+        "/build/post_show.5ef576f9.css"
       ]
     },
     "post_edit": {
       "js": [
-        "/build/runtime.js",
-        "/build/post_edit.js"
+        "/build/runtime.ed3c6480.js",
+        "/build/post_edit.9e688057.js"
       ],
       "css": [
-        "/build/post_edit.css"
+        "/build/post_edit.844d3fc6.css"
       ]
     },
-    "app": {
+    "contact": {
       "js": [
-        "/build/runtime.js",
-        "/build/app.js"
+        "/build/runtime.ed3c6480.js",
+        "/build/contact.8a4bde7e.js"
+      ]
+    },
+    "app_css": {
+      "js": [
+        "/build/runtime.ed3c6480.js"
       ],
       "css": [
-        "/build/app.css"
+        "/build/app_css.21bd2e2c.css"
       ]
     }
   }

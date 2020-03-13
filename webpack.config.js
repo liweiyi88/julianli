@@ -1,8 +1,9 @@
-var Encore = require('@symfony/webpack-encore');
+const Encore = require('@symfony/webpack-encore');
 
 Encore
     .setOutputPath('public/build/')
     .setPublicPath('/build')
+    .addStyleEntry('app_css', './assets/css/app.scss')
     .setManifestKeyPrefix('build/')
 
     .cleanupOutputBeforeBuild()
@@ -22,7 +23,7 @@ Encore
     .addEntry('post_create', './assets/js/post_create.js')
     .addEntry('post_show', './assets/js/post_show.js')
     .addEntry('post_edit', './assets/js/post_edit.js')
-    .addEntry('app', './assets/js/app.js')
+    .addEntry('contact', './assets/js/contact.js')
     .enableSingleRuntimeChunk()
     .enableSassLoader(function (options) {}, {
         resolveUrlLoader: false
