@@ -9,7 +9,7 @@ interface SitemapGeneratorInterface
     /**
      * Add site map url block data.
      */
-    public function addUrl(SitemapUrlInterface $url): self;
+    public function addUrl(SitemapUrl $url): self;
 
     /**
      * Output the site map content.

@@ -3,6 +3,7 @@ parameters:
     app.mailer_host_email: '%env(MAILER_HOST_EMAIL)%'
     app.mailer_admin_email: '%env(MAILER_ADMIN_EMAIL)%'
     app.redis_host: '%env(REDIS_CONNECTION)%'
+    hostUrl: '%env(HOST_URL)%'
 
 services:
     _defaults:
@@ -10,9 +11,12 @@ services:
         autoconfigure: true
         public: false
         bind:
+            $hostUrl: '%hostUrl%'
+            $projectDir: '%kernel.project_dir%'
             $adminEmail: '%app.mailer_admin_email%'
             $debug: '%kernel.debug%'
             $hostEmail: '%app.mailer_host_email%'
+            App\Service\SitemapGenerator\SitemapGeneratorInterface: '@App\Service\SitemapGenerator\CartographerSitemapGenerator'
 
     App\:
         resource: '../src/*'
@@ -22,7 +26,8 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
-    Bugsnag\Client: '@bugsnag'
+    Bugsnag\Client: ~
+    Tackk\Cartographer\Sitemap: ~
 
     Symfony\Component\Serializer\Normalizer\DateTimeNormalizer:
         arguments:
