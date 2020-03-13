@@ -45,7 +45,7 @@ class SitemapGenerateCommand extends Command
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output): void
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $staticPageUrls = [
             new SitemapUrl(
@@ -92,5 +92,7 @@ class SitemapGenerateCommand extends Command
         }
 
         $this->filesystem->dumpFile($this->projectDir. '/public/sitemap.xml', $this->sitemapGenerator->toString());
+
+        return 0;
     }
 }

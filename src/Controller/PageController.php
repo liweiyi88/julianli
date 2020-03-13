@@ -44,7 +44,7 @@ class PageController extends AbstractController
     }
 
     /**
-     * @Route("/article/{slug}", name="article_show")
+     * @Route("/articles/{slug}", name="article_show")
      */
     public function showArticle(Post $post): Response
     {
