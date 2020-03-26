@@ -310,16 +310,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.133.44",
+            "version": "3.133.45",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "00df425deebdde3f3bebfde446a4250695dc47e4"
+                "reference": "928a23e2ee7e195a66f93d0758895e26958c3b7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/00df425deebdde3f3bebfde446a4250695dc47e4",
-                "reference": "00df425deebdde3f3bebfde446a4250695dc47e4",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/928a23e2ee7e195a66f93d0758895e26958c3b7d",
+                "reference": "928a23e2ee7e195a66f93d0758895e26958c3b7d",
                 "shasum": ""
             },
             "require": {
@@ -390,7 +390,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-03-25T18:15:47+00:00"
+            "time": "2020-03-26T18:12:15+00:00"
         },
         {
             "name": "bugsnag/bugsnag",
@@ -6481,16 +6481,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.14.0",
+            "version": "v1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "34094cfa9abe1f0f14f48f490772db7a775559f2"
+                "reference": "81ffd3a9c6d707be22e3012b827de1c9775fc5ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/34094cfa9abe1f0f14f48f490772db7a775559f2",
-                "reference": "34094cfa9abe1f0f14f48f490772db7a775559f2",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/81ffd3a9c6d707be22e3012b827de1c9775fc5ac",
+                "reference": "81ffd3a9c6d707be22e3012b827de1c9775fc5ac",
                 "shasum": ""
             },
             "require": {
@@ -6502,7 +6502,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.14-dev"
+                    "dev-master": "1.15-dev"
                 }
             },
             "autoload": {
@@ -6536,7 +6536,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2020-01-13T11:15:53+00:00"
+            "time": "2020-03-09T19:04:49+00:00"
         },
         {
             "name": "symfony/polyfill-php72",
