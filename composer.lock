@@ -5891,16 +5891,16 @@
         },
         {
             "name": "symfony/messenger",
-            "version": "v4.4.6",
+            "version": "v4.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/messenger.git",
-                "reference": "fe39d1d26a13df1a04ab76658326c3f9b630a8d1"
+                "reference": "24579ff4ed8fc5067d11bf34b1b2436006d440a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/messenger/zipball/fe39d1d26a13df1a04ab76658326c3f9b630a8d1",
-                "reference": "fe39d1d26a13df1a04ab76658326c3f9b630a8d1",
+                "url": "https://api.github.com/repos/symfony/messenger/zipball/24579ff4ed8fc5067d11bf34b1b2436006d440a4",
+                "reference": "24579ff4ed8fc5067d11bf34b1b2436006d440a4",
                 "shasum": ""
             },
             "require": {
@@ -5961,7 +5961,7 @@
             ],
             "description": "Symfony Messenger Component",
             "homepage": "https://symfony.com",
-            "time": "2020-03-16T11:24:17+00:00"
+            "time": "2020-03-27T16:54:36+00:00"
         },
         {
             "name": "symfony/mime",
