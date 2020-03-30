@@ -9658,16 +9658,16 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v4.4.6",
+            "version": "v4.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
-                "reference": "a65222b514eadb42853232ba18610c648b3818a8"
+                "reference": "6937c1a1590da7c314537b4f3f741c9255a7072e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/a65222b514eadb42853232ba18610c648b3818a8",
-                "reference": "a65222b514eadb42853232ba18610c648b3818a8",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/6937c1a1590da7c314537b4f3f741c9255a7072e",
+                "reference": "6937c1a1590da7c314537b4f3f741c9255a7072e",
                 "shasum": ""
             },
             "require": {
@@ -9719,7 +9719,7 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
-            "time": "2020-03-15T14:17:26+00:00"
+            "time": "2020-03-27T16:54:36+00:00"
         },
         {
             "name": "symfony/profiler-pack",
