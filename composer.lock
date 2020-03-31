@@ -4333,16 +4333,16 @@
         },
         {
             "name": "symfony/cache",
-            "version": "v4.4.6",
+            "version": "v4.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/cache.git",
-                "reference": "f20dcf48ecee66ab5ad7ccf4b3b55392b660c3d9"
+                "reference": "f777b570291aebe51081b9827e05f3a747665e87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/cache/zipball/f20dcf48ecee66ab5ad7ccf4b3b55392b660c3d9",
-                "reference": "f20dcf48ecee66ab5ad7ccf4b3b55392b660c3d9",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/f777b570291aebe51081b9827e05f3a747665e87",
+                "reference": "f777b570291aebe51081b9827e05f3a747665e87",
                 "shasum": ""
             },
             "require": {
@@ -4408,7 +4408,7 @@
                 "caching",
                 "psr6"
             ],
-            "time": "2020-03-17T19:51:46+00:00"
+            "time": "2020-03-27T16:54:36+00:00"
         },
         {
             "name": "symfony/cache-contracts",
@@ -8084,16 +8084,16 @@
         },
         {
             "name": "symfony/var-exporter",
-            "version": "v5.0.6",
+            "version": "v5.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-exporter.git",
-                "reference": "89d4bfebb1ad985ee8b770d826707658c44e45d8"
+                "reference": "ffd29a70370e466343e33154b5df197a07a13afa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-exporter/zipball/89d4bfebb1ad985ee8b770d826707658c44e45d8",
-                "reference": "89d4bfebb1ad985ee8b770d826707658c44e45d8",
+                "url": "https://api.github.com/repos/symfony/var-exporter/zipball/ffd29a70370e466343e33154b5df197a07a13afa",
+                "reference": "ffd29a70370e466343e33154b5df197a07a13afa",
                 "shasum": ""
             },
             "require": {
@@ -8140,7 +8140,7 @@
                 "instantiate",
                 "serialize"
             ],
-            "time": "2020-03-16T12:10:54+00:00"
+            "time": "2020-03-27T16:56:45+00:00"
         },
         {
             "name": "symfony/web-link",
