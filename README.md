@@ -1,7 +1,7 @@
 # My website, experiments and knowledge sharing
 [![CircleCI](https://circleci.com/gh/liweiyi88/julianli/tree/master.svg?style=svg)](https://circleci.com/gh/liweiyi88/julianli/tree/master)
 
-## How to run it locally
+## How to run
 ### prerequisite
 * PHP >= 7.4
 
