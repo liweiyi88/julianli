@@ -891,9 +891,9 @@
     prop-types "^15.7.2"
 
 "@symfony/webpack-encore@^0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@symfony/webpack-encore/-/webpack-encore-0.29.0.tgz#312f46511795c0e54ccd782e1081accdbea0a824"
-  integrity sha512-yqJwj8wjvZ2wNjYEcoBAuJ8epcA7MJ7e43TvRj7xpmKpuezW7m/SJEB+xBYJ7cLus1BVymk9x/FSna+XLmEiBA==
+  version "0.29.1"
+  resolved "https://registry.yarnpkg.com/@symfony/webpack-encore/-/webpack-encore-0.29.1.tgz#11b804783056ca116a1bd3af799b5b29b480b30e"
+  integrity sha512-/ZICF0Tbt/1fvSFlSFfvqbQz6WVuzprpQMrUn7c3cTzUmjpW6lm6C5Z1D/0kvL2K1xB46KntIYCmaeWKzByDoA==
   dependencies:
     "@babel/core" "^7.4.0"
     "@babel/plugin-syntax-dynamic-import" "^7.0.0"
