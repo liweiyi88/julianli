@@ -8,7 +8,7 @@
         "babel-preset-react": "^6.24.1",
         "eslint": "^5.16.0",
         "eslint-plugin-react": "^7.11.1",
-        "highlight.js": "^9.15.10",
+        "highlight.js": "^10.0.0",
         "node-sass": "^4.9.4",
         "postcss-loader": "^3.0.0",
         "prop-types": "^15.7.2",
