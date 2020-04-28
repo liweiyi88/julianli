@@ -313,16 +313,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.135.5",
+            "version": "3.135.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "a721de5e39eb584aa74611b07564bedba166893c"
+                "reference": "ba5a7fe1f4f7c4c38b5804c4779dad23399fccab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a721de5e39eb584aa74611b07564bedba166893c",
-                "reference": "a721de5e39eb584aa74611b07564bedba166893c",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ba5a7fe1f4f7c4c38b5804c4779dad23399fccab",
+                "reference": "ba5a7fe1f4f7c4c38b5804c4779dad23399fccab",
                 "shasum": ""
             },
             "require": {
@@ -393,7 +393,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-04-27T18:11:22+00:00"
+            "time": "2020-04-28T18:15:08+00:00"
         },
         {
             "name": "bugsnag/bugsnag",
