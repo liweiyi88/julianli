@@ -313,16 +313,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.138.2",
+            "version": "3.138.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "20397150ba28912a599838c44f50f6113cae5a2b"
+                "reference": "f09630f3e54364d8f7029ddcb2f4bbae272ba754"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/20397150ba28912a599838c44f50f6113cae5a2b",
-                "reference": "20397150ba28912a599838c44f50f6113cae5a2b",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f09630f3e54364d8f7029ddcb2f4bbae272ba754",
+                "reference": "f09630f3e54364d8f7029ddcb2f4bbae272ba754",
                 "shasum": ""
             },
             "require": {
@@ -393,7 +393,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-05-15T18:19:33+00:00"
+            "time": "2020-05-18T18:13:39+00:00"
         },
         {
             "name": "bugsnag/bugsnag",
@@ -8980,12 +8980,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "9b0501ceb2d00bea5814316c5333d513d7622ed5"
+                "reference": "885e8b1e0bc2096989fd20938342e407e8045186"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/9b0501ceb2d00bea5814316c5333d513d7622ed5",
-                "reference": "9b0501ceb2d00bea5814316c5333d513d7622ed5",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/885e8b1e0bc2096989fd20938342e407e8045186",
+                "reference": "885e8b1e0bc2096989fd20938342e407e8045186",
                 "shasum": ""
             },
             "conflict": {
@@ -8998,7 +8998,8 @@
                 "asymmetricrypt/asymmetricrypt": ">=0,<9.9.99",
                 "aws/aws-sdk-php": ">=3,<3.2.1",
                 "bagisto/bagisto": "<0.1.5",
-                "barrelstrength/sprout-base-email": "<3.9",
+                "barrelstrength/sprout-base-email": "<1.2.7",
+                "barrelstrength/sprout-forms": "<3.9",
                 "bolt/bolt": "<3.6.10",
                 "brightlocal/phpwhois": "<=4.2.5",
                 "buddypress/buddypress": "<5.1.2",
@@ -9241,7 +9242,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2020-05-14T00:01:29+00:00"
+            "time": "2020-05-16T00:00:31+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
