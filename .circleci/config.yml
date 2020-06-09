@@ -1,35 +1,5 @@
 version: 2
 jobs:
-    test:
-        working_directory: ~/app
-        environment:
-            - DOCKER_COMPOSE: "docker-compose -f docker-compose.yml -f docker-compose.ci.yml"
-            - EXEC: "$(DOCKER_COMPOSE) exec -T app"
-        machine:
-            enabled: true
-            image: circleci/classic
-        steps:
-            - checkout
-
-            - restore_cache:
-                  key: composer-{{ checksum "composer.lock" }}
-            - restore_cache:
-                  key: npm-{{ checksum "yarn.lock" }}
-
-            - run: make build
-            - run: make up
-            - run: make node_modules assets-prod
-            - run: make vendor cc
-            - run: make ci
-            - save_cache:
-                paths:
-                    - ./vendor
-                key: composer-{{ checksum "composer.lock" }}
-            - save_cache:
-                paths:
-                    - ./node_modules
-                key: npm-{{ checksum "yarn.lock" }}
-
     deploy:
         working_directory: ~/julianli
         docker:
@@ -66,11 +36,6 @@ workflows:
     version: 2
     test_deploy:
         jobs:
-            - test:
-                filters:
-                    branches:
-                        ignore:
-                            - master
             - deploy:
                 filters:
                     branches:
