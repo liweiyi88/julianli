@@ -6,9 +6,7 @@
       - redis_bind: 127.0.0.1
 
   vars_files:
-      - ./vars/deploy_vault.yml
       - ./vars/vars.yml
-      - ./vars/deploy_vars.yml
 
   roles:
       - nginx
