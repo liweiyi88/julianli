@@ -17,3 +17,4 @@ jobs:
           rolesPath: './ansible/roles'
           keyFile: './ansible/key.pem'
           keyFileVaultPass: ${{ secrets.VAULT_PASS }}
+          extraVars: '-e host="digitalocean"'
