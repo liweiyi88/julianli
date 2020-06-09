@@ -9,11 +9,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Execute Playbook Action Step
-        id: Execution
-        uses: saubermacherag/ansible-playbook-docker-action@master
-        env:
-          ANSIBLE_STDOUT_CALLBACK: debug
-          ANSIBLE_FORCE_COLOR: true
+        uses: saubermacherag/ansible-playbook-docker-action@v1.3
         with:
           playbookName: "./ansible/deploy.yml"
           inventoryFile: "./ansible/hosts.ini"
