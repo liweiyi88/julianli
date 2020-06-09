@@ -16,4 +16,4 @@ jobs:
           requirementsFile: './ansible/requirements.yml'
           rolesPath: './ansible/roles'
           keyFile: './ansible/key.pem'
-          keyFileVaultPass: ${{ secrets.KEYFILE_VAULT_PASS }}
+          keyFileVaultPass: ${{ secrets.VAULT_PASS }}
