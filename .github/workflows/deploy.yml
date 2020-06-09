@@ -1,0 +1,23 @@
+name: Deploy
+
+on: [push, pull_request]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Execute Playbook Action Step
+        id: Execution
+        uses: saubermacherag/ansible-playbook-docker-action@master
+        env:
+          ANSIBLE_STDOUT_CALLBACK: debug
+          ANSIBLE_FORCE_COLOR: true
+        with:
+          playbookName: "./ansible/deploy.yml"
+          inventoryFile: "./ansible/hosts.ini"
+          requirementsFile: "./ansible/requirements.yml"
+          rolesPath: "./ansible/roles"
+          keyFile: "./ansible/key.pem"
+          keyFileVaultPass: ${{ secrets.KEYFILE_VAULT_PASS }}
