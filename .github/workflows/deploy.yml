@@ -1,19 +1,19 @@
-name: Deploy
+name: Deploy to production
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
-  lint-and-test:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
-
       - name: Execute Playbook Action Step
         uses: saubermacherag/ansible-playbook-docker-action@v1.3
         with:
-          playbookName: "./ansible/deploy.yml"
-          inventoryFile: "./ansible/hosts.ini"
-          requirementsFile: "./ansible/requirements.yml"
-          rolesPath: "./ansible/roles"
-          keyFile: "./ansible/key.pem"
+          playbookName: './ansible/deploy.yml'
+          inventoryFile: './ansible/hosts.ini'
+          requirementsFile: './ansible/requirements.yml'
+          rolesPath: './ansible/roles'
+          keyFile: './ansible/key.pem'
           keyFileVaultPass: ${{ secrets.KEYFILE_VAULT_PASS }}
