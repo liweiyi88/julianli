@@ -313,16 +313,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.144.2",
+            "version": "3.145.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "0a0b9e4d485fe0cd53db2a4075eba9a416d8331c"
+                "reference": "df5406b49f4f5774045e51e8fecc75717c4d6454"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0a0b9e4d485fe0cd53db2a4075eba9a416d8331c",
-                "reference": "0a0b9e4d485fe0cd53db2a4075eba9a416d8331c",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/df5406b49f4f5774045e51e8fecc75717c4d6454",
+                "reference": "df5406b49f4f5774045e51e8fecc75717c4d6454",
                 "shasum": ""
             },
             "require": {
@@ -394,7 +394,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-07-01T18:18:54+00:00"
+            "time": "2020-07-02T18:12:35+00:00"
         },
         {
             "name": "bugsnag/bugsnag",
@@ -10069,12 +10069,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "6d2e5ab854782830911ddd33b7d4649b9f18c10f"
+                "reference": "9ec84501a85a3b0c7b260042ae81a8efb2f234ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/6d2e5ab854782830911ddd33b7d4649b9f18c10f",
-                "reference": "6d2e5ab854782830911ddd33b7d4649b9f18c10f",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/9ec84501a85a3b0c7b260042ae81a8efb2f234ce",
+                "reference": "9ec84501a85a3b0c7b260042ae81a8efb2f234ce",
                 "shasum": ""
             },
             "conflict": {
@@ -10169,7 +10169,7 @@
                 "monolog/monolog": ">=1.8,<1.12",
                 "namshi/jose": "<2.2",
                 "nzo/url-encryptor-bundle": ">=4,<4.3.2|>=5,<5.0.1",
-                "october/october": ">=1.0.319,<1.0.466",
+                "october/october": ">=1.0.319,<1.0.467",
                 "onelogin/php-saml": "<2.10.4",
                 "oneup/uploader-bundle": "<1.9.3|>=2,<2.1.5",
                 "openid/php-openid": "<2.3",
@@ -10346,7 +10346,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-06-19T13:23:43+00:00"
+            "time": "2020-07-02T17:01:23+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
