@@ -313,16 +313,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.147.7",
+            "version": "3.147.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "0d637e7cbc795996a75531ed8dd2272f2672b2f2"
+                "reference": "b121ee1d69d3a1200ebc22d937cd40043b96a940"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0d637e7cbc795996a75531ed8dd2272f2672b2f2",
-                "reference": "0d637e7cbc795996a75531ed8dd2272f2672b2f2",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b121ee1d69d3a1200ebc22d937cd40043b96a940",
+                "reference": "b121ee1d69d3a1200ebc22d937cd40043b96a940",
                 "shasum": ""
             },
             "require": {
@@ -394,7 +394,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-07-28T18:13:27+00:00"
+            "time": "2020-07-29T18:16:33+00:00"
         },
         {
             "name": "bugsnag/bugsnag",
@@ -10435,12 +10435,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "f1062cc7471971bbb483e8e0dcb7d16eaf472aa4"
+                "reference": "f693c37873d31bff5adb1279cb05a2f4ce5efb43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/f1062cc7471971bbb483e8e0dcb7d16eaf472aa4",
-                "reference": "f1062cc7471971bbb483e8e0dcb7d16eaf472aa4",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/f693c37873d31bff5adb1279cb05a2f4ce5efb43",
+                "reference": "f693c37873d31bff5adb1279cb05a2f4ce5efb43",
                 "shasum": ""
             },
             "conflict": {
@@ -10507,6 +10507,7 @@
                 "friendsofsymfony/oauth2-php": "<1.3",
                 "friendsofsymfony/rest-bundle": ">=1.2,<1.2.2",
                 "friendsofsymfony/user-bundle": ">=1.2,<1.3.5",
+                "friendsoftypo3/mediace": ">=7.6.2,<7.6.5",
                 "fuel/core": "<1.8.1",
                 "getgrav/grav": "<1.7-beta.8",
                 "gos/web-socket-bundle": "<1.10.4|>=2,<2.6.1|>=3,<3.3",
@@ -10533,11 +10534,15 @@
                 "magento/magento1ce": "<1.9.4.3",
                 "magento/magento1ee": ">=1,<1.14.4.3",
                 "magento/product-community-edition": ">=2,<2.2.10|>=2.3,<2.3.2-p.2",
+                "marcwillmann/turn": "<0.3.3",
+                "mittwald/typo3_forum": "<1.2.1",
                 "monolog/monolog": ">=1.8,<1.12",
                 "namshi/jose": "<2.2",
                 "nystudio107/craft-seomatic": "<3.3",
                 "nzo/url-encryptor-bundle": ">=4,<4.3.2|>=5,<5.0.1",
-                "october/october": ">=1.0.319,<1.0.467",
+                "october/backend": ">=1.0.319,<1.0.467",
+                "october/cms": ">=1.0.319,<1.0.466",
+                "october/october": ">=1.0.319,<1.0.466",
                 "onelogin/php-saml": "<2.10.4",
                 "oneup/uploader-bundle": "<1.9.3|>=2,<2.1.5",
                 "openid/php-openid": "<2.3",
@@ -10714,7 +10719,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-28T10:42:11+00:00"
+            "time": "2020-07-29T19:02:51+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
