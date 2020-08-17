@@ -2,8 +2,6 @@
 /.env.*.local
 /public/build/*
 /public/sitemap.xml
-!/public/build/entrypoints.json
-!/public/build/manifest.json
 /public/bundles/
 /var/
 /vendor/
