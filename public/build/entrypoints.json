@@ -2,8 +2,8 @@
   "entrypoints": {
     "posts_main": {
       "js": [
-        "/build/runtime.ed3c6480.js",
-        "/build/posts_main.89693529.js"
+        "/build/runtime.d94b3b43.js",
+        "/build/posts_main.7eceae83.js"
       ],
       "css": [
         "/build/posts_main.01a02584.css"
@@ -11,8 +11,8 @@
     },
     "post_create": {
       "js": [
-        "/build/runtime.ed3c6480.js",
-        "/build/post_create.d1741daf.js"
+        "/build/runtime.d94b3b43.js",
+        "/build/post_create.5f9bf34f.js"
       ],
       "css": [
         "/build/post_create.844d3fc6.css"
@@ -20,8 +20,8 @@
     },
     "post_show": {
       "js": [
-        "/build/runtime.ed3c6480.js",
-        "/build/post_show.fa1c9f1e.js"
+        "/build/runtime.d94b3b43.js",
+        "/build/post_show.bf2f7b09.js"
       ],
       "css": [
         "/build/post_show.5ef576f9.css"
@@ -29,8 +29,8 @@
     },
     "post_edit": {
       "js": [
-        "/build/runtime.ed3c6480.js",
-        "/build/post_edit.9e688057.js"
+        "/build/runtime.d94b3b43.js",
+        "/build/post_edit.dd459d5e.js"
       ],
       "css": [
         "/build/post_edit.844d3fc6.css"
@@ -38,13 +38,13 @@
     },
     "contact": {
       "js": [
-        "/build/runtime.ed3c6480.js",
-        "/build/contact.8a4bde7e.js"
+        "/build/runtime.d94b3b43.js",
+        "/build/contact.89011712.js"
       ]
     },
     "app_css": {
       "js": [
-        "/build/runtime.ed3c6480.js"
+        "/build/runtime.d94b3b43.js"
       ],
       "css": [
         "/build/app_css.21bd2e2c.css"
